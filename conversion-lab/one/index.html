@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadcode × Higgsfield — conversion blocks, one page</title>
+<link rel="icon" href="../assets/logos/quadcode.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="one.css?v=3">
+<link rel="stylesheet" href="studio.css?v=3">
+<link rel="stylesheet" href="work.css?v=7">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><img src="../assets/logos/quadcode.svg" alt="Quadcode"> Conversion blocks <span>· Higgsfield benchmark → Quadcode build</span></div>
+  <nav class="jump">
+    <a href="#checkout">Checkout</a>
+    <a href="#site">Website &amp; sign-up</a>
+    <a href="#account">Account</a>
+    <a href="#ide">IDE</a>
+    <a href="#work">Profile &amp; bonus</a>
+    <a href="#handoff">Dev handoff</a>
+  </nav>
+  <div class="verified"><i class="dot"></i> Higgsfield checked live, logged in (Plus) · 25 Sep</div>
+</header>
+
+<main class="wrap">
+  <section class="intro hero" id="intro">
+    <span class="eyebrow"><i></i> Conversion lab · v2 · design-complete, ready for build</span>
+    <h1>What Higgsfield does to sell — <em>and the same block</em> <span class="grad">in Quadcode</span></h1>
+    <p class="lead">Each row: <b>left</b> — a real Higgsfield screen captured with a logged-in paid account. <b>Right</b> — a real Quadcode screen with the new block composited in our design system. Below every row: the component at real size with all its states, and a four-part spec for the dev team. Timers are real and persist across reloads.</p>
+    <div class="legend">
+      <span class="chip hf"><b>Higgsfield</b> real screenshot</span>
+      <span class="chip"><b style="color:#bbf7d0">Live 25 Sep</b> captured today, logged in</span>
+      <span class="chip"><b>24 Sep</b> captured yesterday, same account</span>
+      <span class="chip qc"><b>Quadcode</b> real screen + new block</span>
+      <span class="chip"><b style="color:#ff2e7e">NEW</b> marks what we add</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b class="grad">24</b><span>conversion blocks, 3 surfaces</span></div>
+      <div class="stat"><b>50</b><span>component states in Spotlight</span></div>
+      <div class="stat"><b>1</b><span>urgency offer at a time — never stacked</span></div>
+      <div class="stat"><b>0</b><span>fake anchors or reset timers</span></div>
+      <div class="stat"><b>$20</b><span>real Basic price · 1,000 QCC</span></div>
+    </div>
+    <div class="marq" id="marq" aria-hidden="true"></div>
+    <div class="toc" id="toc"></div>
+  </section>
+
+  <!-- ===================== 01 CHECKOUT ===================== -->
+  <section class="sec" id="checkout">
+    <div class="sec-head">
+      <span class="kicker">01 · Checkout</span>
+      <h2>New checkout: real results scroll on the left, Stripe on the right</h2>
+      <p>The moment of payment is where people doubt. Higgsfield keeps showing what you get while you type your card. We do the same — in our design, with the Stripe form embedded in our page.</p>
+    </div>
+
+    <div class="ck-refs">
+      <div class="side hf">
+        <div class="cap"><span class="who hf">Higgsfield</span><span class="src live">Live 25 Sep · logged in</span></div>
+        <div class="frame" data-zoom><img src="../assets/hf-live/confirm-pay.png" alt="Higgsfield confirm and pay"></div>
+        <ul class="notes">
+          <li class="ok">Card is saved → repeat purchases skip the checkout: one “Confirm and pay €6.25” modal</li>
+          <li class="ok">Discount line (−26%) and total shown before paying</li>
+        </ul>
+      </div>
+      <div class="side hf">
+        <div class="cap"><span class="who hf">Higgsfield</span><span class="src live">Live 25 Sep · logged in</span></div>
+        <div class="frame" data-zoom><img src="../assets/hf-live/store-topup.png" alt="Higgsfield store"></div>
+        <ul class="notes">
+          <li class="ok">First purchase (no saved card) opens the full-page checkout: scrolling cases left, Stripe right</li>
+          <li class="ok">Our test account already has a card, so HF jumps straight to one-click</li>
+        </ul>
+      </div>
+      <div class="now-box">
+        <h4>Quadcode today</h4>
+        <ul>
+          <li class="bad">Plain Stripe page: product name + card field, nothing that sells</li>
+          <li class="bad">No results, no bonus line, no renewal date, no “what you get”</li>
+          <li class="bad">Card only — no Apple Pay / Google Pay / Link</li>
+          <li class="bad">Every purchase = full checkout again (no one-click)</li>
+          <li>Fix → the page below + one-click modal for repeat buys (block A8)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ck-label"><span class="who qc">Quadcode · new checkout</span> interactive — switch plan, pick credits, press Subscribe (demo, no real payment)</div>
+
+    <div class="ck" id="ck">
+      <aside class="ck-left">
+        <div class="ck-cols" id="ckCols"></div>
+        <div class="ck-shade-top"></div>
+        <div class="ck-shade-bot"></div>
+        <div class="ck-left-head">
+          <div class="logo"><img src="../assets/logos/quadcode.svg" alt=""> Quadcode</div>
+          <h3>Made with Quadcode</h3>
+          <p>Ads, product shots, music videos and tracks — made with Lumi and Sonic. Your credits work for every model.</p>
+        </div>
+        <div class="ck-left-foot">
+          <div class="row"><span><b>30+</b> models</span><span><b>Cody · Lumi · Sonic</b> + more agents</span><span><b>1</b> balance for all</span></div>
+          <div class="ck-models"><span>Claude</span><span>GPT</span><span>Gemini</span><span>Grok</span><span>DeepSeek</span><span>Nano Banana</span><span>Veo</span><span>ElevenLabs</span><span>Suno</span></div>
+        </div>
+      </aside>
+
+      <div class="ck-right">
+        <div class="ck-top">
+          <a href="#account">← Back to Plans &amp; Credits</a>
+          <span class="secure">🔒 Secure checkout</span>
+        </div>
+
+        <div class="ck-form" style="display:flex;flex-direction:column;gap:14px">
+          <h3 class="ck-h">Choose your plan</h3>
+          <div class="seg" id="ckSeg">
+            <button data-per="m" class="on">Monthly</button>
+            <button data-per="y">Yearly <span class="save">SAVE 25%</span></button>
+          </div>
+          <div class="tiers" id="ckTiers"></div>
+
+          <div class="bonus">
+            <span class="gift">🎁</span>
+            <span><b>New creator bonus:</b> +20% credits on your first payment</span>
+            <span class="q-timer" data-tt="starter" data-fmt="hms">23:59:59</span>
+          </div>
+
+          <div class="sum" id="ckSum"></div>
+
+          <div class="stripe">
+            <div class="express">
+              <button class="xbtn apple" data-pay aria-label="Apple Pay"><img src="../assets/logos/apple.svg" alt="" style="height:18px;margin-top:-2px"> <span style="font-weight:600;font-size:16px;letter-spacing:-.01em">Pay</span></button>
+              <button class="xbtn bank" data-pay aria-label="Google Pay"><img src="../assets/logos/google.svg" alt="" style="height:18px"> <span style="font-weight:600;font-size:16px">Pay</span></button>
+            </div>
+            <div class="or">or pay with card</div>
+            <div>
+              <label>Email</label>
+              <div class="inp"><input value="emil@quadcode.ai" aria-label="Email"></div>
+            </div>
+            <div>
+              <label>Card information</label>
+              <div class="grp">
+                <div class="inp"><input placeholder="1234 1234 1234 1234" aria-label="Card number">
+                  <span class="brands"><img src="../assets/logos/visa.svg" alt="Visa"><img src="../assets/logos/mastercard.svg" alt="Mastercard"><img src="../assets/logos/amex.svg" alt="Amex"><img src="../assets/logos/jcb.svg" alt="JCB"></span>
+                </div>
+                <div class="split">
+                  <div class="inp"><input placeholder="MM / YY" aria-label="Expiry"></div>
+                  <div class="inp"><input placeholder="CVC" aria-label="CVC"></div>
+                </div>
+              </div>
+            </div>
+            <div class="two">
+              <div><label>Country</label><div class="inp"><input value="United States" aria-label="Country"></div></div>
+              <div><label>ZIP</label><div class="inp"><input placeholder="12345" aria-label="ZIP"></div></div>
+            </div>
+            <label class="chk"><input type="checkbox" checked> Save my card for 1-click top-ups later</label>
+          </div>
+
+          <button class="pay" id="ckPay" data-pay><span class="lock">🔒</span> <span id="ckPayTxt">Subscribe · $20.00</span></button>
+          <div class="pby">Payments are processed by <img src="../assets/logos/stripe.svg" alt="Stripe"> · we never see your card</div>
+          <div class="trust">
+            <div><b>Credits land instantly</b>Start creating right after payment</div>
+            <div><b>Cancel in 1 click</b>From Plans &amp; Credits, any time</div>
+            <div><b>Invoice for your company</b>VAT / company details supported</div>
+          </div>
+        </div>
+
+        <div class="ck-ok">
+          <div class="big">✓</div>
+          <h4>You're in! <span id="ckOkCredits">1,200 QCC</span> added</h4>
+          <p>Receipt sent to emil@quadcode.ai. Your card is saved — next top-ups take one click.</p>
+          <div style="display:flex;gap:10px;margin-top:6px">
+            <button class="pay" style="padding:0 22px" onclick="document.getElementById('ck').classList.remove('paid')">Open Quadcode</button>
+            <button class="pay" style="padding:0 22px;background:#1f2533" onclick="document.getElementById('ck').classList.remove('paid')">Back (demo reset)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ck-notes">
+      <div><b>What changes</b><ul><li>Our own full-page checkout instead of a bare Stripe page</li><li>Left: endless wall of real Quadcode results with agent + model</li><li>Right: plan switch, bonus line, total due today, renewal date</li></ul></div>
+      <div><b>Payments</b><ul><li>Stripe form embedded in our page (same Stripe account, same session)</li><li>Apple Pay / Google Pay / Link + cards</li><li>Card saved → next purchases become one-click (A8)</li></ul></div>
+      <div><b>Rules we keep</b><ul><li>Timer only for a real offer that really ends</li><li>Renewal date + price always visible</li><li>Cancel link never hidden</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ===================== blocks (rendered by one.js) ===================== -->
+  <section class="sec" id="site">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">02–04 · Website &amp; sign-up</span>
+        <h2>quadcode.ai: give a reason to <em>sign up now</em></h2>
+        <p>Today the site has no offer, no timer, no sign-up bonus and no pricing link. Higgsfield repeats its offer in the header, in banners and inside the sign-up flow. We add one strip, one nav link and a one-screen auth modal that mirrors theirs — creative story on the left, equal-size providers on the right.</p>
+      </div>
+      <div class="aside"><b>Base screens</b>Real quadcode.ai home and sign-in pages at 1366 px. Modals are composited at 60 × 78% of the viewport, the same footprint as Higgsfield's.</div>
+    </div>
+    <div id="blocks-site"></div>
+  </section>
+
+  <section class="sec" id="account">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">05–11 · Account · /profile/plans</span>
+        <h2>Account: every screen can sell — <em>honestly</em></h2>
+        <p>Starter Kit store, exit offer, top-up packs with a fixed loader, a plan card that shows value, fair proration, a one-screen cancel and referrals. One urgency offer at a time; timers are server deadlines that really end.</p>
+      </div>
+      <div class="aside"><b>Base screen</b>Real Plans &amp; Credits page (1847 px, signed in to a sample Basic Monthly account, 766 QCC). Store modals reuse the Higgsfield store layout: tabs → cinematic hero → creative cards.</div>
+    </div>
+    <div id="blocks-account"></div>
+  </section>
+
+  <section class="sec" id="ide">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">12–16 · IDE · desktop app</span>
+        <h2>IDE: marketing layers only — <em>no product changes</em></h2>
+        <p>Base screen: the real Quadcode desktop app (light theme). One banner component with four states, an in-chat 402 pay card that resumes the task, a status-bar pill, an account mini-store and a cost preview. Every state is shown at real size in Spotlight.</p>
+      </div>
+      <div class="aside"><b>IDE art set</b>Banners use the existing <code style="font:600 11px var(--mono);color:#ffb36b">bg_*_light.jpg</code> series (teal / violet / gold / red) with a white scrim on the left so copy always passes AA contrast.</div>
+    </div>
+    <div id="blocks-ide"></div>
+  </section>
+
+  <section class="sec" id="work">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">17–24 · Profile, bonus &amp; workspace</span>
+        <h2>One account, one balance — <em>the same</em> on the website and in the IDE</h2>
+        <p>A profile menu with a live balance, a one-click “Claim your bonus” with coins and a count-up, guest passes, and a workspace that finally shows credits, results and forecast. Use the <b>Demo account</b> switcher at the bottom of the screen: every synced block (15, 17, 18, 19) changes together. Press “Claim 200 QCC” anywhere — the website and the IDE update at once.</p>
+      </div>
+      <div class="aside"><b>Base screens</b>Real workspace pages (overview, usage, settings) at 1888 px and the real desktop app at 1915 px. Account states: New (0 QCC) → Bonus claimed (200) → Low balance (38.40) → Subscriber (1,006.63, the real account).</div>
+    </div>
+    <div id="blocks-work"></div>
+  </section>
+
+  <!-- ===================== DEV HANDOFF KIT ===================== -->
+  <section class="sec" id="handoff">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">KIT · Dev handoff</span>
+        <h2>Everything the team needs to <em>build it</em></h2>
+        <p>Tokens, type scale, offer rules, the data contract behind every timer and the analytics events. All components on this page are plain HTML/CSS — copy the markup from <code style="font:600 12px var(--mono);color:#ffb36b">blocks.js</code> and the styles from <code style="font:600 12px var(--mono);color:#ffb36b">studio.css</code> (prefixes <b>z-</b> web / <b>zi-</b> IDE).</p>
+      </div>
+      <div class="aside"><b>Order of work</b>Wave 1 (02, 03, 04, 05, 08, 12, 13, 14, 17, 18, 19) → Wave 2 (06, 07, 15, 20–24) → Wave 3 (09, 10, 11, 16). Each wave ships behind a feature flag with the events below.</div>
+    </div>
+
+    <div class="kit">
+      <div class="c4">
+        <h4><i>01</i> Color tokens</h4>
+        <div class="sw">
+          <div><i style="background:linear-gradient(92deg,#ff6a00,#ff7a2e 48%,#ff4f6e)"></i><b>--grad</b><span>primary CTA, accents</span></div>
+          <div><i style="background:#ff6a00"></i><b>#FF6A00</b><span>orange · --g1</span></div>
+          <div><i style="background:#ff4f6e"></i><b>#FF4F6E</b><span>coral · gradient end</span></div>
+          <div><i style="background:#ffb36b"></i><b>#FFB36B</b><span>orange text on dark</span></div>
+          <div><i style="background:#06070a;border:1px solid #1a1f2b"></i><b>#06070A</b><span>web bg</span></div>
+          <div><i style="background:#10131a;border:1px solid #1a1f2b"></i><b>#10131A</b><span>web card</span></div>
+          <div><i style="background:#fff"></i><b>#FFFFFF</b><span>IDE card</span></div>
+          <div><i style="background:#111827"></i><b>#111827</b><span>IDE text</span></div>
+          <div><i style="background:#c2410c"></i><b>#C2410C</b><span>IDE orange text</span></div>
+          <div><i style="background:#4ade80"></i><b>#4ADE80</b><span>success / bonus</span></div>
+          <div><i style="background:#ef4444"></i><b>#EF4444</b><span>out of credits</span></div>
+          <div><i style="background:#a78bfa"></i><b>#A78BFA</b><span>top-up share in bars</span></div>
+        </div>
+      </div>
+      <div class="c4">
+        <h4><i>02</i> Type scale</h4>
+        <div class="type">
+          <div><span>Display · Outfit 800</span><b style="font-family:var(--disp);font-size:26px;letter-spacing:-.03em">Starter Kit</b></div>
+          <div><span>Accent · Instrument Serif italic</span><b style="font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">1,200 QCC</b></div>
+          <div><span>Body · Geist 400–700</span><b style="font-weight:500">Same 1,000 QCC every month, billed once a year.</b></div>
+          <div><span>Mono · Geist Mono 800</span><b style="font-family:var(--mono)">23:59:59 · 766 QCC</b></div>
+          <div><span>Chip · Geist 700 10.4 px</span><b style="font-size:10.4px;letter-spacing:.07em;text-transform:uppercase">Starter Kit · first plan</b></div>
+        </div>
+        <ul style="margin-top:12px"><li>Web modals: 1 em = 14 px at 1366 / 1847 px; scale with <code>cqw</code></li><li>IDE: 14 px base, buttons 37 px, chips 26 px, radius 15 px</li><li>Headline accent = one italic serif word with the gradient — never more</li></ul>
+      </div>
+      <div class="c4">
+        <h4><i>03</i> Offer rules (meta/rules/temporary-offers.md)</h4>
+        <ul class="rules">
+          <li><span class="tag-ok">✓</span> One urgency offer at a time. Exit (+30%) <b>replaces</b> Starter Kit (+20%) for 5 minutes, never stacks.</li>
+          <li><span class="tag-ok">✓</span> Deadlines are server timestamps. Reload, new device, IDE — same second.</li>
+          <li><span class="tag-ok">✓</span> Expired means expired. No auto-restart, no "extended for you".</li>
+          <li><span class="tag-ok">✓</span> Bonus credits instead of fake anchor prices. The only struck price is the real yearly list price ($240 → $180).</li>
+          <li><span class="tag-ok">✓</span> Decline buttons are neutral ("No thanks, keep browsing"). Cancel is one screen, always reachable.</li>
+          <li><span class="tag-no">✗</span> No countdown without a real deadline object. No dark-pattern confirm chains.</li>
+        </ul>
+      </div>
+      <div class="c6">
+        <h4><i>04</i> Data contract · one offer object drives every timer</h4>
+<pre><em>// GET /offers/active  (server time, cached 30 s)</em>
+{
+  <b>"id"</b>: <i>"starter"</i>,            <em>// starter | exit | promo | yearly</em>
+  <b>"kind"</b>: <i>"bonus_pct"</i>,        <em>// bonus_pct | price_off | code</em>
+  <b>"value"</b>: 20,                 <em>// +20% credits on the first plan</em>
+  <b>"applies_to"</b>: [<i>"basic_monthly"</i>, <i>"basic_yearly"</i>],
+  <b>"deadline"</b>: <i>"2026-09-26T14:02:11Z"</i>,   <em>// ISO, server clock</em>
+  <b>"replaces"</b>: null,           <em>// exit → "starter"</em>
+  <b>"surfaces"</b>: [<i>"site_strip"</i>, <i>"store"</i>, <i>"ide_banner"</i>, <i>"ide_pill"</i>, <i>"ide_menu"</i>],
+  <b>"dismissed_until"</b>: null
+}
+<em>// Balance (shared by plan card, IDE banner, pill, menu)</em>
+{ <b>"qcc"</b>: 766.52, <b>"plan_qcc"</b>: 586, <b>"topup_qcc"</b>: 180, <b>"renews_at"</b>: <i>"2026-09-07"</i>, <b>"runway_days"</b>: 12 }</pre>
+      </div>
+      <div class="c6">
+        <h4><i>05</i> Components → files · states</h4>
+        <table>
+          <tr><th>Block</th><th>Component</th><th>States</th><th>Trigger</th></tr>
+          <tr><td>02</td><td><code>z-strip</code>, <code>z-navlink</code></td><td>signed-out · signed-in</td><td>offer active</td></tr>
+          <tr><td>03 · 04</td><td><code>z-auth</code> + <code>z-car</code></td><td>signup · signin</td><td>CTA / protected route</td></tr>
+          <tr><td>05 · 07</td><td><code>z-modal</code> store: <code>z-tabs</code>, <code>z-hero</code>, <code>z-cards</code>, <code>z-packs</code></td><td>starter · plans · top-up</td><td>first plan click / top up</td></tr>
+          <tr><td>06</td><td><code>z-modal</code> exit + <code>z-cd</code></td><td>active · expired</td><td>exit intent, once</td></tr>
+          <tr><td>08</td><td><code>z-plan</code></td><td>active · low balance</td><td>subscription exists</td></tr>
+          <tr><td>09 · 10</td><td><code>z-modal pad</code> + <code>z-sum</code> / <code>z-opt</code></td><td>—</td><td>switch / cancel link</td></tr>
+          <tr><td>12</td><td><code>zi-banner</code></td><td>new · promo · sub · out</td><td>state resolver</td></tr>
+          <tr><td>13</td><td><code>zi-msg</code> + <code>zi-pay</code> + <code>zi-lock</code></td><td>402 · resumed</td><td>HTTP 402</td></tr>
+          <tr><td>14 · 16</td><td><code>zi-pill</code>, <code>zi-cost</code>/<code>zi-tip</code>/<code>zi-toast</code></td><td>offer · quiet · low</td><td>always / hover</td></tr>
+          <tr><td>15 · 17</td><td><code>umenu</code> (IDE: <code>umenu light</code>), <code>z-sname</code>, <code>zi-spill</code></td><td>new · claimed · low · sub</td><td>click on name</td></tr>
+          <tr><td>18 · 19</td><td><code>z-claim</code> / <code>zi-claim</code> + <code>.claimable</code>, <code>.claim-fx</code>, <code>.claim-toast</code></td><td>ready · claimed · expired</td><td>first sign-in / first launch</td></tr>
+          <tr><td>20 · 21</td><td><code>z-guest</code> / <code>zi-guest</code></td><td>passes left · used up</td><td>menu → Invite friends</td></tr>
+          <tr><td>22–24</td><td><code>z-page</code>, <code>z-card</code>, <code>z-bars</code>, <code>z-tbl</code>, <code>z-fore</code>, <code>z-offer</code></td><td>—</td><td>workspace routes</td></tr>
+        </table>
+      </div>
+      <div class="c12">
+        <h4><i>06</i> Analytics events (one namespace, properties in braces)</h4>
+        <div class="spec" style="margin-top:0">
+          <div><h5><i>W</i>Website</h5><div class="ev"><span>strip_view</span><span>strip_click</span><span>strip_dismiss</span><span>nav_pricing_click</span><span>auth_open</span><span>auth_provider_click{provider}</span><span>auth_success</span><span>welcome_credits_granted</span><span>offer_toast_click</span></div></div>
+          <div><h5><i>A</i>Account</h5><div class="ev"><span>store_open{tab}</span><span>starter_cta_click</span><span>starter_dismiss</span><span>exit_offer_view</span><span>exit_offer_claim</span><span>exit_offer_expire</span><span>topup_pack_select{qcc}</span><span>topup_pay</span><span>autorefill_toggle</span><span>plan_switch_click</span><span>switch_confirm</span><span>cancel_save_apply</span><span>cancel_confirm</span><span>ref_copy</span></div></div>
+          <div><h5><i>I</i>IDE</h5><div class="ev"><span>ide_banner_view{state}</span><span>ide_banner_click{state,btn}</span><span>ide_banner_dismiss{state}</span><span>ide_402_view</span><span>ide_402_pay</span><span>ide_task_resumed</span><span>ide_pill_click{state}</span><span>ide_menu_open</span><span>ide_menu_topup</span><span>cost_tip_open</span><span>refund_toast_view</span></div></div>
+          <div><h5><i>✓</i>Success metrics</h5><ul><li>Sign-up completion ≥ 45% (from ~20% with the 5-field form)</li><li>First purchase within 24 h of sign-up: track by cohort</li><li>402 → resumed task ≤ 2 clicks, recovery ≥ 60%</li><li>Monthly → Yearly switch rate, average top-up size</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Prototype for the build team. Prices are the current Quadcode plans (Basic $20 = 1,000 QCC · Yearly $180). Timers count real time, persist across reloads and stop at zero — no fake urgency. Higgsfield screenshots: logged-in Plus account, 24–25 Sep.</footer>
+</main>
+
+<div class="lb" id="lb"><button class="lb-x" aria-label="Close">✕</button><div class="lb-in" id="lbIn"></div></div>
+
+<script src="blocks.js?v=4"></script>
+<script src="work.js?v=9"></script>
+<script src="one.js?v=5"></script>
+<script src="studio.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+﻿# Quadcode AI — AI Platform for Coding, Design & Content Creation
+[Button] Open menu  @20,12
+[Image] quadcode.ai  @18,16
+[Text] Drop  @20,50
+[Text] Emil Emil  @40,50
+[Text] emildropemil@gmail.com  @20,60
+[Text] Balance:  @20,73
+[Text] 1006.63  @52,73
+[Text] QCC  @80,73
+[Button] Top up balance  @20,88
+[Button] Apply promo code  @20,116
+[Hyperlink] Overview  @20,156
+[Hyperlink] Plans & Credits  @20,176
+[Hyperlink] Settings  @20,196
+[Hyperlink] Usage  @20,216
+[Hyperlink] Billing & Invoices  @20,236
+[Button] Desktop App  @20,256
+[Button] Logout  @20,1340
+[Text] Usage  @156,24
+[Text] Period:  @156,57
+[ListItem] Last week  @-
+[ListItem] Last month  @-
+[ListItem] Last 3 months  @-
+[ListItem] Last 6 months  @-
+[ListItem] Last year  @-
+[Text] Usage Over Time  @164,92
+[ListItem] Integration legend icon Integration  @487,222
+[Image] Integration legend icon  @487,224
+[ListItem] LLM legend icon LLM  @540,222
+[Image] LLM legend icon  @540,224
+[ListItem] SD legend icon SD  @570,222
+[Image] SD legend icon  @570,224
+[Text] 2026-08-27  @190,210
+[Text] 2026-08-30  @251,210
+[Text] 2026-09-01  @314,210
+[Text] 2026-09-03  @376,210
+[Text] 2026-09-05  @438,210
+[Text] 2026-09-14  @502,210
+[Text] 2026-09-16  @564,210
+[Text] 2026-09-18  @627,210
+[Text] 2026-09-20  @688,210
+[Text] 2026-09-22  @750,210
+[Text] 2026-09-24  @814,210
+[Text] 2026-09-26  @870,210
+[Text] 0  @187,196
+[Text] 15000  @168,176
+[Text] 30000  @166,154
+[Text] 45000  @166,133
+[Text] 60000  @166,116
+[Text] Showing  @168,273
+[Text] 48  @198,273
+[Text] usage records  @206,273
+[DataItem] Date  @168,290
+[DataItem] Service  @390,290
+[DataItem] Amount  @574,290
+[DataItem] Currency  @746,290
+[DataItem] 2026-09-26  @168,309
+[DataItem] Integration  @390,309
+[DataItem] 37.93  @574,309
+[DataItem] QCC  @746,309
+[DataItem] 2026-09-26  @168,328
+[DataItem] LLM  @390,328
+[DataItem] 4331.85  @574,328
+[DataItem] QCC  @746,328
+[DataItem] 2026-09-25  @168,346
+[DataItem] Integration  @390,346
+[DataItem] 2338.93  @574,346
+[DataItem] QCC  @746,346
+[DataItem] 2026-09-25  @168,364
+[DataItem] LLM  @390,364
+[DataItem] 41400.01  @574,364
+[DataItem] QCC  @746,364
+[DataItem] 2026-09-25  @168,383
+[DataItem] SD  @390,383
+[DataItem] 8.94  @574,383
+[DataItem] QCC  @746,383
+[DataItem] 2026-09-24  @168,402
+[DataItem] Integration  @390,402
+[DataItem] 1260.41  @574,402
+[DataItem] QCC  @746,402
+[DataItem] 2026-09-24  @168,420
+[DataItem] LLM  @390,420
+[DataItem] 25365.50  @574,420
+[DataItem] QCC  @746,420
+[DataItem] 2026-09-24  @168,438
+[DataItem] SD  @390,438
+[DataItem] 23.78  @574,438
+[DataItem] QCC  @746,438
+[DataItem] 2026-09-23  @168,457
+[DataItem] Integration  @390,457
+[DataItem] 1037.45  @574,457
+[DataItem] QCC  @746,457
+[DataItem] 2026-09-23  @168,476
+[DataItem] LLM  @390,476
+[DataItem] 30695.93  @574,476
+[DataItem] QCC  @746,476
+[DataItem] 2026-09-22  @168,494
+[DataItem] Integration  @390,494
+[DataItem] 14.22  @574,494
+[DataItem] QCC  @746,494
+[DataItem] 2026-09-22  @168,512
+[DataItem] LLM  @390,512
+[DataItem] 12172.41  @574,512
+[DataItem] QCC  @746,512
+[DataItem] 2026-09-21  @168,531
+[DataItem] Integration  @390,531
+[DataItem] 48.20  @574,531
+[DataItem] QCC  @746,531
+[DataItem] 2026-09-21  @168,550
+[DataItem] LLM  @390,550
+[DataItem] 45125.31  @574,550
+[DataItem] QCC  @746,550
+[DataItem] 2026-09-20  @168,568
+[DataItem] Integration  @390,568
+[DataItem] 4.74  @574,568
+[DataItem] QCC  @746,568
+[DataItem] 2026-09-20  @168,586
+[DataItem] LLM  @390,586
+[DataItem] 7844.33  @574,586
+[DataItem] QCC  @746,586
+[DataItem] 2026-09-19  @168,605
+[DataItem] Integration  @390,605
+[DataItem] 21.49  @574,605
+[DataItem] QCC  @746,605
+[DataItem] 2026-09-19  @168,624
+[DataItem] LLM  @390,624
+[DataItem] 22828.86  @574,624
+[DataItem] QCC  @746,624
+[DataItem] 2026-09-18  @168,642
+[DataItem] Integration  @390,642
+[DataItem] 6.32  @574,642
+[DataItem] QCC  @746,642
+[DataItem] 2026-09-18  @168,660
+[DataItem] LLM  @390,660
+[DataItem] 25376.52  @574,660
+[DataItem] QCC  @746,660
+[DataItem] 2026-09-17  @168,679
+[DataItem] Integration  @390,679
+[DataItem] 43.87  @574,679
+[DataItem] QCC  @746,679
+[DataItem] 2026-09-17  @168,698
+[DataItem] LLM  @390,698
+[DataItem] 28519.70  @574,698
+[DataItem] QCC  @746,698
+[DataItem] 2026-09-16  @168,716
+[DataItem] Integration  @390,716
+[DataItem] 35.85  @574,716
+[DataItem] QCC  @746,716
+[DataItem] 2026-09-16  @168,734
+[DataItem] LLM  @390,734
+[DataItem] 45054.54  @574,734
+[DataItem] QCC  @746,734
+[DataItem] 2026-09-15  @168,753
+[DataItem] Integration  @390,753
+[DataItem] 170.10  @574,753
+[DataItem] QCC  @746,753
+[DataItem] 2026-09-15  @168,772
+[DataItem] LLM  @390,772
+[DataItem] 7752.36  @574,772
+[DataItem] QCC  @746,772
+[DataItem] 2026-09-14  @168,790
+[DataItem] Integration  @390,790
+[DataItem] 321.43  @574,790
+[DataItem] QCC  @746,790
+[DataItem] 2026-09-14  @168,808
+[DataItem] LLM  @390,808
+[DataItem] 17817.23  @574,808
+[DataItem] QCC  @746,808
+[DataItem] 2026-09-07  @168,827
+[DataItem] LLM  @390,827
+[DataItem] 4043.91  @574,827
+[DataItem] QCC  @746,827
+[DataItem] 2026-09-05  @168,846
+[DataItem] LLM  @390,846
+[DataItem] 3626.08  @574,846
+[DataItem] QCC  @746,846
+[DataItem] 2026-09-04  @168,864
+[DataItem] Integration  @390,864
+[DataItem] 214.81  @574,864
+[DataItem] QCC  @746,864
+[DataItem] 2026-09-04  @168,882
+[DataItem] LLM  @390,882
+[DataItem] 9700.99  @574,882
+[DataItem] QCC  @746,882
+[DataItem] 2026-09-03  @168,901
+[DataItem] Integration  @390,901
+[DataItem] 85.79  @574,901
+[DataItem] QCC  @746,901
+[DataItem] 2026-09-03  @168,920
+[DataItem] LLM  @390,920
+[DataItem] 16298.36  @574,920
+[DataItem] QCC  @746,920
+[DataItem] 2026-09-02  @168,938
+[DataItem] Integration  @390,938
+[DataItem] 1200.81  @574,938
+[DataItem] QCC  @746,938
+[DataItem] 2026-09-02  @168,956
+[DataItem] LLM  @390,956
+[DataItem] 6858.10  @574,956
+[DataItem] QCC  @746,956
+[DataItem] 2026-09-01  @168,975
+[DataItem] Integration  @390,975
+[DataItem] 2069.53  @574,975
+[DataItem] QCC  @746,975
+[DataItem] 2026-09-01  @168,994
+[DataItem] LLM  @390,994
+[DataItem] 11688.71  @574,994
+[DataItem] QCC  @746,994
+[DataItem] 2026-09-01  @168,1012
+[DataItem] SD  @390,1012
+[DataItem] 147.96  @574,1012
+[DataItem] QCC  @746,1012
+[DataItem] 2026-08-31  @168,1030
+[DataItem] Integration  @390,1030
+[DataItem] 2614.50  @574,1030
+[DataItem] QCC  @746,1030
+[DataItem] 2026-08-31  @168,1049
+[DataItem] LLM  @390,1049
+[DataItem] 27447.75  @574,1049
+[DataItem] QCC  @746,1049
+[DataItem] 2026-08-30  @168,1068
+[DataItem] LLM  @390,1068
+[DataItem] 494.20  @574,1068
+[DataItem] QCC  @746,1068
+[DataItem] 2026-08-28  @168,1086
+[DataItem] Integration  @390,1086
+[DataItem] 9519.17  @574,1086
+[DataItem] QCC  @746,1086
+[DataItem] 2026-08-28  @168,1104
+[DataItem] LLM  @390,1104
+[DataItem] 18000.71  @574,1104
+[DataItem] QCC  @746,1104
+[DataItem] 2026-08-28  @168,1123
+[DataItem] SD  @390,1123
+[DataItem] 58.08  @574,1123
+[DataItem] QCC  @746,1123
+[DataItem] 2026-08-27  @168,1142
+[DataItem] Integration  @390,1142
+[DataItem] 1027.97  @574,1142
+[DataItem] QCC  @746,1142
+[DataItem] 2026-08-27  @168,1160
+[DataItem] LLM  @390,1160
+[DataItem] 10229.76  @574,1160
+[DataItem] QCC  @746,1160
+[DataItem] 2026-08-27  @168,1178
+[DataItem] SD  @390,1178
+[DataItem] 126.41  @574,1178
+[DataItem] QCC  @746,1178
+[Hyperlink] Quadcode AI home  @156,1268
+[Image] quadcode.ai  @156,1268
+[Text] PRODUCT  @423,1268
+[Hyperlink] Download  @423,1284
+[Hyperlink] Capabilities  @423,1300
+[Hyperlink] Integrations  @423,1316
+[Hyperlink] Features  @423,1332
+[Text] LEGAL  @598,1268
+[Hyperlink] Privacy policy  @598,1284
+[Hyperlink] Terms and conditions  @598,1300
+[Hyperlink] X (Twitter)  @885,1268
+[Image] X  @885,1268
+[Hyperlink] YouTube  @901,1268
+[Hyperlink] LinkedIn  @917,1268
+[Text] © 2026 Quadcode  @875,1285

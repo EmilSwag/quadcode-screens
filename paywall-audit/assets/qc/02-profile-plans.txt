@@ -1,0 +1,177 @@
+﻿# Quadcode AI — AI Platform for Coding, Design & Content Creation
+[Button] Open menu  @20,12
+[Image] quadcode.ai  @18,16
+[Text] Drop  @20,50
+[Text] Emil Emil  @40,50
+[Text] emildropemil@gmail.com  @20,60
+[Text] Balance:  @20,73
+[Text] 1006.63  @52,73
+[Text] QCC  @80,73
+[Button] Top up balance  @20,88
+[Button] Apply promo code  @20,116
+[Hyperlink] Overview  @20,156
+[Hyperlink] Plans & Credits  @20,176
+[Hyperlink] Settings  @20,196
+[Hyperlink] Usage  @20,216
+[Hyperlink] Billing & Invoices  @20,236
+[Button] Desktop App  @20,256
+[Button] Logout  @20,1096
+[Text] Plans & Credits  @156,24
+[Text] Choose a plan that works for you. Upgrade or cancel anytime.  @156,48
+[Text] CURRENT PLAN  @202,108
+[Text] Active  @269,109
+[Text] Basic Monthly  @202,120
+[Text] 1,000  @202,135
+[Text] credits · $  @220,135
+[Text] 20  @254,135
+[Text] /  @262,135
+[Text] month  @270,135
+[Text] NEXT BILLING  @817,116
+[Text] Sep 7, 2026  @820,126
+[Button] Cancel  @869,116
+[Text] Free  @168,186
+[Text] Discover what QuadcodeAI can do for you.  @168,204
+[Text] $0  @177,233
+[Text] forever  @206,244
+[Text] Credits can be obtained via a promo code  @177,258
+[Text] Current balance:  @177,276
+[Text] 1006.63  @226,275
+[Text] QCC  @256,275
+[ListItem] All platform features  @168,376
+[ListItem] Credits available via promo code  @168,390
+[Button] Free Plan  @168,410
+[Text] Monthly  @363,186
+[Text] For fast-moving teams, cancel anytime.  @363,204
+[Text] $  @372,233
+[Text] 20  @384,233
+[Text] per  @412,244
+[Text] month  @425,244
+[Text] incl. VAT · shared across unlimited users  @372,258
+[Text] Active plan  @383,275
+[ListItem] All platform features  @363,306
+[ListItem] 1,000 credits / month  @363,320
+[ListItem] Credits roll over for 1 month  @363,334
+[Button] 1,000 credits / month $20  @363,354
+[Button] Current Plan  @363,382
+[Button] Cancel Subscription  @363,410
+[Text] Best value  @602,170
+[Text] 25% OFF  @650,170
+[Text] Yearly  @558,188
+[Text] Stay longer, pay less. Best value all year.  @558,206
+[Text] $  @566,235
+[Text] 180  @578,235
+[Text] per  @616,246
+[Text] year  @628,246
+[Text] incl. VAT · shared across unlimited users  @566,260
+[Text] $  @566,276
+[Text] 240  @570,276
+[Text] /yr  @581,276
+[Text] Save 25%  @598,276
+[ListItem] All platform features  @558,335
+[ListItem] 1,000 credits / month  @558,349
+[ListItem] Credits expire after a year  @558,363
+[Button] 1,000 credits / month $180  @558,383
+[Button] Switch Plan  @558,411
+[Text] Enterprise  @752,186
+[Text] Built for large orgs needing flexibility, scale, and governance.  @752,204
+[Hyperlink] Contact us  @752,410
+[Text] Get instant access to the best frontier models  @166,470
+[Text] No separate API keys, no per-provider subscriptions. Agents pick the right model and get your tasks done.  @166,486
+[Text] Text & Code  @173,520
+[Text] ANTHROPIC  @173,540
+[Text] Claude Opus  @179,551
+[Text] Claude Sonnet  @179,566
+[Text] OPENAI  @173,584
+[Text] GPT-5  @179,596
+[Text] GPT-5 Codex  @179,610
+[Text] GOOGLE  @173,628
+[Text] Gemini Pro  @179,640
+[Text] Gemini Flash  @179,655
+[Text] XAI  @173,673
+[Text] Grok  @179,684
+[Text] DEEPSEEK  @173,702
+[Text] deepseek-pro  @179,714
+[Text] deepseek-flash  @179,729
+[Text] OTHERS  @173,747
+[Text] GLM  @179,758
+[Text] kimi-k2  @179,774
+[Text] Qwen  @179,788
+[Text] Image  @362,520
+[Text] FRONTIER  @362,540
+[Text] GPT-Image  @368,551
+[Text] Ideogram  @368,566
+[Text] Nanobanana  @368,581
+[Text] Grok Image  @368,596
+[Text] Luma Image  @368,611
+[Text] FINETUNES  @362,629
+[Text] Flux 2 Pro  @368,640
+[Text] Flux Kontext  @368,656
+[Text] Flux 2 Klein  @368,670
+[Text] Flux 1  @368,686
+[Text] Qwen Image  @368,700
+[Text] Z-Image Turbo  @368,716
+[Text] TOOLS  @362,734
+[Text] AI Upscaler  @368,745
+[Text] Background Removal  @368,760
+[Text] Style / Pose / Ref controls  @368,775
+[Text] Image Essentials  @368,790
+[Text] Video  @550,520
+[Text] CINEMATIC FRONTIER  @550,540
+[Text] Veo 3  @556,551
+[Text] Seedance  @556,566
+[Text] Happyhorse  @556,581
+[Text] Kling  @556,596
+[Text] OTHERS  @550,614
+[Text] Grok Video  @556,626
+[Text] Wan 2.7  @556,640
+[Text] Wan 2.2  @556,656
+[Text] LTX-2  @556,670
+[Text] Runway Gen  @556,686
+[Text] Sora  @556,700
+[Text] TOOLS  @550,718
+[Text] Topaz  @556,730
+[Text] VRMG  @556,745
+[Text] Video Essentials  @556,760
+[Text] Long Movie  @556,775
+[Text] Audio & Others  @740,520
+[Text] MUSIC  @740,540
+[Text] Suno  @746,551
+[Text] ACEstep  @746,566
+[Text] Stable Audio  @746,581
+[Text] VOICE & TTS  @740,599
+[Text] ElevenLabs  @746,610
+[Text] TTS Gemini  @746,626
+[Text] TTS ElevenLabs  @746,640
+[Text] TTS IndexTTS  @746,656
+[Text] Chatterbox  @746,670
+[Text] TOOLS  @740,688
+[Text] Whisper X STT  @746,700
+[Text] Foley  @746,715
+[Text] 3D  @740,733
+[Text] Meshy  @746,744
+[Text] Hunyuan3D  @746,760
+[Text] Trellis  @746,774
+[Text] partial list — new models added regularly  @176,812
+[Text] How does the credit pool work?  @164,856
+[Text] Your monthly fee funds a credit pool. Every model call draws from it at the model's real rate — you're not paying a 15–30× subscription subsidy on top.  @164,874
+[Text] Are media models really included?  @552,856
+[Text] Yes. Image, video, 3D, voice and music models are all wired in. No separate provider bills or API keys to manage.  @552,874
+[Text] What happens if I run out of credits?  @164,918
+[Text] Top up your balance anytime, or upgrade to a higher pool. Unused Pro/Max credits behavior follows your billing cycle.  @164,936
+[Text] Can I cancel or switch plans?  @552,918
+[Text] Anytime. Upgrade, downgrade or cancel from this screen — changes apply to your next cycle.  @552,936
+[Hyperlink] Quadcode AI home  @156,1024
+[Image] quadcode.ai  @156,1024
+[Text] PRODUCT  @423,1024
+[Hyperlink] Download  @423,1040
+[Hyperlink] Capabilities  @423,1056
+[Hyperlink] Integrations  @423,1072
+[Hyperlink] Features  @423,1088
+[Text] LEGAL  @598,1024
+[Hyperlink] Privacy policy  @598,1040
+[Hyperlink] Terms and conditions  @598,1056
+[Hyperlink] X (Twitter)  @885,1024
+[Image] X  @885,1024
+[Hyperlink] YouTube  @901,1024
+[Hyperlink] LinkedIn  @917,1024
+[Text] © 2026 Quadcode  @875,1041

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadcode AI · Payments prototype</title>
+<link rel="icon" href="assets/logos/quadcode.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Lexend:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b0b0f; --ink2: #3c3d43; --mute: #6b6d75; --line: rgba(11, 11, 15, .09);
+    --soft: #f6f6f8; --grad: linear-gradient(135deg, #ff9569 0%, #f85a6a 55%, #dd344d 100%);
+    --head: 'Lexend', 'Geist', system-ui, sans-serif; --body: 'Geist', 'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font-family: var(--body); color: var(--ink); background: #fff; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  header { display: flex; align-items: center; justify-content: space-between; height: 72px; border-bottom: 1px solid var(--line); }
+  .brand { display: flex; align-items: center; gap: 10px; font: 600 15px/1 var(--head); }
+  .brand img { height: 26px; }
+  .brand span { color: var(--mute); font-weight: 500; }
+  .note { font-size: 13px; color: var(--mute); }
+  .hero { padding: 72px 0 40px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font: 600 12px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: #dd344d; }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--grad); }
+  h1 { font: 700 56px/1.04 var(--head); letter-spacing: -.03em; margin: 18px 0 16px; }
+  h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { font-size: 18px; line-height: 1.55; color: var(--ink2); max-width: 680px; margin: 0; }
+  .parts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px 0 88px; }
+  .part { position: relative; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 24px; padding: 32px; background: #fff; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .part:hover { transform: translateY(-3px); box-shadow: 0 24px 60px -28px rgba(11, 11, 15, .28); border-color: rgba(11, 11, 15, .16); }
+  .part.two { background: radial-gradient(120% 90% at 100% 0%, rgba(255, 149, 105, .16), transparent 60%), #fff; border-color: rgba(221, 52, 77, .28); }
+  .kick { display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; font: 600 11px/1 var(--body); letter-spacing: .07em; text-transform: uppercase; background: var(--soft); color: var(--ink2); }
+  .two .kick { background: var(--grad); color: #fff; }
+  .part h2 { font: 700 32px/1.1 var(--head); letter-spacing: -.02em; margin: 20px 0 10px; }
+  .part p { font-size: 15px; line-height: 1.6; color: var(--ink2); margin: 0 0 22px; }
+  .links { display: grid; gap: 8px; margin-top: auto; }
+  .links a { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 14px; background: var(--soft); font-weight: 600; font-size: 15px; transition: background .15s ease; }
+  .links a:hover { background: #ececf0; }
+  .links a small { font-weight: 500; color: var(--mute); font-size: 13px; margin-left: 10px; }
+  .links svg, .cta svg { width: 18px; height: 18px; flex: none; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+  .chip { padding: 8px 12px; border-radius: 10px; background: #fff; border: 1px solid var(--line); font-size: 13px; font-weight: 600; }
+  .chip b { font: 700 15px/1 var(--head); margin-right: 4px; }
+  .cta { margin-top: auto; display: flex; align-items: center; justify-content: center; gap: 10px; height: 54px; border-radius: 14px; background: var(--grad); color: #fff; font: 600 16px/1 var(--body); box-shadow: 0 14px 30px -14px rgba(221, 52, 77, .7); transition: filter .15s ease, transform .15s ease; }
+  .cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
+  footer { border-top: 1px solid var(--line); padding: 22px 0 32px; font-size: 13px; color: var(--mute); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><img src="assets/logos/quadcode.svg" alt="Quadcode AI">Quadcode AI <span>/ payments prototype</span></div>
+      <div class="note">Local prototype. Not connected to real payments.</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">More purchases, better retention</div>
+      <h1>Two parts. <em>Start with Part 2.</em></h1>
+      <p class="lead">Part 1 is the full redesign matched with Higgsfield and needs a product release. Part 2 runs on the product as it is today: codes, the app banners, server lists, model prices and our channels.</p>
+    </section>
+
+    <section class="parts">
+      <article class="part" id="part-cl" style="grid-column: 1 / -1; background: linear-gradient(135deg, #0e1118 0%, #171b26 100%); color: #fff; border-color: rgba(255, 106, 0, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span class="kick" style="background: linear-gradient(135deg, #ff6a00, #ff9442); color: #fff;">Conversion Lab · Benchmark & Live Roadmap</span>
+          <span style="font-size: 13px; color: #a1a1aa; font-weight: 600;">Standalone & Static</span>
+        </div>
+        <h2 style="margin: 10px 0 8px; color: #fff;">Conversion Lab: Quadcode vs Higgsfield</h2>
+        <p style="color: #cbd5e1; max-width: 800px; margin-bottom: 16px;">
+          Глубокий аудит 20 поверхностей воронки Quadcode против Higgsfield.ai + интерактивные прототипы 18 внедрений на сайте и в ЛК (A1–A18) и 12 триггеров в десктопной IDE (B1–B12), карта зависимостей и 4 волны запуска.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: linear-gradient(135deg, #ff6a00, #ff8c3b); box-shadow: 0 10px 24px -10px rgba(255,106,0,0.8); color: #fff;" href="conversion-lab/workspace/index.html">🚀 Workspace v2 (Creator Dashboard)</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 10px 24px -10px rgba(16,185,129,0.8); color: #fff;" href="ui_views/dashboard.html">👑 Executive Pitch & Спринты (31 тикет)</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: linear-gradient(135deg, #a855f7, #7c3aed); box-shadow: 0 10px 24px -10px rgba(168,85,247,0.8); color: #fff;" href="ui_views/dashboard.html#creative">🎨 Creative Studio (Lumi & Sonic)</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); box-shadow: 0 10px 24px -10px rgba(59,130,246,0.8); color: #fff;" href="paywall-audit/index.html">🔍 Live Paywall Audit (HF vs QC)</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: #222736; border: 1px solid #363e52; box-shadow: none;" href="conversion-lab/index.html">📊 Открыть Хаб Conversion Lab</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: #222736; border: 1px solid #363e52; box-shadow: none;" href="conversion-lab/one/index.html">📑 Все блоки (One-Page)</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: #222736; border: 1px solid #363e52; box-shadow: none;" href="conversion-lab/site.html">🌐 Часть A: Сайт и ЛК</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: #222736; border: 1px solid #363e52; box-shadow: none;" href="conversion-lab/ide.html">💻 Часть B: Внутри IDE</a>
+          <a class="cta" style="height: 44px; padding: 0 20px; font-size: 14px; background: #222736; border: 1px solid #363e52; box-shadow: none;" href="offers-live/index.html">🔗 Offers Live (20 триггеров)</a>
+        </div>
+      </article>
+
+      <article class="part" id="part1">
+        <span class="kick">Part 1 · needs a release</span>
+        <h2>Full redesign</h2>
+        <p>New pricing page, in-app store, 29 in-app scenes with triggers, app states and the partner program. Everything we built so far, unchanged.</p>
+        <div class="links">
+          <a href="conversion-lab/workspace/index.html" style="background: rgba(255,106,0,0.12); border: 1px solid rgba(255,106,0,0.4); color: #fff;">🚀 Workspace v2 (Creator Dashboard) <small>Редизайн quadcode.ai/profile: 7 категорий, кошелёк, vs Higgsfield drawer</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="ui_views/dashboard.html" style="background: rgba(255,106,0,0.08); border: 1px solid rgba(255,106,0,0.25);">👑 Executive Control Center <small>Pitch руководству + бэклог Спринтов 1–4 (31 тикет)</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="ui_views/dashboard.html#creative" style="background: rgba(168,85,247,0.08); border: 1px solid rgba(168,85,247,0.25);">🎨 Creative Studio (Lumi & Sonic) <small>100% контроль генераций: 12 баннеров, видео и SFX</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="paywall-audit/index.html" style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.25);">🔍 Live Paywall Audit: HF vs QC <small>11 живых поверхностей + 6 интерактивных мокапов</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="deliverables/pricing/index.html">Pricing page <small>plans, packs, checkout</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="deliverables/in-app-offers/index.html">In-app offers <small>29 scenes and triggers</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="deliverables/app-states/index.html">App states <small>user lifecycle</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="deliverables/affiliate/index.html">Partner program <small>creators and affiliates</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="conversion-lab/index.html">Conversion Lab <small>Quadcode × Higgsfield: site, account, IDE</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="conversion-lab/one/index.html">Conversion Lab · One-Page <small>все блоки бок о бок с Higgsfield на 1 странице</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="conversion-lab/lab/index.html">Conversion Lab · интерактив (lab/) <small>флоу гость → покупка, 4 персоны, 12 слоёв IDE, принятые дефолты · localhost:9995/lab/</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="part two" id="part2">
+        <span class="kick">Part 2 · no product changes</span>
+        <h2>Offers on today's product</h2>
+        <p>Nine offers built only on what already works: promo codes, the four banners in the app, plan and top-up lists on the server, model prices, the site popup, analytics and our channels. Each one is shown on a real IDE screenshot, plus a final table of where, when and how it appears.</p>
+        <div class="chips">
+          <span class="chip"><b>0</b>app releases</span>
+          <span class="chip"><b>9</b>offers</span>
+          <span class="chip"><b>6</b>IDE screens</span>
+        </div>
+        <a class="cta" href="deliverables/offers-now/index.html">Open Part 2<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+    </section>
+
+    <footer>Quadcode AI · payments prototype · September 2026</footer>
+  </div>
+</body>
+</html>

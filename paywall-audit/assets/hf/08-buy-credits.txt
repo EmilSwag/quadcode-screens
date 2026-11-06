@@ -1,0 +1,152 @@
+﻿# Subscription • Higgsfield
+[Group] Notifications Alt+T  @-
+[Group] Notifications  @-
+[Pane] Upgrade plan or buy credits  @8,8
+[Text] Choose a higher plan for increased limits, or add extra credits  @8,8
+[Button] Upgrade Plan  @360,26
+[Button] Top-up Credits  @436,26
+[Button] Unlimited Models  @516,26
+[Text] UPGRADE PLAN OR BUY CREDITS  @306,56
+[Text] Choose a higher plan for increased limits, or add extra credits  @364,91
+[Text] Enable credits auto-refill & keep your workflow uninterrupted  @370,121
+[Button] Set up  @582,117
+[Text] 5,000 credits  @300,158
+[Image] 5,000  @300,158
+[Text] €  @392,164
+[Text] 1 =  @396,164
+[Image] 20  @404,164
+[Text] ​  @-
+[Text] 2  @404,164
+[Text] 0  @407,164
+[Text] ​  @-
+[Text] credits  @412,164
+[Text] –  @441,164
+[Image] 41  @444,164
+[Text] ​  @-
+[Text] 4  @444,164
+[Text] 1  @448,164
+[Text] ​  @-
+[Text] %  @450,164
+[Text] Up to 2,500 Nano Banana Pro image generations  @310,180
+[Text] Up to 222 Seedance 2.0 720p, 5s video generations  @310,190
+[Text] 5k  @302,210
+[Text] 7k  @326,210
+[Text] 9k  @348,210
+[Text] 11k  @371,210
+[Text] 13k  @394,210
+[Text] 15k  @418,210
+[Text] 17k  @440,210
+[Text] 19k  @464,210
+[Text] 21k  @487,210
+[Text] 23k  @510,210
+[Text] 25k  @533,210
+[Text] Best Value  @632,162
+[Text] €  @610,189
+[Image] 425  @617,188
+[Text] ​  @-
+[Text] 4  @617,189
+[Text] 2  @624,189
+[Text] 5  @629,189
+[Text] ​  @634,189
+[Text] €  @639,189
+[Image] 250  @646,188
+[Text] ​  @645,189
+[Text] 2  @646,189
+[Text] 5  @651,189
+[Text] 0  @656,189
+[Text] ​  @662,189
+[Button] Purchase  @562,208
+[Text] 4,000 credits  @300,258
+[Text] €  @393,263
+[Text] 1 =  @396,263
+[Text] 19  @404,263
+[Text] credits  @411,263
+[Text] Most Popular  @440,263
+[Text] –  @486,263
+[Text] 38  @489,263
+[Text] %  @496,263
+[Text] Up to 2,000 Nano Banana Pro image generations  @310,278
+[Text] Up to 177 Seedance 2.0 720p, 5s video generations  @310,290
+[Text] €  @612,258
+[Text] 340  @618,258
+[Text] €  @640,258
+[Text] 211  @648,258
+[Button] Purchase  @562,276
+[Text] 2,000 credits  @300,316
+[Text] €  @392,320
+[Text] 1 =  @396,320
+[Text] 19  @404,320
+[Text] credits  @410,320
+[Text] –  @440,320
+[Text] 38  @444,320
+[Text] %  @450,320
+[Text] Up to 1,000 Nano Banana Pro image generations  @310,336
+[Text] Up to 88 Seedance 2.0 720p, 5s video generations  @310,346
+[Text] €  @612,316
+[Text] 170  @619,316
+[Text] €  @638,316
+[Text] 105  @646,316
+[Button] Purchase  @562,332
+[Text] 1,000 credits  @300,372
+[Text] €  @391,377
+[Text] 1 =  @394,377
+[Text] 18  @402,377
+[Text] credits  @408,377
+[Text] –  @438,377
+[Text] 35  @442,377
+[Text] %  @448,377
+[Text] Up to 500 Nano Banana Pro image generations  @310,392
+[Text] Up to 44 Seedance 2.0 720p, 5s video generations  @310,404
+[Text] €  @622,372
+[Text] 85  @628,372
+[Text] €  @644,372
+[Text] 56  @650,372
+[Button] Purchase  @562,390
+[Text] 500 credits  @300,430
+[Text] €  @382,434
+[Text] 1 =  @385,434
+[Text] 17  @393,434
+[Text] credits  @400,434
+[Text] –  @428,434
+[Text] 31  @432,434
+[Text] %  @438,434
+[Text] Up to 250 Nano Banana Pro image generations  @310,450
+[Text] Up to 22 Seedance 2.0 720p, 5s video generations  @310,460
+[Text] €  @612,430
+[Text] 42.5  @619,430
+[Text] €  @644,430
+[Text] 29  @650,430
+[Button] Purchase  @562,446
+[Text] 200 credits  @300,486
+[Text] €  @382,491
+[Text] 1 =  @385,491
+[Text] 17  @393,491
+[Text] credits  @399,491
+[Text] –  @428,491
+[Text] 29  @432,491
+[Text] %  @438,491
+[Text] Up to 100 Nano Banana Pro image generations  @310,506
+[Text] Up to 8 Seedance 2.0 720p, 5s video generations  @310,518
+[Text] €  @625,486
+[Text] 17  @632,486
+[Text] €  @646,486
+[Text] 12  @652,486
+[Button] Purchase  @562,504
+[Text] 100 credits  @300,544
+[Text] €  @380,548
+[Text] 1 =  @383,548
+[Text] 16  @391,548
+[Text] credits  @398,548
+[Text] –  @427,548
+[Text] 26  @430,548
+[Text] %  @437,548
+[Text] Up to 50 Nano Banana Pro image generations  @310,564
+[Text] Up to 4 Seedance 2.0 720p, 5s video generations  @310,574
+[Text] €  @624,544
+[Text] 8.5  @631,544
+[Text] €  @650,544
+[Text] 6  @656,544
+[Button] Purchase  @562,560
+[Text] Extra credits are valid for 90 days  @416,602
+[Hyperlink] Learn more  @514,602
+[Button] Full Pricing Details  @437,596

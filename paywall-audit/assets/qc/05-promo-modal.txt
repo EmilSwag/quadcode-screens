@@ -1,0 +1,153 @@
+﻿# Quadcode AI — AI Platform for Coding, Design & Content Creation
+[Button] Open menu  @20,12
+[Image] quadcode.ai  @18,16
+[Text] Drop  @20,50
+[Text] Emil Emil  @40,50
+[Text] emildropemil@gmail.com  @20,60
+[Text] Balance:  @20,73
+[Text] 1006.63  @52,73
+[Text] QCC  @80,73
+[Button] Top up balance  @20,88
+[Button] Apply promo code  @20,116
+[Hyperlink] Overview  @20,156
+[Hyperlink] Plans & Credits  @20,176
+[Hyperlink] Settings  @20,196
+[Hyperlink] Usage  @20,216
+[Hyperlink] Billing & Invoices  @20,236
+[Button] Desktop App  @20,256
+[Button] Logout  @20,1638
+[Text] Apply Promo Code  @402,192
+[Button] Close  @558,190
+[Text] Enter your promo code below to receive credits instantly.  @378,231
+[Group] PROMO CODE  @378,248
+[Edit] ENTER CODE  @378,260
+[Button] Cancel  @378,302
+[Button] Apply Code  @480,302
+[Text] Install Quadcode.ai  @166,33
+[Text] The workspace where your whole stack lives — and your AI team works alongside you.  @166,50
+[Text] Mac  @280,88
+[Text] 1-click install  @270,101
+[Button] Download  @173,149
+[Text] Windows  @520,88
+[Text] 1-click install  @523,103
+[Button] Download  @426,159
+[Text] Linux  @784,88
+[Text] Experimental  @776,101
+[Button] Download  @679,149
+[Text] Free to download · Sign in and try every model with starter credits · No credit card required  @415,212
+[Hyperlink] View full list of supported AI models  @156,226
+[Text] Ultimate AI workspace for desktop  @166,294
+[Text] Why download instead of using the web version?  @166,310
+[Text] Dynamic interface to match your needs  @175,346
+[Text] Agents and media generation fuse into one custom dynamic interface — built for your specific task, not configured by hand.  @175,362
+[Image] Dynamic interface to match your needs  @176,390
+[Text] Subagents could use Claude Code or any CLI you like  @554,346
+[Text] Spawn subagents that run Claude Code, shell scripts, or any CLI tool — full automation from your desktop workspace.  @554,362
+[Image] Subagents could use Claude Code or any CLI you like  @554,390
+[Text] Integration to use any local tools and heavy media content  @175,614
+[Text] Connect Figma, Unity, browsers, consoles and more. Agents work alongside your existing toolchain, not against it.  @175,631
+[Image] Integration to use any local tools and heavy media content  @176,658
+[Text] Work on your real large projects  @554,614
+[Text] Read, write and run any file on your machine. No upload limits, no sandboxing — work with real repos of any size.  @554,631
+[Image] Work on your real large projects  @554,658
+[Text] Get instant access to the best frontier models  @166,900
+[Text] No separate API keys, no per-provider subscriptions. Agents pick the right model and get your tasks done.  @166,917
+[Text] Text & Code  @173,951
+[Text] ANTHROPIC  @173,970
+[Text] Claude Opus  @179,981
+[Text] Claude Sonnet  @179,996
+[Text] OPENAI  @173,1014
+[Text] GPT-5  @179,1026
+[Text] GPT-5 Codex  @179,1040
+[Text] GOOGLE  @173,1058
+[Text] Gemini Pro  @179,1070
+[Text] Gemini Flash  @179,1085
+[Text] XAI  @173,1103
+[Text] Grok  @179,1114
+[Text] DEEPSEEK  @173,1132
+[Text] deepseek-pro  @179,1144
+[Text] deepseek-flash  @179,1159
+[Text] OTHERS  @173,1177
+[Text] GLM  @179,1188
+[Text] kimi-k2  @179,1204
+[Text] Qwen  @179,1218
+[Text] Image  @362,951
+[Text] FRONTIER  @362,970
+[Text] GPT-Image  @368,981
+[Text] Ideogram  @368,996
+[Text] Nanobanana  @368,1011
+[Text] Grok Image  @368,1026
+[Text] Luma Image  @368,1041
+[Text] FINETUNES  @362,1059
+[Text] Flux 2 Pro  @368,1070
+[Text] Flux Kontext  @368,1086
+[Text] Flux 2 Klein  @368,1100
+[Text] Flux 1  @368,1116
+[Text] Qwen Image  @368,1130
+[Text] Z-Image Turbo  @368,1146
+[Text] TOOLS  @362,1164
+[Text] AI Upscaler  @368,1175
+[Text] Background Removal  @368,1190
+[Text] Style / Pose / Ref controls  @368,1205
+[Text] Image Essentials  @368,1220
+[Text] Video  @550,951
+[Text] CINEMATIC FRONTIER  @550,970
+[Text] Veo 3  @556,981
+[Text] Seedance  @556,996
+[Text] Happyhorse  @556,1011
+[Text] Kling  @556,1026
+[Text] OTHERS  @550,1044
+[Text] Grok Video  @556,1056
+[Text] Wan 2.7  @556,1070
+[Text] Wan 2.2  @556,1086
+[Text] LTX-2  @556,1100
+[Text] Runway Gen  @556,1116
+[Text] Sora  @556,1130
+[Text] TOOLS  @550,1148
+[Text] Topaz  @556,1160
+[Text] VRMG  @556,1175
+[Text] Video Essentials  @556,1190
+[Text] Long Movie  @556,1205
+[Text] Audio & Others  @740,951
+[Text] MUSIC  @740,970
+[Text] Suno  @746,981
+[Text] ACEstep  @746,996
+[Text] Stable Audio  @746,1011
+[Text] VOICE & TTS  @740,1029
+[Text] ElevenLabs  @746,1040
+[Text] TTS Gemini  @746,1056
+[Text] TTS ElevenLabs  @746,1070
+[Text] TTS IndexTTS  @746,1086
+[Text] Chatterbox  @746,1100
+[Text] TOOLS  @740,1118
+[Text] Whisper X STT  @746,1130
+[Text] Foley  @746,1145
+[Text] 3D  @740,1163
+[Text] Meshy  @746,1174
+[Text] Hunyuan3D  @746,1190
+[Text] Trellis  @746,1204
+[Text] partial list — new models added regularly  @176,1242
+[Text] Frequently asked questions  @166,1286
+[Text] Common questions before you download.  @166,1302
+[Button] Is it free to download?  @156,1318
+[Button] Do I need to be online to use it?  @156,1346
+[Button] Will it slow down my computer?  @156,1372
+[Button] Do I need to know how to code?  @156,1400
+[Button] What happens when I run out of credits?  @156,1426
+[Button] Can I use it alongside my existing tools?  @156,1454
+[Button] Can I cancel or change my plan anytime?  @156,1480
+[Hyperlink] Quadcode AI home  @156,1566
+[Image] quadcode.ai  @156,1566
+[Text] PRODUCT  @423,1566
+[Hyperlink] Download  @423,1583
+[Hyperlink] Capabilities  @423,1598
+[Hyperlink] Integrations  @423,1614
+[Hyperlink] Features  @423,1630
+[Text] LEGAL  @598,1566
+[Hyperlink] Privacy policy  @598,1583
+[Hyperlink] Terms and conditions  @598,1598
+[Hyperlink] X (Twitter)  @885,1566
+[Image] X  @885,1566
+[Hyperlink] YouTube  @901,1566
+[Hyperlink] LinkedIn  @917,1566
+[Text] © 2026 Quadcode  @875,1584

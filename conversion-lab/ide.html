@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Часть B: Внутри IDE — Conversion Lab</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <style>
+    .ide-wrapper {
+      position: relative;
+      max-width: 1300px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #000;
+    }
+    .ide-screenshot {
+      width: 100%;
+      display: block;
+    }
+    .a-ring {
+      position: absolute;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 0 0 4px rgba(255, 106, 0, 0.25);
+      pointer-events: none;
+      z-index: 25;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(255, 106, 0, 0.1); }
+      100% { box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.4); }
+    }
+    .a-mk {
+      position: absolute;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 6px;
+      border-radius: 14px;
+      background: var(--accent);
+      color: #000;
+      font-weight: 800;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      z-index: 26;
+      border: 2px solid #fff;
+    }
+    .banner-overlay-box {
+      position: absolute;
+      top: 6.8%;
+      left: 23%;
+      width: 54%;
+      height: 15.5%;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      z-index: 20;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="lab-header">
+    <div class="brand-row">
+      <a href="index.html" class="brand-badge" style="text-decoration:none;">LAB</a>
+      <div class="brand-title">Часть B: Внутри IDE (B1–B12)</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <nav class="nav-links">
+        <a href="index.html" class="nav-btn">📊 Исследование & Карта</a>
+        <a href="one/index.html" class="nav-btn" style="border-color:#ff6a00;color:#ff8c3b">📑 Все блоки (One-Page)</a>
+        <a href="site.html" class="nav-btn">🌐 Часть A: Сайт и ЛК (A1–A18)</a>
+        <a href="../offers-live/index.html" class="nav-btn">🔗 Offers Live</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Trigger Selector Ribbon -->
+  <div style="background: rgba(17,17,22,0.95); border-bottom: 1px solid var(--border); padding: 10px 24px;">
+    <div class="flow-stepper" style="margin-bottom: 0;">
+      <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-right: 8px;">12 Триггеров в IDE:</span>
+      <button class="flow-step-btn active b-trig-btn" data-id="B1"><span class="flow-step-num">B1</span> Starter Kit</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B2"><span class="flow-step-num">B2</span> Выбор модели</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B3"><span class="flow-step-num">B3</span> Ошибка 402</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B4"><span class="flow-step-num">B4</span> Баланс &lt; 15%</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B5"><span class="flow-step-num">B5</span> Кросс-селл</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B6"><span class="flow-step-num">B6</span> Апгрейд Yearly</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B7"><span class="flow-step-num">B7</span> Пилюля статус-бара</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B8"><span class="flow-step-num">B8</span> Модель недели</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B9"><span class="flow-step-num">B9</span> Win-Back</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B10"><span class="flow-step-num">B10</span> Магазин в профиле</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B11"><span class="flow-step-num">B11</span> Челлендж</button>
+      <button class="flow-step-btn b-trig-btn" data-id="B12"><span class="flow-step-num">B12</span> Free активный</button>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1600px; padding: 20px 24px;">
+    <div class="split-layout">
+
+      <!-- Left: Real IDE Screenshot with Interactive Overlays -->
+      <div class="ide-wrapper" id="ide-viewport">
+        <!-- Base Real IDE Screenshot -->
+        <img src="assets/ide-real.png" alt="Quadcode AI Desktop IDE" class="ide-screenshot" id="ide-img">
+
+        <!-- ACTIVE RING & NUMBER MARKER -->
+        <div id="active-ring" class="a-ring"></div>
+        <div id="active-marker" class="a-mk">B1</div>
+
+        <!-- 1. Banner Overlay (for B1, B4, B6, B9, B11, B12) -->
+        <div id="overlay-banner" class="banner-overlay-box" style="display: flex;">
+          <div style="background: rgba(15,15,20,0.88); backdrop-filter: blur(8px); padding: 8px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); max-width: 65%;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
+              <span class="badge badge-orange" id="banner-tag" style="font-size: 10px; padding: 1px 6px;">STARTER KIT · 72 ЧАСА</span>
+              <span style="font-size: 11px; color: #ffd23f; font-weight: 700;" id="banner-timer">71:58:32</span>
+            </div>
+            <div style="font-weight: 800; font-size: 13.5px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="banner-title">Первая покупка +25% QCC (1 000 → 1 250)</div>
+            <div style="font-size: 11px; color: var(--text-secondary); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="banner-desc">Заберите бонус на тарифе Monthly и создайте до 600 картинок или 40 видеоклипов!</div>
+          </div>
+          <button class="nav-btn primary" style="font-weight: 700; font-size: 12px; padding: 8px 14px; white-space: nowrap; box-shadow: 0 4px 15px var(--accent-glow);" id="banner-cta" onclick="window.location.href='site.html'">
+            Забрать +25% QCC →
+          </button>
+        </div>
+
+        <!-- 2. Toast Overlay (for B2) -->
+        <div id="overlay-toast" class="ide-toast" style="display: none; position: absolute; bottom: 8%; left: 23%; z-index: 30; width: 340px; background: #15151c; border-color: var(--accent); padding: 12px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <span class="badge badge-orange" style="font-size: 10px;">B2: Выбор премиум-модели</span>
+            <span style="cursor:pointer;" onclick="hideOverlay('overlay-toast')">&times;</span>
+          </div>
+          <div style="font-weight: 700; color: #fff; font-size: 12.5px; margin-bottom: 2px;">Claude 3.7 Opus (~40 QCC / запрос)</div>
+          <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">
+            На вашем балансе 200 QCC (хватит на 5 запросов). Активируйте Starter Kit (+25% QCC), пока действует скидка!
+          </p>
+          <a href="site.html" class="nav-btn primary" style="font-size: 11px; padding: 4px 10px; display: inline-block;">Пополнить с бонусом →</a>
+        </div>
+
+        <!-- 3. Chat Card Overlay (for B3 402) -->
+        <div id="overlay-chat-402" class="ide-card" style="display: none; position: absolute; top: 38%; left: 1.5%; z-index: 30; width: 20%; background: #13151c; border: 1px solid var(--accent); border-radius: 8px; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+            <span class="badge badge-red" style="font-size: 9px; padding: 1px 5px;">Ошибка 402</span>
+            <strong style="color: #fff; font-size: 11px;">Недостаточно кредитов</strong>
+          </div>
+          <p style="font-size: 10.5px; color: var(--text-secondary); margin-bottom: 8px;">
+            Для запуска не хватает <strong>120 QCC</strong>. Пак 500 QCC за $10 решит задачу и оставит запас.
+          </p>
+          <div style="display: flex; gap: 4px;">
+            <a href="site.html" class="nav-btn primary" style="font-size: 10px; padding: 4px 8px; flex: 1; text-align: center;">Купить 500 ($10)</a>
+            <a href="site.html" class="nav-btn" style="font-size: 10px; padding: 4px 6px; border: 1px solid var(--border);">Все паки</a>
+          </div>
+        </div>
+
+        <!-- 4. Cross-sell Result Overlay (for B5) -->
+        <div id="overlay-cross-sell" class="ide-card" style="display: none; position: absolute; top: 46%; left: 24%; z-index: 30; width: 420px; background: rgba(18,20,28,0.95); border: 1px solid var(--border-light); border-radius: 10px; padding: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <span class="badge badge-green" style="font-size: 10px;">Результат готов · Nano Banana Pro</span>
+            <span style="font-size: 10.5px; color: var(--text-muted);">Расход: 9.2 QCC</span>
+          </div>
+          <div style="font-size: 11.5px; color: #fff; font-weight: 600; margin-bottom: 6px;">
+            ✨ Что сделать дальше с этой генерацией:
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <button class="nav-btn primary" style="font-size: 11px; padding: 5px 10px; background: linear-gradient(135deg, #ff6a00, #a855f7);" onclick="alert('Запуск генерации видео через Veo 3!')">
+              🎬 Оживить в видео (Veo 3 · ~60 QCC)
+            </button>
+            <button class="nav-btn" style="font-size: 11px; padding: 5px 8px; border: 1px solid var(--border);" onclick="alert('Запуск 4K вариаций!')">
+              🔍 4K Вариации
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Status Bar Pill Overlay (for B7) -->
+        <div id="overlay-status-pill" class="ide-pill" style="display: none; position: absolute; bottom: 0.8%; right: 18%; z-index: 30; cursor: pointer; font-size: 10.5px; padding: 2px 8px;" onclick="window.location.href='site.html'">
+          ⚡ −20% скидка · 04:59
+        </div>
+
+        <!-- 6. Model Menu Discount Badge (for B8) -->
+        <div id="overlay-model-menu" class="ide-menu" style="display: none; position: absolute; bottom: 8%; left: 23%; z-index: 30; background: #15151c; border: 1px solid #2a2a35; border-radius: 8px; padding: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 230px;">
+          <div style="font-size: 10px; color: var(--text-muted); padding: 3px 8px; border-bottom: 1px solid var(--border);">Выбор модели AI</div>
+          <div style="padding: 5px 8px; font-size: 11px; display:flex; justify-content:space-between;"><span>Claude 3.7 Sonnet</span> <span style="color:var(--text-muted);">~10 QCC</span></div>
+          <div style="background: rgba(255,106,0,0.15); border: 1px solid var(--accent); padding: 5px 8px; border-radius: 6px; font-size: 11px; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight: 700; color: #fff;">Stable Audio 3</span>
+            <span class="badge badge-orange" style="font-size: 8.5px; padding: 1px 4px;">−30% ЭТА НЕДЕЛЯ</span>
+          </div>
+          <div style="padding: 5px 8px; font-size: 11px; display:flex; justify-content:space-between;"><span>Nano Banana Pro</span> <span style="color:var(--text-muted);">~9.2 QCC</span></div>
+        </div>
+
+        <!-- 7. Profile Store Menu (for B10) -->
+        <div id="overlay-profile-menu" class="ide-menu" style="display: none; position: absolute; bottom: 3.5%; right: 1%; z-index: 30; width: 250px; padding: 10px; background: #15151c; border: 1px solid #2a2a35; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border);">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #ff6a00, #a855f7); display:flex; align-items:center; justify-content:center; font-weight:700; font-size: 11px;">DE</div>
+            <div>
+              <div style="font-weight: 700; font-size: 12px;">Drop Emil</div>
+              <div style="font-size: 10.5px; color: var(--text-muted);">Баланс: <strong style="color:var(--accent);">766.52 QCC</strong></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="site.html" class="nav-btn primary" style="font-size: 11px; text-align: center; justify-content: center; padding: 6px;">💎 Top Up Balance</a>
+            <a href="site.html" class="nav-btn" style="font-size: 11px; text-align: center; justify-content: center; padding: 6px; border: 1px solid var(--border);">⭐ Upgrade to Yearly (−25%)</a>
+            <a href="site.html" class="nav-btn" style="font-size: 11px; text-align: center; justify-content: center; padding: 6px; color: var(--green);">🎁 Пригласить друга (+300 QCC)</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Trigger Inspector Panel -->
+      <div class="side-panel">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+          <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary);">Инспектор триггера IDE</h3>
+          <span class="badge badge-blue" id="active-trig-badge">B1</span>
+        </div>
+
+        <div id="trig-details">
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;" id="trig-title">Starter Kit для новых</h4>
+          <div style="font-size: 12px; color: var(--blue); margin-bottom: 10px;" id="trig-where">Баннер new_user над чатом IDE</div>
+
+          <div style="background: rgba(11,13,17,0.7); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px; margin-bottom: 12px; font-size: 12.5px;">
+            <div style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; margin-bottom: 2px;">Условие срабатывания:</div>
+            <div id="trig-condition" style="color: #fff; font-weight: 600; margin-bottom: 8px;">—</div>
+
+            <div style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; margin-bottom: 2px;">Что видит автор:</div>
+            <div id="trig-sees" style="color: var(--text-secondary); line-height: 1.4;">—</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; font-size: 11.5px;">
+            <div style="background: var(--bg-main); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="color: var(--text-muted); display: block;">Целевая метрика:</span>
+              <strong style="color: var(--green);" id="trig-impact">—</strong>
+            </div>
+            <div style="background: var(--bg-main); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="color: var(--text-muted); display: block;">Приоритет показа:</span>
+              <strong style="color: var(--yellow);" id="trig-priority">—</strong>
+            </div>
+          </div>
+
+          <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 14px;">
+            <span style="color: var(--text-muted);">Что нужно от команды:</span>
+            <div id="trig-reqs" style="margin-top: 3px; font-weight: 500; color: #fff;">—</div>
+          </div>
+
+          <div style="background: rgba(59,130,246,0.08); border-left: 3px solid var(--blue); padding: 10px 12px; border-radius: 0 6px 6px 0; font-size: 12px;">
+            <strong style="color: #fff;">Куда ведёт действие (CTA):</strong>
+            <div id="trig-cta" style="color: var(--text-secondary); margin-top: 2px;">—</div>
+          </div>
+        </div>
+
+        <!-- Priority Hierarchy Note -->
+        <div style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 12px; font-size: 11.5px; color: var(--text-muted);">
+          <strong style="color: var(--text-primary); display: block; margin-bottom: 4px;">Правило приоритета (1 баннер за раз):</strong>
+          B3 (402) &gt; B1/B2 (Starter) &gt; B4 (Low balance) &gt; B9 (Win-back) &gt; B7 &gt; B6 &gt; B12 &gt; B11 &gt; B8
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    let activeTrigId = 'B1';
+
+    // Target positions for ring and marker
+    const TRIGGER_ZONES = {
+      B1:  { top: '6.5%',  left: '22.8%', width: '54.4%', height: '16%', markerTop: '5%',   markerLeft: '22%' },
+      B2:  { top: '91%',   left: '23%',   width: '9%',    height: '4%',  markerTop: '87%',  markerLeft: '23%' },
+      B3:  { top: '37.5%', left: '1.2%',  width: '20.5%', height: '16%', markerTop: '35%',  markerLeft: '1.2%' },
+      B4:  { top: '6.5%',  left: '22.8%', width: '54.4%', height: '16%', markerTop: '5%',   markerLeft: '22%' },
+      B5:  { top: '45.5%', left: '23.8%', width: '33%',   height: '9%',  markerTop: '43%',  markerLeft: '23.8%' },
+      B6:  { top: '6.5%',  left: '22.8%', width: '54.4%', height: '16%', markerTop: '5%',   markerLeft: '22%' },
+      B7:  { top: '97.5%', left: '81%',   width: '6%',    height: '2.2%',markerTop: '94%',  markerLeft: '80%' },
+      B8:  { top: '91%',   left: '23%',   width: '9%',    height: '4%',  markerTop: '87%',  markerLeft: '23%' },
+      B9:  { top: '6.5%',  left: '22.8%', width: '54.4%', height: '16%', markerTop: '5%',   markerLeft: '22%' },
+      B10: { top: '96.5%', left: '96%',   width: '3.5%',  height: '3%',  markerTop: '93%',  markerLeft: '95%' },
+      B11: { top: '6.5%',  left: '22.8%', width: '54.4%', height: '16%', markerTop: '5%',   markerLeft: '22%' },
+      B12: { top: '6.5%',  left: '22.8%', width: '54.4%', height: '16%', markerTop: '5%',   markerLeft: '22%' }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Setup trigger buttons
+      document.querySelectorAll('.b-trig-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectTrigger(btn.dataset.id);
+        });
+      });
+
+      selectTrigger('B1');
+    });
+
+    function selectTrigger(id) {
+      activeTrigId = id;
+      const data = window.CL_DATA.partB.find(x => x.id === id);
+      if (!data) return;
+
+      // Update button highlights
+      document.querySelectorAll('.b-trig-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.id === id);
+      });
+
+      // Update ring and marker position
+      const zone = TRIGGER_ZONES[id];
+      const ring = document.getElementById('active-ring');
+      const marker = document.getElementById('active-marker');
+      if (zone) {
+        ring.style.top = zone.top;
+        ring.style.left = zone.left;
+        ring.style.width = zone.width;
+        ring.style.height = zone.height;
+        marker.style.top = zone.markerTop;
+        marker.style.left = zone.markerLeft;
+        marker.textContent = id;
+      }
+
+      // Update inspector panel
+      document.getElementById('active-trig-badge').textContent = data.id;
+      document.getElementById('trig-title').textContent = data.name;
+      document.getElementById('trig-where').textContent = data.where;
+      document.getElementById('trig-condition').textContent = data.trigger;
+      document.getElementById('trig-sees').textContent = data.sees;
+      document.getElementById('trig-impact').textContent = data.impact;
+      document.getElementById('trig-priority').textContent = `Ранг ${data.priority}`;
+      document.getElementById('trig-reqs').textContent = data.reqs;
+      document.getElementById('trig-cta').textContent = data.cta;
+
+      // Update overlays on real IDE screenshot
+      hideAllOverlays();
+
+      if (id === 'B1') {
+        showBannerOverlay('STARTER KIT · 72 ЧАСА', '71:58:32', 'Starter Kit: первая покупка +25% QCC (1 000 → 1 250)', 'Действует 72 часа для новых авторов. Без скрытых условий.', 'Забрать +25% QCC →', 'assets/banner/bg_new_user_light.jpg');
+      } else if (id === 'B2') {
+        document.getElementById('overlay-toast').style.display = 'block';
+      } else if (id === 'B3') {
+        document.getElementById('overlay-chat-402').style.display = 'block';
+      } else if (id === 'B4') {
+        showBannerOverlay('НИЗКИЙ БАЛАНС', 'ОСТАЛОСЬ 140 QCC', 'Баланс на исходе: включите авто-пополнение', 'Авто-пополнение на $10 гарантирует, что агенты не остановятся.', 'Настроить рефилл →', 'assets/banner/bg_has_subscription_light.jpg');
+      } else if (id === 'B5') {
+        document.getElementById('overlay-cross-sell').style.display = 'block';
+      } else if (id === 'B6') {
+        showBannerOverlay('YEARLY ВЫГОДА', 'ЭКОНОМИЯ $60/ГОД', 'Переходите на годовой план: 3 месяца в подарок', 'План Creator Plus всего за $15/мес ($180/год) вместо $20/мес.', 'Перейти на Yearly с зачётом →', 'assets/banner/bg_has_subscription_light.jpg');
+      } else if (id === 'B7') {
+        document.getElementById('overlay-status-pill').style.display = 'block';
+      } else if (id === 'B8') {
+        document.getElementById('overlay-model-menu').style.display = 'block';
+      } else if (id === 'B9') {
+        showBannerOverlay('С ВОЗВРАЩЕНИЕМ!', 'ПОДАРОК НА ЭТОЙ НЕДЕЛЕ', 'Рады видеть снова: +200 QCC к любому пополнению', 'Активируйте промокод BACK200 в личном кабинете при пополнении баланса.', 'Забрать подарок →', 'assets/banner/bg_promo_user_light.jpg');
+      } else if (id === 'B10') {
+        document.getElementById('overlay-profile-menu').style.display = 'block';
+      } else if (id === 'B11') {
+        showBannerOverlay('COMMUNITY CONTEST', 'LIVE NOW', 'AI Short Film Creator Contest — призовой фонд 10 000 QCC', 'Создайте короткометражку с Sonic AI и участвуйте в борьбе за главный приз.', 'Узнать условия →', 'assets/banner/bg_new_user_light.jpg');
+      } else if (id === 'B12') {
+        showBannerOverlay('12 РАБОТ НА FREE', 'ПЕРЕХОД НА PRO', 'Вы уже создали 12 проектов на Free! Переходите на Monthly', 'В тарифе Monthly ($20) вы получите 1 000 QCC и приоритет без очередей.', 'Выбрать план $20 →', 'assets/banner/bg_new_user_light.jpg');
+      }
+    }
+
+    function showBannerOverlay(tag, timer, title, desc, cta, bgImg) {
+      const banner = document.getElementById('overlay-banner');
+      banner.style.display = 'flex';
+      banner.style.backgroundImage = `url('${bgImg}')`;
+      document.getElementById('banner-tag').textContent = tag;
+      document.getElementById('banner-timer').textContent = timer;
+      document.getElementById('banner-title').textContent = title;
+      document.getElementById('banner-desc').textContent = desc;
+      document.getElementById('banner-cta').textContent = cta;
+    }
+
+    function hideAllOverlays() {
+      document.getElementById('overlay-banner').style.display = 'none';
+      document.getElementById('overlay-toast').style.display = 'none';
+      document.getElementById('overlay-chat-402').style.display = 'none';
+      document.getElementById('overlay-cross-sell').style.display = 'none';
+      document.getElementById('overlay-status-pill').style.display = 'none';
+      document.getElementById('overlay-model-menu').style.display = 'none';
+      document.getElementById('overlay-profile-menu').style.display = 'none';
+    }
+
+    function hideOverlay(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</body>
+</html>

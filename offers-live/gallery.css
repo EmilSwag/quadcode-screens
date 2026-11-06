@@ -1,0 +1,96 @@
+/* Offer gallery: cards with the real app screen, filters, big view, trigger table. Uses page.css variables and i-* app windows. */
+.g-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.g-lab{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);font-weight:700;width:64px}
+.g-chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;display:inline-flex;gap:7px;align-items:center}
+.g-chip i{font-style:normal;font-size:11px;color:var(--mut);background:var(--bg);border-radius:999px;padding:2px 7px}
+.g-chip:hover{border-color:var(--ink)}
+.g-chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.g-chip.on i{background:rgba(255,255,255,.18);color:#fff}
+.g-count{margin-left:auto;font-size:13px;color:var(--mut)}
+
+.g-list{display:grid;gap:22px;margin-top:22px}
+.g-card{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:28px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 22px 18px 18px;box-shadow:0 10px 30px rgba(20,24,40,.06);scroll-margin-top:90px}
+.g-card[hidden]{display:none}
+.g-card.g-flash{animation:gflash 1.6s ease-out}
+@keyframes gflash{0%,40%{box-shadow:0 0 0 4px #ff2d55}100%{box-shadow:0 10px 30px rgba(20,24,40,.06)}}
+.g-left{min-width:0}
+.g-tabs{display:inline-flex;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px;margin-bottom:10px}
+.g-tabs button,.g-tabs span{border:0;background:transparent;border-radius:7px;padding:7px 12px;font:inherit;font-size:13px;font-weight:600;color:var(--mut);cursor:pointer}
+.g-tabs span{cursor:default;color:var(--ink)}
+.g-tabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.g-shot{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#f6f7f9;cursor:zoom-in}
+.g-cv{position:absolute;left:0;top:0;width:1919px;height:1032px;transform-origin:0 0;pointer-events:none;overflow:hidden}
+.g-zoom{position:absolute;right:10px;bottom:10px;z-index:30;border-radius:8px;background:rgba(17,19,26,.86);color:#fff;font-size:12px;font-weight:600;padding:7px 11px;opacity:0;transition:opacity .15s}
+.g-shot:hover .g-zoom{opacity:1}
+
+.g-body{min-width:0;padding-top:6px}
+.g-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.g-n{font-weight:800;font-size:14px;color:var(--hot)}
+.g-grp{font-size:12px;color:var(--mut);background:var(--bg);border-radius:6px;padding:4px 8px}
+.g-st{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:4px 8px;white-space:nowrap}
+.g-st.live{background:#e3f6ea;color:#12753a}
+.g-st.conf{background:#e7efff;color:#1f4fd1}
+.g-st.trig{background:#fff0e0;color:#b05208}
+.g-st.dev{background:#f2e8ff;color:#7a2fc4}
+.g-body h3{font-size:22px;line-height:1.2;margin-top:10px}
+.g-where{font-size:13px;color:var(--mut);margin-top:4px}
+.g-body dl{margin:14px 0 0;display:grid;gap:11px}
+.g-row dt{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.g-row dd{margin:3px 0 0;font-size:14px;line-height:1.45}
+.g-row.hot dd{font-weight:600;border-left:3px solid var(--hot);padding-left:9px}
+
+/* Red frame: where the person clicks */
+.g-hl{outline:4px solid #ff2d55 !important;outline-offset:5px;animation:ghl 1.6s ease-in-out infinite}
+.g-ring{position:absolute;z-index:8;border-radius:8px;outline:4px solid #ff2d55;outline-offset:3px;animation:ghl 1.6s ease-in-out infinite}
+@keyframes ghl{50%{outline-color:rgba(255,45,85,.4)}}
+
+/* App input window, 1:1 from message_input_box.lui: 640x480 centred, faint decor (opacity .05),
+   content from y100 with 20px gaps: help icon + text, borderless field (h80), icon-only OK / Cancel (24x24). */
+.g-dlg{position:absolute;left:640px;top:276px;width:640px;height:480px;z-index:6;background:#fff;border:1px solid rgba(0,0,0,.14);border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.3);color:#15171c;overflow:hidden}
+.g-dlg::before{content:'';position:absolute;inset:0;background:url(assets/native/messagebox_bg_dimmed_light.png) center / 640px 480px no-repeat;opacity:.05}
+.g-dlg.info::before{background-image:url(assets/native/messagebox_bg_dimmed_light_info.png)}
+.g-dlg-c{position:absolute;left:20px;top:100px;right:20px;bottom:20px;display:flex;flex-direction:column;gap:20px}
+.g-dlg-head{position:relative;flex:1;min-height:0;padding-left:24px}
+.g-dic{position:absolute;left:0;top:2px;width:16px;height:16px;background:#3a3f4b;-webkit-mask:url(assets/native/Circle_Help.png) center / contain no-repeat;mask:url(assets/native/Circle_Help.png) center / contain no-repeat}
+.g-dtx{max-width:570px;font-size:13px;line-height:1.45}
+.g-din{flex:none;height:80px;box-sizing:border-box;border-radius:6px;background:rgba(0,0,0,.045);padding:8px 10px;font-size:13px;line-height:17px;display:flex;align-items:flex-start}
+.g-din i{width:1px;height:17px;background:#15171c;margin-left:1px;animation:ghl 1s infinite}
+.g-dbt{flex:none;height:24px;display:flex;gap:10px;justify-content:flex-end}
+.g-dbt span{width:24px;height:24px;border-radius:6px;display:grid;place-items:center;cursor:pointer}
+.g-dbt span::before{content:'';width:16px;height:16px;background:currentColor;-webkit-mask:var(--i) center / contain no-repeat;mask:var(--i) center / contain no-repeat}
+.g-ok{--i:url(assets/native/Check_Big.png);background:#15171c;color:#fff}
+.g-cancel{--i:url(assets/native/Close_LG.png);background:rgba(0,0,0,.07);color:#15171c}
+
+/* Onboarding «Who are you?»: texts, sizes and avatars from who_are_you_widget.lui (800x600, cards 220x340) */
+.g-who{position:absolute;left:560px;top:216px;width:800px;height:600px;box-sizing:border-box;padding:40px;display:flex;flex-direction:column;gap:16px;background:#fff;border:1px solid rgba(0,0,0,.14);border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.3);z-index:6;color:#15171c;text-align:center}
+.g-who-title{font-size:24px;font-weight:700}
+.g-who-sub{font-size:14px;line-height:1.45;color:#4b5160;white-space:pre-line}
+.g-who-hint{font-size:12px;color:#7a8090}
+.g-who-cards{display:flex;justify-content:center;gap:30px;margin-top:4px}
+.g-wcard{width:220px;height:340px;box-sizing:border-box;border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;background:#fafafa}
+.g-wcard img{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.g-wcard-t{font-size:15px;font-weight:700}
+.g-wcard-d{align-self:stretch;font-size:12px;line-height:1.55;color:#4b5160;text-align:left;white-space:pre-line}
+
+/* Big view */
+.g-lb{position:fixed;inset:0;z-index:100;background:rgba(8,10,16,.96);display:none;flex-direction:column;padding:16px 24px 20px}
+.g-lb.on{display:flex}
+.g-lbbar{display:flex;gap:16px;align-items:center;color:#fff;margin-bottom:12px}
+.g-lbtx{flex:1;min-width:0}
+.g-lbt{display:block;font-size:18px;font-weight:700}
+.g-lbw{display:block;font-size:14px;color:#c9cdd8;margin-top:3px}
+.g-lbbar button{border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:8px;padding:8px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.g-lbbar button:hover{background:rgba(255,255,255,.12)}
+.g-lbshot{position:relative;flex:1;min-height:0}
+.g-lbshot .g-cv{border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+
+/* Table and rules */
+.g-tg{font-size:12px;color:var(--mut);margin-top:3px}
+.g-rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.g-rule{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px 18px}
+.g-rule span{font-weight:800;color:var(--hot);font-size:13px}
+.g-rule b{display:block;font-size:16px;margin-top:6px}
+.g-rule p{font-size:14px;color:var(--mut);margin-top:6px;line-height:1.45}
+
+@media (max-width:1100px){.g-card{grid-template-columns:1fr}.g-rules{grid-template-columns:1fr 1fr}}
+@media (max-width:700px){.g-rules{grid-template-columns:1fr}.g-count{margin-left:0;width:100%}}

@@ -1,0 +1,48 @@
+﻿# Quadcode AI — AI Platform for Coding, Design & Content Creation
+[Button] Open menu  @20,12
+[Image] quadcode.ai  @18,16
+[Text] Drop  @20,50
+[Text] Emil Emil  @40,50
+[Text] emildropemil@gmail.com  @20,60
+[Text] Balance:  @20,73
+[Text] 1006.63  @52,73
+[Text] QCC  @80,73
+[Button] Top up balance  @20,88
+[Button] Apply promo code  @20,116
+[Hyperlink] Overview  @20,156
+[Hyperlink] Plans & Credits  @20,176
+[Hyperlink] Settings  @20,196
+[Hyperlink] Usage  @20,216
+[Hyperlink] Billing & Invoices  @20,236
+[Button] Desktop App  @20,256
+[Button] Logout  @20,476
+[Text] Settings  @156,24
+[Text] Linked Accounts  @166,61
+[Text] Connect social accounts for quick sign-in  @255,64
+[Text] Google  @191,98
+[Text] Connected  @191,108
+[Text] 7/9/2026  @222,108
+[Button] Disconnect  @852,98
+[Text] GitHub  @191,133
+[Text] Not connected  @191,142
+[Button] Connect  @861,132
+[Text] API Token  @166,188
+[Text] Your API token for accessing the API  @166,218
+[Text] inJJ...n_Kw  @175,243
+[Button] Show token  @876,238
+[Button] Copy token  @900,238
+[Hyperlink] Quadcode AI home  @156,328
+[Image] quadcode.ai  @156,328
+[Text] PRODUCT  @425,328
+[Hyperlink] Download  @425,344
+[Hyperlink] Capabilities  @425,360
+[Hyperlink] Integrations  @425,376
+[Hyperlink] Features  @425,392
+[Text] LEGAL  @600,328
+[Hyperlink] Privacy policy  @600,344
+[Hyperlink] Terms and conditions  @600,360
+[Hyperlink] X (Twitter)  @891,328
+[Image] X  @891,328
+[Hyperlink] YouTube  @907,328
+[Hyperlink] LinkedIn  @923,328
+[Text] © 2026 Quadcode  @881,345

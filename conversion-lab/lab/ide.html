@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Conversion Lab · B — IDE маркетинг</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="top"></div>
+<div class="lab-wrap">
+  <div class="stage" id="stage" style="padding:14px"><div class="ide-stage" id="ideStage"><img id="ideImg" src="../assets/qc/ide-po.png" alt="Quadcode IDE v0.17441"><div id="ov"></div></div>
+    <div class="note" style="max-width:1400px;margin:12px auto 0;border-color:#2a2a35;color:var(--mut)">Подложка — реальный скрин IDE v0.17441. Меню моделей, выбор моделей и цены генераций не меняются: все слои — маркетинг, тексты и дедлайны приходят с сервера (banner config). Показывается один слой в момент времени; приоритет: B3 › B1/B2 › B4 › B9 › B7 › B6 › B12 › B11 › B8.</div></div>
+  <aside class="side">
+    <div class="row" style="margin-bottom:12px"><button class="btn acc sm" id="autoBtn">▶ Прокликать все</button><button class="btn sm ghost" id="noneBtn">Скрыть</button></div>
+    <div class="card" style="padding:10px 12px;margin-bottom:12px;border-color:#2a2a35"><div class="xs mut" style="text-transform:uppercase;letter-spacing:.06em">Сейчас в IDE</div><div class="small" style="margin-top:4px">Один баннер SubscriptionBannerWidget (4 состояния: new_user / promo_user / has_subscription / out_of_credits) → открывает браузер на /profile/plans. При 402 — серая строка «balance too low». Без цен, таймеров, тостов, кросс-селла, магазина в профиле.</div></div>
+    <h3>12 триггеров</h3>
+    <div id="items"></div>
+  </aside>
+</div>
+<script src="data.js"></script><script src="app.js"></script><script src="ide.js"></script>
+</body></html>

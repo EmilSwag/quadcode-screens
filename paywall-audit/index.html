@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quadcode AI · Paywall & Conversion Kit — dev handoff</title>
+<link rel="stylesheet" href="page.css">
+<link rel="stylesheet" href="kit.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top"><img src="../conversion-lab/assets/logos/quadcode.svg" alt="Quadcode AI"><span>Paywall &amp; Conversion Kit</span></a>
+  <nav><a href="#funnel">Funnel</a><a href="#site">Website</a><a href="#ws">Workspace</a><a href="#ide">Desktop IDE</a><a href="#system">Design system</a><a href="#events">Events</a></nav>
+  <span class="ver">v2 · DEV HANDOFF</span>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <span class="kicker"><i></i>17 surfaces · benchmarked on Higgsfield live</span>
+  <h1>Every moment<br>that should sell<br><span class="grad">now sells.</span></h1>
+  <p class="lead">Each block below = <b>what Higgsfield shows right now</b> next to <b>the same moment in Quadcode</b> with our paywall already in place (real QC screenshots + the new component on top). Toggle <b>Before / After</b> to see today’s state. Under every case: trigger, copy, states, API, analytics and acceptance criteria, ready for dev.</p>
+  <div class="stats">
+    <div><b class="grad">17</b><span>paywall surfaces</span></div>
+    <div><b>6</b><span>inside the desktop IDE</span></div>
+    <div><b>4</b><span>offer types: packs · plans · codes · save</span></div>
+    <div><b>0</b><span>dead ends at 0 credits</span></div>
+  </div>
+  <div class="gaps">
+    <span>0 credits on first launch, no CTA</span><span>Run stops silently when credits end</span><span>Top-up modal: “Failed to load packages”</span><span>/pricing is 404</span><span>No timed offers anywhere</span><span>Settings has no offers / auto-refill</span><span class="ok">Stripe + promo codes already work</span>
+  </div>
+</div>
+<div class="marquee"><div class="track">
+  <figure class="tile"><img src="../assets/pricing/case-1.jpg" alt=""><figcaption><small>VIDEO · VEO 3.1</small>Sneaker film in one chat</figcaption></figure>
+  <figure class="tile w"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><figcaption><small>OFFER CREATIVE</small>Starter Kit</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-5.jpg" alt=""><figcaption><small>APPS</small>Store shipped today</figcaption></figure>
+  <figure class="tile"><img src="../assets/content/c2.jpg" alt=""><figcaption><small>KLING 2.5</small>Night run</figcaption></figure>
+  <figure class="tile w"><img src="../assets/banners/banner_out_of_credits.jpg" alt=""><figcaption><small>OFFER CREATIVE</small>Out of credits</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-4.jpg" alt=""><figcaption><small>GAMES · 3D</small>Ranger character</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-6.jpg" alt=""><figcaption><small>AUDIO</small>Trailer score</figcaption></figure>
+  <figure class="tile w"><img src="../assets/banners/banner_yearly_crown.jpg" alt=""><figcaption><small>OFFER CREATIVE</small>Yearly −30%</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-2.jpg" alt=""><figcaption><small>PRODUCT SHOTS</small>Perfume campaign</figcaption></figure>
+  <figure class="tile"><img src="../assets/content/c5.jpg" alt=""><figcaption><small>MACRO</small>Every detail</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-1.jpg" alt=""><figcaption><small>VIDEO · VEO 3.1</small>Sneaker film in one chat</figcaption></figure>
+  <figure class="tile w"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><figcaption><small>OFFER CREATIVE</small>Starter Kit</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-5.jpg" alt=""><figcaption><small>APPS</small>Store shipped today</figcaption></figure>
+  <figure class="tile"><img src="../assets/content/c2.jpg" alt=""><figcaption><small>KLING 2.5</small>Night run</figcaption></figure>
+  <figure class="tile w"><img src="../assets/banners/banner_out_of_credits.jpg" alt=""><figcaption><small>OFFER CREATIVE</small>Out of credits</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-4.jpg" alt=""><figcaption><small>GAMES · 3D</small>Ranger character</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-6.jpg" alt=""><figcaption><small>AUDIO</small>Trailer score</figcaption></figure>
+  <figure class="tile w"><img src="../assets/banners/banner_yearly_crown.jpg" alt=""><figcaption><small>OFFER CREATIVE</small>Yearly −30%</figcaption></figure>
+  <figure class="tile"><img src="../assets/pricing/case-2.jpg" alt=""><figcaption><small>PRODUCT SHOTS</small>Perfume campaign</figcaption></figure>
+  <figure class="tile"><img src="../assets/content/c5.jpg" alt=""><figcaption><small>MACRO</small>Every detail</figcaption></figure>
+</div></div>
+</section>
+
+<div class="wrap" id="funnel">
+  <div class="fun-h reveal"><h2>The journey,<br><span class="grad">monetised end to end</span></h2><p>Every step a user takes now has a paywall moment. Click a chip to jump to its spec. Red line = what happens today.</p></div>
+  <div class="funnel reveal">
+    <div class="step"><em>01</em><h4>Visits site</h4><div class="was">No Pricing link, no offer</div><div class="chips"><a href="#s1">S1</a><a href="#s2">S2</a></div></div>
+    <div class="step"><em>02</em><h4>Signs up</h4><div class="was">Long 5-field form</div><div class="chips"><a href="#s3">S3</a></div></div>
+    <div class="step"><em>03</em><h4>Opens workspace</h4><div class="was">No plan or offer status</div><div class="chips"><a href="#w1">W1</a></div></div>
+    <div class="step"><em>04</em><h4>First IDE launch</h4><div class="was">0 credits, no CTA</div><div class="chips"><a href="#i1">I1</a><a href="#w2">W2</a></div></div>
+    <div class="step"><em>05</em><h4>Builds &amp; generates</h4><div class="was">No cost preview</div><div class="chips"><a href="#i3">I3</a><a href="#i4">I4</a></div></div>
+    <div class="step"><em>06</em><h4>Balance runs low</h4><div class="was">Silent until zero</div><div class="chips"><a href="#i3">I3</a><a href="#w7">W7</a></div></div>
+    <div class="step"><em>07</em><h4>Hits zero</h4><div class="was">Run just stops</div><div class="chips"><a href="#i2">I2</a><a href="#w2">W2</a></div></div>
+    <div class="step"><em>08</em><h4>Buys</h4><div class="was">Top-up modal broken</div><div class="chips"><a href="#w3">W3</a><a href="#w4">W4</a><a href="#w5">W5</a><a href="#i5">I5</a></div></div>
+    <div class="step"><em>09</em><h4>Stays</h4><div class="was">No auto-refill, no save offer</div><div class="chips"><a href="#w6">W6</a><a href="#w8">W8</a><a href="#i6">I6</a></div></div>
+  </div>
+</div>
+
+<!-- ======================= 01 WEBSITE ======================= -->
+<section class="sec" id="site"><div class="wrap">
+  <div class="sec-head reveal"><div class="n">01</div><div><h2>Website</h2><p>Public quadcode.ai: a live promo bar, a real Pricing page and a sign-up modal built exactly like Higgsfield’s — creative on the left, one-click auth on the right.</p></div></div>
+
+  <article class="case" id="s1">
+    <div class="case-head"><div class="num">S1</div><div><h3>Promo bar + Pricing in the nav</h3><p>Higgsfield runs a timed offer above the header on every page. We add the same bar with a live countdown, a <b>Pricing</b> link with a NEW badge (today there is no pricing link at all) and a one-per-session offer toast.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Public site</span><span class="tag">Timed</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/01-home.png" alt=""><div class="note"><b>Pattern:</b> offer strip + upgrade CTA always one click away.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1440" data-h="900" data-before="assets/qc/home-clean.png"><div class="cv">
+          <img class="base" src="assets/qc/home-clean.png" style="left:0;top:48px;width:1440px" alt="">
+          <div class="ov pbar"><b>Launch week</b> Yearly plan −30% with code <span class="code">LAUNCH30</span> ends in <span class="cd" data-cd="47:12:09"></span><span class="go">Claim offer →</span><span class="x">×</span></div>
+          <div class="ov shead" style="top:48px;height:96px"><img src="../conversion-lab/assets/logos/quadcode.svg" alt=""><nav><a>Capabilities</a><a>Dynamic UI</a><a>Features</a><a>Integrations</a><a class="on">Pricing<sup>NEW</sup></a><a>Download</a></nav><span class="si">Sign in</span><span class="sf">Start for free</span></div>
+          <div class="ov tst" style="left:40px;top:736px;width:600px"><img src="../assets/banners/banner_yearly_crown.jpg" style="object-position:80% 50%" alt=""><div><span class="chip s">LAUNCH WEEK</span><h6>Build more for less</h6><p>Yearly $126 instead of $180 — this week only.</p></div><span class="btn pri sm" style="margin-left:auto">See pricing</span></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="s1"></div>
+  </article>
+
+  <article class="case" id="s2">
+    <div class="case-head"><div class="num">S2</div><div><h3>Pricing page (today: 404)</h3><p>A real <b>/pricing</b>: Monthly/Yearly toggle, the Yearly card dominant with the promo auto-applied, credit packs for one-off buyers and a live “Made with Quadcode” reel so the price sits next to the result.</p></div><div class="tags"><span class="tag p0">P0</span><span class="tag">New route</span><span class="tag">SEO</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/02-pricing.png" alt=""><div class="note"><b>Pattern:</b> plan cards with strike-through, “best value” highlight, promo timer.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1440" data-h="1260" data-before="assets/qc/pricing-404.png"><div class="cv"><div class="pp">
+          <div class="ov pbar"><b>Launch week</b> Yearly plan −30% with code <span class="code">LAUNCH30</span> ends in <span class="cd" data-cd="47:12:09"></span><span class="go">Claim offer →</span><span class="x">×</span></div>
+          <div class="ov shead" style="top:48px"><img src="../conversion-lab/assets/logos/quadcode.svg" alt=""><nav><a>Capabilities</a><a>Dynamic UI</a><a>Features</a><a>Integrations</a><a class="on">Pricing</a><a>Download</a></nav><span class="si">Sign in</span><span class="sf">Start for free</span></div>
+          <div class="ov pp-top"><div class="dh">Pick your <span class="gt">plan</span></div><p>Every model in one place. Credits roll over for a month. Cancel anytime.</p>
+            <div class="bill"><span>Monthly</span><span class="on">Yearly<em>−25%</em></span></div>
+            <div style="display:flex;justify-content:center;margin-top:16px"><div class="codebar">🎟 <span class="code">LAUNCH30</span> applied — extra −30% on Yearly · ends in <b class="cd" data-cd="47:12:09"></b></div></div></div>
+          <div class="ov plans" style="left:72px;right:72px;top:480px">
+            <div class="pl" style="min-height:440px"><h5>Free</h5><div class="p"><b>$0</b></div><div class="sub">Explore with promo credits</div><ul><li>Credits via promo code</li><li>All models, pay as you go</li><li>Community support</li></ul><span class="btn gh">Start free</span></div>
+            <div class="pl" style="min-height:440px"><h5>Basic</h5><div class="p"><b>$20</b><small>/month</small></div><div class="sub">1,000 QCC every month</div><ul><li>1,000 QCC / month</li><li>Credits roll over 1 month</li><li>40+ models incl. Veo 3.1</li><li>Desktop IDE</li></ul><span class="btn wh">Get Basic</span></div>
+            <div class="pl hot" style="min-height:440px"><span class="chip s rib">BEST VALUE · LAUNCH30</span><h5>Yearly</h5><div class="p"><b>$126</b><s>$180</s><small>/year</small></div><div class="sub">12,000 QCC upfront · $10.50 per month</div><ul><li>12,000 QCC upfront</li><li>Everything in Basic</li><li>Priority generation queue</li><li>Early access to new models</li></ul><span class="btn pri">Claim −30%</span><div class="mut" style="text-align:center;font-size:13px;margin-top:12px">Offer ends in <b class="cd" data-cd="47:12:09" style="color:#ffb36b"></b></div></div>
+            <div class="pl" style="min-height:440px"><h5>Enterprise</h5><div class="p"><b>Custom</b></div><div class="sub">For teams &amp; studios</div><ul><li>SSO &amp; SCIM</li><li>Pooled credits &amp; invoicing</li><li>Dedicated support</li><li>Custom model limits</li></ul><span class="btn gh">Contact sales</span></div>
+          </div>
+          <div class="ov pk-row" style="left:72px;right:72px;top:960px">
+            <div style="align-self:center"><div style="font:800 28px/1.05 var(--disp);letter-spacing:-.03em">Need a one-off boost?</div><p class="mut" style="font-size:14px;margin-top:8px">Credit packs. Bigger pack = bigger bonus.</p></div>
+            <div class="pk"><b>500</b><div class="q">QCC</div><span class="bn no">no bonus</span><div class="pr">$10</div></div>
+            <div class="pk on"><span class="chip s pop">MOST POPULAR</span><b>1,200</b><div class="q">QCC</div><span class="bn">+20% bonus</span><div class="pr">$20</div></div>
+            <div class="pk"><b>3,500</b><div class="q">QCC</div><span class="bn">+40% bonus</span><div class="pr">$50</div></div>
+            <div class="pk"><b>8,000</b><div class="q">QCC</div><span class="bn">+60% bonus</span><div class="pr">$100</div></div>
+          </div>
+          <div class="ov" style="left:0;right:0;top:1118px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)"><div class="made">
+            <img src="../assets/pricing/case-1.jpg" alt=""><img src="../assets/content/c3.jpg" alt=""><img src="../assets/pricing/case-5.jpg" alt=""><img src="../assets/pricing/case-2.jpg" alt=""><img src="../assets/content/c2.jpg" alt=""><img src="../assets/pricing/case-4.jpg" alt=""><img src="../assets/pricing/case-6.jpg" alt=""><img src="../assets/content/c6.jpg" alt=""><img src="../assets/pricing/case-3.jpg" alt="">
+            <img src="../assets/pricing/case-1.jpg" alt=""><img src="../assets/content/c3.jpg" alt=""><img src="../assets/pricing/case-5.jpg" alt=""><img src="../assets/pricing/case-2.jpg" alt=""><img src="../assets/content/c2.jpg" alt=""><img src="../assets/pricing/case-4.jpg" alt=""><img src="../assets/pricing/case-6.jpg" alt=""><img src="../assets/content/c6.jpg" alt=""><img src="../assets/pricing/case-3.jpg" alt="">
+          </div></div>
+        </div></div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="s2"></div>
+  </article>
+
+  <article class="case" id="s3">
+    <div class="case-head"><div class="num">S3</div><div><h3>Sign-up modal — 1:1 Higgsfield layout</h3><p>Same structure as Higgsfield: <b>left</b> — auto-playing creative carousel with a big headline and a 4-step progress bar; <b>right</b> — logo, welcome line, incentive bar, three identical provider buttons, OR, email, terms, SSO. Replaces today’s 5-field form.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Activation</span><span class="tag">Carousel</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="../conversion-lab/assets/hf-live/signup-modal.png" alt=""><div class="note"><b>Pattern:</b> creative sells the product while the user picks a provider — zero form fields.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1440" data-h="900" data-before="../conversion-lab/assets/qc/signup.png"><div class="cv">
+          <img class="base" src="assets/qc/home-clean.png" style="left:0;top:0;width:1440px" alt="">
+          <div class="ov dim"></div>
+          <div class="ov m su" style="left:220px;top:100px;width:1000px;height:700px">
+            <div class="su-art">
+              <div class="sl"><img src="../assets/pricing/case-1.jpg" alt=""><div class="cap"><span class="chip w">VIDEO · VEO 3.1 + KLING</span><div class="dh">Shoot a <span class="gt">sneaker film</span></div><p>Script, shots and sound — in one chat.</p></div></div>
+              <div class="sl"><img src="../assets/pricing/case-5.jpg" alt=""><div class="cap"><span class="chip w">APPS · CODY AGENT</span><div class="dh">Ship a <span class="gt">store today</span></div><p>From prompt to a live app with checkout.</p></div></div>
+              <div class="sl"><img src="../assets/pricing/case-4.jpg" alt=""><div class="cap"><span class="chip w">GAMES · 3D</span><div class="dh">Build a <span class="gt">game world</span></div><p>Characters, levels and assets on demand.</p></div></div>
+              <div class="sl"><img src="../assets/pricing/case-6.jpg" alt=""><div class="cap"><span class="chip w">AUDIO · ELEVENLABS</span><div class="dh">Score your <span class="gt">trailer</span></div><p>Music and voice-over that fit every cut.</p></div></div>
+              <div class="prog"><div>Video</div><div>Apps</div><div>Games</div><div>Audio</div></div>
+            </div>
+            <div class="su-r">
+              <img class="lg" src="../conversion-lab/assets/logos/quadcode.svg" alt="">
+              <h4 style="margin:24px 0 6px">Welcome to Quadcode AI</h4>
+              <p class="s">Build apps, films, games and music with 40+ AI models.</p>
+              <div class="inc" style="margin:18px 0 16px"><span class="gift">🎁</span><span>Sign up with a <b>work email</b> and get <b>200 free QCC</b></span></div>
+              <div class="sso">
+                <div class="sbtn hov"><svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue with Google</div>
+                <div class="sbtn"><svg viewBox="0 0 16 16" fill="#fff"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Continue with GitHub</div>
+                <div class="sbtn"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.37 12.64c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.38.81 1.4-.02 2.28-1.27 3.13-2.53.99-1.45 1.4-2.85 1.42-2.93-.03-.01-2.72-1.04-2.71-4.12zM13.78 5.01c.71-.87 1.2-2.07 1.06-3.27-1.03.04-2.28.69-3.02 1.55-.66.76-1.24 1.99-1.09 3.16 1.15.09 2.33-.58 3.05-1.44z"/></svg>Continue with Apple</div>
+              </div>
+              <div class="or">OR</div>
+              <div class="sbtn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>Continue with email</div>
+              <div class="terms"><i>✓</i><span>I agree to the <a>Terms of Service</a> and <a>Privacy Policy</a> and to receive product updates.</span></div>
+              <div class="su-foot">Enterprise? <a>Log in with SSO</a></div>
+            </div>
+            <span class="mx">×</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="s3"></div>
+  </article>
+</div></section>
+
+
+<!-- ======================= 02 WORKSPACE ======================= -->
+<section class="sec" id="ws"><div class="wrap">
+  <div class="sec-head reveal"><div class="n">02</div><div><h2>Workspace</h2><p>Web app (profile/overview, plans, settings, usage): monetization strips, zero-balance takeovers, starter kit popups and runway indicators.</p></div></div>
+
+  <article class="case" id="w1">
+    <div class="case-head"><div class="num">W1</div><div><h3>Overview strip + hero carousel + sidebar card</h3><p>Active personal offer rendered simultaneously across three touchpoints: top strip (48px), hero banner with rotating creative, and compact sidebar card under navigation.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Workspace</span><span class="tag">Multi-touch</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/03-account-menu.png" alt=""><div class="note"><b>Pattern:</b> balance pill, credit consumption progress, and direct upgrade prompt.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-shift="328" data-before="assets/qc/03-overview.png"><div class="cv">
+          <img class="base" src="assets/qc/03-overview.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov wstrip" style="left:256px;right:0;top:0"><b>Welcome offer</b> Basic plan $14 for your first month with <span class="code">WELCOME30</span> · ends in <span class="cd" data-cd="23:59:41"></span><span class="go">Claim →</span></div>
+          <div class="ov whero" style="left:288px;right:32px;top:64px;height:248px">
+            <div class="whs" style="opacity:1"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><div class="cp"><span class="chip s">STARTER KIT</span><div class="dh">1,200 QCC for <span class="gt">$20</span></div><p>+200 bonus credits on your first subscription. Valid for all models.</p><div class="row"><span class="btn pri sm">Claim Starter Kit</span><span class="mut" style="font-size:13px">Ends in <b class="cd" data-cd="23:59:41" style="color:#ffb36b"></b></span></div></div></div>
+            <div class="dots"><i></i><i></i><i></i></div>
+          </div>
+          <div class="ov sbo" style="left:16px;top:540px;width:224px">
+            <div class="im"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><span class="chip s">OFFER</span></div>
+            <div class="bd"><h6>Starter Kit</h6><p>+200 bonus QCC on first top-up.</p><div class="cd mut" style="font-size:12px" data-cd="23:59:41"></div><span class="btn pri sm">Claim $20</span></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w1"></div>
+  </article>
+
+  <article class="case" id="w2">
+    <div class="case-head"><div class="num">W2</div><div><h3>Zero balance takeover modal</h3><p>Triggered immediately upon page open when balance = 0 QCC. Blurs background, reassures project safety, and presents clear pack choices with the popular tier preselected.</p></div><div class="tags"><span class="tag p0">P0</span><span class="tag">Blocking</span><span class="tag">Rescue</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/08-buy-credits.png" alt=""><div class="note"><b>Pattern:</b> modal credit pack ladder with tiered bonuses and quick checkout.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-before="assets/qc/03-overview.png"><div class="cv">
+          <img class="base" src="assets/qc/03-overview.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov dim"></div>
+          <div class="ov m" style="left:530px;top:170px;width:860px;padding:48px 52px">
+            <span class="chip r">BALANCE · 0 QCC</span>
+            <div class="dh" style="margin:20px 0 10px;font-size:56px">You're out of <span class="gt">credits</span></div>
+            <p style="font-size:16px;color:#a3a8b3">Your projects and drafts are safe. Top up credits and keep building immediately.</p>
+            <div class="packs" style="margin:32px 0 24px">
+              <div class="pk"><b>500</b><div class="q">QCC</div><span class="bn no">standard</span><div class="pr">$10</div></div>
+              <div class="pk on"><span class="chip s pop">MOST POPULAR</span><b>1,200</b><div class="q">QCC</div><span class="bn">+20% bonus</span><div class="pr">$20</div></div>
+              <div class="pk"><b>3,500</b><div class="q">QCC</div><span class="bn">+40% bonus</span><div class="pr">$50</div></div>
+              <div class="pk"><b>8,000</b><div class="q">QCC</div><span class="bn">+60% bonus</span><div class="pr">$100</div></div>
+            </div>
+            <div class="row" style="margin-top:20px"><span class="btn pri xl" style="flex:1">Top up 1,200 QCC — $20</span><span class="btn gh" style="height:64px;border-radius:18px">Or get Basic ($20/mo)</span></div>
+            <div class="trust"><span>Credits roll over 1 month</span><span>Instant balance update</span><span>Stripe secure</span></div>
+            <span class="mx">×</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w2"></div>
+  </article>
+
+  <article class="case" id="w3">
+    <div class="case-head"><div class="num">W3</div><div><h3>Top-up modal (replaces broken state)</h3><p>Fixes the "Failed to load packages" error screen with a full-featured top-up ladder, bonus meter bars, custom amount toggle, and one-click auto-refill option.</p></div><div class="tags"><span class="tag p0">P0</span><span class="tag">Bugfix</span><span class="tag">Packs</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/08-buy-credits.png" alt=""><div class="note"><b>Pattern:</b> transparent tiered pricing with bonus multiplier progress.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-before="assets/qc/04-topup-modal.png"><div class="cv">
+          <img class="base" src="assets/qc/03-overview.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov dim"></div>
+          <div class="ov m" style="left:550px;top:150px;width:820px;padding:44px 48px">
+            <span class="chip w">INSTANT BALANCE BOOST</span>
+            <div class="dh" style="margin:16px 0 8px;font-size:52px">Top up <span class="gt">credits</span></div>
+            <p style="font-size:15px;color:#a3a8b3">Credits never expire while your plan is active. Larger packs include larger bonus allowances.</p>
+            <div class="packs" style="margin:28px 0 20px">
+              <div class="pk"><b>500</b><div class="q">QCC</div><div class="bar2"><i style="width:20%"></i></div><div class="pr">$10</div></div>
+              <div class="pk on"><span class="chip s pop">BEST VALUE</span><b>1,200</b><div class="q">QCC</div><div class="bar2"><i style="width:40%"></i></div><div class="pr">$20</div></div>
+              <div class="pk"><b>3,500</b><div class="q">QCC</div><div class="bar2"><i style="width:70%"></i></div><div class="pr">$50</div></div>
+              <div class="pk"><b>8,000</b><div class="q">QCC</div><div class="bar2"><i style="width:100%"></i></div><div class="pr">$100</div></div>
+            </div>
+            <div class="pay" style="margin-bottom:20px"><span class="on">💳 Credit Card</span><span> Apple Pay</span><span>G Google Pay</span></div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08)"><span class="tg"></span><span style="font-size:14px">Auto-refill 1,200 QCC when balance drops below 100 QCC (save 10%)</span></div>
+            <span class="btn pri xl">Pay $20 — Get 1,200 QCC</span>
+            <span class="mx">×</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w3"></div>
+  </article>
+
+  <article class="case" id="w4">
+    <div class="case-head"><div class="num">W4</div><div><h3>Starter Kit modal (+25% QCC on first purchase)</h3><p>Shown on first intent to purchase a plan. Unlocks +200 bonus QCC on top of standard monthly allocation with a 24-hour server-backed deadline timer.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Starter Kit</span><span class="tag">Conversion</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/05-strip-offer-modal.png" alt=""><div class="note"><b>Pattern:</b> visual hero art, value badges, and tight countdown urgency.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-before="assets/qc/02-profile-plans.png"><div class="cv">
+          <img class="base" src="assets/qc/02-profile-plans.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov dim"></div>
+          <div class="ov m" style="left:510px;top:130px;width:900px;overflow:hidden">
+            <div class="hi" style="height:260px"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><div class="cp" style="left:40px;bottom:30px"><span class="chip s">FIRST PURCHASE ONLY</span><div class="dh" style="font-size:52px;margin-top:8px">Starter <span class="gt">Kit</span></div><p style="font-size:15px;color:#d1d5db;margin-top:4px">Your first month supercharged with bonus creative fuel.</p></div></div>
+            <div style="padding:32px 40px">
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px">
+                <div style="padding:16px;border-radius:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08)"><small class="mut">MONTHLY</small><div style="font:800 24px var(--disp);margin-top:4px">1,000 QCC</div></div>
+                <div style="padding:16px;border-radius:14px;background:rgba(255,106,0,0.1);border:1px solid rgba(255,106,0,0.4)"><small style="color:#ffb36b;font-weight:700">BONUS</small><div style="font:800 24px var(--disp);color:#ffb36b;margin-top:4px">+200 QCC</div></div>
+                <div style="padding:16px;border-radius:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08)"><small class="mut">ACCESS</small><div style="font:800 24px var(--disp);margin-top:4px">40+ Models</div></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px"><div class="cdx" data-cd="23:59:41"></div><div style="font:900 48px/1 var(--disp)">$20 <small style="font-size:16px;color:#a3a8b3">/ 1st mo</small></div></div>
+              <span class="btn pri xl">Claim Starter Kit — $20</span>
+              <div class="trust"><span>Cancel anytime</span><span>Instant activation</span><span>Stripe protected</span></div>
+            </div>
+            <span class="mx">×</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w4"></div>
+  </article>
+
+  <article class="case" id="w5">
+    <div class="case-head"><div class="num">W5</div><div><h3>Plans page with timed promo &amp; sticky offer strip</h3><p>Plans screen upgraded with active promotional header strip, auto-applied discount codes, and floating VIP discount popover.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Plans</span><span class="tag">Urgency</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/06-pricing-individual.png" alt=""><div class="note"><b>Pattern:</b> prominent annual plan card with strike-through and discount badge.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-shift="48" data-before="assets/qc/02-profile-plans.png"><div class="cv">
+          <img class="base" src="assets/qc/02-profile-plans.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov wstrip" style="left:256px;right:0;top:0"><b>LAUNCH WEEK</b> Yearly −30% with code <span class="code">LAUNCH30</span> · ends in <span class="cd" data-cd="47:12:09"></span><span class="go">Apply to Checkout →</span></div>
+          <div class="ov tst" style="right:40px;top:80px;width:520px"><img src="../assets/banners/banner_yearly_crown.jpg" alt=""><div><span class="chip s">YEARLY −30%</span><h6>$126 first year</h6><p>Code LAUNCH30 auto-applied at checkout.</p></div><span class="btn pri sm" style="margin-left:auto">Claim</span></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w5"></div>
+  </article>
+
+  <article class="case" id="w6">
+    <div class="case-head"><div class="num">W6</div><div><h3>Settings: active offers, auto-refill &amp; referral</h3><p>Transforms the empty Settings screen into a monetization hub: active personal voucher cards, configurable auto-refill rules, and bilateral referral link generator.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Settings</span><span class="tag">Retention</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/07-subscription.png" alt=""><div class="note"><b>Pattern:</b> subscription management hub with coupon entry and add-ons.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-before="assets/qc/06-settings.png"><div class="cv">
+          <img class="base" src="assets/qc/06-settings.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov" style="left:296px;top:100px;width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+            <div class="dc"><h6>Active Offers (2)</h6>
+              <div class="ofd" style="margin-bottom:12px"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><div><h5>Starter Kit Bonus</h5><p>+200 bonus QCC on first top-up</p></div><span class="btn pri sm">Claim</span></div>
+              <div class="ofd"><img src="../assets/banners/banner_yearly_crown.jpg" alt=""><div><h5>Yearly Upgrade −30%</h5><p>Code LAUNCH30 · 2 days left</p></div><span class="btn gh sm">View</span></div>
+            </div>
+            <div class="dc"><h6>Auto-Refill Settings</h6>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin:16px 0"><span style="font-size:15px">Enable automatic credit refill</span><span class="tg"></span></div>
+              <p style="font-size:13.5px;color:#a3a8b3;line-height:1.5">When balance falls below <b>100 QCC</b>, automatically charge saved card and add <b>1,200 QCC ($20)</b> so background agent runs never halt.</p>
+              <div class="inp" style="margin-top:16px"><span style="font-size:14px">Mastercard •••• 4242</span><span class="btn gh sm">Update card</span></div>
+            </div>
+            <div class="dc"><h6>Redeem Promo Code</h6>
+              <div class="inp"><span style="color:#ffb36b">ENTER PROMO CODE</span><span class="btn wh sm">Apply Code</span></div>
+            </div>
+            <div class="dc"><h6>Referral Program (+300 QCC)</h6>
+              <p style="font-size:13.5px;color:#a3a8b3;margin-bottom:12px">Invite collaborators: they receive 300 QCC upon registration, and you get 300 QCC upon their first purchase.</p>
+              <div class="inp"><span style="font-size:13px;color:#fff">quadcode.ai/r/creator</span><span class="btn pri sm">Copy Link</span></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w6"></div>
+  </article>
+
+  <article class="case" id="w7">
+    <div class="case-head"><div class="num">W7</div><div><h3>Usage runway &amp; burn-rate forecast card</h3><p>Calculates user's average 7-day consumption and projects exact days until depletion. Warns before stoppage and provides immediate one-click refuel.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Usage</span><span class="tag">Predictive</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/15-usage.png" alt=""><div class="note"><b>Pattern:</b> daily usage histogram and model consumption breakdown.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-before="assets/qc/07-usage.png"><div class="cv">
+          <img class="base" src="assets/qc/07-usage.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov tst" style="right:60px;bottom:60px;width:580px;background:#0d0e12;border:1px solid rgba(255,106,0,0.4);box-shadow:0 20px 60px rgba(0,0,0,0.8)"><div style="flex:1"><span class="chip r">RUNWAY ALERT</span><h6>Credits run out in ~4 days</h6><p>At your pace (≈250 QCC/day), balance reaches 0 on Friday.</p>
+            <div class="fc"><i></i><i></i><i></i><i></i><i class="e"></i><i class="e"></i><i class="e"></i></div>
+            <div class="fcl"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+            <div class="row" style="margin-top:16px"><span class="btn pri sm">Top up 1,200 QCC ($20)</span><span class="btn gh sm">Auto-refill</span></div>
+          </div></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w7"></div>
+  </article>
+
+  <article class="case" id="w8">
+    <div class="case-head"><div class="num">W8</div><div><h3>Cancellation save flow (50% off retention offer)</h3><p>Intercepts subscription cancellation with an immediate retention discount: 50% off for the next 3 months, highlighting lost accumulated rollover credits.</p></div><div class="tags"><span class="tag p2">P2</span><span class="tag">Retention</span><span class="tag">Save flow</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/17-cancel-flow.png" alt=""><div class="note"><b>Pattern:</b> multi-step cancellation with retention discounts and paused subscription options.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-before="assets/qc/08-billing.png"><div class="cv">
+          <img class="base" src="assets/qc/08-billing.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov dim"></div>
+          <div class="ov m" style="left:550px;top:160px;width:820px;padding:48px 52px">
+            <span class="chip r">WAIT · SPECIAL OFFER</span>
+            <div class="dh" style="margin:18px 0 10px;font-size:52px">Stay for <span class="gt">50% off</span></div>
+            <p style="font-size:16px;color:#a3a8b3">Keep your Basic plan at just <b>$10/month</b> for the next 3 months instead of canceling.</p>
+            <ul class="lose" style="margin:24px 0">
+              <li>You will forfeit <b>840 rollover QCC</b> currently saved on your balance</li>
+              <li>You will lose priority queue access during peak model demand</li>
+              <li>Your custom dynamic UI components will freeze</li>
+            </ul>
+            <div class="row" style="margin-top:28px"><span class="btn pri xl" style="flex:1">Keep my plan at 50% off ($10/mo)</span><span class="btn gh" style="height:64px;border-radius:18px">Continue canceling</span></div>
+            <span class="mx">×</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="w8"></div>
+  </article>
+</div></section>
+
+<!-- ======================= 03 DESKTOP IDE ======================= -->
+<section class="sec" id="ide"><div class="wrap">
+  <div class="sec-head reveal"><div class="n">03</div><div><h2>Desktop IDE</h2><p>In-app monetization inside the desktop workspace: first-launch credits onboarding, pause-and-refill chat cards, cost preview chips and integrated app store.</p></div></div>
+
+  <article class="case" id="i1">
+    <div class="case-head"><div class="num">I1</div><div><h3>First launch welcome modal (0 credits onboarding)</h3><p>Today a new desktop user lands on an empty window with 0 credits and no guidance. This modal welcomes the user with 50 free credits, a Starter Kit offer, and an auto-scrolling showcase wall.</p></div><div class="tags"><span class="tag p0">P0</span><span class="tag">Desktop IDE</span><span class="tag">Onboarding</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/04-image-composer.png" alt=""><div class="note"><b>Pattern:</b> credits balance visible right beside the generation trigger with quick claim.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-ide="chat:base;pill:zero;up:none" data-before="assets/qc/ide-win0.png"><div class="cv">
+          <img class="base" src="assets/qc/ide-win0.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov dim l"></div>
+          <div class="ov m iw" style="left:420px;top:180px;width:1080px;height:680px">
+            <div class="vm">
+              <div class="col"><img src="../assets/pricing/case-1.jpg" alt=""><img src="../assets/pricing/case-4.jpg" alt=""><img src="../assets/content/c2.jpg" alt=""></div>
+              <div class="col dn"><img src="../assets/pricing/case-5.jpg" alt=""><img src="../assets/pricing/case-2.jpg" alt=""><img src="../assets/pricing/case-6.jpg" alt=""></div>
+              <div class="cap"><span class="chip w">MADE IN QUADCODE</span><div class="dh">Build <span class="gt">without limits</span></div></div>
+            </div>
+            <div class="r">
+              <span class="bal0"><i></i>CURRENT BALANCE · 0 QCC</span>
+              <h4 style="font:800 36px/1.05 var(--disp);margin:20px 0 8px">Welcome to Quadcode AI</h4>
+              <p style="color:#a3a8b3;font-size:15px;margin-bottom:24px">Every project, script and UI you build stays entirely yours. Choose how to start:</p>
+              <div class="offer hot" style="margin-bottom:14px"><div><span class="chip s" style="font-size:10px;padding:3px 8px;margin-bottom:6px">STARTER OFFER</span><h6>Try Free with 50 QCC</h6><p>No credit card required. Generate your first video, audio or app.</p></div><span class="btn pri sm" style="margin-left:auto">Claim 50 QCC</span></div>
+              <div class="offer" style="margin-bottom:14px"><div><h6>Basic Plan · $14 1st mo</h6><p>Use code WELCOME30. 1,000 QCC every month.</p></div><span class="btn wh sm" style="margin-left:auto">Get Basic</span></div>
+              <div class="offer"><div><h6>Credit Packs from $10</h6><p>One-off boosts without ongoing subscription.</p></div><span class="btn gh sm" style="margin-left:auto">See packs</span></div>
+              <span class="mx">×</span>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="i1"></div>
+  </article>
+
+  <article class="case" id="i2">
+    <div class="case-head"><div class="num">I2</div><div><h3>Out of credits in-chat pause card (replaces silent failure)</h3><p>When an agent run runs out of credits midway, the run freezes cleanly with progress saved. An interactive card in the chat stream lets the user refuel and immediately resume.</p></div><div class="tags"><span class="tag p0">P0</span><span class="tag">Chat UX</span><span class="tag">Rescue</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/08-buy-credits.png" alt=""><div class="note"><b>Pattern:</b> instant top-up card appears immediately without navigating away from generation task.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-ide="chat:stop;pill:zero;up:none" data-before="assets/qc/ide-win0.png"><div class="cv">
+          <img class="base" src="assets/qc/ide-win0.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov ioc" style="left:33px;top:440px;width:687px">
+            <div class="hd"><img src="../assets/banners/banner_out_of_credits.jpg" alt=""><div class="cp"><span class="chip r">PAUSED AT 62%</span><div class="dh">Out of <span class="gt">credits</span></div></div></div>
+            <div class="bd">
+              <p style="font-size:14px;color:#4b5563">Your prompt, files and generated frames are saved. Refuel credits to resume execution automatically.</p>
+              <div class="ipks">
+                <div class="ipk"><b>500</b><span>QCC · $10</span></div>
+                <div class="ipk on"><span class="pp2">POPULAR</span><b>1,200</b><span>QCC · $20</span><em>+20%</em></div>
+                <div class="ipk"><b>3,500</b><span>QCC · $50</span><em>+40%</em></div>
+              </div>
+              <span class="btn pri xl" style="height:50px;font-size:15px">Resume run with 1,200 QCC ($20)</span>
+              <div class="ichk"><i>✓</i><span>Auto-refill next time when credits drop below 100 QCC</span></div>
+            </div>
+          </div>
+          <div class="ov lk" style="left:23px;top:836px;width:707px;height:160px"><span style="font-size:14px;font-weight:700">🔒 Composer paused · Top up to continue building</span><span class="btn pri sm">Top up</span></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="i2"></div>
+  </article>
+
+  <article class="case" id="i3">
+    <div class="case-head"><div class="num">I3</div><div><h3>Low balance warning toast &amp; model cost chip</h3><p>Shows a soft non-blocking warning above the composer when credits fall below 15% of monthly allowance, alongside real-time cost estimation per model selection.</p></div><div class="tags"><span class="tag p0">P0</span><span class="tag">Predictive</span><span class="tag">Composer</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/11-video-composer.png" alt=""><div class="note"><b>Pattern:</b> model selector displays exact credit cost before generation is dispatched.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-ide="chat:run;pill:low;up:none" data-before="assets/qc/ide-win1.png"><div class="cv">
+          <img class="base" src="assets/qc/ide-win1.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov ilb" style="left:33px;top:770px;width:687px">
+            <div class="ring"><b>118</b></div>
+            <div><h6>118 QCC remaining · ~5 runs left</h6><p>Top up now so long agent tasks aren't interrupted.</p></div>
+            <div style="margin-left:auto;display:flex;gap:8px"><span class="btn pri sm">Top up $20</span><span class="btn lt sm">Auto-refill</span></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="i3"></div>
+  </article>
+
+  <article class="case" id="i4">
+    <div class="case-head"><div class="num">I4</div><div><h3>Timed promo pill &amp; header popover</h3><p>Displays urgency badge on the titlebar Upgrade button, accompanied by a rich popover card and in-stream chat reminder with ticking countdown timer.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Urgency</span><span class="tag">Header</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/09-store-upgrade.png" alt=""><div class="note"><b>Pattern:</b> prominent Upgrade badge in window header with discount callout.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-ide="chat:run;pill:ok;up:promo" data-before="assets/qc/ide-win1.png"><div class="cv">
+          <img class="base" src="assets/qc/ide-win1.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov ipb" style="left:33px;top:100px;width:687px"><img src="../assets/banners/banner_yearly_crown.jpg" alt=""><div><h6>Launch Week · Yearly −30%</h6><p>Ends in <span class="cd" data-cd="47:12:09"></span> · Code LAUNCH30 auto-applied.</p></div><span class="btn pri sm" style="margin-left:auto">Claim offer</span></div>
+          <div class="ov m ipop" style="left:1140px;top:48px;width:440px;padding:32px"><span class="chip s">LAUNCH WEEK · 47:12:09</span><div class="dh" style="font-size:40px;margin:12px 0 6px">Yearly <span class="gt">−30%</span></div><p style="font-size:14px;color:#a3a8b3">Pay $126 instead of $180 for your first year. 12,000 QCC upfront.</p><span class="btn pri xl" style="height:48px;font-size:15px;margin-top:18px">Claim −30% Discount</span></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="i4"></div>
+  </article>
+
+  <article class="case" id="i5">
+    <div class="case-head"><div class="num">I5</div><div><h3>Store modal with tabbed plans &amp; credit packs</h3><p>Full-screen native store overlay inside the desktop app. Splits into Plans, Credit Packs, and Promo Codes tabs without requiring external browser checkout.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">Store</span><span class="tag">Full modal</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/10-store-unlimited.png" alt=""><div class="note"><b>Pattern:</b> tabbed store view covering monthly passes, credit packages and promo entry.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-ide="chat:run;pill:ok;up:none" data-before="assets/qc/ide-win1.png"><div class="cv">
+          <img class="base" src="assets/qc/ide-win1.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov dim l"></div>
+          <div class="ov m ist" style="left:330px;top:120px;width:1260px;height:800px">
+            <div class="lh"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><div class="cp"><span class="chip s">STARTER OFFER</span><div class="dh" style="font-size:48px;margin-top:10px">Supercharge <span class="gt">your stack</span></div><p style="font-size:15px;color:#d1d5db;margin-top:6px">Access Claude 3.7 Sonnet, Veo 3.1, Nanobanana and Kling with high-speed priority dispatch.</p></div></div>
+            <div class="rr">
+              <div class="tabs"><span class="on">Plans</span><span>Credit Packs</span><span>Promo Code</span></div>
+              <div class="plans" style="margin-top:30px">
+                <div class="pl"><h5>Basic</h5><div class="p"><b>$20</b><small>/mo</small></div><div class="sub">1,000 QCC every month</div><ul><li>All 40+ models</li><li>1 month rollover</li></ul><span class="btn gh sm" style="width:100%;margin-top:14px">Get Basic</span></div>
+                <div class="pl hot"><span class="chip s rib">BEST VALUE</span><h5>Yearly</h5><div class="p"><b>$126</b><s>$180</s><small>/yr</small></div><div class="sub">12,000 QCC upfront ($10.50/mo)</div><ul><li>Priority model queue</li><li>Save $54/year</li></ul><span class="btn pri sm" style="width:100%;margin-top:14px">Claim −30%</span></div>
+                <div class="pl"><h5>Enterprise</h5><div class="p"><b>Custom</b></div><div class="sub">Studio pooled seats</div><ul><li>Dedicated support</li><li>Custom rate limits</li></ul><span class="btn gh sm" style="width:100%;margin-top:14px">Contact</span></div>
+              </div>
+            </div>
+            <span class="mx">×</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="i5"></div>
+  </article>
+
+  <article class="case" id="i6">
+    <div class="case-head"><div class="num">I6</div><div><h3>IDE Settings: dedicated Billing tab</h3><p>Replaces the empty right area of the IDE Settings dialog with a complete Billing cockpit: current tier status, rollover meter, auto-refill, active vouchers and payment methods.</p></div><div class="tags"><span class="tag p1">P1</span><span class="tag">IDE Settings</span><span class="tag">Billing</span></div></div>
+    <div class="compare">
+      <div class="pane hf"><div class="pane-bar"><i class="dot"></i>Higgsfield · live</div><img class="shot" src="assets/hf/07-subscription.png" alt=""><div class="note"><b>Pattern:</b> unified billing panel displaying renewal date, credit balances and invoices.</div></div>
+      <div class="pane qc"><div class="pane-bar"><i class="dot"></i>Quadcode · with paywall<span class="sp"></span><span class="seg"><button data-mode="before">BEFORE</button><button class="on" data-mode="after">AFTER</button></span></div>
+        <div class="stage" data-w="1920" data-h="1040" data-ide="chat:base;pill:ok;up:none;right:none" data-before="assets/qc/ide-win2.png"><div class="cv">
+          <img class="base" src="assets/qc/ide-win2.png" style="left:0;top:0;width:1920px" alt="">
+          <div class="ov iset" style="left:748px;top:88px;width:1157px;height:918px">
+            <nav><span>General</span><span>Models</span><span>Appearance</span><span class="on">💳 Billing &amp; Plans</span><span>Tokens &amp; Keys</span><span>Shortcuts</span></nav>
+            <div class="ct">
+              <div class="lc"><h6>CURRENT PLAN</h6><div class="big">Basic Plan</div><p style="font-size:13.5px;color:#6b7280;margin:6px 0 14px">$20/month · Renews Oct 14, 2026</p><span class="btn lt sm">Change Plan</span></div>
+              <div class="lc"><h6>AVAILABLE BALANCE</h6><div class="big">1,006 <span style="font-size:18px;color:#6b7280">QCC</span></div><div class="lbar"><i style="width:65%"></i></div><p style="font-size:13px;color:#6b7280">Projected runway: ~12 days</p><span class="btn pri sm" style="margin-top:8px">Add credits</span></div>
+              <div class="lc" style="grid-column:span 2"><h6>ACTIVE OFFERS</h6>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px">
+                  <div class="lofr"><img src="../assets/banners/banner_yearly_crown.jpg" alt=""><div><h5>Yearly Upgrade −30%</h5><p>Save $54 · ends in 47h</p></div><span class="btn pri sm">Claim</span></div>
+                  <div class="lofr"><img src="../assets/banners/banner_starter_kit.jpg" alt=""><div><h5>Referral Bonus</h5><p>Earn +300 QCC per invite</p></div><span class="btn lt sm">Share</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="spec" data-spec="i6"></div>
+  </article>
+</div></section>
+
+<!-- ======================= 04 DESIGN SYSTEM ======================= -->
+<section class="sec" id="system"><div class="wrap">
+  <div class="sec-head reveal"><div class="n">04</div><div><h2>Design System &amp; Tokens</h2><p>Unified visual language for paywalls across website, web workspace and desktop IDE.</p></div></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px">
+    <div style="background:#0d0e12;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:20px"><div style="height:48px;border-radius:10px;background:#ff6a00;margin-bottom:12px"></div><b style="font:700 14px var(--mono)">Accent / Brand</b><p class="mut" style="font-size:13px;margin-top:4px">#ff6a00 · Primary CTA &amp; glows</p></div>
+    <div style="background:#0d0e12;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:20px"><div style="height:48px;border-radius:10px;background:#F18024;margin-bottom:12px"></div><b style="font:700 14px var(--mono)">Secondary Accent</b><p class="mut" style="font-size:13px;margin-top:4px">#F18024 · Badges &amp; gradients</p></div>
+    <div style="background:#0d0e12;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:20px"><div style="height:48px;border-radius:10px;background:#22c55e;margin-bottom:12px"></div><b style="font:700 14px var(--mono)">Success / Bonus</b><p class="mut" style="font-size:13px;margin-top:4px">#22c55e · Free credits &amp; bonuses</p></div>
+    <div style="background:#0d0e12;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:20px"><div style="height:48px;border-radius:10px;background:#ef4444;margin-bottom:12px"></div><b style="font:700 14px var(--mono)">Critical / Zero</b><p class="mut" style="font-size:13px;margin-top:4px">#ef4444 · Out of credits alert</p></div>
+  </div>
+</div></section>
+
+<!-- ======================= 05 EVENTS ======================= -->
+<section class="sec" id="events"><div class="wrap">
+  <div class="sec-head reveal"><div class="n">05</div><div><h2>Analytics Events Table</h2><p>Exhaustive telemetry pipeline tracking every conversion impression, click and transaction across all 17 surfaces.</p></div></div>
+  <table class="etab">
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Surface &amp; Placement</th>
+        <th>Trigger Condition</th>
+        <th>Payload Properties</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div></section>
+
+<script src="specs.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadcode AI — офферы на кредиты в IDE и на сайте</title>
+<link rel="icon" href="assets/logos/quadcode.svg">
+<link rel="stylesheet" href="page.css?v=3">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img src="assets/logos/quadcode.svg" alt=""><b>Quadcode AI</b><span class="tag">Офферы в IDE и на сайте</span>
+  <nav><a href="../index.html" style="opacity: 0.85;">← Хаб прототипов</a><a href="../conversion-lab/index.html" style="color: #ff9442; font-weight: 700;">Conversion Lab</a><a href="index.html" style="font-weight: 700;">Галерея IDE (34 экрана)</a><a href="#scenarios">Сценарии</a><a href="#offers">Все офферы</a><a href="#rules">Правила</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <h1>Офферы на кредиты <em>в приложении и на сайте</em>. Интерфейс не меняется</h1>
+  <p>Все модели доступны всем, платят только за кредиты. Поэтому каждый оффер — это больше кредитов за те же деньги, код на кредиты или годовой тариф. Ниже реальный экран приложения и копия страницы тарифов: где, когда и в каком виде человек видит каждый оффер.</p>
+  <div class="stats" id="stats"></div>
+</div></section>
+
+<section class="sec" id="scenarios"><div class="wrap">
+  <h2>Сценарии</h2>
+  <p class="lead">Выбери ситуацию пользователя и пройди шаги. Красная рамка — где появляется оффер, цифра — его номер в таблице ниже. «Сейчас / С оффером» показывает один и тот же экран до и после настройки.</p>
+  <div class="scs" id="scs"></div>
+  <div class="schead">
+    <div><h3 id="sct"></h3><p id="scw"></p></div>
+    <div class="seg" id="seg"><button data-m="now">Сейчас</button><button data-m="offer">С оффером</button></div>
+  </div>
+  <div class="steps" id="steps"></div>
+  <div class="stage" id="stage">
+    <button class="fsb" id="fsb">На весь экран</button>
+    <div class="view" id="view"><div class="canvas" id="cv"></div></div>
+  </div>
+  <div class="info" id="info"></div>
+  <div class="nav2"><button id="prev">← Назад</button><button id="next">Дальше →</button></div>
+</div></section>
+
+<section class="sec" id="offers"><div class="wrap">
+  <h2>Все офферы: где, когда и в каком виде</h2>
+  <p class="lead">«Уже работает» — есть сейчас. «Новый» — настраивается в админке, рассылке и Discord. Приложение и карточки тарифов не меняются.</p>
+  <div class="tbw"><table class="tb" id="tb"></table></div>
+</div></section>
+
+<section class="sec" id="rules"><div class="wrap">
+  <h2>Правила</h2>
+  <div class="rules" id="rulesg"></div>
+</div></section>
+
+<footer class="foot"><div class="wrap">Экран приложения — реальный скриншот Quadcode AI v0.17441, баннер, меню моделей и окно профиля — с реальными текстами приложения. Страница тарифов — копия quadcode.ai/profile/plans с ценами на 25.09: Monthly от 1,000 кредитов за $20 до 15,000 за $300, Yearly 1,000 кредитов в месяц за $180. Сетка пакетов пополнения — пример, реальную надо сверить.</div></footer>
+
+<script src="data.js?v=1"></script>
+<script src="ide-data.js?v=1"></script>
+<script src="states.js?v=3"></script>
+<script src="site.js?v=1"></script>
+<script src="app.js?v=4"></script>
+</body>
+</html>

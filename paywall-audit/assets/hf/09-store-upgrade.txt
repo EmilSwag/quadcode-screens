@@ -1,0 +1,147 @@
+﻿# Subscription • Higgsfield
+[Group] Notifications Alt+T  @-
+[Group] Notifications  @-
+[Pane] Upgrade plan or buy credits  @8,8
+[Text] Choose a higher plan for increased limits, or add extra credits  @8,8
+[Button] Upgrade Plan  @360,26
+[Button] Top-up Credits  @436,26
+[Button] Unlimited Models  @516,26
+[Text] UPGRADE PLAN OR BUY CREDITS  @306,56
+[Text] Choose a higher plan for increased limits, or add extra credits  @364,91
+[Text] Enable credits auto-refill & keep your workflow uninterrupted  @370,121
+[Button] Set up  @582,117
+[Button] Toggle billing period  @441,148
+[Text] PLUS  @223,186
+[Text] 20% OFF  @254,189
+[Text] For everyday AI creation  @223,203
+[Image] 1,200  @241,223
+[Text] ​  @-
+[Text] 1  @241,224
+[Text] ,  @244,224
+[Text] 2  @246,224
+[Text] 0  @250,224
+[Text] ​  @-
+[Text] credits/mo.  @260,224
+[Text] = 600  @243,236
+[Text] Nano Banana Pro Generations  @260,236
+[Text] ~ 53  @243,246
+[Text] Seedance 2.0 videos  @256,246
+[Text] Fixed amount of 1,200 credits/mo  @259,266
+[Text] €59  @223,292
+[Text] €47  @246,290
+[Text] per month, billed annually  @272,298
+[Button] Change Commitment  @222,314
+[Text] UNLIMITED & FREE GENS  @238,354
+[Button] Learn more  @362,352
+[Text] Higgsfield Genjutsu  @238,375
+[Text] 720p  @326,376
+[Text] 3 free gens  @344,376
+[Text] Nano Banana Pro  @238,394
+[Text] No unlimited  @342,394
+[Button] Nano Banana 2  @238,412
+[Text] 2K  @322,414
+[Text] 7-day unlimited  @335,414
+[Button] Kling 3.0  @238,432
+[Text] 7-day unlimited  @335,433
+[Button] 7 unlimited & free generation models  @228,446
+[Button] Unlimited paid parallel generations  @231,474
+[Text] New  @368,476
+[Text] Access to Supercomputer  @231,485
+[Button] Access to all Seedance models  @231,494
+[Button] Access to all models & features  @231,504
+[Button] Early access to advanced AI features  @231,514
+[Text] Access to unlimited marketplace  @231,525
+[Text] Lowest cost per credit  @231,535
+[Text] ULTRA  @403,186
+[Text] 23% OFF  @441,189
+[Text] BEST VALUE  @478,189
+[Text] For ambitious AI projects  @403,203
+[Image] 3,000  @421,223
+[Text] ​  @-
+[Text] 3  @421,224
+[Text] ,  @426,224
+[Text] 0  @428,224
+[Text] ​  @-
+[Text] credits/mo.  @442,224
+[Text] = 1500  @423,236
+[Text] Nano Banana Pro Generations  @442,236
+[Text] ~ 133  @423,246
+[Text] Seedance 2.0 videos  @438,246
+[Button] 3,000  @414,270
+[Button] 6,000  @468,270
+[Button] 9,000  @522,270
+[Text] €129  @403,292
+[Text] €99  @430,290
+[Text] per month, billed annually  @458,298
+[Button] Upgrade Plan  @402,314
+[Text] Save €360  @434,342
+[Text] compared to monthly  @466,342
+[Text] UNLIMITED & FREE GENS  @418,370
+[Button] Learn more  @542,368
+[Text] Higgsfield Genjutsu  @418,391
+[Text] 720p  @506,392
+[Text] 3 free gens  @524,392
+[Button] Nano Banana Pro  @418,409
+[Text] 2K  @502,410
+[Text] 7-day unlimited  @515,410
+[Button] Nano Banana 2  @418,428
+[Text] 2K  @502,430
+[Text] 7-day unlimited  @515,430
+[Button] Kling 3.0  @418,448
+[Text] 7-day unlimited  @515,449
+[Button] 7 unlimited & free generation models  @408,462
+[Button] Unlimited paid parallel generations  @411,490
+[Text] New  @548,492
+[Text] Access to Supercomputer  @411,501
+[Button] Access to all Seedance models  @411,510
+[Button] Access to all models & features  @411,520
+[Button] Early access to advanced AI features  @411,530
+[Text] Access to unlimited marketplace  @411,541
+[Text] Lowest cost per credit  @411,551
+[Text] FOR TEAMS  @584,186
+[Text] 30% OFF  @648,190
+[Text] BEST VALUE  @684,190
+[Text] For teams, businesses, and enterprises  @584,204
+[Text] Shared workspaces & credits  @602,224
+[Text] = from 2 seats  @604,237
+[Text] per workspace  @645,237
+[Text] = unlimited  @604,247
+[Text] credits/mo pooled  @636,247
+[Text] Starting from 1,000 credits/seat/mo  @616,266
+[Text] FROM €65  @584,290
+[Text] /seat/mo, billed annually  @649,298
+[Button] Explore Plans  @582,314
+[Text] Flexible billing  @610,342
+[Text] tailored to your team  @652,342
+[Text] Access to all models & features  @594,363
+[Text] Access to Seedance 2.0  @594,373
+[Text] Access to Supercomputer  @594,383
+[Text] Early access to advanced AI features  @594,393
+[Text] Lowest cost per credit  @594,403
+[Text] 70% CHEAPER  @700,404
+[Text] WORKSPACE & COLLABORATION  @584,417
+[Text] Shareable elements and Soul ID  @594,427
+[Text] Shared workspace & projects with integrated chats  @594,437
+[Text] Custom credits amount  @594,447
+[Text] Unlimited members  @594,457
+[Text] Admin control of workspace  @594,467
+[Text] SECURITY & COMPLIANCE  @584,481
+[Text] SOC 2 security  @594,491
+[Text] Custom SSO access  @594,501
+[Text] Retain rights to use, edit & publish generations  @594,511
+[Text] No training clause  @594,521
+[Text] Indemnification  @594,531
+[Text] PERSONALIZED EXPERIENCE  @584,545
+[Text] Dedicated capacity (SLA)  @594,555
+[Text] Higher concurrency  @594,565
+[Text] Priority queue  @594,575
+[Text] Detailed analytics  @594,585
+[Text] Automated billing invoice  @594,595
+[Text] Personal Slack Support  @594,605
+[Text] AI Educator  @594,615
+[Text] Volume based discounts  @594,625
+[Text] Unlimited models and Free Generations on plans are accessible only via higgsfield.ai and are not accessible on MCP/CLI, Canvas or Supercomputer.  @271,658
+[Text] Prices exclude VAT and local taxes, calculated at checkout. Unlimited usage may be subject to dynamic speed adjustments during high-traffic periods.  @250,667
+[Text] Learn more  @679,667
+[Text] Access to new models and advanced features may be done on a rolling basis and not available to all users at launch.  @316,676
+[Button] Full Pricing Details  @437,596

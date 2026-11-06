@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Часть A: Сайт и Личный кабинет — Conversion Lab</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="lab-header">
+    <div class="brand-row">
+      <a href="index.html" class="brand-badge" style="text-decoration:none;">LAB</a>
+      <div class="brand-title">Часть A: Сайт и Личный кабинет (A1–A18)</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div class="toggle-bar">
+        <button class="toggle-opt active" id="btn-mode-after">✨ С улучшениями</button>
+        <button class="toggle-opt" id="btn-mode-now">⌛ Сейчас (QC Live)</button>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-btn">📊 К аналитике</a>
+        <a href="one/index.html" class="nav-btn" style="border-color:#ff6a00;color:#ff8c3b">📑 Все блоки (One-Page)</a>
+        <a href="ide.html" class="nav-btn primary" style="background: var(--blue);">💻 Внутри IDE (B1–B12)</a>
+        <a href="../offers-live/index.html" class="nav-btn">🔗 Offers Live</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Flow Stepper Ribbon -->
+  <div style="background: rgba(17,17,22,0.95); border-bottom: 1px solid var(--border); padding: 10px 24px;">
+    <div class="flow-stepper" style="margin-bottom: 0;">
+      <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-right: 8px;">Путь автора:</span>
+      <button class="flow-step-btn active" data-view="home"><span class="flow-step-num">1</span> Главная (Гость)</button>
+      <button class="flow-step-btn" data-view="signup"><span class="flow-step-num">2</span> Sign Up</button>
+      <button class="flow-step-btn" data-view="welcome"><span class="flow-step-num">3</span> Welcome Kit</button>
+      <button class="flow-step-btn" data-view="pricing"><span class="flow-step-num">4</span> Тарифы (/pricing)</button>
+      <button class="flow-step-btn" data-view="lk"><span class="flow-step-num">5</span> Личный кабинет</button>
+      <button class="flow-step-btn" data-view="checkout"><span class="flow-step-num">6</span> Checkout</button>
+
+      <div style="margin-left: auto; display: flex; gap: 6px; align-items: center;">
+        <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Попапы:</span>
+        <button class="item-thumb-btn pop-btn" data-pop="timer" title="A8 Персональный таймер">⏱️ Таймер 5м</button>
+        <button class="item-thumb-btn pop-btn" data-pop="exit" title="A9 Exit-intent бонус">🚪 Exit-intent</button>
+        <button class="item-thumb-btn pop-btn" data-pop="topup" title="A10 Паки кредитов">💎 Паки & Рефилл</button>
+        <button class="item-thumb-btn pop-btn" data-pop="change" title="A11 Смена плана со справедливым вычетом">🔄 Смена плана</button>
+        <button class="item-thumb-btn pop-btn" data-pop="low" title="A13 Нехватка кредитов">⚠️ Нехватка</button>
+        <button class="item-thumb-btn pop-btn" data-pop="cancel" title="A14 Честный Save-flow отмены">🛑 Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1600px; padding: 20px 24px;">
+    <div class="split-layout">
+
+      <!-- Left: Interactive Stage Simulator -->
+      <div style="background: #000; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; min-height: 780px; position: relative;" id="sim-viewport">
+
+        <!-- Banner Strip (A5) -->
+        <div id="sim-promo-strip" class="promo-bar" style="display: flex; align-items: center; justify-content: center;">
+          <span>🔥 <strong>Yearly −25%</strong>: 1 000 QCC/мес всего за $15/мес ($180/год) — 3 месяца в подарок!</span>
+          <span class="timer" style="background:#000; color:#ffd23f; padding:2px 8px; border-radius:6px; margin-left:12px;" id="promo-timer">04:59</span>
+        </div>
+
+        <!-- Sticky Timer Strip (A8) -->
+        <div id="sim-sticky-strip" style="display:none; background: #ff6a00; color:#fff; font-weight:700; text-align:center; padding:7px; font-size:12px;">
+          ⚡ Ваша персональная скидка −20% зафиксирована на первый месяц! До конца акции: <span id="sticky-timer-num">04:58</span>
+        </div>
+
+        <!-- Top Navigation Bar -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; border-bottom: 1px solid #1a1a24; background: rgba(8,8,12,0.95);">
+          <div style="display: flex; align-items: center; gap: 24px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 16px; letter-spacing: -0.5px;">
+              <span style="color: var(--accent);">◆</span> QUADCODE AI
+            </div>
+            <div id="sim-main-nav" style="display: flex; gap: 18px; font-size: 13px; color: #a1a1aa;">
+              <span style="cursor:pointer;" class="nav-sim-item" data-target="home">Features</span>
+              <span style="cursor:pointer;" class="nav-sim-item" data-target="home">Integrations</span>
+              <!-- A1 Pricing in Nav -->
+              <span id="sim-nav-pricing" style="cursor:pointer; font-weight:700; color:#fff;" class="nav-sim-item" data-target="pricing">
+                Pricing <span class="badge badge-orange" style="font-size: 9px; padding: 1px 5px;">−25%</span>
+              </span>
+              <span style="cursor:pointer;" class="nav-sim-item" data-target="home">Download</span>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <!-- A6 Upgrade Pill (When Logged In) -->
+            <button id="sim-upgrade-pill" class="pill" style="display: none; cursor:pointer;" onclick="switchSimView('pricing')">
+              Upgrade · −25%
+            </button>
+
+            <!-- User Status in Sim -->
+            <div id="sim-auth-guest" style="display: flex; gap: 8px;">
+              <button class="nav-btn" style="color:#fff;" onclick="switchSimView('signup')">Sign in</button>
+              <button class="nav-btn primary" onclick="switchSimView('signup')">Start for free</button>
+            </div>
+
+            <div id="sim-auth-user" style="display: none; align-items: center; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; background: #181822; padding: 4px 10px; border-radius: 20px; border: 1px solid #2a2a38; cursor: pointer;" onclick="openSimPopup('topup')">
+                <span style="color: var(--accent); font-weight: 700;">💎 766.52 QCC</span>
+                <span style="color: var(--text-muted);">+</span>
+              </div>
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #ff6a00, #a855f7); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:11px; cursor:pointer;" onclick="switchSimView('lk')">
+                DE
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIM VIEW CONTAINER -->
+        <div id="sim-content" style="padding: 24px; min-height: 600px;">
+          <!-- Dynamically filled by JS -->
+        </div>
+
+        <!-- OVERLAY MODALS (A4, A8, A9, A10, A11, A13, A14) -->
+        <div class="ov" id="sim-overlay" style="display: none;">
+          <div class="modal" id="sim-modal-content">
+            <!-- Modal Body -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Inspector & Details Panel -->
+      <div class="side-panel">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+          <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary);">Инспектор внедрений (A1–A18)</h3>
+          <span class="badge badge-orange" id="active-item-badge">A1</span>
+        </div>
+
+        <div id="inspector-details">
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;" id="insp-title">Pricing в навигации + /pricing</h4>
+          <div style="font-size: 12px; color: var(--accent); margin-bottom: 10px;" id="insp-surface">Шапка сайта (гость) и футер, роут /pricing</div>
+
+          <div style="background: rgba(11,13,17,0.7); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px; margin-bottom: 12px; font-size: 12.5px;">
+            <div style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; margin-bottom: 2px;">Что видит автор:</div>
+            <div id="insp-sees" style="color: var(--text-primary); line-height: 1.4;">—</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; font-size: 11.5px;">
+            <div style="background: var(--bg-main); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="color: var(--text-muted); display: block;">Целевая метрика:</span>
+              <strong style="color: var(--green);" id="insp-impact">—</strong>
+            </div>
+            <div style="background: var(--bg-main); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="color: var(--text-muted); display: block;">Волна релиза:</span>
+              <strong style="color: var(--blue);" id="insp-wave">—</strong>
+            </div>
+          </div>
+
+          <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 14px;">
+            <span style="color: var(--text-muted);">Что нужно от команды:</span>
+            <div id="insp-reqs" style="margin-top: 3px; font-weight: 500; color: #fff;">—</div>
+          </div>
+        </div>
+
+        <!-- Mini List of all 18 items -->
+        <div style="border-top: 1px solid var(--border); padding-top: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Все внедрения Части A:</div>
+          <div style="display: flex; flex-direction: column; gap: 4px; max-height: 310px; overflow-y: auto; padding-right: 4px;" id="items-quick-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    let currentMode = 'after'; // 'now' or 'after'
+    let currentView = 'home'; // 'home', 'signup', 'welcome', 'pricing', 'lk', 'checkout'
+    let activeItem = 'A1';
+    let timerSeconds = 299; // 5 min demo timer
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initApp();
+      startDemoTimer();
+    });
+
+    function initApp() {
+      // Setup Mode buttons
+      document.getElementById('btn-mode-after').addEventListener('click', () => setMode('after'));
+      document.getElementById('btn-mode-now').addEventListener('click', () => setMode('now'));
+
+      // Setup Flow buttons
+      document.querySelectorAll('.flow-step-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchSimView(btn.dataset.view);
+        });
+      });
+
+      // Setup Popup buttons
+      document.querySelectorAll('.pop-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          openSimPopup(btn.dataset.pop);
+        });
+      });
+
+      // Nav items
+      document.querySelectorAll('.nav-sim-item').forEach(item => {
+        item.addEventListener('click', () => {
+          if (item.dataset.target) switchSimView(item.dataset.target);
+        });
+      });
+
+      // Populate Items list in sidebar
+      const listContainer = document.getElementById('items-quick-list');
+      window.CL_DATA.partA.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'item';
+        row.id = `item-row-${item.id}`;
+        row.style.padding = '6px 10px';
+        row.style.marginBottom = '4px';
+        row.innerHTML = `
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-weight: 700; font-size: 12px; color: ${item.id === activeItem ? 'var(--accent)' : 'inherit'}">${item.id} · ${item.name}</span>
+            <span class="badge ${item.wave === 1 ? 'badge-orange' : (item.wave === 2 ? 'badge-yellow' : 'badge-blue')}" style="font-size: 9px; padding: 1px 5px;">W${item.wave}</span>
+          </div>
+        `;
+        row.addEventListener('click', () => {
+          selectItem(item.id);
+        });
+        listContainer.appendChild(row);
+      });
+
+      selectItem('A1');
+      renderSimView();
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      document.getElementById('btn-mode-after').classList.toggle('active', mode === 'after');
+      document.getElementById('btn-mode-now').classList.toggle('active', mode === 'now');
+
+      // Update visible elements based on mode
+      const promoStrip = document.getElementById('sim-promo-strip');
+      const pricingNav = document.getElementById('sim-nav-pricing');
+      const upgradePill = document.getElementById('sim-upgrade-pill');
+
+      if (mode === 'now') {
+        promoStrip.style.display = 'none';
+        pricingNav.style.display = 'none'; // No pricing in nav for guest
+        upgradePill.style.display = 'none';
+      } else {
+        promoStrip.style.display = 'flex';
+        pricingNav.style.display = 'inline-block';
+        if (currentView === 'lk') upgradePill.style.display = 'inline-flex';
+      }
+
+      renderSimView();
+    }
+
+    function switchSimView(view) {
+      currentView = view;
+      document.querySelectorAll('.flow-step-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === view);
+      });
+
+      // Update header auth state simulation
+      const authGuest = document.getElementById('sim-auth-guest');
+      const authUser = document.getElementById('sim-auth-user');
+      const upgradePill = document.getElementById('sim-upgrade-pill');
+
+      if (view === 'lk') {
+        authGuest.style.display = 'none';
+        authUser.style.display = 'flex';
+        if (currentMode === 'after') upgradePill.style.display = 'inline-flex';
+      } else {
+        authGuest.style.display = 'flex';
+        authUser.style.display = 'none';
+        upgradePill.style.display = 'none';
+      }
+
+      closeSimPopup();
+      renderSimView();
+
+      // Auto-focus relevant item in inspector
+      if (view === 'pricing') selectItem('A1');
+      else if (view === 'signup') selectItem('A2');
+      else if (view === 'welcome') selectItem('A4');
+      else if (view === 'lk') selectItem('A12');
+      else if (view === 'checkout') selectItem('A18');
+    }
+
+    function renderSimView() {
+      const sim = document.getElementById('sim-content');
+
+      if (currentView === 'home') {
+        sim.innerHTML = renderHomeHtml();
+      } else if (currentView === 'signup') {
+        sim.innerHTML = renderSignupHtml();
+      } else if (currentView === 'welcome') {
+        sim.innerHTML = renderWelcomeHtml();
+      } else if (currentView === 'pricing') {
+        sim.innerHTML = renderPricingHtml();
+      } else if (currentView === 'lk') {
+        sim.innerHTML = renderLkHtml();
+      } else if (currentView === 'checkout') {
+        sim.innerHTML = renderCheckoutHtml();
+      }
+    }
+
+    // 1. HOME VIEW
+    function renderHomeHtml() {
+      if (currentMode === 'now') {
+        return `
+          <div style="text-align: center; padding: 60px 20px;">
+            <div class="badge badge-yellow" style="margin-bottom: 14px;">Сейчас: Нет публичных цен и офферов</div>
+            <h1 style="font-size: 42px; font-weight: 800; line-height: 1.1; margin-bottom: 16px;">
+              Build Complete AI Software & Media with Intelligent Agents
+            </h1>
+            <p style="font-size: 16px; color: var(--text-secondary); max-width: 620px; margin: 0 auto 28px;">
+              Autonomous agent network for coding, visual content generation and automation. All models included.
+            </p>
+            <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 40px;">
+              <button class="nav-btn primary" style="padding: 10px 24px; font-size: 14px;" onclick="switchSimView('signup')">Download Quadcode</button>
+              <button class="nav-btn" style="border-color: var(--border); padding: 10px 20px;" onclick="switchSimView('signup')">Sign Up</button>
+            </div>
+            <div style="border: 1px dashed var(--bad); padding: 12px; border-radius: 8px; max-width: 500px; margin: 0 auto; font-size: 12px; color: var(--bad);">
+              ❌ В навигации нет ссылки Pricing. Роут /pricing выдаёт 404. Пользователь не может узнать цену до регистрации!
+            </div>
+          </div>
+        `;
+      } else {
+        return `
+          <div style="text-align: center; padding: 40px 20px;">
+            <div class="badge badge-orange" style="margin-bottom: 14px;">A5: Промо-акция активна · A16: Соцдоказательство</div>
+            <h1 style="font-size: 44px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px;">
+              Build Complete AI Software & Media with Intelligent Agents
+            </h1>
+            <p style="font-size: 16px; color: var(--text-secondary); max-width: 660px; margin: 0 auto 24px;">
+              Autonomous agent network for coding, visual content generation and automation. All 18+ leading AI models included.
+            </p>
+            <div style="display: flex; gap: 14px; justify-content: center; margin-bottom: 30px;">
+              <button class="nav-btn primary" style="padding: 12px 28px; font-size: 14px;" onclick="switchSimView('signup')">Start Free · Get 200 QCC</button>
+              <button class="nav-btn" style="border-color: var(--border-light); padding: 12px 24px; color:#fff;" onclick="switchSimView('pricing')">View Pricing & Plans →</button>
+            </div>
+
+            <!-- Social Proof Strip -->
+            <div style="display: flex; gap: 32px; justify-content: center; font-size: 13px; color: var(--text-muted); padding: 14px; background: rgba(20,23,31,0.5); border-radius: 12px; max-width: 760px; margin: 0 auto 30px;">
+              <div>⚡ <strong>84 210</strong> генераций за неделю</div>
+              <div>👥 <strong>14 000+</strong> авторов в Discord</div>
+              <div>⭐ <strong>4.9 / 5</strong> рейтинг моделей</div>
+            </div>
+
+            <!-- A16 Community Challenge Box -->
+            <div style="background: linear-gradient(135deg, rgba(255,106,0,0.1) 0%, rgba(139,92,246,0.1) 100%); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 18px 24px; max-width: 760px; margin: 0 auto; text-align: left; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <span class="badge badge-orange" style="margin-bottom: 4px;">Community Challenge · Live Now</span>
+                <div style="font-weight: 800; font-size: 15px; color: #fff;">AI Short Film Creator Contest — призовой фонд 50 000 QCC</div>
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">Создайте видео с Sonic AI и заберите до 10 000 бонусных кредитов.</div>
+              </div>
+              <button class="nav-btn primary" style="font-size: 12px; white-space:nowrap;" onclick="switchSimView('signup')">Участвовать →</button>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // 2. SIGNUP VIEW
+    function renderSignupHtml() {
+      if (currentMode === 'now') {
+        return `
+          <div style="max-width: 440px; margin: 40px auto; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px;">
+            <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">Sign Up for Quadcode</h2>
+            <div class="form">
+              <input class="inp" placeholder="First Name" value="Emil">
+              <input class="inp" placeholder="Last Name" value="Drop">
+              <input class="inp" placeholder="Email" value="creator@example.com">
+              <input class="inp" type="password" placeholder="Password" value="••••••••••••">
+              <input class="inp" type="password" placeholder="Confirm Password" value="••••••••••••">
+              <div class="turn"><i></i> <span>Cloudflare Turnstile verification...</span></div>
+              <input class="inp" placeholder="Referral / Promo code (optional)">
+              <button class="btn pri" style="margin-top: 10px;" onclick="switchSimView('welcome')">Create Account</button>
+            </div>
+            <div style="margin-top: 16px; font-size: 11.5px; color: var(--bad); border-top: 1px solid var(--border); padding-top: 10px;">
+              ⚠️ 5 обязательных полей, подтверждение пароля и капча без какого-либо стимула. Высокий процент отвала!
+            </div>
+          </div>
+        `;
+      } else {
+        return `
+          <div style="max-width: 440px; margin: 30px auto; background: var(--card); border: 1px solid var(--accent); border-radius: var(--radius-lg); padding: 28px; box-shadow: 0 10px 40px var(--accent-glow);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <span class="badge badge-orange">A2: Стимул + Упрощение</span>
+              <span style="font-size: 12px; color: var(--green); font-weight: 700;">🎁 +200 QCC Free</span>
+            </div>
+            <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 6px;">Create Account — Get 200 QCC Free</h2>
+            <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 18px;">
+              Начните создавать видео, дизайн и софт сразу после входа. Без привязки карты.
+            </p>
+
+            <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+              <button class="btn" style="flex:1; font-size:12px; background: #202533; border-color:#363e52;" onclick="switchSimView('welcome')">Google</button>
+              <button class="btn" style="flex:1; font-size:12px; background: #202533; border-color:#363e52;" onclick="switchSimView('welcome')">GitHub</button>
+            </div>
+
+            <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-bottom: 14px;">ИЛИ ЧЕРЕЗ EMAIL</div>
+
+            <div class="form">
+              <input class="inp" placeholder="Work or Personal Email" value="creator@studio.com">
+              <input class="inp" type="password" placeholder="Password (min 8 chars)" value="••••••••••••">
+              <button class="btn acc" style="margin-top: 8px; font-weight: 700;" onclick="switchSimView('welcome')">Create Account & Claim 200 QCC →</button>
+            </div>
+
+            <!-- Value checklist -->
+            <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 6px;">
+              <div style="color: var(--green);">✓ Все 18+ моделей доступны без ограничений</div>
+              <div style="color: var(--green);">✓ Без ввода банковской карты</div>
+              <div style="color: var(--yellow);">✨ +100 QCC за корпоративную почту</div>
+            </div>
+
+            <div style="margin-top: 12px; text-align: center; font-size: 12px; color: var(--text-muted);">
+              Есть аккаунт? <span style="color:#fff; cursor:pointer;" onclick="switchSimView('welcome')">Войти</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // 3. WELCOME VIEW
+    function renderWelcomeHtml() {
+      return `
+        <div style="max-width: 580px; margin: 30px auto; background: var(--card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 32px; text-align: center;">
+          <div class="badge badge-orange" style="margin-bottom: 12px;">A4: Welcome Starter Kit (72 часа)</div>
+          <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 8px;">Добро пожаловать в Quadcode AI! 🎉</h2>
+          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">
+            Вам начислено <strong>200 приветственных QCC</strong>. Для уверенного старта мы активировали для вас персональный Starter Kit:
+          </p>
+
+          <div style="background: rgba(255,106,0,0.08); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 20px; margin-bottom: 24px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span style="font-weight: 800; font-size: 16px; color:#fff;">Starter Kit: +25% QCC к первой покупке</span>
+              <span class="badge badge-orange">STARTER25</span>
+            </div>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
+              При покупке плана Monthly ($20) вы получите <strong>1 250 QCC</strong> вместо 1 000. Этого хватит на ~600 картинок Nano Banana Pro или ~50 роликов Veo 3!
+            </p>
+            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+              <span>Честный обратный отсчёт акции:</span>
+              <span class="timer" style="font-size: 14px;">71:59:42</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; justify-content: center;">
+            <button class="nav-btn primary" style="padding: 12px 24px; font-weight: 700;" onclick="switchSimView('pricing')">Забрать +25% в тарифах →</button>
+            <button class="nav-btn" style="border-color: var(--border-light);" onclick="switchSimView('lk')">Пропустить в ЛК</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // 4. PRICING VIEW
+    function renderPricingHtml() {
+      const isAfter = currentMode === 'after';
+      return `
+        <div style="max-width: 1200px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 32px;">
+            <div class="badge ${isAfter ? 'badge-orange' : 'badge-yellow'}" style="margin-bottom: 10px;">
+              ${isAfter ? 'A1: Публичные тарифы · A7: Редизайн карточек' : 'Сейчас: Закрытый роут, сухие карточки'}
+            </div>
+            <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 8px;">Выберите тариф для ваших задач</h2>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-bottom: 20px;">
+              Единый баланс кредитов QCC. Все модели доступны на каждом плане.
+            </p>
+
+            <div class="toggle">
+              <button class="${isAfter ? '' : 'on'}">Monthly</button>
+              <button class="${isAfter ? 'on' : ''}">Yearly <span style="color:var(--acc); font-weight:800;">−25%</span></button>
+            </div>
+          </div>
+
+          <!-- Plans Grid -->
+          <div class="plans">
+            <!-- Free -->
+            <div class="plan">
+              <div class="name">Free / Promo</div>
+              <div class="price">$0 <small>/ навсегда</small></div>
+              <p style="font-size: 12px; color: var(--text-muted);">Для ознакомления с интерфейсом</p>
+              <ul>
+                <li>200 QCC при регистрации</li>
+                <li>Все модели доступны</li>
+                <li>Базовая скорость</li>
+                <li class="x">Без переноса баланса</li>
+              </ul>
+              <button class="btn" style="margin-top:auto;" onclick="switchSimView('signup')">Попробовать</button>
+            </div>
+
+            <!-- Starter -->
+            <div class="plan ${isAfter ? '' : 'hot'}">
+              <div class="name">Starter</div>
+              <div class="price">${isAfter ? '$15' : '$20'} <small>/ мес</small></div>
+              <div class="outc">
+                <span>1 000 QCC / мес</span>
+                ${isAfter ? '<span style="color:var(--acc);">+250 QCC Starter Kit</span>' : ''}
+              </div>
+              ${isAfter ? '<p style="font-size: 11px; color: var(--text-muted);">≈ 500 картинок Nano Banana Pro или 40 видеоклипов</p>' : ''}
+              <ul>
+                <li>1 000 QCC каждый месяц</li>
+                <li>Все 18+ моделей</li>
+                <li>Перенос остатка 1 месяц</li>
+                <li>Стандартная поддержка</li>
+              </ul>
+              <button class="btn pri" style="margin-top:auto;" onclick="switchSimView('checkout')">Выбрать Starter</button>
+            </div>
+
+            <!-- Plus / Best Value -->
+            <div class="plan ${isAfter ? 'hot' : ''}">
+              ${isAfter ? '<span class="badge acc top">MOST POPULAR · SAVE $60</span>' : ''}
+              <div class="name">Creator Plus</div>
+              <div class="price">${isAfter ? '$75' : '$100'} <small>/ мес</small></div>
+              <div class="outc">
+                <span>5 000 QCC / мес</span>
+                <span style="color:var(--ok);">Экономия $300/год</span>
+              </div>
+              ${isAfter ? '<p style="font-size: 11px; color: var(--text-muted);">≈ 2 500 картинок или 200 видео Veo 3 / Sora</p>' : ''}
+              <ul>
+                <li>5 000 QCC каждый месяц</li>
+                <li>Приоритетная очередь агентов</li>
+                <li>Неограниченный перенос остатка</li>
+                <li>Выделенный сервер сборки</li>
+              </ul>
+              <button class="btn acc" style="margin-top:auto; font-weight:800;" onclick="switchSimView('checkout')">Оформить Creator Plus</button>
+            </div>
+
+            <!-- Pro -->
+            <div class="plan">
+              <div class="name">Studio Pro</div>
+              <div class="price">${isAfter ? '$150' : '$200'} <small>/ мес</small></div>
+              <div class="outc"><span>10 000 QCC / мес</span></div>
+              <ul>
+                <li>10 000 QCC каждый месяц</li>
+                <li>Максимальный приоритет</li>
+                <li>Командный доступ (3 места)</li>
+                <li>Персональный менеджер</li>
+              </ul>
+              <button class="btn" style="margin-top:auto;" onclick="switchSimView('checkout')">Выбрать Pro</button>
+            </div>
+          </div>
+
+          <!-- Trust Row -->
+          <div style="display: flex; justify-content: center; gap: 32px; margin-top: 40px; padding: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted);">
+            <div>🔒 Безопасная оплата через Stripe</div>
+            <div>⚡ Мгновенное зачисление QCC</div>
+            <div>🔄 Отмена подписки в 1 клик в любое время</div>
+            <div>💳 Поддержка карт всех стран, Apple Pay и Google Pay</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // 5. LK VIEW
+    function renderLkHtml() {
+      const isAfter = currentMode === 'after';
+      return `
+        <div class="acct">
+          <div class="sb">
+            <div class="u">
+              <div class="av"></div>
+              <div>
+                <strong style="font-size: 13px;">Drop Emil</strong>
+                <div style="font-size: 11px; color: var(--text-muted);">Active Creator</div>
+              </div>
+            </div>
+            <a href="#" class="on">Overview & Billing</a>
+            <a href="#">Plans & Credits</a>
+            <a href="#">Usage Analytics</a>
+            <a href="#">Settings</a>
+            <a href="#">Desktop App</a>
+          </div>
+
+          <div class="main">
+            <div class="bal">
+              <div class="card">
+                <span class="small mut">Текущий баланс</span>
+                <div style="font-size: 26px; font-weight: 800; color: #fff; margin: 4px 0;">766.52 QCC</div>
+                <div class="bar" style="margin-bottom: 8px;"><i style="width: 76%;"></i></div>
+                <span class="xs mut">План продлевается 7 октября 2026</span>
+              </div>
+              <div class="card">
+                <span class="small mut">Активный тариф</span>
+                <div style="font-size: 20px; font-weight: 700; margin: 4px 0;">Starter Monthly ($20/мес)</div>
+                <div style="display: flex; gap: 8px; margin-top: 10px;">
+                  <button class="btn acc sm" onclick="openSimPopup('change')">Change Plan (Proration)</button>
+                  <button class="btn sm" onclick="openSimPopup('topup')">Top Up Balance</button>
+                  <button class="btn sm danger" onclick="openSimPopup('cancel')">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Value Realization Box (A12) -->
+            ${isAfter ? `
+              <div class="card" style="border-color: rgba(255,106,0,0.3); background: rgba(255,106,0,0.03);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                  <span class="badge badge-orange">A12: Value-Realization Dashboard</span>
+                  <span style="font-size: 12px; color: var(--green); font-weight: 700;">Экономия с подпиской: $64.00</span>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; font-size: 12px; margin-bottom: 14px;">
+                  <div style="background: var(--bg-main); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="color: var(--text-muted);">Создано картинок:</div>
+                    <div style="font-size: 18px; font-weight: 800; color:#fff;">142</div>
+                  </div>
+                  <div style="background: var(--bg-main); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="color: var(--text-muted);">Создано видео:</div>
+                    <div style="font-size: 18px; font-weight: 800; color:#fff;">18</div>
+                  </div>
+                  <div style="background: var(--bg-main); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="color: var(--text-muted);">Часов работы агентов:</div>
+                    <div style="font-size: 18px; font-weight: 800; color:#fff;">34.5 ч</div>
+                  </div>
+                  <div style="background: var(--bg-main); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="color: var(--text-muted);">Моделей опробовано:</div>
+                    <div style="font-size: 18px; font-weight: 800; color:#fff;">7 из 18</div>
+                  </div>
+                </div>
+                <div style="font-size: 12px; color: var(--text-secondary);">
+                  💡 <strong>Вы ещё не пробовали:</strong> Sonic Video Lip-sync и Claude Opus. <a href="#" style="color:var(--accent); text-decoration:underline;">Запустить демо →</a>
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Credit Packs Table -->
+            <div class="card">
+              <h3 style="font-size: 15px; margin-bottom: 12px;">Пакеты пополнения кредитов</h3>
+              <div class="packs">
+                <div class="pack">
+                  <div class="n">100 QCC</div>
+                  <div class="p">$2.00 ($1 = 50 QCC)</div>
+                  <button class="btn sm" style="width:100%; margin-top:8px;" onclick="openSimPopup('topup')">Купить</button>
+                </div>
+                <div class="pack">
+                  <div class="n">500 QCC</div>
+                  <div class="p">$10.00 ($1 = 50 QCC)</div>
+                  <button class="btn sm" style="width:100%; margin-top:8px;" onclick="openSimPopup('topup')">Купить</button>
+                </div>
+                <div class="pack ${isAfter ? 'hot' : ''}">
+                  ${isAfter ? '<span class="badge lime" style="position:absolute; top:-8px; right:8px;">POPULAR</span>' : ''}
+                  <div class="n">1 000 QCC</div>
+                  <div class="p">$20.00 ($1 = 50 QCC)</div>
+                  <button class="btn sm pri" style="width:100%; margin-top:8px;" onclick="openSimPopup('topup')">Купить</button>
+                </div>
+                <div class="pack">
+                  <div class="n">4 000 QCC</div>
+                  <div class="p">$80.00 ($1 = 50 QCC)</div>
+                  <button class="btn sm" style="width:100%; margin-top:8px;" onclick="openSimPopup('topup')">Купить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // 6. CHECKOUT VIEW
+    function renderCheckoutHtml() {
+      const isAfter = currentMode === 'after';
+      return `
+        <div style="max-width: 520px; margin: 30px auto; background: var(--card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 32px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h2 style="font-size: 20px; font-weight: 800;">Stripe Checkout</h2>
+            <span class="badge badge-green">SSL Encrypted</span>
+          </div>
+
+          <!-- A18 Apple Pay / Google Pay Quick Buttons -->
+          ${isAfter ? `
+            <div style="margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--border);">
+              <div style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">A18: Быстрая оплата в 1 клик</div>
+              <button class="btn" style="width: 100%; background: #000; color: #fff; font-weight: 700; margin-bottom: 8px; border: 1px solid #333;" onclick="alert('Успешная тестовая оплата Apple Pay!')">
+                 Pay
+              </button>
+              <button class="btn" style="width: 100%; background: #fff; color: #000; font-weight: 700;" onclick="alert('Успешная тестовая оплата Google Pay!')">
+                G Pay
+              </button>
+              <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 12px;">ИЛИ БАНКОВСКОЙ КАРТОЙ</div>
+            </div>
+          ` : ''}
+
+          <div style="background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 18px;">
+            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; margin-bottom: 4px;">
+              <span>Creator Plus Yearly ($15/мес)</span>
+              <span>$180.00</span>
+            </div>
+            <div style="font-size: 12px; color: var(--green); display: flex; justify-content: space-between;">
+              <span>Годовая скидка −25%:</span>
+              <span>−$60.00</span>
+            </div>
+            ${isAfter ? `
+              <div style="font-size: 12px; color: var(--accent); display: flex; justify-content: space-between; margin-top: 4px; padding-top: 4px; border-top: 1px dashed var(--border);">
+                <span>Welcome Starter Kit:</span>
+                <span>+1 250 QCC Бонус</span>
+              </div>
+            ` : ''}
+            <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 16px; margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border);">
+              <span>Итого к оплате:</span>
+              <span style="color:#fff;">$180.00</span>
+            </div>
+          </div>
+
+          <div class="form">
+            <input class="inp" placeholder="Card number: 4242 •••• •••• 4242" value="4242 •••• •••• 4242">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <input class="inp" placeholder="MM / YY" value="12 / 28">
+              <input class="inp" placeholder="CVC" value="888">
+            </div>
+            <button class="btn acc" style="margin-top: 10px; font-weight: 800; padding: 12px;" onclick="switchSimView('lk')">Подтвердить и оплатить $180.00 →</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // MODAL POPUPS LOGIC
+    function openSimPopup(type) {
+      const overlay = document.getElementById('sim-overlay');
+      const content = document.getElementById('sim-modal-content');
+      overlay.style.display = 'flex';
+
+      if (type === 'timer') {
+        selectItem('A8');
+        content.innerHTML = `
+          <button class="x" onclick="closeSimPopup()">&times;</button>
+          <div class="badge badge-orange" style="margin-bottom: 8px;">A8: Персональный таймер-оффер</div>
+          <h2>Специальное предложение на 1-й месяц 🔥</h2>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+            Мы заметили, что вы выбираете тариф. Зафиксируйте персональную скидку <strong>−20%</strong> прямо сейчас:
+          </p>
+          <div style="background: rgba(255,106,0,0.1); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; font-size: 16px; font-weight: 800;">
+              <span>Monthly Plan:</span>
+              <span><span class="strike" style="font-size:13px; color:var(--text-muted);">$20.00</span> $16.00</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">До конца действия акции: <span class="timer">04:59</span></div>
+          </div>
+          <button class="btn acc" style="width: 100%; font-weight: 700;" onclick="applyTimerOffer()">Применить скидку −20%</button>
+        `;
+      } else if (type === 'exit') {
+        selectItem('A9');
+        content.innerHTML = `
+          <button class="x" onclick="closeSimPopup()">&times;</button>
+          <div class="badge badge-yellow" style="margin-bottom: 8px;">A9: Exit-Intent спасение сессии</div>
+          <h2>Подождите! Специальный подарок 🎁</h2>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+            Не уходите с пустыми руками. Мы добавили <strong>+300 бонусных QCC</strong> к любому выбранному плану:
+          </p>
+          <div style="background: #191c26; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px; text-align: center;">
+            <div style="font-size: 22px; font-weight: 800; color: var(--green);">+300 QCC</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Автоматически применится в корзине</div>
+          </div>
+          <button class="btn acc" style="width: 100%;" onclick="closeSimPopup(); switchSimView('pricing');">Забрать 300 QCC и продолжить →</button>
+        `;
+      } else if (type === 'topup') {
+        selectItem('A10');
+        content.innerHTML = `
+          <button class="x" onclick="closeSimPopup()">&times;</button>
+          <div class="badge badge-orange" style="margin-bottom: 8px;">A10: Паки кредитов с авто-рефиллом</div>
+          <h2>Пополнение баланса QCC</h2>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
+            Кредиты не сгорают и действуют для всех генераторов.
+          </p>
+          <div class="packs" style="margin-bottom: 16px;">
+            <div class="pack" style="cursor:pointer;"><div class="n">100</div><div class="p">$2.00</div></div>
+            <div class="pack" style="cursor:pointer;"><div class="n">500</div><div class="p">$10.00</div></div>
+            <div class="pack hot" style="cursor:pointer;"><div class="n">1 000</div><div class="p">$20.00</div></div>
+            <div class="pack" style="cursor:pointer;"><div class="n">4 000</div><div class="p">$80.00</div></div>
+          </div>
+          <!-- Auto-refill toggle -->
+          <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 700; font-size: 13px; color: var(--green);">Авто-пополнение баланса</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Пополнять 500 QCC ($10), если остаток < 50 QCC</div>
+            </div>
+            <input type="checkbox" checked style="accent-color: var(--green); width: 18px; height: 18px;">
+          </div>
+          <button class="btn acc" style="width: 100%; font-weight: 700;" onclick="closeSimPopup()">Пополнить 1 000 QCC ($20.00)</button>
+        `;
+      } else if (type === 'change') {
+        selectItem('A11');
+        content.innerHTML = `
+          <button class="x" onclick="closeSimPopup()">&times;</button>
+          <div class="badge badge-blue" style="margin-bottom: 8px;">A11: Смена плана с Prorations</div>
+          <h2>Смена тарифа: Monthly → Yearly</h2>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+            При переходе мы справедливо зачитываем неизрасходованный остаток текущего месяца:
+          </p>
+          <div style="background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px; font-size: 13px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>Годовой план Creator Plus:</span>
+              <span>$180.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; color: var(--green); margin-bottom: 8px;">
+              <span>Зачёт остатка 766 QCC:</span>
+              <span>−$15.33</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 15px; border-top: 1px solid var(--border); padding-top: 8px;">
+              <span>К оплате сегодня:</span>
+              <span style="color: #fff;">$164.67</span>
+            </div>
+          </div>
+          <button class="btn acc" style="width: 100%; font-weight: 700;" onclick="closeSimPopup(); switchSimView('lk');">Подтвердить апгрейд с зачётом ($164.67)</button>
+        `;
+      } else if (type === 'low') {
+        selectItem('A13');
+        content.innerHTML = `
+          <button class="x" onclick="closeSimPopup()">&times;</button>
+          <div class="badge badge-red" style="margin-bottom: 8px;">A13: Нехватка кредитов</div>
+          <h2>Недостаточно QCC для задачи</h2>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
+            Для генерации ролика через Veo 3 требуется <strong>60 QCC</strong>. На вашем балансе осталось <strong>12 QCC</strong>.
+          </p>
+          <div style="background: rgba(255,106,0,0.1); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 12px; margin-bottom: 16px; font-size: 12.5px;">
+            ⚡ <strong>Рекомендация:</strong> Пак 500 QCC за $10 мгновенно решит задачу и оставит запас на ~30 генераций.
+          </div>
+          <button class="btn acc" style="width: 100%; font-weight: 700; margin-bottom: 8px;" onclick="closeSimPopup(); openSimPopup('topup');">Купить 500 QCC ($10)</button>
+          <button class="btn" style="width: 100%;" onclick="closeSimPopup(); switchSimView('pricing');">Посмотреть все тарифы</button>
+        `;
+      } else if (type === 'cancel') {
+        selectItem('A14');
+        content.innerHTML = `
+          <button class="x" onclick="closeSimPopup()">&times;</button>
+          <div class="badge badge-yellow" style="margin-bottom: 8px;">A14: Честный 1-экранный Save-flow</div>
+          <h2>Отмена подписки</h2>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
+            При отмене подписки ваш остаток <strong>766 QCC ($15.33) сгорит</strong> в конце расчетного периода 7 октября 2026.
+          </p>
+          <div style="background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px;">
+            <button class="btn" style="text-align: left; justify-content: flex-start; font-size: 12.5px;" onclick="alert('Напоминание установлено за 3 дня до списания!'); closeSimPopup();">
+              🔔 <strong>Напомнить за 3 дня</strong> до следующего списания
+            </button>
+            <button class="btn" style="text-align: left; justify-content: flex-start; font-size: 12.5px;" onclick="alert('Подписка поставлена на паузу на 1 месяц!'); closeSimPopup();">
+              ⏸️ <strong>Пауза на 1 месяц</strong> (сохранить все накопленные кредиты)
+            </button>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn danger" style="flex: 1;" onclick="alert('Подписка отменена'); closeSimPopup();">Все равно отменить</button>
+            <button class="btn pri" style="flex: 1;" onclick="closeSimPopup()">Оставить подписку</button>
+          </div>
+        `;
+      }
+    }
+
+    function closeSimPopup() {
+      document.getElementById('sim-overlay').style.display = 'none';
+    }
+
+    function applyTimerOffer() {
+      closeSimPopup();
+      document.getElementById('sim-sticky-strip').style.display = 'block';
+      switchSimView('pricing');
+    }
+
+    function selectItem(itemId) {
+      activeItem = itemId;
+      const item = window.CL_DATA.partA.find(x => x.id === itemId);
+      if (!item) return;
+
+      document.getElementById('active-item-badge').textContent = item.id;
+      document.getElementById('insp-title').textContent = item.name;
+      document.getElementById('insp-surface').textContent = item.surface;
+      document.getElementById('insp-sees').textContent = item.sees;
+      document.getElementById('insp-impact').textContent = item.impact;
+      document.getElementById('insp-wave').textContent = `Волна ${item.wave}`;
+      document.getElementById('insp-reqs').textContent = item.reqs;
+
+      document.querySelectorAll('#items-quick-list .item').forEach(el => {
+        el.style.borderColor = el.id === `item-row-${itemId}` ? 'var(--accent)' : 'var(--line)';
+      });
+    }
+
+    function startDemoTimer() {
+      setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          const m = Math.floor(timerSeconds / 60);
+          const s = timerSeconds % 60;
+          const str = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+          const el1 = document.getElementById('promo-timer');
+          const el2 = document.getElementById('sticky-timer-num');
+          if (el1) el1.textContent = str;
+          if (el2) el2.textContent = str;
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿# Create AI Videos from Text & Image | Higgsfield
+[Text] Special offer  @30,16
+[Text] Unlimited Seedance 2.5 at 1080p for 7 days. Available on Scale plan with 30% OFF.  @76,16
+[Button] Get Unlimited Seedance 2.5  @845,12
+[Hyperlink] Higgsfield  @16,36
+[Group] Main  @32,34
+[ListItem] Explore  @32,34
+[ListItem] Image  @66,34
+[ListItem] Video  @94,34
+[ListItem] Audio  @122,34
+[ListItem] MCP  @150,34
+[ListItem] API New  @174,34
+[ListItem] ChatGPT Plugin  @217,34
+[ListItem] Genjutsu  @278,34
+[ListItem] Effects  @316,34
+[ListItem] Cinema Studio  @348,34
+[ListItem] Contests  @406,34
+[ListItem] Marketing Studio  @444,34
+[ListItem] Supercomputer  @510,34
+[ListItem] 3D Jutsu New  @570,34
+[ListItem] Edit  @628,34
+[ListItem] Academy  @648,34
+[ListItem] Community  @688,34
+[ListItem] Plugins  @736,34
+[ListItem] Canvas  @768,34
+[ListItem] Originals  @802,34
+[Button] Search Higgsfield  @722,36
+[Hyperlink] Upgrade30% OFF  @740,36
+[Hyperlink] Enterprise  @797,36
+[Hyperlink] Folder icon Assets  @849,34
+[Image] Folder icon  @852,38
+[Button] Add members  @900,34
+[Button] Notifications  @918,34
+[Button] Account menu  @940,36
+[Image] user profile  @942,38
+[Text] Create Video  @24,62
+[Text] Edit Video  @74,62
+[Text] Motion Control  @114,62
+[Button] GENERAL Seedance 2.5  @20,83
+[Button] Change  @128,86
+[RadioButton] References  @22,154
+[RadioButton] Extend Video  @96,154
+[Button] Add references Image, Video or Audio  @29,193
+[Text] Prompt  @27,256
+[Button] Elements  @26,310
+[Group] On  @72,310
+[Button] Model  @20,332
+[Button] Duration  @20,360
+[Button] Ratio  @78,360
+[Button] Resolution  @126,360
+[Button] Bitrate  @20,384
+[Text] Unlimited mode  @26,416
+[Button] Generate 80 60  @24,436
+[Tab] Page view  @188,60
+[TabItem] History  @188,60
+[TabItem] How it works  @229,60
+[Text] MAKE VIDEOS IN ONE CLICK  @204,131
+[Text] 250+ presets for camera control, framing, and high-quality VFX - or use the general preset for manual control.  @204,160
+[Image] Add image  @204,185
+[Text] Upload or generate an image to start your animation  @204,384
+[Group] Choose preset  @452,185
+[Text] Pick a preset to control your image movement  @452,384
+[Group] Get video  @700,185
+[Text] Click generate to create your final animated video!  @700,384
+[Hyperlink] Don’t know where to start? Go to the Academy and start your journey  @180,469
+[List] Typeahead menu  @-
+[Group] Notifications Alt+T  @-
+[Group] Notifications  @-

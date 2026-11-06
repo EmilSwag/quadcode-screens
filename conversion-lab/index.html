@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversion Lab — Quadcode vs Higgsfield</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="lab-header">
+    <div class="brand-row">
+      <div class="brand-badge">LAB</div>
+      <div class="brand-title">Conversion Lab · Quadcode vs Higgsfield</div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-btn active">📊 Исследование & Карта</a>
+      <a href="one/index.html" class="nav-btn" style="border-color:#ff6a00;color:#ff8c3b">📑 Все блоки (One-Page)</a>
+      <a href="site.html" class="nav-btn">🌐 Часть A: Сайт и ЛК (A1–A18)</a>
+      <a href="ide.html" class="nav-btn">💻 Часть B: Внутри IDE (B1–B12)</a>
+      <a href="../offers-live/index.html" class="nav-btn">🔗 Offers Live</a>
+      <a href="lab/index.html" class="nav-btn" style="border-color:#ff9442;color:#ff9442" title="Кликабельный флоу гость → покупка, 4 персоны, 12 слоёв IDE, принятые дефолты">⚡ Интерактив (lab/)</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero Box -->
+    <section class="hero-box">
+      <h1 class="hero-title">Conversion Lab: Разбор воронок Quadcode vs Higgsfield</h1>
+      <p class="hero-subtitle">
+        Практическое исследование конверсионных воронок и внедрение 30 маркетинговых механик (18 на сайте/ЛК + 12 в IDE).
+        Продуктовая модель Quadcode (все модели доступны всем, покупка кредитов QCC) остаётся неизменной — добавляются только продающие и удерживающие слои.
+      </p>
+
+      <div class="tldr-list" id="tldr-container">
+        <!-- Rendered from CL_DATA.specMeta.tldr -->
+      </div>
+    </section>
+
+    <!-- Stats Ribbon -->
+    <section class="stats-ribbon">
+      <div class="stat-card">
+        <div class="stat-num" style="color: var(--accent);">18</div>
+        <div class="stat-label">Внедрений Сайт & ЛК (A1–A18)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color: var(--blue);">12</div>
+        <div class="stat-label">Триггеров в IDE (B1–B12)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color: var(--yellow);">20</div>
+        <div class="stat-label">Поверхностей в аудите QC ↔ HF</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color: var(--green);">4</div>
+        <div class="stat-label">Волны поэтапного запуска</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color: #fff;">0</div>
+        <div class="stat-label">Изменений в ядре биллинга QCC</div>
+      </div>
+    </section>
+
+    <!-- Quick Navigation to Prototypes -->
+    <section class="section-card" style="background: linear-gradient(180deg, var(--card) 0%, rgba(20,23,31,0.9) 100%);">
+      <div class="section-head">
+        <div class="section-title">🚀 Интерактивные прототипы внедрений</div>
+        <div class="badge badge-orange">Clickable Demos</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        <div class="stat-card" style="border-color: var(--border-light); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span class="badge badge-orange">Часть A</span>
+              <span style="font-size: 12px; color: var(--text-muted);">18 механик</span>
+            </div>
+            <h3 style="font-size: 18px; margin-bottom: 8px;">Сайт и Личный кабинет</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+              Интерактивный переключатель «Сейчас / Как станет». Публичный роут /pricing для гостей, форма Sign Up с 200 QCC бонусом, Welcome Starter Kit, таймер-оффер 5 мин, паки с авто-рефиллом, справедливый Change Plan и 1-экранный Save-flow отмены.
+            </p>
+          </div>
+          <a href="site.html" class="nav-btn primary" style="text-align: center; justify-content: center;">Открыть прототип Сайта и ЛК →</a>
+        </div>
+
+        <div class="stat-card" style="border-color: var(--border-light); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span class="badge badge-blue">Часть B</span>
+              <span style="font-size: 12px; color: var(--text-muted);">12 триггеров</span>
+            </div>
+            <h3 style="font-size: 18px; margin-bottom: 8px;">Внутри десктопного IDE</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+              Живой скриншот IDE v0.17441 с 12 интерактивными триггерами: баннер Starter Kit над чатом, карточка ошибки 402 прямо в переписке, тост выбора тяжелой модели, кросс-селл апселл, пилюля активного промокода в статус-баре и меню профиля как магазин.
+            </p>
+          </div>
+          <a href="ide.html" class="nav-btn primary" style="background: var(--blue); text-align: center; justify-content: center;">Открыть прототип внутри IDE →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audit Section: QC vs HF -->
+    <section class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span>1. Сравнение поверхностей: Higgsfield vs Quadcode сейчас</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="nav-btn active filter-gap-btn" data-gap="all">Все (20)</button>
+          <button class="nav-btn filter-gap-btn" data-gap="критичный">Критичные</button>
+          <button class="nav-btn filter-gap-btn" data-gap="высокий">Высокие</button>
+          <button class="nav-btn filter-gap-btn" data-gap="средний">Средние</button>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="data-table" id="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 40px;">#</th>
+              <th style="width: 220px;">Поверхность / Механика</th>
+              <th style="width: 300px;">Higgsfield (Бенчмарк)</th>
+              <th style="width: 300px;">Quadcode (Сейчас)</th>
+              <th style="width: 110px;">Разрыв</th>
+              <th style="width: 140px;">Скриншоты</th>
+            </tr>
+          </thead>
+          <tbody id="comparison-tbody">
+            <!-- Dynamically populated from CL_DATA.comparison -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Real Proof Screenshots -->
+    <section class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span>2. Живые доказательства: Quadcode Live (25.09)</span>
+        </div>
+        <div class="badge badge-yellow">Аудит текущего состояния</div>
+      </div>
+      <div class="gal" id="gal-qc">
+        <figure><img src="assets/qc/home.png" loading="lazy" class="view-shot-img" data-title="QC: Главная quadcode.ai для гостя"><figcaption>Главная quadcode.ai — гость: нет ссылки Pricing</figcaption></figure>
+        <figure><img src="assets/qc/signup.png" loading="lazy" class="view-shot-img" data-title="QC: Форма регистрации"><figcaption>Sign Up: 5 полей, подтверждение пароля, Turnstile</figcaption></figure>
+        <figure><img src="assets/qc/signin.png" loading="lazy" class="view-shot-img" data-title="QC: Вход"><figcaption>Sign In: гость не видит офферов</figcaption></figure>
+        <figure><img src="assets/qc/plans-po.png" loading="lazy" class="view-shot-img" data-title="QC: /profile/plans"><figcaption>ЛК /profile/plans: сухие карточки без выгод</figcaption></figure>
+        <figure><img src="assets/qc/po-3.png" loading="lazy" class="view-shot-img" data-title="QC: Меню моделей в IDE"><figcaption>IDE: меню моделей без акционных бейджей</figcaption></figure>
+        <figure><img src="assets/qc/ide-po.png" loading="lazy" class="view-shot-img" data-title="QC: Баннер в IDE"><figcaption>IDE: стандартный баннер без оффера</figcaption></figure>
+      </div>
+
+      <div class="section-head" style="margin-top: 32px;">
+        <div class="section-title">
+          <span>3. Живые доказательства: Higgsfield Benchmark</span>
+        </div>
+        <div class="badge badge-green">Лучшие практики рынка</div>
+      </div>
+      <div class="gal" id="gal-hf">
+        <figure><img src="assets/hf/home-guest.png" loading="lazy" class="view-shot-img" data-title="HF: Главная"><figcaption>Higgsfield главная: промо-полоса с таймером</figcaption></figure>
+        <figure><img src="assets/hf/pricing-guest.png" loading="lazy" class="view-shot-img" data-title="HF: Pricing"><figcaption>Higgsfield Pricing: годовой план, бейджи, сравнение</figcaption></figure>
+        <figure><img src="assets/hf/78-change-commitment-modal.png" loading="lazy" class="view-shot-img" data-title="HF: Подтверждение тарифа"><figcaption>HF: окно подтверждения тарифа со скидкой</figcaption></figure>
+        <figure><img src="assets/hf/89-exit-intent-62pct.png" loading="lazy" class="view-shot-img" data-title="HF: Персональный таймер"><figcaption>HF: персональный таймер 07:58 на скидку 62%</figcaption></figure>
+        <figure><img src="assets/hf/06-topup.png" loading="lazy" class="view-shot-img" data-title="HF: Докупка кредитов"><figcaption>HF: 7 паков докупки с авто-рефиллом</figcaption></figure>
+        <figure><img src="assets/hf/74-cancel-flow-screen5.png" loading="lazy" class="view-shot-img" data-title="HF: Save flow"><figcaption>HF: 1-экранный Save-flow отмены подписки</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Dependencies and Impact Matrix -->
+    <section class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span>4. Карта зависимостей и метрик внедрения</span>
+        </div>
+        <div class="badge badge-green">Production Roadmap</div>
+      </div>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+        Что конкретно затрагивает каждое изменение: сайт, личный кабинет, бэкенд/биллинг, клиент IDE или CRM/email-рассылки, и на какую ключевую метрику оно направлено.
+      </p>
+
+      <div style="overflow-x: auto;">
+        <table class="data-table" id="dependency-table">
+          <thead>
+            <tr>
+              <th style="width: 240px;">Механика</th>
+              <th style="text-align: center; width: 80px;">Сайт FE</th>
+              <th style="text-align: center; width: 80px;">ЛК FE</th>
+              <th style="text-align: center; width: 100px;">Бэк / Биллинг</th>
+              <th style="text-align: center; width: 90px;">IDE клиент</th>
+              <th style="text-align: center; width: 90px;">CRM / Email</th>
+              <th>Целевая метрика</th>
+            </tr>
+          </thead>
+          <tbody id="dependency-tbody">
+            <!-- Dynamically populated from CL_DATA.dependencyMatrix -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4 Waves Section -->
+    <section class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span>5. 4 Волны запуска (Release Waves)</span>
+        </div>
+        <div class="badge badge-blue">Implementation Schedule</div>
+      </div>
+      <div class="waves-grid" id="waves-grid">
+        <!-- Dynamically populated from CL_DATA.waves -->
+      </div>
+    </section>
+
+    <!-- Wave Interactive Dev Backlog: Waves 1, 2, 3 & 4 -->
+    <section class="section-card" id="wave-backlog-card" style="border-left: 3px solid var(--accent);">
+      <div class="section-head">
+        <div class="section-title">
+          <span id="backlog-title">⚡ Инженерный бэклог внедрения (Волны 1, 2, 3 и 4)</span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <div style="display: flex; gap: 6px; background: rgba(0,0,0,0.25); padding: 3px; border-radius: 8px;">
+            <button class="nav-btn active filter-wave-select-btn" data-wave="w1">Волна 1: Quick Wins (13)</button>
+            <button class="nav-btn filter-wave-select-btn" data-wave="w2">Волна 2: TTL Promos (6)</button>
+            <button class="nav-btn filter-wave-select-btn" data-wave="w3">Волна 3: Billing & Retention (7)</button>
+            <button class="nav-btn filter-wave-select-btn" data-wave="w4">Волна 4: Retention & Community (5)</button>
+            <button class="nav-btn filter-wave-select-btn" data-wave="all">Все (31)</button>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <button class="nav-btn active filter-w-area-btn" data-area="all">Все зоны</button>
+            <button class="nav-btn filter-w-area-btn" data-area="web">Сайт & ЛК</button>
+            <button class="nav-btn filter-w-area-btn" data-area="ide">Внутри IDE</button>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+        Готовый к спринту бэклог для веб- и десктоп-команды. Кликните по задаче, чтобы раскрыть критерии приёмки и ответственного. Спеки: <a href="docs/wave1-engineering-spec.md" target="_blank" style="color:var(--accent); text-decoration: underline;">docs/wave1-engineering-spec.md</a>, <a href="docs/wave2-engineering-spec.md" target="_blank" style="color:var(--accent); text-decoration: underline;">docs/wave2-engineering-spec.md</a>, <a href="docs/wave3-engineering-spec.md" target="_blank" style="color:var(--accent); text-decoration: underline;">docs/wave3-engineering-spec.md</a> и <a href="docs/wave4-engineering-spec.md" target="_blank" style="color:var(--accent); text-decoration: underline;">docs/wave4-engineering-spec.md</a>.
+      </p>
+
+      <div style="display: grid; gap: 10px;" id="w-tickets-container">
+        <!-- Rendered by JS from CL_DATA.wave1Tickets & CL_DATA.wave2Tickets -->
+      </div>
+    </section>
+
+    <!-- Questions for PO -->
+    <section class="section-card" style="border-left: 3px solid var(--accent);">
+      <div class="section-head">
+        <div class="section-title">
+          <span>6. Принятые значения по умолчанию (утверждено PO 25.09)</span>
+        </div>
+        <div class="badge badge-green">Decided</div>
+      </div>
+      <ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: var(--text-primary);">
+        <li><strong>Welcome-кредиты:</strong> 200 QCC (≈$4) при регистрации + 100 QCC за рабочую почту.</li>
+        <li><strong>Starter Kit:</strong> +25% кредитов к первой покупке (1 250 вместо 1 000 за $20), 72 часа, один раз на аккаунт, серверный дедлайн. Цену не трогаем.</li>
+        <li><strong>Auto-refill и Prorations:</strong> в бэклог биллинга сейчас (Волна 3), параллельно с фронтендом Волны 1. Auto-refill по умолчанию выключен: порог 100 QCC → пак 500 за $10, не чаще 2 раз в месяц. Перерасчёт: остаток × $0.02/QCC, апгрейд сразу, даунгрейд с даты продления.</li>
+        <li><strong>Реферальная программа:</strong> +300 QCC приглашённому при регистрации и +300 QCC пригласившему после первой оплаты друга; до 10 друзей в месяц; gift cards $20 / $50 / $100.</li>
+      </ol>
+      <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 12px;">Значения зашиты в интерактивной версии: <a href="lab/index.html" style="color: var(--accent);">lab/ → раздел 6</a> (единый источник <code>lab/data.js → LAB.cfg</code>); спека — <a href="docs/conversion-lab-spec.md" target="_blank" style="color:var(--accent); text-decoration: underline;">docs/conversion-lab-spec.md</a>, раздел 8.</p>
+    </section>
+  </main>
+
+  <!-- Screenshot Modal Viewer -->
+  <div class="modal-overlay" id="image-modal">
+    <div class="modal-dialog">
+      <div class="modal-dialog-header">
+        <div class="modal-dialog-title" id="modal-title">Скриншот</div>
+        <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-dialog-body">
+        <img src="" alt="" class="modal-dialog-img" id="modal-img">
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = window.CL_DATA;
+
+      // 1. Render TL;DR
+      const tldrContainer = document.getElementById('tldr-container');
+      data.specMeta.tldr.forEach((text, i) => {
+        const item = document.createElement('div');
+        item.className = 'tldr-item';
+        item.innerHTML = `
+          <span class="tldr-icon">▸</span>
+          <span>${text}</span>
+        `;
+        tldrContainer.appendChild(item);
+      });
+
+      // 2. Render Comparison Table
+      const tbody = document.getElementById('comparison-tbody');
+      function renderComparison(filterGap = 'all') {
+        tbody.innerHTML = '';
+        data.comparison.forEach(row => {
+          if (filterGap !== 'all' && row.gap !== filterGap) return;
+
+          let badgeClass = 'badge-yellow';
+          let rowClass = 'table-row-medium';
+          if (row.gap === 'критичный') { badgeClass = 'badge-red'; rowClass = 'table-row-critical'; }
+          else if (row.gap === 'высокий') { badgeClass = 'badge-orange'; rowClass = 'table-row-high'; }
+          else if (row.gap === 'низкий') { badgeClass = 'badge-green'; rowClass = 'table-row-low'; }
+
+          const tr = document.createElement('tr');
+          tr.className = rowClass;
+          tr.innerHTML = `
+            <td style="color: var(--text-muted); font-weight: 600;">${row.id}</td>
+            <td style="font-weight: 600;">${row.name}</td>
+            <td style="color: #cbd5e1;">${row.hf}</td>
+            <td style="color: var(--text-secondary);">${row.qc}</td>
+            <td><span class="badge ${badgeClass}">${row.gap}</span></td>
+            <td>
+              <div style="display: flex; gap: 6px;">
+                <button class="item-thumb-btn view-shot-btn" data-title="Higgsfield: ${row.name}" data-src="${row.hfShot}">HF</button>
+                <button class="item-thumb-btn view-shot-btn" data-title="Quadcode: ${row.name}" data-src="${row.qcShot}">QC</button>
+              </div>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        // Re-attach screenshot click events
+        document.querySelectorAll('.view-shot-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            openShotModal(btn.dataset.title, btn.dataset.src);
+          });
+        });
+      }
+
+      renderComparison('all');
+
+      // Filter comparison table
+      document.querySelectorAll('.filter-gap-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-gap-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderComparison(btn.dataset.gap);
+        });
+      });
+
+      // Gallery click events
+      document.querySelectorAll('.view-shot-img').forEach(img => {
+        img.addEventListener('click', () => {
+          openShotModal(img.dataset.title, img.src);
+        });
+      });
+
+      // 3. Render Dependency Matrix
+      const depTbody = document.getElementById('dependency-tbody');
+      data.dependencyMatrix.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-weight: 600;">${row.item}</td>
+          <td style="text-align: center;">${row.siteFE ? '<span style="color:var(--green)">✓</span>' : '<span style="color:var(--text-muted)">—</span>'}</td>
+          <td style="text-align: center;">${row.lkFE ? '<span style="color:var(--green)">✓</span>' : '<span style="color:var(--text-muted)">—</span>'}</td>
+          <td style="text-align: center;">${row.backend ? '<span style="color:var(--accent); font-weight:700;">✓</span>' : '<span style="color:var(--text-muted)">—</span>'}</td>
+          <td style="text-align: center;">${row.ideClient ? '<span style="color:var(--blue); font-weight:700;">✓</span>' : '<span style="color:var(--text-muted)">—</span>'}</td>
+          <td style="text-align: center;">${row.crm ? '<span style="color:var(--yellow); font-weight:700;">✓</span>' : '<span style="color:var(--text-muted)">—</span>'}</td>
+          <td style="color: var(--text-primary); font-weight: 500;">${row.metric}</td>
+        `;
+        depTbody.appendChild(tr);
+      });
+
+      // 4. Render Waves
+      const wavesGrid = document.getElementById('waves-grid');
+      data.waves.forEach(wave => {
+        const box = document.createElement('div');
+        box.className = 'wave-box';
+        box.innerHTML = `
+          <div class="wave-header">
+            <span>Волна ${wave.number}</span>
+            <span class="badge ${wave.number === 1 ? 'badge-orange' : 'badge-blue'}">${wave.items.length} задач</span>
+          </div>
+          <div style="font-weight: 700; font-size: 13px; margin-bottom: 4px;">${wave.title}</div>
+          <div class="wave-desc">${wave.desc}</div>
+          <div class="wave-pills">
+            ${wave.items.map(it => `<span class="wave-pill">${it}</span>`).join('')}
+          </div>
+        `;
+        wavesGrid.appendChild(box);
+      });
+
+      // 4b. Render Wave Tickets (Wave 1, 2 & 3)
+      let currentWave = 'w1';
+      let currentArea = 'all';
+
+      const wContainer = document.getElementById('w-tickets-container');
+      function renderWaveTickets() {
+        wContainer.innerHTML = '';
+        let pool = [];
+        if (currentWave === 'w1') pool = data.wave1Tickets || [];
+        else if (currentWave === 'w2') pool = data.wave2Tickets || [];
+        else if (currentWave === 'w3') pool = data.wave3Tickets || [];
+        else if (currentWave === 'w4') pool = data.wave4Tickets || [];
+        else pool = [...(data.wave1Tickets || []), ...(data.wave2Tickets || []), ...(data.wave3Tickets || []), ...(data.wave4Tickets || [])];
+
+        pool.forEach(ticket => {
+          if (currentArea !== 'all' && ticket.area !== currentArea) return;
+
+          const card = document.createElement('div');
+          card.style.background = 'rgba(18,20,28,0.7)';
+          card.style.border = '1px solid var(--border)';
+          card.style.borderRadius = 'var(--radius-md)';
+          card.style.padding = '14px 18px';
+          card.style.cursor = 'pointer';
+          card.style.transition = 'all 0.15s ease';
+
+          const isWeb = ticket.area === 'web';
+          const badgeClass = isWeb ? 'badge-orange' : 'badge-blue';
+
+          card.innerHTML = `
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="badge ${badgeClass}" style="font-weight: 800;">${ticket.id}</span>
+                <span style="font-weight: 700; font-size: 14px; color: #fff;">${ticket.name}</span>
+                <span class="badge ${ticket.priority.includes('P0') ? 'badge-red' : 'badge-yellow'}" style="font-size: 10px;">${ticket.priority}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: 12px;">
+                <span style="color: var(--text-muted);">${ticket.owner}</span>
+                <span class="badge badge-green" style="font-size: 11px;">${ticket.estimate}</span>
+                <span class="w-toggle-arrow" style="color: var(--text-muted); font-size: 11px;">▼</span>
+              </div>
+            </div>
+            <div style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.4;">${ticket.goal}</div>
+            <div class="w-details-panel" style="display: none; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); font-size: 12px;">
+              <div style="margin-bottom: 8px;"><strong style="color: var(--text-muted);">Поверхность:</strong> <span style="color: #cbd5e1;">${ticket.surface}</span></div>
+              <div style="background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 6px; border-left: 2px solid var(--green);">
+                <strong style="color: var(--green); display: block; margin-bottom: 3px;">Критерии приёмки (Acceptance Criteria):</strong>
+                <span style="color: #e2e8f0; line-height: 1.45;">${ticket.acceptance}</span>
+              </div>
+            </div>
+          `;
+
+          card.addEventListener('click', () => {
+            const panel = card.querySelector('.w-details-panel');
+            const arrow = card.querySelector('.w-toggle-arrow');
+            const isOpen = panel.style.display !== 'none';
+            panel.style.display = isOpen ? 'none' : 'block';
+            arrow.textContent = isOpen ? '▼' : '▲';
+            card.style.borderColor = isOpen ? 'var(--border)' : (isWeb ? 'var(--accent)' : 'var(--blue)');
+          });
+
+          wContainer.appendChild(card);
+        });
+      }
+
+      renderWaveTickets();
+
+      // Wave selector listeners
+      document.querySelectorAll('.filter-wave-select-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-wave-select-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentWave = btn.dataset.wave;
+          renderWaveTickets();
+        });
+      });
+
+      // Area selector listeners
+      document.querySelectorAll('.filter-w-area-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-w-area-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentArea = btn.dataset.area;
+          renderWaveTickets();
+        });
+      });
+
+      // 5. Screenshot Modal Logic
+      const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalTitle = document.getElementById('modal-title');
+      const closeBtn = document.getElementById('modal-close-btn');
+
+      function openShotModal(title, src) {
+        modalTitle.textContent = title;
+        modalImg.src = src;
+        modal.classList.add('active');
+      }
+
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') modal.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

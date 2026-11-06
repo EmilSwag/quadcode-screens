@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>In-app monetization — Quadcode AI desktop · Surfaces, triggers, offers</title>
+<meta name="description" content="Where payment offers live inside the Quadcode desktop app, what triggers each modal, and how offers adapt to the selected model, plan and balance.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="light.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="https://quadcode.ai">
+      <span class="mark"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="#fff"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="#fff" opacity=".85"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="#fff" opacity=".85"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="#fff" opacity=".6"/></svg></span>
+      quadcode.ai <span class="crumb">/ in-app monetization</span>
+    </a>
+    <nav class="main">
+      <a href="#today">Today</a>
+      <a href="#map">Surfaces</a>
+      <a href="#scenarios">Scenarios</a>
+      <a href="#logic">Offer logic</a>
+      <a href="#payments">Payments</a>
+      <a href="#popups">Popups</a>
+      <a href="#rules">Rules</a>
+      <a href="#verified">Verified</a>
+      <a href="#plan">Test plan</a>
+    </nav>
+    <div class="hdr-right">
+      <a class="btn btn-ghost btn-sm" href="../pricing/index.html">Pricing page</a>
+      <a class="btn btn-primary btn-sm" href="#scenarios">See the modals</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><b>DESKTOP APP</b> Monetization system · v1</span>
+        <h1>Every moment of intent <span class="serif grad-text">gets an offer</span></h1>
+        <p class="sub">Ten payment surfaces, twenty-nine scenes and one in-app store inside the Quadcode desktop app. Mirrored from Higgsfield's paid funnel, adapted to an agent workspace where people ship films, key art, games and apps — and priced from a single config shared with the pricing page.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#scenarios">Walk the scenarios</a>
+          <a class="btn btn-ghost btn-lg" href="#map">Open the surface map</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>6×</b><span>contextual paywall vs. generic upgrade prompt<br><em>12% vs 2% conversion</em></span></div>
+        <div class="stat"><b>+18%</b><span>upgrades when premium models are gated<br><em>model-level "Plus only" badges</em></span></div>
+        <div class="stat"><b>15–30%</b><span>shift to annual when annual is default<br><em>with "save $X" line</em></span></div>
+        <div class="stat"><b>20–34%</b><span>of cancellations saved by a win-back offer<br><em>pause · downgrade · discount</em></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TODAY: LIVE FUNNEL AUDIT ===== -->
+<section id="today">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">00 · Today, read from the live code</span>
+      <h2>Why the current checkout loses buyers</h2>
+      <p>Before redesigning anything we read the live quadcode.ai plans page and checkout code (23.09.2026). Seven leaks, each linked to the scene that closes it.</p>
+    </div>
+    <ol class="leaks" id="leaks"></ol>
+    <div class="card path">
+      <div class="path-row"><span class="pt">Today<small>6 steps · 2 apps · job left behind</small></span><ol id="pathToday"></ol></div>
+      <div class="path-row new"><span class="pt">New<small>3 steps · one window · job kept</small></span><ol id="pathNew"></ol></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SURFACE MAP ===== -->
+<section id="map">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">01 · Surfaces</span>
+      <h2>Where offers live in the app</h2>
+      <p>One workspace screen. Ten places that can ask for money — each with its own moment, so they never compete for attention at the same time.</p>
+    </div>
+    <div class="map-grid">
+      <div class="frame" id="mapFrame"></div>
+      <ol class="legend" id="mapLegend"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENARIOS ===== -->
+<section id="scenarios">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">02 · Triggers → modals</span>
+      <h2>What fires, when, and what it shows</h2>
+      <p>Each scene is the real workspace at the moment the trigger fires. The modal is rendered exactly as it should ship — copy, price, options, escape hatch.</p>
+    </div>
+    <div class="scene-nav" id="sceneNav"></div>
+    <div id="scenes"></div>
+  </div>
+</section>
+
+<!-- ===== OFFER LOGIC ===== -->
+<section id="logic">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">03 · Adaptive offers</span>
+      <h2>The offer follows the model</h2>
+      <p>The headline offer is chosen by what the user just selected — not by a global campaign. Same modal shell, different first card.</p>
+    </div>
+    <div class="logic-grid">
+      <div class="card">
+        <div class="card-h">Selected model → headline offer</div>
+        <table class="matrix" id="modelMatrix"></table>
+      </div>
+      <div class="card">
+        <div class="card-h">Segment → price shown</div>
+        <table class="matrix" id="segmentMatrix"></table>
+        <div class="note">Price per credit in packs is always above the next plan tier, so packs never cannibalize subscriptions. Annual is preselected everywhere.</div>
+        <div class="card-h" style="margin-top:22px">Today in v0.17441 → what changes</div>
+        <ul class="gap" id="gapList"></ul>
+      </div>
+    </div>
+    <div class="logic-grid three">
+      <div class="card" id="packsCard"></div>
+      <div class="card" id="passesCard"></div>
+      <div class="card" id="timerCard"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAYMENTS (Higgsfield payments audit, 23.09) ===== -->
+<section id="payments">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">04 · Payments</span>
+      <h2>Every way to pay, every thing to buy</h2>
+      <p>Checked against the Higgsfield help center and the live Quadcode code on 23–24.09. Quadcode today takes cards only, through one Stripe card field, and every purchase happens on the web page. Higgsfield adds Apple Pay and bank payments, auto-refill, passes, boosts, per-seat team plans and a 24-hour Unlimited start. We ship all of them inside the app.</p>
+    </div>
+    <div class="card">
+      <div class="card-h">Payment methods</div>
+      <table class="matrix pay" id="payMethods"></table>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <div class="card-h">What a user can buy, and where the app offers it</div>
+      <table class="matrix pay" id="payPaths"></table>
+    </div>
+    <div class="logic-grid three pay-rules" id="payRules"></div>
+  </div>
+</section>
+
+<!-- ===== POPUP MAP ===== -->
+<section id="popups">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">05 · Popup map</span>
+      <h2>Which popup fires, when, and which one wins</h2>
+      <p>All 29 scenes on one board, ordered by where the user is. When two popups want the same moment, the priority ladder decides; the frequency rules keep it to one interruption per session.</p>
+    </div>
+    <div class="lanes" id="popupLanes"></div>
+    <div class="logic-grid">
+      <div class="card"><div class="card-h">Priority when two popups collide</div><ol class="ladder" id="popupLadder"></ol></div>
+      <div class="card"><div class="card-h">Frequency rules</div><ul class="freq" id="popupFreq"></ul></div>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <div class="card-h">Every trigger in one table</div>
+      <table class="matrix trig" id="popupTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RULES ===== -->
+<section id="rules">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">06 · Offer stack rules</span>
+      <h2>What we copy, what we refuse</h2>
+      <p>Higgsfield runs four offers on one screen and hides cancellation at the bottom of a six-screen page. We take the mechanics that convert and skip the ones that generate chargebacks.</p>
+    </div>
+    <div class="rules-grid" id="rulesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== VERIFIED ON HIGGSFIELD ===== -->
+<section id="verified">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">07 · Verified 23–24.09.2026</span>
+      <h2>Every scene maps to a live Higgsfield surface</h2>
+      <p>Walked as a paying Plus subscriber in real browser sessions (23–24.09): composer, result view, store, subscription page, usage, cancellation save-flow, plan switching, auto-refill, affiliate. Nothing here is guessed — each row names the screen it was copied from.</p>
+    </div>
+    <div class="verified-grid">
+      <div class="card">
+        <div class="card-h">Our scene → their surface</div>
+        <table class="matrix vmap" id="verifiedMap"></table>
+      </div>
+      <div class="card">
+        <div class="card-h">Seen live → where it lives now</div>
+        <ul class="gap" id="newMechanics"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEST PLAN ===== -->
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-title left">
+      <span class="eyebrow">08 · Rollout &amp; test plan</span>
+      <h2>Ship order by expected revenue impact</h2>
+      <p>Price structure moves revenue most, then trial mechanics, then placement, then copy. We ship in that order and measure each step before the next.</p>
+    </div>
+    <div class="phases" id="phases"></div>
+    <div class="kpis" id="kpis"></div>
+  </div>
+</section>
+
+<!-- ===== FINAL ===== -->
+<section class="final">
+  <div class="wrap">
+    <h2>One config. <span class="serif grad-text">Ten surfaces.</span></h2>
+    <p class="sub">Prices, credit costs and pack ladders come from the same CONFIG as the public pricing page — change a number once, every modal updates.</p>
+    <div class="hero-cta center">
+      <a class="btn btn-primary btn-lg" href="../pricing/index.html">Open pricing page</a>
+      <a class="btn btn-ghost btn-lg" href="#map">Back to surface map</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Quadcode AI · Internal design deliverable · Desktop app monetization v1</div>
+    <div><a href="../pricing/index.html">Pricing page</a><a href="https://quadcode.ai">quadcode.ai</a></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

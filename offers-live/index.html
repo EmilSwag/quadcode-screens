@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadcode AI — все офферы в IDE: экран, когда появляется, куда ведёт</title>
+<link rel="icon" href="assets/logos/quadcode.svg">
+<link rel="stylesheet" href="page.css?v=3">
+<link rel="stylesheet" href="gallery.css?v=3">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img src="assets/logos/quadcode.svg" alt=""><b>Quadcode AI</b><span class="tag">Офферы в IDE</span>
+  <nav><a href="../index.html" style="opacity: 0.85;">← Хаб прототипов</a><a href="../conversion-lab/index.html" style="color: #ff9442; font-weight: 700;">Conversion Lab</a><a href="#states">Экраны</a><a href="#triggers">Где и когда</a><a href="#rules">Правила</a><a href="site.html">Сайт и сценарии</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <h1>Все офферы внутри Quadcode AI: <em>экран, когда появляется, куда ведёт</em></h1>
+  <p>На каждой карточке — реальный экран приложения с оффером, условие показа, частота и кнопка. Все модели открыты всем, поэтому офферы только про кредиты: бонусные кредиты, коды, пополнение и годовой тариф. Красная рамка — куда нажимает человек.</p>
+  <div class="stats" id="stats"></div>
+</div></section>
+
+<section class="sec" id="states"><div class="wrap">
+  <h2>Экраны с оффером</h2>
+  <p class="lead">«Сейчас в приложении» — как экран выглядит сегодня. «Как предлагаем» — тот же баннер с более сильным текстом и кнопкой. Клик по экрану открывает его на весь экран, стрелки листают.</p>
+  <div class="g-bar" id="fg"></div>
+  <div class="g-bar" id="fs"></div>
+  <div class="g-list" id="list"></div>
+</div></section>
+
+<section class="sec" id="triggers"><div class="wrap">
+  <h2>Где и когда появляется каждый оффер</h2>
+  <p class="lead">Одна строка — один экран. «Экран» прокручивает к карточке.</p>
+  <div class="tbw"><table class="tb" id="tb"></table></div>
+</div></section>
+
+<section class="sec" id="rules"><div class="wrap">
+  <h2>Правила показа</h2>
+  <div class="g-rules" id="rl"></div>
+</div></section>
+
+<footer class="foot"><div class="wrap">Экран — реальный скриншот Quadcode AI v0.17441. Баннер, окно входа, меню моделей и окно профиля в режиме «Сейчас в приложении» — с реальными текстами приложения. Цены: Monthly от 1,000 кредитов за $20 до 15,000 за $300, Yearly $180. Сверить с приложением: окно ввода кода, сетку пакетов пополнения, сумму бонуса за регистрацию.</div></footer>
+
+<div class="g-lb" id="lb">
+  <div class="g-lbbar"><div class="g-lbtx"><span class="g-lbt"></span><span class="g-lbw"></span></div><button class="g-prev">← Назад</button><button class="g-next">Дальше →</button><button class="g-lbx">Закрыть</button></div>
+  <div class="g-lbshot"><div class="g-cv"></div></div>
+</div>
+
+<script src="states.js?v=3"></script>
+<script src="gallery.js?v=3"></script>
+</body>
+</html>

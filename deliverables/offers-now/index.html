@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadcode AI · Часть 2. Офферы без правки продукта</title>
+<link rel="icon" href="../../assets/logos/quadcode.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ide.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../index.html"><img src="../../assets/logos/quadcode.svg" alt="">Quadcode AI</a>
+  <nav class="nav">
+    <a href="../../index.html">Часть 1</a>
+    <a class="on" href="#">Часть 2</a>
+    <a href="#ide">Экраны IDE</a>
+    <a href="#table">Итоговая таблица</a>
+    <a href="#rules">Проверки</a>
+  </nav>
+  <div class="right"><span class="chip hot">Без правки продукта</span></div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Часть 2 · офферы</span>
+  <h1>Офферы, которые запускаем <em>без правки продукта</em></h1>
+  <p class="lead">Только то, что уже есть: баннер над чатом, кнопка ввода кода, меню моделей с ценами, окно профиля с кнопкой Deposit, тарифы и пакеты на сайте. Все экраны ниже — настоящая IDE Quadcode AI. Поверх неё показано, что, где и когда появляется.</p>
+  <div class="stats">
+    <div class="stat"><b>6</b><span>экранов настоящей IDE</span></div>
+    <div class="stat"><b>9</b><span>офферов</span></div>
+    <div class="stat"><b>4</b><span>состояния баннера над чатом</span></div>
+    <div class="stat"><b>0</b><span>правок в коде IDE</span></div>
+  </div>
+  <div class="cta-row">
+    <a class="btn primary" href="#ide">Смотреть экраны IDE</a>
+    <a class="btn ghost" href="#table">Итоговая таблица</a>
+  </div>
+</div></section>
+
+<section class="sec" id="ide"><div class="wrap">
+  <div class="sec-head">
+    <h2><span class="num">01</span>Где это в IDE</h2>
+    <p>Экраны идут по пути пользователя: от бесплатных кредитов до пополнения. Цифры на экране — номера офферов из итоговой таблицы. Нажми на оффер справа, чтобы увидеть его строку в таблице.</p>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="ide-grid" id="grid">
+    <div class="stage">
+      <div class="fit"><div class="canvas"><div class="shot"></div><div class="veil"></div><div id="ovl"></div></div></div>
+      <div class="stage-bar">
+        <span class="real"><span class="dot-live"></span>Настоящий скрин IDE Quadcode AI v0.17441, белая тема. Баннер, картинки баннера и окно профиля взяты из файлов приложения: размеры и тексты как в продукте.</span>
+        <button class="zoom" id="zoom">На весь экран</button>
+      </div>
+    </div>
+    <aside class="panel" id="panel"></aside>
+  </div>
+</div></section>
+
+<section class="sec alt" id="table"><div class="wrap">
+  <div class="sec-head">
+    <h2><span class="num">02</span>Итоговая таблица офферов</h2>
+    <p>Где, когда и в каком виде появляется каждый оффер. «Текст сейчас» — уже работает в продукте. «Текст, предложение» — наш вариант. Буквы справа открывают экран IDE.</p>
+  </div>
+  <div class="tbl-wrap">
+    <table class="final">
+      <thead><tr>
+        <th>Оффер</th><th>Где появляется</th><th>Когда</th><th>В каком виде</th><th>Что настраиваем</th><th>Что меряем</th><th>Проверить до запуска</th><th>Экран</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="sec" id="rules"><div class="wrap">
+  <div class="sec-head">
+    <h2><span class="num">03</span>Проверки до запуска</h2>
+    <p>Что нашли в файлах IDE и на сайте. Без этих проверок оффер может сломаться или стать нечестным.</p>
+  </div>
+  <div class="rules" id="rules-grid"></div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Quadcode AI · Часть 2 · офферы без правки продукта</span>
+  <span>Первая часть лежит без изменений: <a href="../../index.html">открыть</a></span>
+</div></footer>
+
+<script src="ide.js"></script>
+</body>
+</html>

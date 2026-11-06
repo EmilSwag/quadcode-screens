@@ -1,0 +1,64 @@
+﻿# Create AI Images from Text & Photo | Higgsfield
+[Text] Special offer  @30,16
+[Text] Unlimited Seedance 2.5 at 1080p for 7 days. Available on Scale plan with 30% OFF.  @76,16
+[Button] Get Unlimited Seedance 2.5  @845,12
+[Hyperlink] Higgsfield  @16,36
+[Group] Main  @32,34
+[ListItem] Explore  @32,34
+[ListItem] Image  @66,34
+[ListItem] Video  @94,34
+[ListItem] Audio  @122,34
+[ListItem] MCP  @150,34
+[ListItem] API New  @174,34
+[ListItem] ChatGPT Plugin  @217,34
+[ListItem] Genjutsu  @278,34
+[ListItem] Effects  @316,34
+[ListItem] Cinema Studio  @348,34
+[ListItem] Contests  @406,34
+[ListItem] Marketing Studio  @444,34
+[ListItem] Supercomputer  @510,34
+[ListItem] 3D Jutsu New  @570,34
+[ListItem] Edit  @628,34
+[ListItem] Academy  @648,34
+[ListItem] Community  @688,34
+[ListItem] Plugins  @736,34
+[ListItem] Canvas  @768,34
+[ListItem] Originals  @802,34
+[Button] Search Higgsfield  @722,36
+[Hyperlink] Upgrade30% OFF  @740,36
+[Hyperlink] Enterprise  @797,36
+[Hyperlink] Folder icon Assets  @849,34
+[Image] Folder icon  @852,38
+[Button] Add members  @900,34
+[Button] Notifications  @918,34
+[Button] Account menu  @940,36
+[Image] user profile  @942,38
+[Button] Filter  @842,54
+[Image] image generation  @8,78
+[Text] Last viewed  @73,178
+[Image] image generation  @164,78
+[Text] Failed  @508,639
+[Text] Credits refunded  @554,639
+[Button] View more  @687,728
+[Image] image generation  @716,624
+[Text] Failed  @35,772
+[Text] Credits refunded  @81,772
+[Button] View more  @214,861
+[Text] Failed  @270,772
+[Text] Credits refunded  @317,772
+[Button] View more  @450,861
+[Image] image generation  @480,757
+[Group] Nano Banana Pro  @216,476
+[Button] 3:4  @315,476
+[Group] 1K  @355,476
+[Button] Decrement 1/4 Increment  @390,476
+[Button] Decrement  @396,480
+[Button] Increment  @426,480
+[Text] Unlimited  @454,482
+[Text] Draw  @532,482
+[Button] Scroll settings left  @311,482
+[Button] Scroll settings right  @670,482
+[Button] Generate 2  @680,454
+[List] Typeahead menu  @-
+[Group] Notifications Alt+T  @-
+[Group] Notifications  @-

@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<!-- This is page to be shown in Quadcode.ai ide workspace - SKILL COMPLIANCE REQUIRED
+Any edits must follow skill with alias dev_create_meta_ui_to_work_with_project_data_using_html_js -->
+<html lang="ru">
+<head>
+  <style id="__qc-fouc-guard">body{visibility:hidden!important}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadcode AI · Executive Control Center & Pitch</title>
+  <style>
+    :root {
+      --accent: #ff6a00;
+      --accent-grad: linear-gradient(135deg, #ff6a00, #ff8c3b);
+      --card-bg: var(--qc-color-bg-secondary, #181a20);
+      --body-bg: var(--qc-color-bg-primary, #0f1115);
+      --text-main: var(--qc-color-text-primary, #ffffff);
+      --text-muted: var(--qc-color-text-secondary, #9da3af);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.03);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--body-bg);
+      color: var(--text-main);
+      font-family: var(--qc-var-font-primary, system-ui, -apple-system, sans-serif);
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 24px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-title h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(255, 106, 0, 0.15);
+      color: #ff8c3b;
+      border: 1px solid rgba(255, 106, 0, 0.3);
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ff8c3b;
+    }
+
+    /* TOP VIEW SELECTOR TABS */
+    .top-nav {
+      display: flex;
+      gap: 8px;
+      background: rgba(0,0,0,0.25);
+      padding: 4px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
+    .top-nav-btn {
+      padding: 8px 16px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .top-nav-btn.active {
+      background: var(--card-bg);
+      color: var(--text-main);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* KPI GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .kpi-val {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+    }
+    .kpi-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* SHOWCASE GRID */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .showcase-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .showcase-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 106, 0, 0.4);
+    }
+    .showcase-card.featured {
+      border-color: rgba(255, 106, 0, 0.5);
+      background: radial-gradient(circle at top right, rgba(255,106,0,0.08), transparent 70%), var(--card-bg);
+    }
+    .card-meta {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: #2a2e39;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .card-btn:hover {
+      background: #363c4a;
+    }
+    .card-btn.primary {
+      background: var(--accent-grad);
+      box-shadow: 0 4px 12px rgba(255,106,0,0.3);
+    }
+    .card-btn.primary:hover {
+      filter: brightness(1.1);
+    }
+
+    /* WAVE TABS */
+    .wave-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .wave-tab {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .wave-tab.active {
+      background: rgba(255, 106, 0, 0.15);
+      border-color: rgba(255, 106, 0, 0.4);
+      color: #ff8c3b;
+    }
+
+    /* TICKETS TABLE */
+    .tickets-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .tickets-table th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(0,0,0,0.15);
+    }
+    .tickets-table td {
+      padding: 12px 16px;
+      font-size: 12px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+    .tickets-table tr:last-child td {
+      border-bottom: none;
+    }
+    .tickets-table tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+    .ticket-id {
+      font-family: monospace;
+      font-weight: 700;
+      color: #ff8c3b;
+    }
+    .status-pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 600;
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    .status-pill.spec {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    .action-btn {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .action-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* PITCH STYLES */
+    .pitch-hero {
+      background: linear-gradient(180deg, rgba(255,106,0,0.12) 0%, rgba(24,26,32,0.8) 100%);
+      border: 1px solid rgba(255,106,0,0.3);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pitch-hero h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .pitch-hero p {
+      font-size: 14px;
+      color: #d1d5db;
+      max-width: 900px;
+      line-height: 1.6;
+    }
+    .gap-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .gap-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 3px solid #ef4444;
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .gap-card.fixed {
+      border-left-color: #22c55e;
+    }
+    .gap-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #ef4444;
+    }
+    .gap-card.fixed .gap-badge {
+      color: #4ade80;
+    }
+    .gap-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .gap-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* CREATIVE STUDIO STYLES */
+    .creative-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 16px;
+    }
+    .creative-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .creative-card:hover {
+      border-color: rgba(255, 106, 0, 0.4);
+      transform: translateY(-2px);
+    }
+    .creative-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .creative-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .creative-tag.lumi {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    .creative-tag.sonic {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .creative-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: rgba(128, 128, 128, 0.05);
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid rgba(128, 128, 128, 0.15);
+    }
+    .ctrl-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+    }
+    .ctrl-label {
+      color: var(--text-muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .ctrl-select {
+      background: var(--qc-color-bg-primary, #ffffff);
+      border: 1px solid rgba(128, 128, 128, 0.25);
+      color: var(--qc-color-text-primary, #1e293b);
+      border-radius: 6px;
+      padding: 5px 8px;
+      font-size: 11px;
+      outline: none;
+      width: 100%;
+      max-width: 220px;
+    }
+    .prompt-box {
+      font-size: 11px;
+      color: var(--qc-color-text-primary, #334155);
+      background: rgba(128, 128, 128, 0.06);
+      border-radius: 6px;
+      padding: 8px 10px;
+      border: 1px dashed rgba(128, 128, 128, 0.25);
+      font-family: monospace;
+      line-height: 1.4;
+      max-height: 60px;
+      overflow-y: auto;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #22c55e;
+      color: #000;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-title">
+        <h1>Quadcode AI · Executive Control Center</h1>
+        <span class="badge"><span class="badge-dot"></span> 11 витрин готовы к показу</span>
+      </div>
+
+      <!-- VIEW SELECTOR -->
+      <nav class="top-nav">
+        <button class="top-nav-btn active" id="tab-btn-showcases" onclick="switchMainView('showcases')">🚀 Витрины (11)</button>
+        <button class="top-nav-btn" id="tab-btn-pitch" onclick="switchMainView('pitch')">📊 Executive Pitch</button>
+        <button class="top-nav-btn" id="tab-btn-sprint" onclick="switchMainView('sprint')">⚡ Спринты (31 тикет)</button>
+        <button class="top-nav-btn" id="tab-btn-creative" onclick="switchMainView('creative')">🎨 Creative Studio (Lumi & Sonic)</button>
+      </nav>
+    </header>
+
+    <!-- KPI ROW (Always visible) -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-val" style="color: #ff8c3b;">11</div>
+        <div class="kpi-label">Интерактивных витрин и прототипов</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">31</div>
+        <div class="kpi-label">Специфицированная задача (4 волны внедрения)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val" style="color: #4ade80;">31</div>
+        <div class="kpi-label">Тикетов в разработку (Спринты 1–4)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">+150-200%</div>
+        <div class="kpi-label">Прогнозный рост конверсии воронки в оплату</div>
+      </div>
+    </section>
+
+    <!-- VIEW 1: SHOWCASES & ROADMAP -->
+    <div id="view-showcases">
+      <!-- SHOWCASE LAUNCHER -->
+      <section style="margin-bottom: 24px;">
+        <div class="section-title">
+          <span>🚀 Пульт запуска интерактивных витрин</span>
+        </div>
+        <div class="showcase-grid">
+          <div class="showcase-card featured" style="border-color: rgba(255,106,0,0.6); background: linear-gradient(135deg, rgba(255,106,0,0.12), rgba(255,140,59,0.05));">
+            <div>
+              <div class="card-meta" style="color: #ff8c3b;">🚀 Флагман · ЛК Редизайн</div>
+              <div class="card-title">Workspace v2 (Creator Dashboard)</div>
+              <div class="card-desc">Редизайн ЛК quadcode.ai/profile: 7 категорий, кошелёк, навигация vs Higgsfield Drawer с живым переключением состояний.</div>
+            </div>
+            <button class="card-btn primary" onclick="openView('conversion-lab/workspace/index.html')">Открыть Workspace v2 →</button>
+          </div>
+
+          <div class="showcase-card featured" style="border-color: rgba(59,130,246,0.6); background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(29,78,216,0.05));">
+            <div>
+              <div class="card-meta" style="color: #60a5fa;">🔍 Live Research & Gaps</div>
+              <div class="card-title">Live Paywall Audit: HF vs QC</div>
+              <div class="card-desc">11 поверхностей Higgsfield Live против Quadcode AI + 6 интерактивных мокапов решений (Starter Kit, Top-Up, Cost Badge).</div>
+            </div>
+            <button class="card-btn primary" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);" onclick="openView('paywall-audit/index.html')">Открыть аудит →</button>
+          </div>
+
+          <div class="showcase-card featured">
+            <div>
+              <div class="card-meta">Флагман · Higgsfield бок о бок</div>
+              <div class="card-title">Conversion Lab: One-Page</div>
+              <div class="card-desc">Все экраны и триггеры бок о бок с реальным Higgsfield Live (Checkout, Site, Account, IDE).</div>
+            </div>
+            <button class="card-btn primary" onclick="openView('conversion-lab/one/index.html')">Открыть витрину →</button>
+          </div>
+
+          <div class="showcase-card featured">
+            <div>
+              <div class="card-meta">Интерактивный аудит воронки</div>
+              <div class="card-title">Conversion Lab: Хаб 20 зон</div>
+              <div class="card-desc">Глубокое сравнение 20 поверхностей, галерея доказательств и интерактивный трекер 31 задачи.</div>
+            </div>
+            <button class="card-btn primary" onclick="openView('conversion-lab/index.html')">Открыть хаб →</button>
+          </div>
+
+          <div class="showcase-card">
+            <div>
+              <div class="card-meta">Кликабельный сценарий</div>
+              <div class="card-title">Conversion Lab: Интерактив (lab/)</div>
+              <div class="card-desc">Сквозной путь от гостя до чекаута за 4 разные персоны с принятыми значениями по умолчанию.</div>
+            </div>
+            <button class="card-btn" onclick="openView('conversion-lab/lab/index.html')">Открыть флоу →</button>
+          </div>
+
+          <div class="showcase-card">
+            <div>
+              <div class="card-meta">Десктоп IDE · 20 триггеров</div>
+              <div class="card-title">Offers Live: IDE Triggers</div>
+              <div class="card-desc">20 интерактивных триггеров поверх реального скриншота десктопного приложения Quadcode AI.</div>
+            </div>
+            <button class="card-btn" onclick="openView('offers-live/index.html')">Открыть триггеры →</button>
+          </div>
+
+          <div class="showcase-card">
+            <div>
+              <div class="card-meta">Сайт · Часть 1</div>
+              <div class="card-title">Светлая страница оплаты</div>
+              <div class="card-desc">Редизайн страницы тарифов 1:1 по структуре Higgsfield в фирменных цветах Quadcode.</div>
+            </div>
+            <button class="card-btn" onclick="openView('deliverables/pricing/index.html')">Открыть страницу →</button>
+          </div>
+
+          <div class="showcase-card">
+            <div>
+              <div class="card-meta">Мобильность и сценарии</div>
+              <div class="card-title">In-App Offers (29 сцен)</div>
+              <div class="card-desc">Полная карта монетизации десктопного редактора со всеми модалками и тостами.</div>
+            </div>
+            <button class="card-btn" onclick="openView('deliverables/in-app-offers/index.html')">Открыть сцены →</button>
+          </div>
+
+          <div class="showcase-card">
+            <div>
+              <div class="card-meta">Жизненный цикл</div>
+              <div class="card-title">App States: Игра за новичка</div>
+              <div class="card-desc">Сценарий первых 10 минут пользователя с 0 кредитов и доска из 17 состояний.</div>
+            </div>
+            <button class="card-btn" onclick="openView('deliverables/app-states/index.html')">Открыть симулятор →</button>
+          </div>
+
+          <div class="showcase-card">
+            <div>
+              <div class="card-meta">Партнёрская сеть</div>
+              <div class="card-title">Affiliate & Referral Program</div>
+              <div class="card-desc">Лендинг для креаторов и партнёров с калькулятором дохода и блоком Invite a friend.</div>
+            </div>
+            <button class="card-btn" onclick="openView('deliverables/affiliate/index.html')">Открыть страницу →</button>
+          </div>
+
+          <div class="showcase-card">
+            <div>
+              <div class="card-meta">Часть 2 · Без релиза</div>
+              <div class="card-title">Offers on Today's Product</div>
+              <div class="card-desc">9 готовых офферов на текущем продукте: промокоды, баннеры в приложении, серверные списки тарифов.</div>
+            </div>
+            <button class="card-btn" onclick="openView('deliverables/offers-now/index.html')">Открыть Part 2 →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROADMAP & WAVES TRACKER -->
+      <section>
+        <div class="section-title">
+          <span>📋 План внедрения по волнам (31 инженерная задача)</span>
+        </div>
+        <div class="wave-tabs">
+          <button class="wave-tab active" onclick="switchWave(1, this)">⚡ Волна 1: Quick Wins (13)</button>
+          <button class="wave-tab" onclick="switchWave(2, this)">⏳ Волна 2: Urgency & TTL (6)</button>
+          <button class="wave-tab" onclick="switchWave(3, this)">💳 Волна 3: Advanced Billing (7)</button>
+          <button class="wave-tab" onclick="switchWave(4, this)">🌟 Волна 4: Retention & Community (5)</button>
+        </div>
+
+        <div id="tickets-container"></div>
+      </section>
+    </div>
+
+    <!-- VIEW 2: EXECUTIVE PITCH (ДЛЯ РУКОВОДСТВА) -->
+    <div id="view-pitch" style="display: none; flex-direction: column; gap: 20px;">
+      <div class="pitch-hero">
+        <div class="badge" style="width: fit-content;"><span class="badge-dot"></span> Executive Summary</div>
+        <h2>Как увеличить выручку Quadcode AI в 2–3 раза без изменения продуктового ядра</h2>
+        <p>
+          Мы провели live-аудит реальной воронки Quadcode AI против лидера рынка Higgsfield.ai на действующем Plus-аккаунте.
+          Наши AI-модели (Claude 3.7, Veo 3, Nanobanana) находятся на мировом уровне, но продукт теряет до 70% платящих пользователей из-за 5 элементарных разрывов в базовом онбординге и биллинге.
+        </p>
+      </div>
+
+      <div class="section-title">
+        <span>🚨 Топ-5 утечек воронки Quadcode AI (сегодня vs решение)</span>
+      </div>
+      <div class="gap-cards-grid">
+        <div class="gap-card">
+          <span class="gap-badge">Утечка №1: Гость не видит цены</span>
+          <div class="gap-title">Роут /pricing отдаёт 404</div>
+          <div class="gap-desc">Гость не может узнать стоимость до регистрации. В шапке нет ссылки Pricing. Решение: задача <b>A1</b> — открытый роут цен с тарифами $20 и $180.</div>
+        </div>
+
+        <div class="gap-card">
+          <span class="gap-badge">Утечка №2: Пустая регистрация</span>
+          <div class="gap-title">5 полей и 0 приветственных кредитов</div>
+          <div class="gap-desc">У Higgsfield дают 50 кредитов сразу. В QC — Turnstile капча и сухой вход. Решение: задача <b>A2</b> — вход в 1 клик и +200 QCC Free на 14 дней.</div>
+        </div>
+
+        <div class="gap-card">
+          <span class="gap-badge">Утечка №3: Ошибка 402 в чате IDE</span>
+          <div class="gap-title">«HTTP 402 Payment Required»</div>
+          <div class="gap-desc">Когда кончаются кредиты, новичок видит серый текст ошибки. Решение: задачи <b>B1, B3</b> — интерактивная карточка быстрой докупки пака прямо в чате.</div>
+        </div>
+
+        <div class="gap-card">
+          <span class="gap-badge">Утечка №4: Остановка фоновых задач</span>
+          <div class="gap-title">Нет авто-пополнения баланса</div>
+          <div class="gap-desc">Длинные генерации агентов умирают при исчерпании QCC. Решение: задача <b>A10-R</b> (Волна 3) — авто-рефилл при балансе &lt;100 QCC.</div>
+        </div>
+
+        <div class="gap-card">
+          <span class="gap-badge">Утечка №5: Штраф при смене плана</span>
+          <div class="gap-title">Нет зачёта средств (Prorations)</div>
+          <div class="gap-desc">При переходе с Monthly на Yearly юзер платит полную цену, теряя остаток. Решение: задача <b>A11</b> — справедливый перерасчёт со зачётом $0.02/QCC.</div>
+        </div>
+
+        <div class="gap-card fixed">
+          <span class="gap-badge">Стратегия: 4 волны внедрения</span>
+          <div class="gap-title">Быстрый старт с Волны 1</div>
+          <div class="gap-desc">Волна 1 (13 задач) не требует переделки ядра биллинга и запускается за 1-2 спринта силами фронтенд- и десктоп-разработчиков.</div>
+        </div>
+      </div>
+
+      <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; margin-top: 10px;">
+        <div style="font-size: 15px; font-weight: 700; margin-bottom: 12px; color: #ff8c3b;">📌 Решения, принятые по умолчанию для команды:</div>
+        <ul style="padding-left: 20px; line-height: 1.8; color: #d1d5db;">
+          <li><b>Цены планов:</b> Monthly 1 000 QCC / $20 ($0.02 за кредит), Yearly 12 000 QCC / $180 ($15/мес, скидка 25%).</li>
+          <li><b>Welcome-бонус:</b> 200 QCC при регистрации (срок жизни 14 дней, действует на все модели).</li>
+          <li><b>Starter Kit:</b> +25% QCC (1 000 → 1 250) на первую покупку в первые 72 часа после регистрации.</li>
+          <li><b>Лестница кредит-паков:</b> 100 QCC ($2), 500 QCC ($10), 1 000 QCC ($20), 4 000 QCC ($80).</li>
+          <li><b>Юридическая защита:</b> Честные серверные таймеры без фейкового дефицита, отмена подписки в 1 экран с возможностью паузы.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- VIEW 3: SPRINT BACKLOG -->
+    <div id="view-sprint" style="display: none; flex-direction: column; gap: 16px;">
+      <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <div style="font-size: 16px; font-weight: 700; color: #ff8c3b;" id="sprint-header-title">Спринт 1: Backlog для передачи в разработку (Волна 1 Quick Wins)</div>
+          <div style="font-size: 12px; color: var(--text-muted);" id="sprint-header-desc">13 специфицированных задач · 0 изменений биллинга · Срок реализации: 1–2 спринта</div>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+          <div class="top-nav" style="padding: 2px;">
+            <button class="top-nav-btn active" id="sprint-btn-1" onclick="selectSprint(1)">Спринт 1 (13)</button>
+            <button class="top-nav-btn" id="sprint-btn-2" onclick="selectSprint(2)">Спринт 2 (6)</button>
+            <button class="top-nav-btn" id="sprint-btn-3" onclick="selectSprint(3)">Спринт 3 (7)</button>
+            <button class="top-nav-btn" id="sprint-btn-4" onclick="selectSprint(4)">Спринт 4 (5)</button>
+          </div>
+          <button class="action-btn" id="sprint-doc-btn" onclick="openCurrentSprintDoc()">📄 Файл бэклога</button>
+          <button class="action-btn" onclick="copyCurrentSprintJson()">📋 Экспорт спринта (JSON)</button>
+          <button class="action-btn" onclick="copyAllSprintsJson()" style="border-color: rgba(255,106,0,0.4); color: #ff8c3b;">📦 Все 31 тикет (JSON)</button>
+        </div>
+      </div>
+
+      <!-- SPRINT TICKETS LIST -->
+      <div id="sprint-tickets-list" style="display: flex; flex-direction: column; gap: 10px;"></div>
+    </div>
+
+    <!-- VIEW 4: CREATIVE STUDIO (LUMI & SONIC) -->
+    <div id="view-creative" style="display: none; flex-direction: column; gap: 20px;">
+      <div class="pitch-hero" style="background: linear-gradient(180deg, rgba(168,85,247,0.12) 0%, rgba(24,26,32,0.8) 100%); border-color: rgba(168,85,247,0.3);">
+        <div class="badge" style="width: fit-content; background: rgba(168,85,247,0.15); color: #c084fc; border-color: rgba(168,85,247,0.3);"><span class="badge-dot" style="background: #c084fc;"></span> PO Creative Control Panel</div>
+        <h2>🎨 Creative Studio · Полный контроль генераций под руководством PO</h2>
+        <p>
+          Управляйте созданием креативных материалов для Спринта 1 и воронки конверсий. Выбирайте модели (Lumi для графики, Sonic для видео и звука), настраивайте художественные стили и бюджет QCC, вносите финальные правки в промпты перед запуском.
+        </p>
+      </div>
+
+      <!-- FILTER PILLS -->
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Фильтр раздела:</span>
+        <div class="top-nav" style="padding: 2px;">
+          <button class="top-nav-btn active" id="filter-all" onclick="filterCreative('all', this)">Все материалы (12)</button>
+          <button class="top-nav-btn" id="filter-ide" onclick="filterCreative('ide', this)">🖼 Баннеры IDE (Lumi)</button>
+          <button class="top-nav-btn" id="filter-cases" onclick="filterCreative('cases', this)">💎 Обложки тарифов (Lumi)</button>
+          <button class="top-nav-btn" id="filter-video" onclick="filterCreative('video', this)">🎬 Видео & Тизеры (Sonic)</button>
+          <button class="top-nav-btn" id="filter-audio" onclick="filterCreative('audio', this)">🎵 Аудио & SFX (Sonic)</button>
+        </div>
+      </div>
+
+      <!-- CARDS GRID -->
+      <div class="creative-grid" id="creative-cards-grid"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">Тикет скопирован в буфер обмена!</div>
+
+  <script>
+    const WAVES_DATA = {
+      1: {
+        title: "Волна 1: Quick Wins (Быстрый старт)",
+        desc: "13 задач без изменения ядра биллинга. Готовы к передаче в разработку.",
+        specFile: "conversion-lab/docs/wave1-engineering-spec.md",
+        tickets: [
+          { id: "A1", title: "Публичный роут /pricing и кнопка Pricing в навигации", role: "Web Frontend", days: "2 дн", status: "Готов к спринту" },
+          { id: "A2", title: "Упрощенная форма Sign Up со стимулом +200 QCC Free", role: "Web / Backend", days: "3 дн", status: "Готов к спринту" },
+          { id: "A3", title: "Мостик к регистрации в форме Sign In", role: "Web Frontend", days: "0.5 дн", status: "Готов к спринту" },
+          { id: "A5", title: "Сквозная промо-полоса сайта (Site-wide Banner Strip)", role: "Web Frontend", days: "1 дн", status: "Готов к спринту" },
+          { id: "A6", title: "Оранжевая пилюля Upgrade · −25% в шапке ЛК", role: "Web Frontend", days: "0.5 дн", status: "Готов к спринту" },
+          { id: "A7", title: "Редизайн карточек тарифов /profile/plans", role: "Web Frontend", days: "2 дн", status: "Готов к спринту" },
+          { id: "A10", title: "Лестница кредит-паков с якорями цен (без авто-рефилла)", role: "Web / Billing", days: "1.5 дн", status: "Готов к спринту" },
+          { id: "A13", title: "Модалка нехватки кредитов в веб-редакторе", role: "Web Frontend", days: "1 дн", status: "Готов к спринту" },
+          { id: "B1", title: "Баннер Starter Kit: +25% QCC для новичков в IDE", role: "Desktop Lead", days: "1.5 дн", status: "Готов к спринту" },
+          { id: "B2", title: "Контекстный тост при выборе тяжелой модели в IDE", role: "Desktop Lead", days: "1 дн", status: "Готов к спринту" },
+          { id: "B6", title: "Баннер апгрейда на Yearly для Monthly в IDE", role: "Desktop Lead", days: "1 дн", status: "Готов к спринту" },
+          { id: "B10", title: "Меню профиля в статус-баре как мини-магазин", role: "Desktop Lead", days: "1.5 дн", status: "Готов к спринту" },
+          { id: "B12", title: "Майлстоун-баннер для активных Free-пользователей", role: "Desktop Lead", days: "1 дн", status: "Готов к спринту" }
+        ]
+      },
+      2: {
+        title: "Волна 2: Urgency & Персональные промокоды",
+        desc: "6 задач: серверный TTL промокодов, спасение сессий и тосты нехватки.",
+        specFile: "conversion-lab/docs/wave2-engineering-spec.md",
+        tickets: [
+          { id: "A4", title: "Оффер Starter Kit: первая покупка +25% QCC на 72 часа", role: "Web / Backend", days: "2 дн", status: "Специфицирован" },
+          { id: "A8", title: "Оффер со скидкой −20% на 5 минут при долгом выборе", role: "Web / TTL Service", days: "2.5 дн", status: "Специфицирован" },
+          { id: "A9", title: "Exit-intent модалка спасения корзины", role: "Web Frontend", days: "1.5 дн", status: "Специфицирован" },
+          { id: "B3", title: "Карточка ошибки 402 в чате вместо серого текста", role: "Desktop Lead", days: "2 дн", status: "Специфицирован" },
+          { id: "B7", title: "Пилюля дедлайна оффера в статус-баре IDE", role: "Desktop Lead", days: "1 дн", status: "Специфицирован" },
+          { id: "B9", title: "Win-back баннер при возвращении неактивного юзера", role: "Desktop Lead", days: "1.5 дн", status: "Специфицирован" }
+        ]
+      },
+      3: {
+        title: "Волна 3: Продвинутый биллинг и удержание",
+        desc: "7 задач: авто-рефилл Stripe, Prorations с зачетом QCC, пауза подписки и рефералка.",
+        specFile: "conversion-lab/docs/wave3-engineering-spec.md",
+        tickets: [
+          { id: "A10-R", title: "Авто-рефилл баланса при остатке <100 QCC", role: "Billing Lead", days: "3 дн", status: "Специфицирован" },
+          { id: "A11", title: "Смена тарифа со справедливым перерасчетом (Prorations)", role: "Billing Lead", days: "3.5 дн", status: "Специфицирован" },
+          { id: "A14", title: "Save-flow отмены подписки с возможностью паузы", role: "Web / Billing", days: "2 дн", status: "Специфицирован" },
+          { id: "A15", title: "Реферальная система в ЛК (+300/+300 QCC)", role: "Web / Backend", days: "3 дн", status: "Специфицирован" },
+          { id: "A17", title: "Возврат брошенной корзины (Email триггер через 2 часа)", role: "Backend / CRM", days: "2 дн", status: "Специфицирован" },
+          { id: "A18", title: "Поддержка Apple Pay и Google Pay в чекауте", role: "Billing Lead", days: "2 дн", status: "Специфицирован" },
+          { id: "B4", title: "Предупреждение в чате об остатке баланса <15%", role: "Desktop Lead", days: "1.5 дн", status: "Специфицирован" }
+        ]
+      },
+      4: {
+        title: "Волна 4: Retention, Community & Cross-Sell",
+        desc: "5 задач: дашборд ценности, челленджи сообщества и кросс-селл моделей.",
+        specFile: "conversion-lab/docs/wave4-engineering-spec.md",
+        tickets: [
+          { id: "A12", title: "Value Dashboard: счетчики ценности и истории генераций", role: "Web / Analytics", days: "2.5 дн", status: "Специфицирован" },
+          { id: "A16", title: "Раздел Community Creator Challenge на сайте", role: "Web Frontend", days: "3 дн", status: "Специфицирован" },
+          { id: "B11", title: "Баннер AI Challenge в IDE с призовым пулом", role: "Desktop Lead", days: "1 дн", status: "Специфицирован" },
+          { id: "B5", title: "Кросс-селл следующего шага в чате агентов", role: "Desktop / AI Team", days: "2 дн", status: "Специфицирован" },
+          { id: "B8", title: "Промо-бейдж «Модель недели» со скидкой на вызовы", role: "Desktop / Catalog", days: "1.5 дн", status: "Специфицирован" }
+        ]
+      }
+    };
+
+    const SPRINT1_DETAILS = [
+      {
+        key: "QC-W1-A1",
+        title: "Публичный роут /pricing и кнопка Pricing в навигации сайта",
+        role: "Web Frontend Lead",
+        estimate: "2 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Создать публичный роут /pricing и добавить пункт 'Pricing (-25%)' в шапку сайта без авторизационного редиректа на главную."
+      },
+      {
+        key: "QC-W1-A2",
+        title: "Упрощенный Sign Up с начислением 200 QCC Free",
+        role: "Web Fullstack",
+        estimate: "3 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Регистрация в 2 поля (Email + Password) с бонусом 200 QCC (срок 14 дней). Вход через Google/GitHub в 1 клик."
+      },
+      {
+        key: "QC-W1-A3",
+        title: "Мостик к регистрации в форме Sign In",
+        role: "Web Frontend",
+        estimate: "0.5 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Ссылка 'New to Quadcode? Create account and get 200 QCC free' под формой входа."
+      },
+      {
+        key: "QC-W1-A5",
+        title: "Сквозная промо-полоса сайта (Site-wide Banner Strip)",
+        role: "Web Frontend",
+        estimate: "1 день",
+        proto: "conversion-lab/site.html",
+        desc: "Фиксированная полоса над навигацией: Yearly -25% ($180/год) для гостей или зачёт средств для подписчиков."
+      },
+      {
+        key: "QC-W1-A6",
+        title: "Оранжевая пилюля Upgrade · −25% в шапке ЛК",
+        role: "Web Frontend",
+        estimate: "0.5 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Постоянный стимул перехода на годовой тариф рядом со счётчиком баланса пользователя."
+      },
+      {
+        key: "QC-W1-A7",
+        title: "Редизайн карточек тарифов /profile/plans (дефолт Yearly)",
+        role: "Web Frontend",
+        estimate: "2 дня",
+        proto: "deliverables/pricing/index.html",
+        desc: "Переключатель по умолчанию на Yearly ($180/год), бейдж BEST VALUE, блок материального исхода."
+      },
+      {
+        key: "QC-W1-A10",
+        title: "Лестница кредит-паков с якорями цен (без авто-рефилла)",
+        role: "Web / Billing",
+        estimate: "1.5 дня",
+        proto: "conversion-lab/site.html",
+        desc: "4 пака: 100 QCC ($2), 500 QCC ($10), 1000 QCC ($20), 4000 QCC ($80) с прямым переходом в Stripe Checkout."
+      },
+      {
+        key: "QC-W1-A13",
+        title: "Модалка нехватки кредитов в веб-редакторе",
+        role: "Web Frontend",
+        estimate: "1 день",
+        proto: "conversion-lab/site.html",
+        desc: "Модалка при дефиците баланса с точным расчётом нехватки и быстрой докупкой подходящего пака."
+      },
+      {
+        key: "QC-W1-B1",
+        title: "Баннер Starter Kit: +25% QCC для новичков в IDE",
+        role: "Desktop Lead",
+        estimate: "1.5 дня",
+        proto: "conversion-lab/ide.html",
+        desc: "Баннер над чатом для пользователей <72 часов: +25% QCC на первую покупку."
+      },
+      {
+        key: "QC-W1-B2",
+        title: "Контекстный тост при выборе тяжелой модели в IDE",
+        role: "Desktop Lead",
+        estimate: "1 день",
+        proto: "conversion-lab/ide.html",
+        desc: "Тост при выборе Claude Opus, Veo 3 или Sora с подсказкой расхода кредитов."
+      },
+      {
+        key: "QC-W1-B6",
+        title: "Баннер апгрейда на Yearly для Monthly в IDE",
+        role: "Desktop Lead",
+        estimate: "1 день",
+        proto: "conversion-lab/ide.html",
+        desc: "Баннер перехода на годовой план с выгодой $60 (3 месяца в подарок)."
+      },
+      {
+        key: "QC-W1-B10",
+        title: "Меню профиля в статус-баре как мини-магазин",
+        role: "Desktop Lead",
+        estimate: "1.5 дня",
+        proto: "conversion-lab/ide.html",
+        desc: "Меню аватара: текущий баланс, пополнение в 1 клик, апгрейд на Yearly, реферальная ссылка."
+      },
+      {
+        key: "QC-W1-B12",
+        title: "Майлстоун-баннер для активных Free-пользователей",
+        role: "Desktop Lead",
+        estimate: "1 день",
+        proto: "conversion-lab/ide.html",
+        desc: "Поздравление с 10 успешными проектами и предложение тарифа $20/мес для работы без очереди."
+      }
+    ];
+
+    const SPRINT2_DETAILS = [
+      {
+        key: "QC-W2-A4",
+        title: "Welcome Starter Kit (+25% QCC на 72 часа)",
+        role: "Web Fullstack",
+        estimate: "2 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Модалка Starter Kit на /profile/plans для пользователей <72ч и 0 покупок с тикающим серверным таймером и промокодом STARTER25."
+      },
+      {
+        key: "QC-W2-A8",
+        title: "Персональный таймер-оффер на 5 минут (−20% на 1-й месяц)",
+        role: "Web / TTL Service",
+        estimate: "2.5 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Карточка и sticky-полоса со скидкой -20% при задержке на странице >45 сек. Строго 1 раз в 30 дней, серверный expires_at."
+      },
+      {
+        key: "QC-W2-A9",
+        title: "Exit-Intent оверлей спасения сессии (+300 бонусных QCC)",
+        role: "Web Frontend",
+        estimate: "1 день",
+        proto: "conversion-lab/site.html",
+        desc: "Модалка при попытке увести курсор с закрытием вкладки. Бонус +300 QCC к выбранному плану без размытия цены тарифа."
+      },
+      {
+        key: "QC-W2-B3",
+        title: "Интерактивная карточка ошибки 402 с умной паузой в IDE",
+        role: "Desktop Lead",
+        estimate: "2 дня",
+        proto: "conversion-lab/ide.html",
+        desc: "Карточка в ленте чата вместо серой ошибки 402 с расчетом нехватки QCC и авто-стартом задачи после пополнения."
+      },
+      {
+        key: "QC-W2-B7",
+        title: "Пилюля активного промокода с живым таймером в статус-баре IDE",
+        role: "Desktop Lead",
+        estimate: "1 день",
+        proto: "conversion-lab/ide.html",
+        desc: "Оранжевая пилюля в статус-баре с обратным отсчетом действующего оффера и бесшовным переходом в чекаут."
+      },
+      {
+        key: "QC-W2-B9",
+        title: "Win-Back баннер возврата после 14+ дней неактивности",
+        role: "Desktop Lead / CRM",
+        estimate: "1.5 дня",
+        proto: "conversion-lab/ide.html",
+        desc: "Баннер над чатом при первом запуске после 14 дней паузы: +200 бонусных QCC по промокоду BACK200."
+      }
+    ];
+
+    const SPRINT3_DETAILS = [
+      {
+        key: "QC-W3-A10-R",
+        title: "Авто-пополнение баланса при исчерпании (Auto-Refill)",
+        role: "Billing Lead / Backend",
+        estimate: "3 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Строго Opt-in авто-пополнение на 500 QCC ($10) при остатке <100 QCC. Stripe off-session списание, лимит до 2 раз в месяц."
+      },
+      {
+        key: "QC-W3-A11",
+        title: "Смена плана со справедливым перерасчетом (Stripe Prorations)",
+        role: "Billing Lead / Web FE",
+        estimate: "2.5 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Мгновенный апгрейд на Yearly со справедливым зачетом неизрасходованных QCC по курсу $0.02/QCC. Прозрачный калькулятор в окне Change Plan."
+      },
+      {
+        key: "QC-W3-A14",
+        title: "Честный 1-экранный Save-flow отмены с паузой подписки",
+        role: "Web Frontend / Billing",
+        estimate: "2 дня",
+        proto: "conversion-lab/site.html",
+        desc: "1-экранная модалка при нажатии Cancel с предложением заморозить подписку на 1 месяц (pause_collection) с сохранением кредитов."
+      },
+      {
+        key: "QC-W3-A15",
+        title: "Двусторонняя реферальная программа («Подари 300 QCC»)",
+        role: "Web FE / Backend",
+        estimate: "3 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Раздел в ЛК: +300 QCC приглашенному другу и +300 QCC автору после первой оплаты. Подарочные сертификаты на $20, $50, $100."
+      },
+      {
+        key: "QC-W3-A17",
+        title: "Авто-восстановление брошенной корзины (Stripe Checkout Recovery)",
+        role: "Backend / CRM",
+        estimate: "1.5 дня",
+        proto: "conversion-lab/site.html",
+        desc: "CRM-вебхук через 2 часа после незавершенного чекаута: персональное письмо с бонусом +150 QCC по промокоду RECOVER150."
+      },
+      {
+        key: "QC-W3-A18",
+        title: "Экспресс-оплата в 1 касание (Apple Pay & Google Pay)",
+        role: "Web Frontend",
+        estimate: "1 день",
+        proto: "conversion-lab/site.html",
+        desc: "Кнопки Apple Pay и Google Pay через Stripe Payment Request Button на странице тарифов и в модалке пополнения баланса."
+      },
+      {
+        key: "QC-W3-B4",
+        title: "Предупреждение о низком остатке (< 15% месячного плана) в IDE",
+        role: "Desktop Lead",
+        estimate: "1.5 дня",
+        proto: "conversion-lab/ide.html",
+        desc: "Баннер над чатом IDE при остатке <15% месячного пакета с предложением включить авто-рефилл, предотвращая остановку работы."
+      }
+    ];
+
+    const SPRINT4_DETAILS = [
+      {
+        key: "QC-W4-A12",
+        title: "Value-Realization Dashboard & Yearly Rewind в ЛК",
+        role: "Web / Analytics",
+        estimate: "2.5 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Счетчики созданного контента (Lumi, Sonic, Cody), финансовый расчет экономии против раздельных API и чеклист неиспользованных фичей."
+      },
+      {
+        key: "QC-W4-A16",
+        title: "Community AI Challenge & Creators Showcase на сайте",
+        role: "Web FE / Content",
+        estimate: "2 дня",
+        proto: "conversion-lab/site.html",
+        desc: "Промо-блок тематического контеста с пулом 50 000 QCC, таймером дедлайна и витриной лучших работ со свободным копированием промптов."
+      },
+      {
+        key: "QC-W4-B11",
+        title: "Баннер Community Challenge над чатом IDE",
+        role: "Desktop Lead",
+        estimate: "1 день",
+        proto: "conversion-lab/ide.html",
+        desc: "Баннер текущего творческого конкурса над лентой чата IDE с кнопкой открытия правил и вставкой шаблона в композер."
+      },
+      {
+        key: "QC-W4-B5",
+        title: "Контекстный инлайн-кросс-селл следующих шагов в чате IDE",
+        role: "Desktop Lead",
+        estimate: "2 дня",
+        proto: "conversion-lab/ide.html",
+        desc: "Панель контекстных кнопок под картинкой Lumi: оживление в видео (Sonic · Veo 3), 4K вариации и фоновый саундтрек без ручного ввода промпта."
+      },
+      {
+        key: "QC-W4-B8",
+        title: "Промо-бейдж «Модель недели» в селекторе моделей IDE",
+        role: "Desktop Lead / Backend",
+        estimate: "1 день",
+        proto: "conversion-lab/ide.html",
+        desc: "Бейдж −30% ЭТА НЕДЕЛЯ в меню выбора моделей десктопного редактора со скидкой на вызовы (управляется серверным cache_data.json)."
+      }
+    ];
+
+    let currentSprintNum = 1;
+
+    function getTicketsForSprint(num) {
+      if (num === 1) return SPRINT1_DETAILS;
+      if (num === 2) return SPRINT2_DETAILS;
+      if (num === 3) return SPRINT3_DETAILS;
+      if (num === 4) return SPRINT4_DETAILS;
+      return SPRINT1_DETAILS;
+    }
+
+    function renderWave(waveNum) {
+      const data = WAVES_DATA[waveNum];
+      const container = document.getElementById('tickets-container');
+      if (!container) return;
+      let html = `
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; font-weight: 700; color: #ff8c3b;">${data.title}</div>
+            <div style="font-size: 12px; color: var(--text-muted);">${data.desc}</div>
+          </div>
+          <button class="action-btn" onclick="openDoc('${data.specFile}')">📄 Читать спеку</button>
+        </div>
+        <table class="tickets-table">
+          <thead>
+            <tr>
+              <th style="width: 70px;">ID</th>
+              <th>Название задачи</th>
+              <th style="width: 140px;">Роль</th>
+              <th style="width: 80px;">Оценка</th>
+              <th style="width: 130px;">Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      data.tickets.forEach(t => {
+        html += `
+          <tr>
+            <td class="ticket-id">${t.id}</td>
+            <td style="font-weight: 500;">${t.title}</td>
+            <td style="color: var(--text-muted);">${t.role}</td>
+            <td style="color: var(--text-muted);">${t.days}</td>
+            <td><span class="status-pill ${waveNum === 1 ? '' : 'spec'}">${t.status}</span></td>
+          </tr>
+        `;
+      });
+      html += `</tbody></table>`;
+      container.innerHTML = html;
+    }
+
+    function switchWave(num, btn) {
+      document.querySelectorAll('.wave-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderWave(num);
+    }
+
+    function switchMainView(viewName) {
+      document.querySelectorAll('.top-nav-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('view-showcases').style.display = 'none';
+      document.getElementById('view-pitch').style.display = 'none';
+      document.getElementById('view-sprint').style.display = 'none';
+      const creativeEl = document.getElementById('view-creative');
+      if (creativeEl) creativeEl.style.display = 'none';
+
+      if (viewName === 'showcases') {
+        document.getElementById('tab-btn-showcases').classList.add('active');
+        document.getElementById('view-showcases').style.display = 'block';
+      } else if (viewName === 'pitch') {
+        document.getElementById('tab-btn-pitch').classList.add('active');
+        document.getElementById('view-pitch').style.display = 'flex';
+      } else if (viewName === 'sprint') {
+        document.getElementById('tab-btn-sprint').classList.add('active');
+        document.getElementById('view-sprint').style.display = 'flex';
+        renderSprintTickets();
+      } else if (viewName === 'creative') {
+        document.getElementById('tab-btn-creative').classList.add('active');
+        if (creativeEl) creativeEl.style.display = 'flex';
+        renderCreativeCards();
+      }
+    }
+
+    const CREATIVE_ITEMS = [
+      {
+        id: 'c1',
+        type: 'ide',
+        agent: 'Lumi',
+        title: 'Starter Kit Баннер (+25% QCC)',
+        ticket: 'B1 (Спринт 1)',
+        metaSection: 'files.assets.banners.banner_starter_kit_jpg',
+        desc: 'Баннер над чатом IDE для пользователей <72 часов с оффером +25% QCC на первый депозит.',
+        models: ['Nanobanana (Pro · ~9.2 QCC)', 'Flux 2 Pro (~1.8 QCC)', 'Seedream v5 Pro (~2.5 QCC)', 'GPT Image 2.5 (~4.2 QCC)'],
+        styles: ['Futuristic Dark Cyber Glow', 'Sleek Apple Minimalism', 'High-Contrast Studio Dark', 'Warm Neon Gradient'],
+        ratio: '16:9 (1280x720)',
+        preview: '/assets/banners/banner_starter_kit.jpg',
+        prompt: 'A sleek modern IDE chat interface banner, dark glassmorphism card with glowing orange neon gift box, floating 3D coins +25% bonus credits, cyber accents, clean typography, luxury tech look'
+      },
+      {
+        id: 'c2',
+        type: 'ide',
+        agent: 'Lumi',
+        title: 'Out of Credits Warning Баннер',
+        ticket: 'B3 (Спринт 2)',
+        metaSection: 'files.assets.banners.banner_out_of_credits_jpg',
+        desc: 'Интерактивная карточка в чате при исчерпании кредитов вместо серой ошибки 402.',
+        models: ['Nanobanana (Pro · ~9.2 QCC)', 'Flux 2 Pro (~1.8 QCC)', 'GPT Image 2.5 (~4.2 QCC)'],
+        styles: ['Urgent Alert Orange/Red', 'Cyberpunk Warning Neon', 'Clean Dark Modern'],
+        ratio: '16:9 (1280x720)',
+        preview: '/assets/banners/banner_out_of_credits.jpg',
+        prompt: 'Urgent warning banner for developer IDE, glowing amber battery indicator at 0%, futuristic tech dashboard, dark background, orange accent glow, crisp interface UI'
+      },
+      {
+        id: 'c3',
+        type: 'ide',
+        agent: 'Lumi',
+        title: 'Win-Back Bonus Баннер (+200 QCC)',
+        ticket: 'B9 (Спринт 2)',
+        metaSection: 'files.assets.banners.banner_win_back_jpg',
+        desc: 'Баннер возврата пользователя после 14+ дней отсутствия с приветственным бонусом.',
+        models: ['Flux 2 Pro (~1.8 QCC)', 'Nanobanana (Pro · ~9.2 QCC)', 'Seedream v5 Pro (~2.5 QCC)'],
+        styles: ['Celebration Gold Confetti', 'Welcome Glow Dark', 'Clean Modern Tech'],
+        ratio: '16:9 (1280x720)',
+        preview: '/offers-live/assets/banner/bg_promo_user_light.jpg',
+        prompt: 'Celebration win-back banner for AI app, floating golden coins, gift ribbons, subtle glowing particles, deep dark violet and charcoal background, premium finish'
+      },
+      {
+        id: 'c4',
+        type: 'ide',
+        agent: 'Lumi',
+        title: 'Yearly Upgrade VIP Crown Баннер',
+        ticket: 'B6 (Спринт 1)',
+        metaSection: 'files.assets.banners.banner_yearly_crown_jpg',
+        desc: 'Баннер апгрейда на годовой тариф с экономией $60 (3 месяца в подарок).',
+        models: ['Nanobanana (Pro · ~9.2 QCC)', 'Flux 2 Pro (~1.8 QCC)', 'Seedream v5 Pro (~2.5 QCC)'],
+        styles: ['Luxury VIP Dark & Gold', 'Sleek Titanium Minimalist', 'Neon Cyber Crown'],
+        ratio: '16:9 (1280x720)',
+        preview: '/assets/banners/banner_yearly_crown.jpg',
+        prompt: 'VIP Upgrade banner for creative app, golden neon crown hovering above obsidian glass pedestal, shiny reflections, yearly pass card -25% discount, sleek luxury tech'
+      },
+      {
+        id: 'c5',
+        type: 'cases',
+        agent: 'Lumi',
+        title: 'AI Fullstack Engineering Cover',
+        ticket: 'A7 (Спринт 1)',
+        metaSection: 'files.assets.pricing.case-1_jpg',
+        desc: 'Иллюстрация кейса: автономный кодинг, архитектура и интеграции (Cody / Claude 3.7).',
+        models: ['Flux 2 Pro (~1.8 QCC)', 'Nanobanana (Pro · ~9.2 QCC)', 'Seedream v5 Pro (~2.5 QCC)'],
+        styles: ['Futuristic Code Matrix', 'Sleek Dark Terminal', 'Isometric Studio'],
+        ratio: '1:1 (1024x1024)',
+        preview: '/assets/pricing/case-1.jpg',
+        prompt: 'Futuristic developer coding station, glowing holographic code trees, neon orange compiler stream, isometric 3D render, dark background, ultra sharp'
+      },
+      {
+        id: 'c6',
+        type: 'cases',
+        agent: 'Lumi',
+        title: 'UI/UX Design Studio Cover',
+        ticket: 'A7 (Спринт 1)',
+        metaSection: 'files.assets.pricing.case-2_jpg',
+        desc: 'Иллюстрация дизайн-возможностей: генерация макетов и UI-компонентов (Lumi).',
+        models: ['Nanobanana (Pro · ~9.2 QCC)', 'Flux 2 Pro (~1.8 QCC)', 'Seedream v5 Pro (~2.5 QCC)'],
+        styles: ['Glassmorphic UI Frames', 'Vibrant Design Swatches', 'Clean Apple Studio'],
+        ratio: '1:1 (1024x1024)',
+        preview: '/assets/pricing/case-2.jpg',
+        prompt: 'Modern UI/UX design workspace, floating layered glass app frames, responsive layout grids, vibrant orange and purple color palettes, clean studio lighting'
+      },
+      {
+        id: 'c7',
+        type: 'cases',
+        agent: 'Lumi',
+        title: 'Multi-Agent Autonomous Pipeline',
+        ticket: 'A7 (Спринт 1)',
+        metaSection: 'files.assets.pricing.case-3_jpg',
+        desc: 'Иллюстрация параллельной работы 5 специализированных агентов.',
+        models: ['Nanobanana (Pro · ~9.2 QCC)', 'Flux 2 Pro (~1.8 QCC)', 'Seedream v5 Pro (~2.5 QCC)'],
+        styles: ['Cyber Neural Network', 'Sci-Fi Command Center', 'Futuristic Hologram'],
+        ratio: '1:1 (1024x1024)',
+        preview: '/assets/pricing/case-3.jpg',
+        prompt: 'Central AI neural core branching into 5 specialized energy conduits, cybernetic command interface, dark void background, energetic pulsing neon nodes'
+      },
+      {
+        id: 'c8',
+        type: 'video',
+        agent: 'Sonic',
+        title: '5-сек промо-тизер тарифов платформы',
+        ticket: 'A7 / Лендинг',
+        metaSection: 'files.assets.videos.promo_teaser_mp4',
+        desc: 'Динамичный кинематографичный пролёт камеры через интерфейс платформы.',
+        models: ['Gemini Omni 1.1 Flash (~120 QCC)', 'Seedance 2.0 (~230 QCC)', 'Veo 3 (~200 QCC)', 'Kling 3 (~60 QCC)', 'Wan 2.7 (~60 QCC)'],
+        styles: ['Cinematic 60fps Ultra-Sharp', 'Fast Dynamic Cyber Motion', 'Sleek Product Commercial'],
+        ratio: '16:9 (MP4, 5s)',
+        preview: '/assets/content/c1.jpg',
+        prompt: 'Cinematic camera flying forward smoothly into a glowing holographic AI interface, energetic tech motion, code lines and sleek 3D models resolving in real time, 4k ultra realistic, vibrant orange accents, dark obsidian reflective glass aesthetic. Rich spatial audio with subtle electronic whoosh and ambient digital shimmer.'
+      },
+      {
+        id: 'c9',
+        type: 'video',
+        agent: 'Sonic',
+        title: 'Micro-Action "Animate to Video" в IDE',
+        ticket: 'B5 (Спринт 4)',
+        metaSection: 'files.assets.videos.animate_preview_mp4',
+        desc: 'Превью-ролик оживления статичного арта в видео прямо под картинкой в чате.',
+        models: ['Gemini Omni 1.1 Flash (~120 QCC)', 'Seedance 2.0 (~230 QCC)', 'Veo 3 (~200 QCC)', 'Kling 3 (~60 QCC)'],
+        styles: ['Fluid Organic Motion', 'Dynamic Zoom & Pan', 'Hyperrealistic Physics'],
+        ratio: '16:9 (MP4, 5s)',
+        preview: '/assets/content/c2.jpg',
+        prompt: 'A stunning still cyberpunk city street suddenly comes alive with rain puddles reflecting neon lights, flying vehicles zooming by smoothly, seamless motion transition, fluid organic motion, hyperrealistic physics. Ambient city rain and gentle hovering engine sound.'
+      },
+      {
+        id: 'c10',
+        type: 'video',
+        agent: 'Sonic',
+        title: 'Экспресс-интро логотипа Quadcode AI',
+        ticket: 'Сплэш-экран',
+        metaSection: 'files.assets.videos.logo_intro_mp4',
+        desc: 'Плавная неоновая анимация сборки логотипа для сплэш-скрина и загрузчиков.',
+        models: ['Gemini Omni 1.1 Flash (~120 QCC)', 'Seedance 2.0-fast (~150 QCC)', 'Wan 2.7 (~60 QCC)', 'Kling 3 (~60 QCC)'],
+        styles: ['Neon Particle Assembly', 'Liquid Metal Morphing', 'Clean Minimal Tech'],
+        ratio: '1:1 (MP4, 3s)',
+        preview: '/offers-live/assets/logos/quadcode.svg',
+        prompt: 'Glowing orange circuit particles coalesce into the Quadcode AI geometric cube logo, radiant light pulse explosion, dark reflective glass surface, elegant motion graphics, particle assembly, minimal clean tech aesthetic.'
+      },
+      {
+        id: 'c11',
+        type: 'audio',
+        agent: 'Sonic',
+        title: 'SFX: Purchase Success Jingle',
+        ticket: 'A10 / Чекаут',
+        metaSection: 'files.assets.audio.purchase_success_wav',
+        desc: 'Премиальный теплый аккорд с кристальным послезвучием при оплате подписки или пака.',
+        models: ['ElevenLabs SFX (~1.7 QCC)', 'Stable Audio 3 (~1.5 QCC)'],
+        styles: ['Warm Luxury Chime', 'Futuristic Digital Harmonic', 'Pleasant Acoustic Ripple'],
+        ratio: 'Audio (WAV, 2s)',
+        preview: 'audio:success',
+        audioUrl: '/assets/audio/purchase_success.wav',
+        prompt: 'Satisfying futuristic chime with warm sub bass and crystalline harmonic shimmer, luxury confirmation sound, uplifting and pleasant acoustic ripple, modern fintech audio UX.'
+      },
+      {
+        id: 'c12',
+        type: 'audio',
+        agent: 'Sonic',
+        title: 'SFX: Credit Low Warning Chime',
+        ticket: 'B4 / Чат IDE',
+        metaSection: 'files.assets.audio.credit_low_wav',
+        desc: 'Мягкий деликатный двухтоновый сигнал при балансе кредитов <15%.',
+        models: ['ElevenLabs SFX (~1.7 QCC)', 'Stable Audio 3 (~1.5 QCC)'],
+        styles: ['Delicate Dual-Tone Soft', 'Gentle Futuristic Ping', 'Subtle Notification'],
+        ratio: 'Audio (WAV, 1.5s)',
+        preview: 'audio:warning',
+        audioUrl: '/assets/audio/credit_low.wav',
+        prompt: 'Soft gentle two-tone tech alert ping, delicate warm chime, non-intrusive warning notification sound, subtle acoustic harmonic ripple.'
+      }
+    ];
+
+    let currentCreativeFilter = 'all';
+
+    function extractCost(modelStr) {
+      const match = modelStr.match(/~[\d\.]+\s*QCC/i);
+      return match ? match[0] : 'QCC';
+    }
+
+    function updateCardCost(id, modelVal) {
+      const badge = document.getElementById(`cost-badge-${id}`);
+      if (badge) {
+        badge.textContent = extractCost(modelVal);
+      }
+    }
+
+    function renderCreativeCards(filterType) {
+      currentCreativeFilter = filterType || currentCreativeFilter;
+      const grid = document.getElementById('creative-cards-grid');
+      if (!grid) return;
+      const items = currentCreativeFilter === 'all'
+        ? CREATIVE_ITEMS
+        : CREATIVE_ITEMS.filter(it => it.type === currentCreativeFilter);
+
+      let html = '';
+      items.forEach(it => {
+        const isSonic = it.agent === 'Sonic';
+        const tagClass = isSonic ? 'sonic' : 'lumi';
+        const agentIcon = isSonic ? '🎬' : '🎨';
+        const modelOptions = it.models.map(m => `<option value="${m}">${m}</option>`).join('');
+        const styleOptions = it.styles.map(s => `<option value="${s}">${s}</option>`).join('');
+        const initialCost = extractCost(it.models[0]);
+
+        const metaBtn = it.metaSection
+          ? `<button class="action-btn" title="Открыть мета-секцию" onclick="openMeta('${it.metaSection}')">📄 Мета</button>`
+          : '';
+
+        let previewHtml = '';
+        if (it.preview.startsWith('audio:')) {
+          const isSuccess = it.preview.includes('success');
+          const audioColor = isSuccess ? '#4ade80' : '#f59e0b';
+          const audioIcon = isSuccess ? '🔔' : '⚠️';
+          const audioSrc = it.audioUrl || '';
+          previewHtml = `
+            <div style="width: 100%; min-height: 105px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: 12px; box-sizing: border-box;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 28px;">${audioIcon}</span>
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-weight: 700; font-size: 13px; color: ${audioColor};">Audio FX Stream · ElevenLabs</span>
+                  <span style="font-size: 11px; color: var(--text-muted);">Формат: WAV · 44.1 kHz · ${it.ratio}</span>
+                  <span style="font-size: 10px; color: #4ade80; font-weight: 600;">✓ Сгенерировано (ElevenLabs)</span>
+                </div>
+              </div>
+              ${audioSrc ? `
+              <div style="display: flex; align-items: center; gap: 8px; margin-top: 2px;">
+                <audio id="audio-${it.id}" src="${audioSrc}" preload="auto"></audio>
+                <button type="button" class="action-btn" style="flex: 1; height: 28px; background: rgba(255,255,255,0.08); border-color: ${audioColor}; color: #fff; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;" onclick="const a=document.getElementById('audio-${it.id}'); if(a){a.currentTime=0; a.play();}">▶ Слушать сэмпл (${it.ratio})</button>
+              </div>` : ''}
+            </div>
+          `;
+        } else if (it.preview.endsWith('.svg')) {
+          previewHtml = `
+            <div style="position: relative; width: 100%; height: 120px; border-radius: 8px; overflow: hidden; background: #12141a; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; padding: 16px;">
+              <img src="${it.preview}" style="height: 60px; filter: drop-shadow(0 0 12px rgba(255,106,0,0.4));" alt="${it.title}">
+              <span style="position: absolute; bottom: 8px; right: 8px; font-size: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; border-radius: 4px;">🎬 Векторный референс</span>
+            </div>
+          `;
+        } else {
+          const isVideo = it.type === 'video';
+          previewHtml = `
+            <div style="position: relative; width: 100%; height: 120px; border-radius: 8px; overflow: hidden; background: #12141a; border: 1px solid rgba(255,255,255,0.08);">
+              <img src="${it.preview}" style="width: 100%; height: 100%; object-fit: cover;" alt="${it.title}">
+              ${isVideo ? '<span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.65); border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 14px; color: #fff;">▶</span>' : ''}
+              <span style="position: absolute; bottom: 6px; right: 6px; font-size: 10px; background: rgba(0,0,0,0.75); color: #fff; padding: 2px 6px; border-radius: 4px; backdrop-filter: blur(4px);">
+                ${isVideo ? '🎬 Референс динамики' : '🖼 Визуальный референс'}
+              </span>
+            </div>
+          `;
+        }
+
+        html += `
+          <div class="creative-card" id="card-${it.id}">
+            <div class="creative-header">
+              <div>
+                <div style="font-size: 15px; font-weight: 700;">${it.title}</div>
+                <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Тикет: <b style="color: #ff8c3b;">${it.ticket}</b></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span class="creative-tag ${tagClass}">${agentIcon} ${it.agent}</span>
+              </div>
+            </div>
+
+            ${previewHtml}
+
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">${it.desc}</div>
+
+            <div class="creative-controls">
+              <div class="ctrl-row">
+                <span class="ctrl-label">AI Модель:</span>
+                <select class="ctrl-select" id="model-select-${it.id}" onchange="updateCardCost('${it.id}', this.value)">${modelOptions}</select>
+              </div>
+              <div class="ctrl-row">
+                <span class="ctrl-label">Худ. стиль:</span>
+                <select class="ctrl-select" id="style-select-${it.id}">${styleOptions}</select>
+              </div>
+              <div class="ctrl-row">
+                <span class="ctrl-label">Формат:</span>
+                <span style="font-size: 11px; font-weight: 600; color: #d1d5db;">${it.ratio}</span>
+              </div>
+              <div class="ctrl-row">
+                <span class="ctrl-label">Тарификация:</span>
+                <span id="cost-badge-${it.id}" style="font-size: 11px; font-weight: 700; color: #ff8c3b; background: rgba(255,140,59,0.12); padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(255,140,59,0.3);">${initialCost}</span>
+              </div>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">Промпт генерации (редактируемый):</span>
+                <span style="font-size: 10px; color: #4ade80; font-weight: 600;">✓ 100% контроль PO</span>
+              </div>
+              <textarea class="prompt-box" id="prompt-input-${it.id}" rows="3" style="width: 100%; box-sizing: border-box; resize: vertical; font-family: inherit; font-size: 11px; padding: 6px 8px; border-radius: 6px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: var(--text-main); line-height: 1.4;">${it.prompt}</textarea>
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-top: auto; align-items: center;">
+              <button class="card-btn primary" style="flex: 1; padding: 7px 12px;" onclick="triggerPOAgentGeneration('${it.id}')">
+                ${agentIcon} Запустить с ${it.agent} →
+              </button>
+              ${metaBtn}
+              <button class="action-btn" title="Копировать бриф задачи" onclick="copyCreativeBrief('${it.id}')">📋</button>
+            </div>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+
+    function filterCreative(type, btn) {
+      document.querySelectorAll('#view-creative .top-nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCreativeCards(type);
+    }
+
+    function copyCreativeBrief(id) {
+      const item = CREATIVE_ITEMS.find(it => it.id === id);
+      if (!item) return;
+      const model = document.getElementById(`model-select-${id}`)?.value || item.models[0];
+      const style = document.getElementById(`style-select-${id}`)?.value || item.styles[0];
+      const promptVal = document.getElementById(`prompt-input-${id}`)?.value || item.prompt;
+      const text = `[Creative Task] ${item.title}\nИсполнитель: ${item.agent}\nТикет: ${item.ticket}\nМодель: ${model}\nСтиль: ${style}\nФормат: ${item.ratio}\n${item.metaSection ? 'Мета-секция: ' + item.metaSection + '\n' : ''}Промпт: ${promptVal}`;
+      safeCopy(text, `Бриф "${item.title}" скопирован!`);
+    }
+
+    async function triggerPOAgentGeneration(id) {
+      const item = CREATIVE_ITEMS.find(it => it.id === id);
+      if (!item) return;
+      const model = document.getElementById(`model-select-${id}`)?.value || item.models[0];
+      const style = document.getElementById(`style-select-${id}`)?.value || item.styles[0];
+      const promptVal = document.getElementById(`prompt-input-${id}`)?.value || item.prompt;
+      const promptText = `Сгенерируй креативный материал для задачи ${item.ticket} ("${item.title}").\nВыбранная модель: ${model}\nХудожественный стиль: ${style}\nФормат/соотношение: ${item.ratio}\n${item.metaSection ? 'Связанная мета-секция: ' + item.metaSection + '\n' : ''}Промпт: ${promptVal}`;
+
+      if (window.QC && QC.forms && QC.forms.AgentRequestPopup) {
+        new QC.forms.AgentRequestPopup({
+          agent_name: item.agent,
+          prompt: promptText
+        }).open();
+      } else {
+        safeCopy(promptText, `Задача для ${item.agent} скопирована в буфер обмена!`);
+      }
+    }
+
+    async function openMeta(sectionId) {
+      if (window.QC && QC.ui && QC.ui.openMetaSection) {
+        await QC.ui.openMetaSection(sectionId);
+      } else {
+        safeCopy(sectionId, `ID мета-секции "${sectionId}" скопирован!`);
+      }
+    }
+
+    function selectSprint(num) {
+      currentSprintNum = num;
+      for (let i = 1; i <= 4; i++) {
+        const btn = document.getElementById(`sprint-btn-${i}`);
+        if (btn) btn.classList.toggle('active', num === i);
+      }
+
+      const titleEl = document.getElementById('sprint-header-title');
+      const descEl = document.getElementById('sprint-header-desc');
+      if (num === 1) {
+        if (titleEl) titleEl.textContent = 'Спринт 1: Backlog для передачи в разработку (Волна 1 Quick Wins)';
+        if (descEl) descEl.textContent = '13 специфицированных задач · 0 изменений биллинга · Срок реализации: 1–2 спринта';
+      } else if (num === 2) {
+        if (titleEl) titleEl.textContent = 'Спринт 2: Backlog для передачи в разработку (Волна 2 Urgency & TTL)';
+        if (descEl) descEl.textContent = '6 специфицированных задач · Серверный TTL промокодов · Срок реализации: 1–2 спринта';
+      } else if (num === 3) {
+        if (titleEl) titleEl.textContent = 'Спринт 3: Backlog для передачи в разработку (Волна 3 Advanced Billing)';
+        if (descEl) descEl.textContent = '7 специфицированных задач · Авто-рефилл Stripe, Prorations и Save-flow · Срок реализации: 2 спринта';
+      } else if (num === 4) {
+        if (titleEl) titleEl.textContent = 'Спринт 4: Backlog для передачи в разработку (Волна 4 Retention & Community)';
+        if (descEl) descEl.textContent = '5 специфицированных задач · Value Dashboard, AI Челленджи и Кросс-селл · Срок реализации: 1–2 спринта';
+      }
+      renderSprintTickets();
+    }
+
+    function renderSprintTickets() {
+      const list = document.getElementById('sprint-tickets-list');
+      if (!list) return;
+      const tickets = getTicketsForSprint(currentSprintNum);
+      let html = '';
+      tickets.forEach(t => {
+        html += `
+          <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+            <div style="display: flex; flex-direction: column; gap: 4px; flex: 1;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="ticket-id">${t.key}</span>
+                <span style="font-size: 14px; font-weight: 700;">${t.title}</span>
+                <span class="status-pill">Готов к спринту</span>
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted);">${t.desc}</div>
+              <div style="font-size: 11px; color: #ff8c3b; margin-top: 2px;">
+                Исполнитель: <b>${t.role}</b> · Оценка: <b>${t.estimate}</b>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button class="action-btn" onclick="openView('${t.proto}')">🔗 Прототип</button>
+              <button class="action-btn" onclick="copyTicket('${t.key}', '${t.title}', '${t.role}', '${t.estimate}', '${t.desc}')">📋 Копировать</button>
+            </div>
+          </div>
+        `;
+      });
+      list.innerHTML = html;
+    }
+
+    function safeCopy(text, toastMsg) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      } catch (e) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).catch(() => {});
+        }
+      }
+      showToast(toastMsg);
+    }
+
+    function copyTicket(key, title, role, estimate, desc) {
+      const text = `Тикет: ${key}\nНазвание: ${title}\nРоль: ${role}\nОценка: ${estimate}\nОписание: ${desc}\nСтатус: Ready for sprint`;
+      safeCopy(text, `Тикет ${key} скопирован в буфер!`);
+    }
+
+    function openCurrentSprintDoc() {
+      const sprintFiles = {
+        1: 'conversion-lab/docs/sprint1-backlog-wave1.md',
+        2: 'conversion-lab/docs/sprint2-backlog-wave2.md',
+        3: 'conversion-lab/docs/sprint3-backlog-wave3.md',
+        4: 'conversion-lab/docs/sprint4-backlog-wave4.md'
+      };
+      openDoc(sprintFiles[currentSprintNum] || sprintFiles[1]);
+    }
+
+    function copyCurrentSprintJson() {
+      const tickets = getTicketsForSprint(currentSprintNum);
+      safeCopy(JSON.stringify(tickets, null, 2), `Все ${tickets.length} тикетов Спринта ${currentSprintNum} скопированы в формате JSON!`);
+    }
+
+    function copyAllSprintsJson() {
+      const allTickets = [
+        ...SPRINT1_DETAILS.map(t => ({ ...t, sprint: 1, wave: "Wave 1: Quick Wins" })),
+        ...SPRINT2_DETAILS.map(t => ({ ...t, sprint: 2, wave: "Wave 2: Urgency & TTL" })),
+        ...SPRINT3_DETAILS.map(t => ({ ...t, sprint: 3, wave: "Wave 3: Advanced Billing" })),
+        ...SPRINT4_DETAILS.map(t => ({ ...t, sprint: 4, wave: "Wave 4: Retention & Community" }))
+      ];
+      safeCopy(JSON.stringify(allTickets, null, 2), `Все 31 тикет (Спринты 1–4) скопированы в формате JSON!`);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 2500);
+    }
+
+    async function openView(url) {
+      if (window.QC && QC.ui && QC.ui.openBrowser) {
+        await QC.ui.openBrowser(url);
+      } else {
+        const base = window.location.protocol === 'file:' ? '../' : '/';
+        window.open(base + url, '_blank');
+      }
+    }
+
+    async function openDoc(file) {
+      if (window.QC && QC.ui && QC.ui.openFile) {
+        await QC.ui.openFile(file);
+      } else {
+        const base = window.location.protocol === 'file:' ? '../' : '/';
+        window.open(base + file, '_blank');
+      }
+    }
+
+    async function init() {
+      if (window.QC || await new Promise(r => {
+        var d = Date.now()+2000, t = setInterval(()=>{ (window.QC||Date.now()>d)&&(clearInterval(t),r(window.QC)); },20);
+      })) {
+        await QC.ready();
+        await QC.style.applyMainCss();
+      }
+      document.getElementById('__qc-fouc-guard')?.remove();
+      renderWave(1);
+      renderCreativeCards();
+      renderSprintTickets();
+
+      if (window.location.hash === '#creative' || localStorage.getItem('qc_dashboard_tab') === 'creative') {
+        localStorage.removeItem('qc_dashboard_tab');
+        switchMainView('creative');
+      } else if (window.location.hash === '#pitch') {
+        switchMainView('pitch');
+      } else if (window.location.hash === '#sprint') {
+        switchMainView('sprint');
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

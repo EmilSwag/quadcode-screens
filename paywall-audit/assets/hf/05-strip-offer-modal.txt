@@ -1,0 +1,694 @@
+﻿# Pricing plans — Higgsfield AI Video & Image Generator
+[Hyperlink] Higgsfield  @16,13
+[Group] Main  @38,14
+[ListItem] Explore  @38,14
+[ListItem] Image  @72,14
+[ListItem] Video  @100,14
+[ListItem] Audio  @128,14
+[ListItem] MCP  @156,14
+[ListItem] API New  @180,14
+[ListItem] ChatGPT Plugin  @223,14
+[ListItem] Genjutsu  @284,14
+[ListItem] Effects  @322,14
+[ListItem] Cinema Studio  @354,14
+[ListItem] Contests  @412,14
+[ListItem] Marketing Studio  @450,14
+[ListItem] Supercomputer  @516,14
+[ListItem] 3D Jutsu New  @576,14
+[ListItem] Edit  @634,14
+[ListItem] Academy  @654,14
+[ListItem] Community  @694,14
+[ListItem] Plugins  @742,14
+[ListItem] Canvas  @774,14
+[ListItem] Originals  @808,14
+[Button] Search Higgsfield  @692,12
+[Hyperlink] Upgrade30% OFF  @712,12
+[Hyperlink] Enterprise  @767,12
+[Hyperlink] Folder icon Assets  @828,12
+[Image] Folder icon  @834,18
+[Button] Add members  @888,12
+[Button] Notifications  @908,12
+[Button] Account menu  @928,12
+[Image] user profile  @931,15
+[Hyperlink] SPECIAL UNLIMITED OFFER SEEDANCE 2.5 & SEEDANCE 2.0 UNLIMITED SEEDANCE 2.5 OR SEEDANCE 2.0 FOR 7 DAYS ON SCALE & TEAM PLANS WITH UP TO 30% OFF Get 7-day Unlimited Seedance 2.5 (25s, 1080p) on Scale Annual & Seedance 2.0 (15s, 720p) on Team Annual  @215,50
+[Text] Upgrade your plan  @215,163
+[Text] Lock better prices with upgrade or scale your creativity maximizing your current plan  @215,194
+[Tab] Pricing audience  @215,223
+[TabItem] Individual plans  @218,226
+[TabItem] Business plans UNLIMITED SEEDANCE 2.5  @298,226
+[Button] Toggle billing period  @666,224
+[Text] TEAM  @224,279
+[Text] 18% OFF  @258,282
+[Text] For agencies and small teams to create faster  @224,296
+[Text] 5,000 credits in total/mo  @242,318
+[Text] = 1,000 credits per seat/mo  @244,330
+[Text] = 2,500 Nano Banana Pro images  @244,340
+[Text] ~ 833 Kling 3.0 videos  @244,350
+[Text] €79  @224,371
+[Text] €65  @246,368
+[Text] per seat/mo · annual  @273,377
+[Button] Get Team Annual  @222,392
+[Text] Save €168  @256,420
+[Text] compared to monthly  @286,420
+[Button] Decrease team size  @230,446
+[Text] 5 seats  @290,447
+[Button] Increase team size  @363,446
+[Text] 2 to 9 members in one shared workspace  @234,476
+[Text] Access to all features & models  @234,488
+[Text] Shared workspace & credit pool for your team  @234,500
+[Text] Early access to advanced AI features  @234,512
+[Text] Access to Supercomputer  @234,524
+[Text] 7-DAY UNLIMITED  @228,546
+[Text] SEEDANCE 2.0  @283,546
+[Text] 7 days of Unlimited Seedance 2.0 (15s, 720p) starts from the day you purchase.  @228,558
+[Text] Business verification required  @242,584
+[Text] UNLIMITED MODELS  @239,613
+[Button] Learn more  @342,614
+[Button] Nano Banana Pro  @239,630
+[Text] 2K  @323,631
+[Text] 7-day unlimited  @336,631
+[Button] Seedream 5.0 Pro  @239,650
+[Text] 2K  @323,650
+[Text] 7-day unlimited  @336,650
+[Text] Seedance 2.0 Mini/Fast  @239,670
+[Text] No unlimited  @343,670
+[Text] Kling 3.0  @239,689
+[Text] No unlimited  @343,690
+[Text] Admin & Control  @224,712
+[Text] Basic analytics & priority support  @234,724
+[Text] Admin spend control  @234,736
+[Text] Priority queue  @234,748
+[Text] SSO  @234,760
+[Text] Delegated top-up access  @234,772
+[Text] Security & Compliance  @224,790
+[Text] Indemnification  @234,802
+[Text] No training on your data  @234,814
+[Text] SOC 2 security (coming soon)  @234,826
+[Text] Personal AI Educator  @234,838
+[Text] SCALE  @404,279
+[Text] 30% OFF  @441,282
+[Text] BEST VALUE  @480,282
+[Text] Designed for growing creative teams  @404,296
+[Text] 12,500 credits/mo  @422,318
+[Text] = 2,500 credits per seat/mo  @424,330
+[Text] = 6,250 Nano Banana Pro images  @424,340
+[Text] ~ 2,083 Kling 3.0 videos  @424,350
+[Text] €215  @404,371
+[Text] €150  @431,368
+[Text] per seat/mo · annual  @464,377
+[Button] Get Scale Annual  @402,392
+[Text] Save €228  @434,420
+[Text] compared to monthly  @466,420
+[Button] Decrease team size  @410,446
+[Text] 5 seats  @469,447
+[Button] Increase team size  @542,446
+[Text] 5 to 15 members in one shared workspace  @414,476
+[Text] Access to all features & models  @414,488
+[Text] Shared workspace & credit pool for your team  @414,500
+[Text] Early access to advanced AI features  @414,512
+[Text] Access to Supercomputer  @414,524
+[Text] 7-DAY UNLIMITED  @408,546
+[Text] SEEDANCE 2.5  @462,546
+[Text] 7 days of Unlimited Seedance 2.5 (25s, 1080p) starts from the day you purchase.  @408,558
+[Text] Business verification required  @422,584
+[Text] UNLIMITED MODELS  @418,613
+[Button] Learn more  @522,614
+[Button] Nano Banana Pro  @418,630
+[Text] 4K  @502,631
+[Text] 7-day unlimited  @515,631
+[Button] Seedream 5.0 Pro  @418,650
+[Text] 2K  @502,650
+[Text] 7-day unlimited  @515,650
+[Button] Kling 3.0  @418,669
+[Text] 7-day unlimited  @515,670
+[Text] Seedance 2.0 Mini/Fast  @418,689
+[Text] No unlimited  @522,690
+[Text] Admin & Control  @404,712
+[Text] Detailed analytics & priority support  @414,724
+[Text] Admin spend control  @414,736
+[Text] Priority queue for faster task processing  @414,748
+[Text] Basic SSO  @414,760
+[Text] Delegated top-up access  @414,772
+[Text] Security & Compliance  @404,790
+[Text] Indemnification  @414,802
+[Text] No training on your data  @414,814
+[Text] SOC 2 security (coming soon)  @414,826
+[Text] Personal AI Educator  @414,838
+[Text] EXPERTS’ CHOICE  @640,260
+[Text] ENTERPRISE  @583,280
+[Text] For organizations needing personalisation & security  @583,297
+[Text] Custom credits per seat/mo  @601,318
+[Text] = Unlimited seats  @603,330
+[Text] = Custom model access  @603,340
+[Text] = Volume rollover credits  @603,350
+[Text] Let’s talk  @583,369
+[Button] Contact sales  @581,392
+[Text] Best offers for Higgsfield’s partners  @608,420
+[Button] Learn more  @581,440
+[Text] Unlimited members & Dedicated capacity (SLA)  @593,476
+[Text] Access to all features & models  @593,488
+[Text] Shared workspace & credit pool for your team  @593,500
+[Text] Early access to advanced AI features  @593,512
+[Text] Access to Supercomputer  @593,524
+[Text] VOLUME BASED DISCOUNTS ON SEEDANCE  @588,547
+[Text] Get discounts for Seedance models based on your team's volume - contact sales for a quote  @588,559
+[Button] Contact sales  @588,580
+[Text] UNLIMITED RESOURCES  @598,614
+[Button] Learn more  @701,614
+[Text] Volume discounts per model  @598,631
+[Text] Included  @710,632
+[Text] Custom credits per seat  @598,650
+[Text] Included  @710,651
+[Text] Unlimited number of seats  @598,670
+[Text] Included  @710,670
+[Text] Custom capacity & SLA  @598,690
+[Text] Included  @710,690
+[Text] Admin & Control  @583,713
+[Text] Detailed analytics & priority support  @593,725
+[Text] Admin spend control  @593,737
+[Text] Priority queue for faster task processing  @593,749
+[Text] Custom SSO  @593,761
+[Text] Delegated top-up access  @593,773
+[Text] Security & Compliance  @583,791
+[Text] Indemnification  @593,803
+[Text] No training on your data  @593,815
+[Text] SOC 2 security  @593,827
+[Text] Personal AI Educator  @593,839
+[Group] Pricing help  @215,866
+[Hyperlink] How do Higgsfield plans work?  @384,866
+[Hyperlink] What are Unlimited models?  @492,866
+[Text] Unlimited models and Free Generations on plans are accessible only via higgsfield.ai and are not accessible on MCP/CLI, Canvas or Supercomputer.  @271,886
+[Text] Prices exclude VAT and local taxes, calculated at checkout. Unlimited usage may be subject to dynamic speed adjustments during high-traffic periods.  @250,895
+[Text] Learn more  @679,895
+[Text] Access to new models and advanced features may be done on a rolling basis and not available to all users at launch.  @316,904
+[Text] Compare features  @215,962
+[Text] See in details what plan suits you best  @215,993
+[Text] Annual  @233,1094
+[Text] 30% OFF  @258,1094
+[Text] Team  @354,1034
+[Text] €65/seat/month  @354,1060
+[Text] Billed annually  @354,1070
+[Button] Upgrade Plan  @354,1086
+[Button] ⓘ Calculated for min. 2 seats  @354,1122
+[Text] Scale  @546,1034
+[Text] €150/seat/month  @546,1060
+[Text] Billed annually  @546,1070
+[Button] Upgrade Plan  @546,1086
+[Text] Video  @228,1128
+[Text] Concurrent Jobs  @228,1154
+[Text] Seedance 2.0 720p  @228,1180
+[Text] ~22 credits/5s  @228,1192
+[Text] Seedance 2.0 1080p  @228,1212
+[Text] ~45 credits/5s  @228,1224
+[Text] Seedance 2.0 4K  @228,1244
+[Text] ~110 credits/5s  @228,1256
+[Text] Kling 3.0 720p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Kling 3.0 1080p  @228,1256
+[Text] ~8 credits/5s  @228,1268
+[Text] Kling 3.0 4K  @228,1256
+[Text] ~30 credits/5s  @228,1268
+[Text] Kling Omni 3 Image Reference 720p  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Kling Omni 3 Image Reference 1080p  @228,1252
+[Text] ~7 credits/5s  @228,1274
+[Text] Kling Omni 3 FLF 720p  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Kling Omni 3 FLF 1080p  @228,1256
+[Text] ~6 credits/5s  @228,1268
+[Text] Grok Video  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Grok Video Edit  @228,1256
+[Text] ~10 credits/5s  @228,1268
+[Text] Kling 2.6 Motion Control 720p  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Kling 2.6 Motion Control 1080p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Kling 3.0 Motion Control 720p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Kling 3.0 Motion Control 1080p  @228,1256
+[Text] ~12 credits/5s  @228,1268
+[Text] Kling Omni 1 720p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Kling Omni 1 1080p  @228,1256
+[Text] ~10 credits/5s  @228,1268
+[Text] Kling 2.6 with sound  @228,1256
+[Text] ~10 credits/5s  @228,1268
+[Text] Kling 2.6 without sound  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Wan 2.6 480p  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Wan 2.6 720p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Wan 2.6 1080p  @228,1256
+[Text] ~10 credits/5s  @228,1268
+[Text] Wan 3.0 480p  @228,1256
+[Text] 5 credits/5s  @228,1268
+[Text] Wan 3.0 720p  @228,1256
+[Text] 8.75 credits/5s  @228,1268
+[Text] Wan 3.0 1080p  @228,1256
+[Text] 17.5 credits/5s  @228,1268
+[Text] Wan 3.0 Prime 480p  @228,1256
+[Text] 7.5 credits/5s  @228,1268
+[Text] Wan 3.0 Prime 720p  @228,1256
+[Text] 15 credits/5s  @228,1268
+[Text] Wan 3.0 Prime 1080p  @228,1256
+[Text] 30 credits/5s  @228,1268
+[Text] Seedance 1.5 480p  @228,1256
+[Text] ~1 credits/5s  @228,1268
+[Text] Seedance 1.5 720p  @228,1256
+[Text] ~3 credits/5s  @228,1268
+[Text] Seedance 1.5 1080p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Higgsfield DoP Lite 720p  @228,1256
+[Text] ~3 credits/3s  @228,1268
+[Text] Higgsfield DoP Standard 720p  @228,1256
+[Text] ~7 credits/3s  @228,1268
+[Text] Higgsfield DoP Turbo 720p  @228,1256
+[Text] ~5 credits/3s  @228,1268
+[Text] Sora 2 720p  @228,1256
+[Text] ~10 credits/4s  @228,1268
+[Text] Sora 2 Pro 720p  @228,1256
+[Text] ~30 credits/4s  @228,1268
+[Text] Sora 2 Pro 1080p  @228,1256
+[Text] ~50 credits/4s  @228,1268
+[Text] Sora 2 Max 720p  @228,1256
+[Text] ~14 credits/4s  @228,1268
+[Text] Sora 2 Max 1080p  @228,1256
+[Text] ~34 credits/4s  @228,1268
+[Text] Sora 2 Pro Max 720p  @228,1256
+[Text] ~34 credits/4s  @228,1268
+[Text] Sora 2 Pro Max 1080p  @228,1256
+[Text] ~54 credits/4s  @228,1268
+[Text] Google Veo 3.1 Fast 720p  @228,1256
+[Text] ~16 credits/4s  @228,1268
+[Text] Google Veo 3.1 Fast 1080p  @228,1256
+[Text] ~16 credits/4s  @228,1268
+[Text] Google Veo 3.1 720p  @228,1256
+[Text] ~40 credits/4s  @228,1268
+[Text] Google Veo 3.1 1080p  @228,1256
+[Text] ~40 credits/4s  @228,1268
+[Text] Google Veo 3 Fast 720p  @228,1256
+[Text] ~22 credits/8s  @228,1268
+[Text] Google Veo 3 720p  @228,1256
+[Text] ~58 credits/8s  @228,1268
+[Text] Kling 2.5 Turbo 720p  @228,1256
+[Text] ~4 credits/5s  @228,1268
+[Text] Kling 2.5 Turbo 1080p  @228,1256
+[Text] ~6 credits/5s  @228,1268
+[Text] Kling 2.1 720p  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Kling 2.1 1080p  @228,1256
+[Text] ~10 credits/5s  @228,1268
+[Text] Kling 2.1 Master 1080p  @228,1256
+[Text] ~25 credits/5s  @228,1268
+[Text] Wan 2.2 Fast 720p  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Wan 2.2 720p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Wan 2.5 Fast 720p  @228,1256
+[Text] ~9 credits/5s  @228,1268
+[Text] Wan 2.5 Fast 1080p  @228,1256
+[Text] ~13 credits/5s  @228,1268
+[Text] Wan 2.5 480p  @228,1256
+[Text] ~5 credits/5s  @228,1268
+[Text] Wan 2.5 720p  @228,1256
+[Text] ~7 credits/5s  @228,1268
+[Text] Wan 2.5 1080p  @228,1256
+[Text] ~10 credits/5s  @228,1268
+[Text] Minimax Hailuo 2.3 Fast 768p  @228,1256
+[Text] ~4 credits/6s  @228,1268
+[Text] Minimax Hailuo 2.3 Fast 1080p  @228,1256
+[Text] ~7 credits/6s  @228,1268
+[Text] Minimax Hailuo 2.3 768p  @228,1256
+[Text] ~6 credits/6s  @228,1268
+[Text] Minimax Hailuo 2.3 1080p  @228,1256
+[Text] ~10 credits/6s  @228,1268
+[Text] Minimax Hailuo 02 Fast 512p  @228,1256
+[Text] ~3 credits/6s  @228,1268
+[Text] Minimax Hailuo 02 768p  @228,1256
+[Text] ~6 credits/6s  @228,1268
+[Text] Minimax Hailuo 02 1080p  @228,1256
+[Text] ~10 credits/6s  @228,1268
+[Text] Seedance Pro Fast 720p  @228,1256
+[Text] ~4 credits/5s  @228,1268
+[Text] Seedance Pro Fast 1080p  @228,1256
+[Text] ~9 credits/5s  @228,1268
+[Text] Seedance Pro 480p  @228,1256
+[Text] ~4 credits/5s  @228,1268
+[Text] Seedance Pro 720p  @228,1256
+[Text] ~8 credits/5s  @228,1268
+[Text] Seedance Pro 1080p  @228,1256
+[Text] ~18 credits/5s  @228,1268
+[Button] View More  @228,1270
+[Text] Image  @228,1314
+[Text] Concurrent Jobs  @228,1340
+[Text] Nano Banana Pro  @228,1366
+[Text] 2 credit/image  @228,1378
+[Text] Nano Banana Pro 4K  @228,1398
+[Text] 4 credits/image  @228,1410
+[Text] Nano Banana 2  @228,1430
+[Text] 2 credit/image  @228,1442
+[Text] Higgsfield Soul 2.0  @228,1442
+[Text] 0.12 credits/image  @228,1454
+[Text] Higgsfield Soul  @228,1442
+[Text] 0.25 credits/image  @228,1454
+[Text] Soul Inpaint  @228,1442
+[Text] 0.25 credits/image  @228,1454
+[Text] Product Placement  @228,1442
+[Text] 0.25 credits/image  @228,1454
+[Text] Higgsfield Popcorn  @228,1442
+[Text] 1.5 credits/image  @228,1454
+[Text] Higgsfield Face Swap  @228,1442
+[Text] ~2 credits/image  @228,1454
+[Text] Higgsfield Character Swap  @228,1442
+[Text] ~2 credits/image  @228,1454
+[Text] Reve  @228,1442
+[Text] 0.25 credit/image  @228,1454
+[Text] Nano Banana  @228,1442
+[Text] 1 credit/image  @228,1454
+[Text] Banana Placement  @228,1442
+[Text] 1 credit/image  @228,1454
+[Text] Seedream  @228,1442
+[Text] 1 credit/image  @228,1454
+[Text] Wan 2.2  @228,1442
+[Text] 0.5 credits/image  @228,1454
+[Text] Flux Kontext  @228,1442
+[Text] 1.5 credits/image  @228,1454
+[Text] Multi Reference  @228,1442
+[Text] 1.5 credits/image  @228,1454
+[Text] GPT Image  @228,1442
+[Text] 1 credit/image  @228,1454
+[Text] FLUX.2 Pro  @228,1442
+[Text] 1 credits/image  @228,1454
+[Text] FLUX.2 Flex  @228,1442
+[Text] 3 credits/image  @228,1454
+[Text] FLUX.2 Max  @228,1442
+[Text] 4 credits/image  @228,1454
+[Button] View More  @228,1456
+[Text] 16 concurrent jobs  @354,1154
+[Text] 32 concurrent jobs  @546,1154
+[Text] 1066 videos  @354,1186
+[Text] 6666 videos  @546,1186
+[Text] 533 videos  @354,1218
+[Text] 3333 videos  @546,1218
+[Text] 218 videos  @354,1250
+[Text] 1363 videos  @546,1250
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 2742 videos  @354,1271
+[Text] 17142 videos  @546,1271
+[Text] 800 videos  @354,1271
+[Text] 5000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 3840 videos  @354,1271
+[Text] 24000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 1920 videos  @354,1271
+[Text] 12000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 2742 videos  @354,1271
+[Text] 17142 videos  @546,1271
+[Text] 1371 videos  @354,1271
+[Text] 8571 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 1600 videos  @354,1271
+[Text] 10000 videos  @546,1271
+[Text] 800 videos  @354,1271
+[Text] 5000 videos  @546,1271
+[Text] 16000 videos  @354,1271
+[Text] 100000 videos  @546,1271
+[Text] 8000 videos  @354,1271
+[Text] 50000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 8000 videos  @354,1271
+[Text] 50000 videos  @546,1271
+[Text] 3428 videos  @354,1271
+[Text] 21428 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 800 videos  @354,1271
+[Text] 5000 videos  @546,1271
+[Text] 480 videos  @354,1271
+[Text] 3000 videos  @546,1271
+[Text] 1714 videos  @354,1271
+[Text] 10714 videos  @546,1271
+[Text] 705 videos  @354,1271
+[Text] 4411 videos  @546,1271
+[Text] 705 videos  @354,1271
+[Text] 4411 videos  @546,1271
+[Text] 444 videos  @354,1271
+[Text] 2777 videos  @546,1271
+[Text] 1500 videos  @354,1271
+[Text] 9375 videos  @546,1271
+[Text] 1500 videos  @354,1271
+[Text] 9375 videos  @546,1271
+[Text] 600 videos  @354,1271
+[Text] 3750 videos  @546,1271
+[Text] 600 videos  @354,1271
+[Text] 3750 videos  @546,1271
+[Text] 1090 videos  @354,1271
+[Text] 6818 videos  @546,1271
+[Text] 413 videos  @354,1271
+[Text] 2586 videos  @546,1271
+[Text] 6000 videos  @354,1271
+[Text] 37500 videos  @546,1271
+[Text] 4000 videos  @354,1271
+[Text] 25000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 960 videos  @354,1271
+[Text] 6000 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 3428 videos  @354,1271
+[Text] 21428 videos  @546,1271
+[Text] 2666 videos  @354,1271
+[Text] 16666 videos  @546,1271
+[Text] 1846 videos  @354,1271
+[Text] 11538 videos  @546,1271
+[Text] 4800 videos  @354,1271
+[Text] 30000 videos  @546,1271
+[Text] 3200 videos  @354,1271
+[Text] 20000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 6000 videos  @354,1271
+[Text] 37500 videos  @546,1271
+[Text] 3428 videos  @354,1271
+[Text] 21428 videos  @546,1271
+[Text] 4000 videos  @354,1271
+[Text] 25000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 8000 videos  @354,1271
+[Text] 50000 videos  @546,1271
+[Text] 4000 videos  @354,1271
+[Text] 25000 videos  @546,1271
+[Text] 2400 videos  @354,1271
+[Text] 15000 videos  @546,1271
+[Text] 6000 videos  @354,1271
+[Text] 37500 videos  @546,1271
+[Text] 2666 videos  @354,1271
+[Text] 16666 videos  @546,1271
+[Text] 6000 videos  @354,1271
+[Text] 37500 videos  @546,1271
+[Text] 3000 videos  @354,1271
+[Text] 18750 videos  @546,1271
+[Text] 1333 videos  @354,1271
+[Text] 8333 videos  @546,1271
+[Text] 16 concurrent jobs  @354,1340
+[Text] 32 concurrent jobs  @546,1340
+[Text] 12000 images  @354,1372
+[Text] 75000 images  @546,1372
+[Text] 6000 images  @354,1404
+[Text] 37500 images  @546,1404
+[Text] 12000 images  @354,1436
+[Text] 75000 images  @546,1436
+[Text] 200000 images  @354,1457
+[Text] 1250000 images  @546,1457
+[Text] 96000 images  @354,1457
+[Text] 600000 images  @546,1457
+[Text] 96000 images  @354,1457
+[Text] 600000 images  @546,1457
+[Text] 96000 images  @354,1457
+[Text] 600000 images  @546,1457
+[Text] 16000 images  @354,1457
+[Text] 100000 images  @546,1457
+[Text] 12000 images  @354,1457
+[Text] 75000 images  @546,1457
+[Text] 12000 images  @354,1457
+[Text] 75000 images  @546,1457
+[Text] 96000 images  @354,1457
+[Text] 600000 images  @546,1457
+[Text] 24000 images  @354,1457
+[Text] 150000 images  @546,1457
+[Text] 24000 images  @354,1457
+[Text] 150000 images  @546,1457
+[Text] 24000 images  @354,1457
+[Text] 150000 images  @546,1457
+[Text] 48000 images  @354,1457
+[Text] 300000 images  @546,1457
+[Text] 16000 images  @354,1457
+[Text] 100000 images  @546,1457
+[Text] 16000 images  @354,1457
+[Text] 100000 images  @546,1457
+[Text] 24000 images  @354,1457
+[Text] 150000 images  @546,1457
+[Text] 24000 images  @354,1457
+[Text] 150000 images  @546,1457
+[Text] 8000 images  @354,1457
+[Text] 50000 images  @546,1457
+[Text] 6000 images  @354,1457
+[Text] 37500 images  @546,1457
+[Button] Lipsync Studio  @228,1500
+[Text] Concurrent Jobs  @240,1546
+[Text] Higgsfield Speak 2.0 720p  @240,1572
+[Text] ~14 credits/5s  @240,1584
+[Text] Google Veo 3 Fast w/audio 720p  @240,1604
+[Text] ~22 credits/8s  @240,1616
+[Text] Google Veo 3 w/audio 720p  @240,1636
+[Text] ~58 credits/8s  @240,1648
+[Text] Wan 2.5 Speak Fast 720p  @240,1649
+[Text] ~9 credits/5s  @240,1661
+[Text] Wan 2.5 Speak Fast 1080p  @240,1649
+[Text] ~12 credits/5s  @240,1661
+[Text] Wan 2.5 Speak 480p  @240,1649
+[Text] ~6 credits/5s  @240,1661
+[Text] Wan 2.5 Speak 720p  @240,1649
+[Text] ~12 credits/5s  @240,1661
+[Text] Wan 2.5 Speak 1080p  @240,1649
+[Text] ~20 credits/5s  @240,1661
+[Text] Kling Speak 720p  @240,1649
+[Text] ~2 credits/2s  @240,1661
+[Text] Kling Speak 1080p  @240,1649
+[Text] ~4 credits/2s  @240,1661
+[Text] Kling Lipsync 720p  @240,1649
+[Text] ~2 credits/5s  @240,1661
+[Text] Infinite Talk 480p  @240,1649
+[Text] ~18 credits/5s  @240,1661
+[Text] Infinite Talk 720p  @240,1649
+[Text] ~12 credits/2s  @240,1661
+[Text] Sync Lipsync 3 4K 30FPS  @240,1649
+[Text] ~18 credits/2s  @240,1661
+[Button] View More  @240,1662
+[Text] 16 concurrent jobs  @366,1546
+[Text] 32 concurrent jobs  @546,1546
+[Text] 1714 videos  @366,1578
+[Text] 10714 videos  @546,1578
+[Text] 1090 videos  @366,1610
+[Text] 6818 videos  @546,1610
+[Text] 413 videos  @366,1642
+[Text] 2586 videos  @546,1642
+[Text] 2666 videos  @366,1664
+[Text] 16666 videos  @546,1664
+[Text] 1920 videos  @366,1664
+[Text] 12000 videos  @546,1664
+[Text] 3840 videos  @366,1664
+[Text] 24000 videos  @546,1664
+[Text] 1920 videos  @366,1664
+[Text] 12000 videos  @546,1664
+[Text] 1200 videos  @366,1664
+[Text] 7500 videos  @546,1664
+[Text] 12000 videos  @366,1664
+[Text] 75000 videos  @546,1664
+[Text] 6000 videos  @366,1664
+[Text] 37500 videos  @546,1664
+[Text] 9600 videos  @366,1664
+[Text] 60000 videos  @546,1664
+[Text] 1600 videos  @366,1664
+[Text] 10000 videos  @546,1664
+[Text] 2000 videos  @366,1664
+[Text] 12500 videos  @546,1664
+[Text] 1333 videos  @366,1664
+[Text] 8333 videos  @546,1664
+[Button] Character  @228,1542
+[Text] Concurrent Jobs  @240,1587
+[Text] Max Generations Amount  @240,1620
+[Text] 8 concurrent jobs  @366,1588
+[Text] 16 concurrent jobs  @546,1588
+[Text] Up to 800 generations  @366,1620
+[Text] Up to 5000 generations  @546,1620
+[Button] Credits & Usage  @228,1582
+[Text] Credits  @240,1628
+[Text] Credit discount  @240,1660
+[Text] 2000  @366,1628
+[Text] 12500  @546,1628
+[Text] Not included  @366,1666
+[Button] Access & Features  @228,1624
+[Text] Commercial use  @240,1669
+[Text] Fast-track generation  @240,1701
+[Text] Access to characters  @240,1733
+[Text] Start & End Frame control  @240,1765
+[Text] Higgsfield ads  @240,1778
+[Text] Higgsfield speak  @240,1778
+[Text] UGC builder  @240,1778
+[Text] Priority access to new models  @240,1778
+[Text] Priority access to new features  @240,1778
+[Button] View More  @240,1786
+[Text] Included  @366,1674
+[Button] Compare Features  @443,1286
+[Text] Frequently Asked Questions  @137,1340
+[Button] How do I get started with a Team Plan?  @336,1386
+[Button] Can I upgrade from Team to Enterprise later?  @336,1422
+[Button] What support is included?  @336,1458
+[Button] What payment methods are available?  @336,1494
+[Button] Is there an admin dashboard?  @336,1530
+[Button] How secure is my data?  @336,1566
+[Button] How many members can I add?  @336,1602
+[Button] Do my credits expire or reset?  @336,1638
+[Button] What should I do if I need more credits?  @336,1674
+[Button] Are collaboration features available?  @336,1710
+[Button] What features can I access?  @336,1348
+[Button] What is the main difference between the Team and Enterprise plans?  @336,1384
+[Button] How does billing work?  @336,1434
+[Text] Are you ready?  @417,1481
+[Button] Choose your plan  @476,1475
+[Text] ©  @20,1922
+[Text] 2026  @28,1922
+[Text] Higgsfield, Inc.  @46,1922
+[Text] All rights reserved.  @99,1922
+[ListItem] Change language  @652,1921
+[Image] English flag  @652,1921
+[ListItem] Help center  @710,1921
+[ListItem] Cookie Notice  @760,1921
+[ListItem] Cookie Settings  @820,1921
+[ListItem] Terms  @884,1921
+[ListItem] Privacy  @917,1921
+[Group] Notifications Alt+T  @-
+[Group] Notifications  @-

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Quadcode AI — Newcomer Sales States Prototype (0 to Paid)</title>
+<meta name="description" content="Interactive prototype for the Quadcode AI newcomer onboarding flow: visible 0-credit balance, dynamic quick prompt costs, paused task on 0, and in-app welcome checkout.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== CONTROLLER HEADER ===== -->
+<header class="top-nav">
+  <div class="nav-wrap">
+    <div class="nav-brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5" opacity=".85"/><rect x="1" y="9" width="6" height="6" rx="1.5" opacity=".85"/><rect x="9" y="9" width="6" height="6" rx="1.5" opacity=".6"/></svg>
+      </span>
+      <span class="brand-title">Quadcode AI <span id="brandSub" style="font-weight:400;color:#6b7280">/ Play as Newcomer</span></span>
+      <span class="brand-badge" id="brandBadge">Onboarding Prototype · Part 1</span>
+    </div>
+
+    <div class="nav-actions">
+      <label class="toggle-proposal">
+        <input type="checkbox" id="toggleProposal">
+        <span>Show proposal notes</span>
+      </label>
+      <button class="btn-nav restart" id="btnRestart">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        Restart
+      </button>
+      <button class="btn-nav" id="btnPrev">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </button>
+      <button class="btn-nav primary" id="btnNext">
+        Next step
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <a class="btn-nav" href="../in-app-offers/index.html" style="margin-left:6px">
+        In-app offers map
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STEPPER NAVIGATION BAR ===== -->
+<div class="stepper-bar">
+  <div class="stepper-wrap">
+    <div class="mode-switch-group">
+      <button class="mode-btn on" id="modeBtnNewbie" data-mode="newbie">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Play as newbie
+      </button>
+      <button class="mode-btn" id="modeBtnAllStates" data-mode="all-states">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        All states (17)
+      </button>
+    </div>
+    <div class="stepper-divider"></div>
+    <div class="stepper-steps-wrap" id="stepperContainer"></div>
+  </div>
+</div>
+
+<!-- ===== RATIONALE STRIP ===== -->
+<div class="rationale-strip" id="rationaleStrip"></div>
+
+<!-- ===== PROPOSAL NOTES LAYER ===== -->
+<div class="proposal-notes-box" id="proposalNotesBox">
+  <b>Proposal Note:</b> Welcome Gift (+20% bonus credits on first purchase for 7 days) and reserved exit-intent discount (-62% on Plus upon abandoning checkout) are based on the Quadcode AI monetization research and Higgsfield audit. Currently pending final PO confirmation.
+</div>
+
+<!-- ===== MAIN STAGE (IDE FRAME / STATES BOARD) ===== -->
+<main class="stage">
+  <div class="app-frame" id="appFrame"></div>
+
+  <!-- States Audit Board (All states mode) -->
+  <div class="states-board-wrap" id="statesBoardWrap" style="display:none">
+    <div class="board-header">
+      <div class="board-header-left">
+        <span class="board-tag">Матрица продающих состояний IDE · Спецификация Sage (разд. 3.3)</span>
+        <h1 class="board-title">Доска-аудит: 17 состояний десктопной IDE (5 жизненных дорожек по спеке Sage)</h1>
+        <p class="board-desc">
+          Аудит интерфейсных элементов Quadcode AI IDE по 5 жизненным дорожкам (17 целевых состояний без дублей). Отображает индикаторы баланса в шапке, поведение кнопки отправки, реакцию чата/композера, активные промо-офферы и триггеры конверсии на основе <code>meta/docs/research/app-sales-states.md</code> (раздел 3.3).
+        </p>
+      </div>
+      <div class="board-header-right">
+        <div class="board-stat-pill">
+          <span class="stat-dot"></span>
+          <span>17 из 17 состояний смоделировано</span>
+        </div>
+        <button class="btn-board-switch" id="btnBackToNewbie">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Сыграть за новичка (0 → Покупка)
+        </button>
+      </div>
+    </div>
+
+    <!-- State Cards Grid -->
+    <div class="states-grid" id="statesGrid"></div>
+
+    <!-- Ladder of Temporary Offers (Section 4 spec) -->
+    <div class="offers-ladder-wrap" id="offersLadderWrap">
+      <div class="offers-ladder-header">
+        <div class="offers-ladder-left">
+          <span class="offers-ladder-tag">Спецификация разд. 4 · Лестница временных офферов</span>
+          <h2 class="offers-ladder-title">Лестница офферов: от первого запуска до 30-го дня (6 предложений)</h2>
+          <p class="offers-ladder-desc">
+            Строго <b>один активный оффер</b> в любой момент времени. Честные не сбрасываемые таймеры. Прямая связь с интерактивным прототипом и со сценами лендинга монетизации in-app.
+          </p>
+        </div>
+        <div class="offers-ladder-meta">
+          <span class="rule-badge">1 активный оффер</span>
+          <span class="rule-badge">Честный таймер</span>
+          <span class="rule-badge">0 скрытых списаний</span>
+        </div>
+      </div>
+      <div class="offers-ladder-grid" id="offersLadderGrid"></div>
+    </div>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

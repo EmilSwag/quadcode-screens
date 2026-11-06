@@ -1,0 +1,780 @@
+/* Real Quadcode AI desktop app: light theme, 2 panels (Chat | Actions), Windows title bar.
+   Measured from the live app window (1920x1032). Written light-native: app.js lightSkin() does not touch this file. */
+
+.app{
+  --bg:#efefef; --card:#fff; --card2:#f4f4f5; --text:#161616;
+  --line:rgba(0,0,0,.08); --line2:rgba(0,0,0,.14);
+  --muted:#5f6368; --dim:#9aa0a6;
+  --ui:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  background:var(--bg); color:var(--text); font-family:var(--ui);
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* title bar */
+.app .tb{background:transparent;border:0;height:40px;padding:0 6px 0 12px;gap:6px;color:#333}
+.app .tb-logo{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#F18024,#F85A6A);display:grid;place-items:center;flex:none}
+.app .tb-logo svg{width:11px;height:11px}
+.app .tb > svg{color:#777;margin-right:4px}
+.app .tb .proj{font-weight:600;font-size:12px;color:#161616;background:transparent;border:0;padding:3px 6px}
+.app .tb .tbi{color:#555;width:26px;height:26px;display:grid;place-items:center;border-radius:7px}
+.app .tb .ver{color:#8a8a8a;font-size:11px}
+.app .tb .toggles i{background:#d6d6d6;border-color:#d6d6d6}
+.app .tb .toggles i.on{background:#fff;border-color:#bdbdbd}
+.app .tb .win{display:flex;margin-left:6px}
+.app .tb .win i{width:34px;height:28px;display:grid;place-items:center;color:#444}
+
+/* two real panels */
+.app .body,.app .body.wide{grid-template-columns:40% 1fr !important;gap:6px;padding:0 6px;background:transparent}
+.app .left,.app .center{background:#f8f8f8;border:0 !important;border-radius:12px;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
+.app .ptabs{border-bottom:0;padding:8px 8px 6px;gap:2px;background:transparent}
+.app .ptabs span{color:#3c3c3c;font-size:12px;font-weight:500;padding:6px 10px;border-radius:8px;border:0;background:transparent}
+.app .ptabs span.on{background:#e6e6e6;color:#111;font-weight:600;box-shadow:none}
+.app .ptabs span.on::after{display:none}
+
+/* chat */
+.app .msg .bub{background:#fff;border:1px solid rgba(0,0,0,.07);color:#1f1f1f;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.app .msg.user .bub{background:#e9e9ea;border-color:transparent;color:#111}
+.app .msg .who b{color:#111}
+.app .msg .mb{background:#f0f0f0;color:#555;border-color:transparent}
+
+/* composer: white card as in the real app */
+.app .composer{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.05);padding:10px 10px 8px}
+.app .composer .c-top{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.app .composer .agent-chip{display:flex;align-items:center;gap:7px;font-size:11px;color:#333;padding:2px 6px 2px 2px;border-radius:9px}
+.app .composer .agent-chip .an{display:flex;flex-direction:column;line-height:1.15}
+.app .composer .agent-chip .an b{font-size:12px;color:#111;font-weight:600}
+.app .composer .agent-chip .an small{font-size:10px;color:#777}
+.app .composer .c-media{margin-left:auto;display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
+.app .composer .text{color:#8a8a8a;font-size:12.5px;min-height:34px;padding:2px 2px 6px}
+.app .composer .crow{display:flex;align-items:center;gap:5px;flex-wrap:nowrap}
+.app .composer .crow .sp{flex:1}
+.app .composer .ico-b{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#555;background:transparent;border:0}
+.app .composer .ico-b.sq{background:#ececec;color:#333}
+.app .composer .tgl{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#444;padding:0 4px}
+.app .composer .tgl .sw{width:22px;height:12px;border-radius:99px;background:#d9d9d9;position:relative}
+.app .composer .tgl .sw::after{content:"";position:absolute;left:2px;top:2px;width:8px;height:8px;border-radius:50%;background:#fff}
+.app .chip{background:#f3f3f4;border:1px solid transparent;color:#222;font-size:10.5px;height:26px;border-radius:8px}
+.app .chip.on{background:#fff;border-color:#F18024;box-shadow:0 0 0 3px rgba(241,128,36,.14)}
+.app .chip.locked{background:#fff7f0;border-color:rgba(241,128,36,.35)}
+.app .send{background:#111;color:#fff;border:0;border-radius:9px;height:28px;font-weight:600}
+.app .send .c{background:rgba(255,255,255,.14);color:#fff}
+.app .send.warn,.app .send.gate,.app .send.low{background:linear-gradient(90deg,#F18024,#F85A6A);color:#fff}
+
+/* right panel: Actions as in the real app */
+.app .subreq{display:flex;align-items:center;gap:8px;padding:4px 4px 10px;font-size:12px;color:#222}
+.app .subreq b{font-weight:600}
+.app .subreq .mchip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:8px;padding:4px 8px;font-size:11px;color:#222}
+.app .subreq .mchip.off{background:transparent;border-color:transparent;color:#a0a0a0}
+.app .subreq .mchip.off .lg{opacity:.45;filter:grayscale(1)}
+.app .subreq .sp{flex:1}
+.app .subreq > svg{color:#666}
+.app .acard{background:#ececec;border:0;border-radius:10px;position:relative;overflow:hidden;color:#1f1f1f}
+.app .acard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#9e9e9e}
+.app .acard.done::before{background:#2fa84f}
+.app .acard.wait::before{background:#f0a020}
+.app .acard.lock::before{background:#F85A6A}
+.app .acard small{color:#6b6b6b;font-family:var(--mono)}
+.app .acard .st{background:#fff;color:#2fa84f;border:0}
+
+/* status bar */
+.app .sb{background:transparent;border:0;color:#555;font-size:10.5px;height:28px}
+.app .sb .jb{display:inline-flex;align-items:center;gap:5px}
+.app .sb .jb i{display:block;width:44px;height:8px;border-radius:2px;background:linear-gradient(90deg,#ffd54a 60%,#f0e3a8 60%)}
+.app .sb .jb em{font-style:normal;font-family:var(--mono);color:#666}
+.app .sb .ok{color:#2e7d32}
+.app .sb .on{display:inline-flex;align-items:center;gap:5px;color:#2e7d32}
+.app .sb .on .bar{width:22px;height:8px;border-radius:2px;background:#34c759}
+.app .sb .me .avatar{background:#111;color:#fff}
+
+/* modals, toasts, dropdowns on white */
+.app .ov{background:rgba(20,20,28,.28);backdrop-filter:blur(2px)}
+.app .md,.app .toast,.app .pop,.app .menu{background:#fff;color:#161616;border:1px solid rgba(0,0,0,.07);box-shadow:0 24px 60px -12px rgba(20,20,40,.28),0 2px 8px rgba(0,0,0,.06)}
+.app .md h3,.app .toast h4,.app .pop h4{color:#111}
+.app .md p,.app .toast p,.app .pop p{color:#555}
+.app .duo-c{background:#fafafa}
+.app .si-b{background:#fff;color:#222;border-color:rgba(0,0,0,.12)}
+.app .si-b.hi{background:#111;color:#fff;border-color:#111}
+
+/* ===== desktop landing layout: full-width app shot, spec in three even columns ===== */
+#scenarios .wrap{width:min(1440px,100% - 64px)}
+.scene{grid-template-columns:1fr !important;gap:22px;padding:40px 0 48px}
+.scene .frame{width:100%}
+.scene .frame .app{width:100%}
+.scene .app .ver{display:block}
+.scene .spec{position:static !important;display:grid;grid-template-columns:1.05fr 1.35fr 1fr;
+  column-gap:36px;align-items:start;max-width:none;padding:0}
+.scene .spec .sc1,.scene .spec .sc3{display:flex;flex-direction:column;gap:12px;min-width:0}
+.scene .spec .sc1 h3,.scene .spec .sc1 .lead,.scene .spec .sc2 dl,.scene .spec .sc3 .ev,.scene .spec .sc3 .kpi{margin:0}
+.scene .spec .sc2{min-width:0}
+.app .sb > span,.app .sb .sb-right > span{white-space:nowrap}
+.app .composer .agent-chip,.app .composer .tgl,.app .chip{white-space:nowrap}
+
+/* media pickers: icon + caret like the real app; the active or locked one shows its name and plan badge */
+.app .composer .c-media .chip{padding:0 6px;gap:4px}
+.app .composer .c-media .chip:not(.on):not(.locked) .cn{display:none}
+.app .composer .crow .chip .cn{max-width:96px;overflow:hidden;text-overflow:ellipsis}
+.app .composer .crow{min-width:0}
+.app .composer .c-top:has(.chip.on,.chip.locked) .c-media > .ico-b{display:none}
+.app .composer .c-top:has(.c-media > :nth-child(5)) .agent-chip .an small{display:none}
+.app .composer .c-top:has(.c-media > :nth-child(5)) .agent-chip > svg{display:none}
+.app .composer .send{padding:0 10px;gap:6px}
+.app .pb.starter{color:#1d4ed8;background:#e8f0fe;border-color:transparent}
+.app .pb.new{color:#fff;background:#19c37d;border-color:transparent}
+
+/* real vendor logos */
+.mk.lgt{background:#fff !important;display:inline-grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);color:transparent}
+.mk.lgt .lg{width:72%;height:72%;object-fit:contain}
+img.lg{width:14px;height:14px;display:inline-block;vertical-align:-2px;object-fit:contain;flex:none}
+.si-b .lg{width:15px;height:15px}
+.wal .w{display:flex;align-items:center;justify-content:center;gap:6px}
+.wal .w .lg{width:auto;height:16px}
+.app .wal .apple{background:#000;color:#fff}
+.app .wal .apple .lg{filter:invert(1);height:18px}
+.app .wal .bank,.app .ck-wallets .w.bk{background:#fff;color:#111;border:1px solid rgba(0,0,0,.14)}
+.app .md .x + .kick{padding-right:30px} /* keeps the Stripe / timer tag clear of the close button */
+.app .stripe-note{display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;color:#777;margin-top:8px}
+.app .stripe-note .lg{height:12px;width:auto}
+
+/* ---------- scenes 22–29 (payments audit): watermark preview, invites, recap thumbs, referral link ---------- */
+.app .md .wm-prev { position: relative; height: 150px; margin: 10px 0 12px; border-radius: 12px; overflow: hidden; background: #ececec; }
+.app .md .wm-prev img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.app .md .wm-prev .wm { position: absolute; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px 5px 6px; border-radius: 8px; background: rgba(255, 255, 255, .85); color: #1a1a1a; font: 600 11px/1 Inter, system-ui, sans-serif; box-shadow: 0 2px 8px rgba(0, 0, 0, .12); }
+.app .md .wm-prev .wm .lg { width: 14px; height: 14px; }
+.app .md .inv { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; padding: 8px; border: 1px solid #e3e3e3; border-radius: 10px; background: #fafafa; }
+.app .md .inv span { padding: 5px 9px; border: 1px solid #e3e3e3; border-radius: 7px; background: #fff; color: #1a1a1a; font-size: 12px; }
+.app .md .inv em { padding: 5px 4px; color: #9a9a9a; font-size: 12px; font-style: normal; }
+.app .toast .rc-imgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 8px 0 10px; }
+.app .toast .rc-imgs img { width: 100%; height: 64px; object-fit: cover; border-radius: 8px; display: block; }
+.app .toast .ref { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 8px 0; padding: 8px 10px; border: 1px dashed #d6d6d6; border-radius: 9px; background: #fafafa; color: #1a1a1a; font: 500 12px/1.2 'IBM Plex Mono', ui-monospace, monospace; }
+.app .toast .ref b { color: #F18024; font: 600 12px/1 Inter, system-ui, sans-serif; }
+
+/* ===== Step 9.1: Higgsfield-aligned retention & monetization scenes ===== */
+
+/* Scene 8: 1-screen cancel flow & loss cards */
+.app .c-timeline { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 10px 12px; margin: 10px 0 12px; border-radius: 10px; background: #f8f8f9; border: 1px solid rgba(0,0,0,.08); font-size: 11px; }
+.app .c-timeline .tl-step { display: flex; flex-direction: column; gap: 2px; }
+.app .c-timeline .tl-step b { font-size: 11px; color: #111; }
+.app .c-timeline .tl-step small { font-size: 9.5px; color: #666; }
+.app .c-timeline .tl-step.on b { color: #f18024; }
+.app .c-timeline .tl-arr { color: #aaa; font-weight: 600; font-size: 13px; }
+
+.app .loss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0 12px; }
+.app .loss-c { padding: 10px 8px; border-radius: 10px; border: 1px solid rgba(0,0,0,.08); background: #fbfbfb; text-align: center; display: flex; flex-direction: column; gap: 3px; }
+.app .loss-c.hi { border-color: rgba(241,128,36,.4); background: #fffaf6; }
+.app .loss-v { font-family: var(--head, sans-serif); font-size: 17px; font-weight: 700; color: #111; }
+.app .loss-c.hi .loss-v { color: #f18024; }
+.app .loss-l { font-size: 9.5px; color: #666; line-height: 1.3; }
+
+.app .ret-offer-box { border: 1px solid rgba(241,128,36,.4); background: linear-gradient(180deg, #fffaf6, #fff); border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; }
+.app .ret-badge { display: inline-block; padding: 2px 7px; border-radius: 99px; background: #f18024; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+.app .ret-title { font-family: var(--head, sans-serif); font-size: 14px; font-weight: 700; color: #111; margin-bottom: 4px; }
+.app .ret-offer-box p { font-size: 11px; color: #555; margin-bottom: 10px; line-height: 1.45; }
+.app .ret-actions { display: flex; gap: 8px; }
+.app .btn-accept-offer { flex: 1.2; background: #f18024; color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; font-size: 11.5px; font-weight: 600; cursor: pointer; }
+.app .btn-remind-me { flex: 1; background: #fff; color: #333; border: 1px solid rgba(0,0,0,.15); border-radius: 8px; padding: 8px 10px; font-size: 11px; font-weight: 500; cursor: pointer; }
+
+.app .cancel-footer-row { display: flex; gap: 8px; margin-top: 12px; border-top: 1px solid rgba(0,0,0,.08); padding-top: 12px; }
+.app .btn-cancel-full { flex: 1; background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; border-radius: 8px; padding: 9px 12px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all .15s; }
+.app .btn-cancel-full:hover { background: #fee2e2; }
+.app .btn-keep-sub { flex: 1; background: #111; color: #fff; border: 0; border-radius: 8px; padding: 9px 12px; font-size: 12px; font-weight: 600; cursor: pointer; }
+
+/* Cancel modal view switch / post-cancellation survey */
+.app .cview-bar { display: flex; gap: 6px; padding: 3px; border-radius: 8px; background: #ececec; margin-bottom: 12px; font-size: 10.5px; }
+.app .cview-bar span { flex: 1; text-align: center; padding: 4px 8px; border-radius: 6px; color: #555; font-weight: 500; cursor: pointer; }
+.app .cview-bar span.on { background: #fff; color: #111; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+
+.app .postcancel-box { display: flex; flex-direction: column; gap: 10px; }
+.app .pc-status { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 10px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+.app .pc-status .ico.ok { width: 22px; height: 22px; border-radius: 50%; background: #10b981; color: #fff; display: grid; place-items: center; flex: none; }
+.app .pc-status b { font-size: 12.5px; color: #064e3b; display: block; }
+.app .pc-status p { font-size: 11px; color: #047857; margin: 2px 0 0; }
+.app .pc-survey { border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: 12px; background: #fbfbfb; }
+.app .survey-title { font-weight: 600; font-size: 12.5px; color: #111; }
+.app .survey-sub { font-size: 10.5px; color: #666; margin-bottom: 8px; }
+.app .survey-reasons { display: grid; gap: 5px; font-size: 11px; color: #333; margin-bottom: 8px; }
+.app .survey-reasons label { display: flex; align-items: center; gap: 7px; cursor: pointer; }
+.app .survey-field { position: relative; margin-top: 6px; }
+.app .survey-field textarea { width: 100%; box-sizing: border-box; height: 50px; border: 1px solid rgba(0,0,0,.15); border-radius: 8px; padding: 6px 8px; font-family: var(--ui); font-size: 11px; resize: none; background: #fff; }
+.app .survey-field .char-count { position: absolute; right: 8px; bottom: 6px; font-size: 9.5px; color: #888; font-family: var(--mono); }
+.app .survey-actions { display: flex; gap: 8px; margin-top: 8px; }
+.app .btn-submit-feedback { flex: 1; background: #111; color: #fff; border: 0; border-radius: 7px; padding: 7px 12px; font-size: 11px; font-weight: 600; cursor: pointer; }
+.app .btn-skip-survey { background: transparent; border: 1px solid rgba(0,0,0,.15); border-radius: 7px; padding: 7px 12px; font-size: 11px; color: #555; cursor: pointer; }
+
+/* Scene 17: Changing Commitment Modal */
+.app .comm-plans { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; margin: 12px 0; }
+.app .comm-box { border: 1px solid rgba(0,0,0,.09); border-radius: 10px; padding: 10px; background: #fafafa; }
+.app .comm-box.cur { opacity: .75; }
+.app .comm-box.new { border-color: rgba(241,128,36,.5); background: #fffaf6; }
+.app .comm-lab { font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #777; }
+.app .comm-name { font-weight: 700; font-size: 13px; color: #111; margin: 2px 0; }
+.app .comm-price { font-size: 11px; color: #444; }
+.app .comm-price small { display: block; font-size: 9.5px; color: #16a34a; font-weight: 600; }
+.app .comm-arrow { font-size: 16px; color: #999; font-weight: 700; text-align: center; }
+
+/* Scene 24: Split billing (Instant Upgrade vs. Deferred Downgrade) */
+.app .split-tier-toggle { display: flex; gap: 6px; padding: 3px; border-radius: 8px; background: #eaeaea; margin-bottom: 12px; font-size: 10.5px; }
+.app .split-tier-toggle span { flex: 1; text-align: center; padding: 5px 8px; border-radius: 6px; color: #555; font-weight: 500; cursor: pointer; }
+.app .split-tier-toggle span.on { background: #fff; color: #111; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.app .downgrade-callout { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; border-radius: 9px; background: #fef3c7; border: 1px solid #fde68a; color: #92400e; font-size: 10.5px; margin-bottom: 10px; }
+
+/* Scene 2: Escape subtle link */
+.app .escape-subtle { text-align: center; margin-top: 10px; font-size: 10.5px; color: #777; }
+.app .escape-subtle a { color: #f18024; text-decoration: underline; font-weight: 500; }
+
+/* Scene 5: Exit-intent 62% modal & sticky banner */
+.app .exit-sticky { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 12px; background: #111; color: #fff; font-size: 11px; border-radius: 8px; margin-bottom: 8px; }
+.app .exit-sticky .pill { background: #f85a6a; color: #fff; padding: 2px 6px; border-radius: 99px; font-weight: 700; font-size: 9.5px; }
+.app .exit-sticky b { color: #ffd54a; }
+.app .exit-timer-pill { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 11px; background: rgba(255,255,255,.12); padding: 2px 8px; border-radius: 6px; color: #fff; }
+
+/* Scene 23 & 7 & 10: Auto-refill counters */
+.app .menu.hf .row.subcr { margin-top: 3px; font-size: 10px; color: #666; }
+.app .menu.hf .row.subcr b { color: #111; font-weight: 600; }
+.app .sp-subcr { padding: 4px 8px; border-radius: 8px; background: #f4f4f5; font-size: 10.5px; color: #444; display: flex; flex-direction: column; gap: 1px; }
+.app .sp-subcr b { color: #111; }
+.app .sp-subcr small { color: #777; font-size: 9px; }
+
+/* Scene 29: Two-track referral */
+.app .ref-twotrack, .app .ref-tracks { display: flex; flex-direction: column; gap: 8px; margin: 8px 0 10px; }
+.app .ref-track { border: 1px solid rgba(0,0,0,.09); border-radius: 10px; padding: 10px; background: #fafafa; display: flex; flex-direction: column; gap: 6px; }
+.app .ref-track.hi, .app .ref-track.inapp { border-color: rgba(241,128,36,.3); background: #fffaf7; }
+.app .ref-track.aff { border-color: rgba(16,185,129,.3); background: #f7fdf9; }
+.app .ref-track-title, .app .ref-track .rt-head { font-weight: 700; font-size: 11.5px; color: #111; display: flex; align-items: center; justify-content: space-between; }
+.app .ref-track-title .tag, .app .ref-track .rt-head .pill { font-size: 9px; padding: 2px 7px; border-radius: 99px; background: #e0f2fe; color: #0369a1; font-weight: 600; }
+.app .ref-track-title .tag.cash, .app .ref-track .rt-head .pill.green { background: #dcfce7; color: #15803d; }
+.app .ref-track p { font-size: 10.5px; color: #555; line-height: 1.35; margin: 0; }
+.app .ref-box { display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border: 1px dashed #d6d6d6; border-radius: 8px; background: #ffffff; font: 500 11px/1.2 'IBM Plex Mono', ui-monospace, monospace; margin: 4px 0; }
+.app .ref-box b { color: #f18024; cursor: pointer; font-family: Inter, sans-serif; font-size: 11px; }
+.app .ref-tier-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: 10px; color: #444; }
+.app .ref-tier-list li { display: flex; align-items: center; justify-content: space-between; gap: 5px; }
+.app .ref-tier-list li b { color: #f18024; font-weight: 600; }
+.app .aff-perks { display: flex; flex-direction: column; gap: 4px; font-size: 10.5px; color: #444; margin: 4px 0; }
+.app .aff-perks div { display: flex; align-items: center; gap: 5px; }
+.app .aff-perks svg { color: #15803d; flex-shrink: 0; }
+
+/* Store modal: Unlimited tab & durations */
+.app .st-unl { display: grid; gap: 8px; }
+.app .uc { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 12px; background: #fafafa; border: 1px solid rgba(0,0,0,.08); }
+.app .uc.hi { border-color: rgba(241,128,36,.4); background: #fffaf6; }
+.app .uc-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.app .uc-head b { font-size: 13px; color: #111; font-weight: 700; }
+.app .uc-head .pill { font-size: 9px; padding: 1px 7px; border-radius: 99px; background: #f18024; color: #fff; font-weight: 600; }
+.app .uc-desc { font-size: 10px; color: #666; margin: 1px 0 4px; }
+.app .uc-durations { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 3px; }
+.app .uc-dur { font-size: 10px; padding: 2px 7px; border-radius: 6px; border: 1px solid rgba(0,0,0,.12); background: #fff; color: #444; font-family: var(--mono); cursor: pointer; }
+.app .uc-dur.on { border-color: #f18024; background: #fffaf6; color: #f18024; font-weight: 600; }
+.app .uc-dur small { font-size: 9px; color: #16a34a; font-weight: 600; margin-left: 2px; }
+.app .st-tabs span { cursor: pointer; }
+
+/* Final access screen (post-cancellation) */
+.app .final-access-box { padding: 14px 10px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.app .final-access-box .fa-icon { width: 40px; height: 40px; border-radius: 50%; background: #ecfdf5; color: #10b981; display: grid; place-items: center; border: 1px solid #a7f3d0; margin-bottom: 2px; }
+.app .final-access-box h3 { font-family: var(--head, sans-serif); font-size: 15px; font-weight: 700; color: #111; margin: 0; }
+.app .final-access-box .fa-lead { font-size: 11px; color: #555; margin: 0 0 4px; }
+.app .final-access-box .fa-details { width: 100%; box-sizing: border-box; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; background: #fafafa; padding: 8px 12px; font-size: 11px; text-align: left; display: grid; gap: 6px; }
+.app .fa-row { display: flex; justify-content: space-between; gap: 8px; }
+.app .fa-row span { color: #666; font-size: 10.5px; }
+.app .fa-row b { color: #111; font-size: 10.5px; font-weight: 600; }
+.app .fa-actions { width: 100%; display: flex; gap: 8px; margin-top: 4px; }
+.app .btn-resubscribe { flex: 1; background: #111; color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; font-size: 11.5px; font-weight: 600; cursor: pointer; }
+.app .btn-back-workspace { flex: 1; background: #fff; color: #333; border: 1px solid rgba(0,0,0,.15); border-radius: 8px; padding: 8px 12px; font-size: 11.5px; font-weight: 500; cursor: pointer; }
+
+header.site {
+  position: relative !important;
+}
+
+/* ===== Step 9.5: External scenario toolbar ===== */
+.scene-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  background: #f0f0f2;
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 10px;
+  font-size: 11.5px;
+}
+.scene-toolbar .stb-label {
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: .06em;
+  font-family: var(--mono);
+}
+.scene-toolbar .stb-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.scene-toolbar .stb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+  color: #333;
+  font-family: var(--ui);
+  font-weight: 500;
+  font-size: 11.5px;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.scene-toolbar .stb-btn:hover {
+  background: #fafafa;
+  color: #111;
+  border-color: rgba(0,0,0,.2);
+}
+.scene-toolbar .stb-btn.on {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+
+/* ===== Step 9.5: Store modal enhancements (HF 1:1) ===== */
+.app .md.store {
+  --mw: 760px;
+  padding: 20px 22px 16px;
+  max-height: 94%;
+  display: flex;
+  flex-direction: column;
+}
+.app .md.store .st-tab-pane {
+  max-height: 540px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Top-up full-width strips (HF screens 06 & 07) */
+.app .refill-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  font-size: 11.5px;
+}
+.app .refill-banner .refill-ico {
+  display: grid;
+  place-items: center;
+  color: #10b981;
+}
+.app .refill-banner .refill-text {
+  flex: 1;
+}
+.app .btn-refill-setup {
+  background: #10b981;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app .topup-strips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.app .topup-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fafafa;
+  border: 1px solid rgba(0,0,0,.08);
+  transition: all .15s ease;
+}
+.app .topup-strip:hover {
+  background: #fdfdfd;
+  border-color: rgba(0,0,0,.15);
+}
+.app .topup-strip.hi {
+  border-color: rgba(241,128,36,.4);
+  background: #fffaf6;
+  box-shadow: 0 0 0 1px rgba(241,128,36,.15);
+}
+.app .strip-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.app .strip-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.app .strip-credits {
+  font-family: var(--head, sans-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+}
+.app .strip-rate {
+  font-size: 11px;
+  color: #555;
+  background: #ebebeb;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-family: var(--mono);
+}
+.app .strip-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 99px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.app .strip-badge.popular {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.app .strip-badge.gold {
+  background: #fef3c7;
+  color: #92400e;
+}
+.app .strip-off {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #fce7f3;
+  color: #be185d;
+}
+.app .strip-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  color: #444;
+}
+.app .strip-outcomes div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.app .strip-outcomes svg {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+.app .strip-slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: #eee;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: #666;
+}
+.app .strip-center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  min-width: 80px;
+}
+.app .strip-was {
+  font-size: 14px;
+  color: #888;
+  text-decoration: line-through;
+}
+.app .strip-price {
+  font-family: var(--head, sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+.app .btn-strip-purchase {
+  background: #111;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-family: var(--ui);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .15s ease;
+}
+.app .btn-strip-purchase:hover {
+  background: #222;
+}
+.app .btn-strip-purchase.hi {
+  background: #f18024;
+}
+.app .btn-strip-purchase.hi:hover {
+  background: #e07218;
+}
+
+/* Unlimited Models Poster Cards (HF screen 08) */
+.app .st-unl-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.app .unl-hero-banner {
+  position: relative;
+  min-height: 175px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,.15);
+  overflow: hidden;
+}
+.app .unl-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+.app .unl-hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .12em;
+  color: #f18024;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.app .unl-hero-title {
+  font-family: var(--head, sans-serif);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: #fff;
+  margin: 0 0 3px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+.app .unl-hero-desc {
+  font-size: 11.5px;
+  color: #ddd;
+  margin: 0 0 10px;
+}
+.app .unl-hero-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.app .unl-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-family: var(--mono);
+}
+.app .unl-pill.hl {
+  background: rgba(241, 128, 36, 0.9);
+  color: #fff;
+  font-weight: 600;
+}
+.app .unl-pill.hl s {
+  opacity: .75;
+}
+.app .unl-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.app .btn-hero-pass {
+  background: #fff;
+  color: #111;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.app .unl-hero-link {
+  font-size: 11px;
+  color: #ddd;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Poster Cards Grid */
+.app .unl-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.app .unl-poster-card {
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fafafa;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.app .unl-card-art {
+  height: 105px;
+  background-size: cover;
+  background-position: center;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  position: relative;
+}
+.app .unl-card-top {
+  display: flex;
+  justify-content: flex-end;
+}
+.app .unl-qbadge {
+  font-size: 9px;
+  font-family: var(--mono);
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(0,0,0,.65);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.app .unl-qbadge.gold {
+  background: rgba(241,128,36,.9);
+  border-color: rgba(255,255,255,.4);
+}
+.app .unl-card-name {
+  line-height: 1.15;
+}
+.app .unl-card-name small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: .08em;
+  color: #ffd54a;
+  font-weight: 700;
+}
+.app .unl-card-name b {
+  font-family: var(--head, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.7);
+}
+.app .unl-card-foot {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  flex: 1;
+}
+.app .unl-dur-select {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.app .unl-dchip {
+  font-size: 10px;
+  font-family: var(--mono);
+  color: #555;
+}
+.app .unl-dchip.on {
+  font-weight: 600;
+  color: #111;
+}
+.app .unl-dchip s {
+  color: #888;
+}
+.app .unl-all-desc {
+  font-size: 9.5px;
+  color: #666;
+  line-height: 1.3;
+}
+.app .btn-card-pass {
+  background: #f4f4f5;
+  color: #111;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 10.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all .15s ease;
+}
+.app .btn-card-pass:hover {
+  background: #e8e8ea;
+}
+.app .btn-card-pass.hi {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+.app .btn-card-pass.hi:hover {
+  background: #222;
+}
+
+.app .unl-store-footer {
+  margin-top: 4px;
+  border-top: 1px solid rgba(0,0,0,.08);
+  padding-top: 8px;
+}
+.app .unl-filters-title {
+  font-size: 10px;
+  font-family: var(--mono);
+  color: #777;
+  margin-bottom: 5px;
+}
+.app .unl-filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.app .unl-fchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f4f4f5;
+  border: 1px solid rgba(0,0,0,.08);
+  font-size: 10.5px;
+  color: #444;
+  cursor: pointer;
+}
+.app .unl-fchip.on {
+  background: #fff;
+  border-color: #f18024;
+  color: #f18024;
+  font-weight: 600;
+}
+.app .unl-fchip .f-lg {
+  height: 11px;
+  width: auto;
+}

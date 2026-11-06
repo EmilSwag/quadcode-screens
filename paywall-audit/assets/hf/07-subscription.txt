@@ -1,0 +1,224 @@
+﻿# Subscription • Higgsfield
+[Text] Special offer  @30,16
+[Text] Unlimited Seedance 2.5 at 1080p for 7 days. Available on Scale plan with 30% OFF.  @76,16
+[Button] Get Unlimited Seedance 2.5  @839,12
+[Hyperlink] Higgsfield  @16,36
+[Group] Main  @32,34
+[ListItem] Explore  @32,34
+[ListItem] Image  @66,34
+[ListItem] Video  @94,34
+[ListItem] Audio  @122,34
+[ListItem] MCP  @150,34
+[ListItem] API New  @174,34
+[ListItem] ChatGPT Plugin  @217,34
+[ListItem] Genjutsu  @278,34
+[ListItem] Effects  @316,34
+[ListItem] Cinema Studio  @348,34
+[ListItem] Contests  @406,34
+[ListItem] Marketing Studio  @444,34
+[ListItem] Supercomputer  @510,34
+[ListItem] 3D Jutsu New  @570,34
+[ListItem] Edit  @628,34
+[ListItem] Academy  @648,34
+[ListItem] Community  @688,34
+[ListItem] Plugins  @736,34
+[ListItem] Canvas  @768,34
+[ListItem] Originals  @802,34
+[Button] Search Higgsfield  @716,36
+[Hyperlink] Upgrade30% OFF  @734,36
+[Hyperlink] Enterprise  @791,36
+[Hyperlink] Folder icon Assets  @843,34
+[Image] Folder icon  @846,38
+[Button] Add members  @894,34
+[Button] Notifications  @912,34
+[Button] Account menu  @934,36
+[Image] user profile  @936,38
+[Group] Account settings navigation  @14,62
+[Text] tudoreagle2000's workspace  @14,62
+[ListItem] Personal profile  @14,74
+[ListItem] Gifts  @14,94
+[ListItem] Subscription  @14,112
+[ListItem] Usage  @14,132
+[ListItem] Promocode  @14,150
+[Group] Support resources  @14,406
+[Text] Need help?  @38,442
+[Text] Answers on billing, credits, and account  @29,455
+[Hyperlink] Go to Help Center  @18,480
+[Button] Join our Discord  @106,448
+[Button] Need help?  @106,454
+[Button] Sign out  @14,508
+[Text] Subscription  @359,70
+[Text] Manage your plan, credits, unlimited models  @359,90
+[Text] Subscription  @378,117
+[Text] Plus Plan  @371,138
+[Text] Your plan renews October 15, 2026  @371,152
+[Button] Upgrade plan  @660,140
+[Text] 1,200 credits per  @383,179
+[Text] month  @433,179
+[Text] Parallel generations: up to 6 Videos, 8  @383,193
+[Text] Images  @493,193
+[Text] Access to  @383,207
+[Text] Supercomputer  @413,207
+[Text] Access to all Seedance  @383,221
+[Text] models  @451,221
+[Text] Access to all models &  @557,179
+[Text] features  @623,179
+[Text] Early access to advanced AI  @557,193
+[Text] features  @640,193
+[Text] Access to unlimited  @557,207
+[Text] marketplace  @615,207
+[Text] Lowest cost per  @557,221
+[Text] credit  @604,221
+[Text] Credits  @378,260
+[Hyperlink] Learn more  @685,260
+[Text] Monthly credits left  @373,285
+[Text] 719  @373,296
+[Text] / 1 200  @390,296
+[Text] Auto-refill credits  @444,285
+[Text] 0  @444,296
+[Button] Buy credits  @660,288
+[Text] Credits auto-refill  @378,350
+[Text] Auto-refill is disabled  @393,373
+[Text] Enable to automatically top up credits when running low  @393,386
+[Button] Set-up & Enable  @660,374
+[Text] Active unlimited models  @378,424
+[Text] Get unlimited access to top models from $5  @389,446
+[Text] Seedance 2.0, Nano Banana Pro, Kling 3.0 and more  @389,458
+[Button] Get Unlimited  @668,448
+[Text] 6 models  @371,487
+[Text] Currently unlimited  @371,501
+[Text] 0  @492,487
+[Text] Free generations in total  @492,501
+[Text] + $0  @612,487
+[Text] Saved in total  @612,501
+[DataItem] Model Name  @363,519
+[DataItem] Starts  @526,519
+[DataItem] Expires  @601,519
+[DataItem] Status  @676,519
+[DataItem] FLUX.2 Pro 365 Unlimited 1K quality  @363,540
+[DataItem] Auto-renewing  @526,540
+[DataItem] Active  @676,540
+[DataItem] GPT Image 365 Unlimited  @363,577
+[DataItem] Auto-renewing  @526,577
+[DataItem] Active  @676,577
+[DataItem] Seedream 4.5 365 Unlimited  @363,604
+[DataItem] Auto-renewing  @526,604
+[DataItem] Active  @676,604
+[DataItem] Kling O1 Image 365 Unlimited  @363,632
+[DataItem] Auto-renewing  @526,632
+[DataItem] Active  @676,632
+[DataItem] Nano Banana 365 Unlimited  @363,660
+[DataItem] Auto-renewing  @526,660
+[DataItem] Active  @676,660
+[DataItem] Seedream 5.0 Lite 365 Unlimited  @363,687
+[DataItem] Auto-renewing  @526,687
+[DataItem] Active  @676,687
+[Button] Show 10  @369,720
+[Text] Page 1 of 1  @531,725
+[Text] Unlimited Access History  @371,754
+[Text] All models you've had unlimited access to  @371,766
+[Hyperlink] See Unlimited History  @632,756
+[Text] Pending Invoices  @378,806
+[Hyperlink] All invoices  @686,804
+[DataItem] Description  @363,820
+[DataItem] Due on  @542,820
+[DataItem] Status  @615,820
+[DataItem] Total  @668,820
+[DataItem] 1 × Higgsfield Plus - monthly (at €59.00 / month)  @363,841
+[DataItem] October 15, 2026  @542,841
+[DataItem] Upcoming  @615,841
+[DataItem] €62.54  @668,841
+[Text] Payment methods  @378,897
+[DataItem] Card info  @389,910
+[DataItem] Expire date  @576,910
+[DataItem] ••3360  @389,932
+[DataItem] 12/27  @576,932
+[DataItem] Add new payment method  @363,958
+[Text] Billing information  @369,1010
+[Button] How does billing work?  @440,1008
+[Text] Manage your billing details displayed on your invoices  @369,1022
+[Button] Manage  @678,1010
+[Text] Your Rewind  @378,1059
+[Text] 23 generations  @372,1082
+[Text] so far - and you're still just getting started  @372,1094
+[Text] HIGGSFIELD  @384,1307
+[Text] Your video generations  @531,1194
+[Button] Show  @566,1214
+[Text] Top image model: GPT Image 2.5  @666,1082
+[Text] - 12 Generations  @666,1094
+[Text] GPT Image 2.5  @670,1152
+[Text] 12  @675,1178
+[Text] Gens  @684,1179
+[Text] ByteDance Upscale  @712,1216
+[Text] 4  @718,1242
+[Text] Gens  @725,1244
+[Text] Expand & Crop  @757,1216
+[Text] 4  @761,1242
+[Text] Gens  @768,1244
+[Text] HIGGSFIELD  @678,1307
+[Text] Favorite video models  @828,1194
+[Button] Show  @860,1214
+[Text] Your cinematics shots  @974,1194
+[Button] Show  @1008,1214
+[Text] Your plan includes  @378,1347
+[Text] 1  @693,1347
+[Text] /  @696,1347
+[Text] 15  @701,1347
+[Text] You've used  @373,1372
+[Text] Create Image  @405,1392
+[Text] Generate AI images  @405,1404
+[Hyperlink] Generate  @662,1394
+[Text] Unused from your subscription  @373,1432
+[Text] Photodump  @405,1454
+[Text] Generate your aesthetics  @405,1466
+[Hyperlink] Show  @668,1455
+[Text] Cinema Studio Image  @405,1492
+[Text] Real camera and lens simulation  @405,1504
+[Hyperlink] Show  @668,1493
+[Text] Soul ID Character  @405,1530
+[Text] Create unique character  @405,1542
+[Hyperlink] Show  @668,1531
+[Text] Relight  @405,1568
+[Text] Adjust lighting position, color, and brightness  @405,1580
+[Hyperlink] Show  @668,1569
+[Text] Inpaint  @405,1606
+[Text] Select an area, describe the change  @405,1618
+[Hyperlink] Show  @668,1607
+[Text] Image Upscale  @405,1644
+[Text] Enhance image quality  @405,1656
+[Hyperlink] Show  @668,1645
+[Text] Face Swap  @405,1682
+[Text] Create Realistic Face Swaps  @405,1694
+[Hyperlink] Show  @668,1683
+[Text] Character Swap  @405,1720
+[Text] Create Realistic Character Swaps  @405,1732
+[Hyperlink] Show  @668,1721
+[Text] Draw to Edit  @405,1758
+[Text] From sketch to picture  @405,1770
+[Hyperlink] Show  @668,1759
+[Text] Fashion Factory  @405,1796
+[Text] Create fashion sets  @405,1808
+[Hyperlink] Show  @668,1797
+[Text] Cinema Studio Audio  @405,1834
+[Text] Film-style audio  @405,1846
+[Hyperlink] Show  @668,1835
+[Text] Cinema Studio Video  @405,1872
+[Text] Create cinematic videos  @405,1884
+[Hyperlink] Show  @668,1873
+[Text] Moodboard  @405,1910
+[Text] Generate in your style  @405,1922
+[Hyperlink] Show  @668,1911
+[Text] AI influencer  @405,1948
+[Text] Create virtual influencers  @405,1960
+[Hyperlink] Show  @668,1949
+[Text] Plan Settings  @373,1988
+[Text] Manage Subscription  @407,2008
+[Text] Subscription cancellation settings  @407,2020
+[Button] Show  @668,2010
+[Text] If you cancel, you'll lose access to your remaining credits when your billing period ends.  @410,2044
+[Text] Plus Plan  @388,2082
+[Text] Your subscription is active until October 15, 2026  @388,2098
+[Button] Cancel Subscription  @601,2087
+[Button] Scroll Up  @762,490
+[Group] Notifications Alt+T  @-
+[Group] Notifications  @-

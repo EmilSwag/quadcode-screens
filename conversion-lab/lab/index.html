@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Conversion Lab — Quadcode × Higgsfield</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="top"></div>
+<div class="hub">
+  <h1>Quadcode × Higgsfield: что переносим, чтобы росла конверсия в покупку</h1>
+  <p class="lead">Живое исследование 25.09.2026: quadcode.ai (главная, Sign in / Sign up, /profile/plans), higgsfield.ai в Zen (гость) + платный путь HF из прогонов 23–24.09. Ниже — сравнение, доказательства (скрины), карта влияния и два раздела прототипа. Продуктовую модель QC (все модели всем, покупка QCC) не трогаем — только маркетинговые слои.</p>
+
+  <div class="kpi" style="margin:22px 0">
+    <div class="card"><b>0</b><span class="mut">цен видно гостю на quadcode.ai (нет Pricing, /pricing = 404, /profile/plans → редирект)</span></div>
+    <div class="card"><b>5 → 2</b><span class="mut">полей в Sign Up после упрощения (+ стимул 200 QCC)</span></div>
+    <div class="card"><b>18 + 12</b><span class="mut">внедрений: сайт/ЛК (A) и IDE (B), все — поверх существующего биллинга</span></div>
+    <div class="card"><b>1</b><span class="mut">urgency-оффер одновременно, только серверный дедлайн (meta/rules/temporary-offers.md)</span></div>
+  </div>
+
+  <div class="grid2" style="margin-bottom:26px">
+    <a class="card" href="site.html" style="border-color:var(--acc)"><span class="badge acc">Часть A</span><h2 style="margin:8px 0 4px">Сайт и личный кабинет</h2><p class="mut">Главная, Sign in / Sign up, публичный /pricing, /profile/plans с попапами (Starter Kit, таймер 5 мин, exit-intent, паки, Change plan, отмена), checkout. Переключатель «Сейчас / После» и 4 персоны.</p><div class="btn acc sm" style="margin-top:10px">Открыть →</div></a>
+    <a class="card" href="ide.html" style="border-color:var(--blue)"><span class="badge blue">Часть B</span><h2 style="margin:8px 0 4px">IDE — маркетинговые слои</h2><p class="mut">12 триггеров поверх реального скрина IDE v0.17441: Starter Kit при первом запуске, тост на дорогой модели, 402 → пак, авто-пополнение, кросс-селл, пилюля с таймером, win-back, магазин в профиле. Меню моделей не меняем.</p><div class="btn sm" style="margin-top:10px;border-color:var(--blue)">Открыть →</div></a>
+  </div>
+
+  <h2 style="margin:26px 0 10px">1. Сравнение по поверхностям</h2>
+  <div class="card" style="padding:0 6px"><table id="cmp"><thead><tr><th>Механика</th><th>Higgsfield</th><th>Quadcode сейчас</th><th>Разрыв</th></tr></thead><tbody></tbody></table></div>
+
+  <h2 style="margin:30px 0 10px">2. Доказательства — Quadcode вживую (25.09)</h2>
+  <div class="gal" id="gal-qc"></div>
+  <h2 style="margin:30px 0 10px">3. Доказательства — Higgsfield</h2>
+  <p class="mut small" style="margin-bottom:10px">В Zen сейчас гостевой вид (PO не залогинен) — первые два скрина. Платные экраны — из прогона 23–24.09 под Plus-подпиской.</p>
+  <div class="gal" id="gal-hf"></div>
+
+  <h2 style="margin:30px 0 10px">4. Что на что влияет</h2>
+  <div class="card" style="padding:0 6px"><table><thead><tr><th>Изменение</th><th>Сайт FE</th><th>ЛК FE</th><th>Бэк / биллинг</th><th>IDE клиент</th><th>CRM</th><th>Метрика</th></tr></thead><tbody>
+    <tr><td>A1 Pricing публичный</td><td>✔ роут</td><td>—</td><td>✔ публичный GET цен</td><td>—</td><td>—</td><td>visitor→signup</td></tr>
+    <tr><td>A2/A3 Sign up / in</td><td>✔</td><td>—</td><td>✔ welcome-кредиты</td><td>—</td><td>✔ welcome письмо</td><td>signup rate</td></tr>
+    <tr><td>A4/B1/B2 Starter Kit</td><td>—</td><td>✔ модалка</td><td>✔ промокод с TTL</td><td>✔ текст баннера/тост</td><td>✔ напоминание за 24 ч</td><td>signup→purchase</td></tr>
+    <tr><td>A5/A6 полоса, пилюля</td><td>✔</td><td>✔</td><td>✔ banner config</td><td>—</td><td>—</td><td>CTR pricing, Yearly mix</td></tr>
+    <tr><td>A7 карточки</td><td>—</td><td>✔</td><td>—</td><td>—</td><td>—</td><td>checkout start</td></tr>
+    <tr><td>A8/A9/B7 таймер, exit-intent</td><td>—</td><td>✔</td><td>✔ персональный оффер + TTL</td><td>✔ пилюля</td><td>—</td><td>purchase в сессии</td></tr>
+    <tr><td>A10/A13/B3/B4 паки, auto-refill</td><td>—</td><td>✔</td><td>✔ auto-refill (новое)</td><td>✔ карточка 402</td><td>✔ low balance</td><td>top-up rate</td></tr>
+    <tr><td>A11 Change plan</td><td>—</td><td>✔</td><td>✔ prorations (новое)</td><td>—</td><td>—</td><td>Yearly mix, отмены</td></tr>
+    <tr><td>A12/A14 подписка, отмена</td><td>—</td><td>✔</td><td>✔ пауза, агрегаты</td><td>—</td><td>✔</td><td>churn</td></tr>
+    <tr><td>A15/B10 реферал, gifts</td><td>—</td><td>✔</td><td>✔ реф-коды</td><td>✔ попап</td><td>✔</td><td>CAC</td></tr>
+    <tr><td>A16/B11 челлендж</td><td>✔</td><td>—</td><td>—</td><td>✔ баннер</td><td>—</td><td>вовлечение</td></tr>
+    <tr><td>B5/B8 кросс-селл, бейджи</td><td>—</td><td>—</td><td>✔ список акций</td><td>✔ подсказка/бейдж</td><td>—</td><td>ARPU</td></tr>
+  </tbody></table></div>
+
+  <h2 style="margin:30px 0 10px">5. Волны запуска</h2>
+  <div class="grid2">
+    <div class="card"><span class="badge lime">Волна 1 · только фронт + конфиг</span><p style="margin-top:8px">A1, A2, A3, A5, A6, A7, A10 (без auto-refill), A13, B1, B2, B6, B10, B12 — рост регистраций и первых покупок без изменений биллинга.</p></div>
+    <div class="card"><span class="badge acc">Волна 2 · промокоды с TTL</span><p style="margin-top:8px">A4, A8, A9, B7, B9, B3 — честные таймеры с серверным дедлайном.</p></div>
+    <div class="card"><span class="badge blue">Волна 3 · биллинг</span><p style="margin-top:8px">A11 prorations, auto-refill (A10/B4), пауза подписки (A14), реферал (A15), A17, A18.</p></div>
+    <div class="card"><span class="badge mut">Волна 4 · контент</span><p style="margin-top:8px">A12 Rewind, A16/B11 челленджи, B5/B8 кампании моделей.</p></div>
+  </div>
+
+  <h2 style="margin:30px 0 10px">6. Принятые значения по умолчанию <span class="badge ok" style="vertical-align:middle">утверждено 25.09</span></h2>
+  <p class="mut small" style="margin-bottom:10px">PO: «прими разумные значения по умолчанию». Ниже — что зашито в прототип (единый источник — <code>data.js → LAB.cfg</code>), почему так и где это видно. Любое значение меняется в одном месте.</p>
+  <div class="card" style="padding:0 6px"><table id="dec"><thead><tr><th>Параметр</th><th>Значение</th><th>Почему</th><th>Где в прототипе</th></tr></thead><tbody></tbody></table></div>
+
+  <h2 style="margin:30px 0 10px">7. Как смотреть</h2>
+  <div class="grid2">
+    <div class="card"><b>Часть A · сайт и ЛК</b><ol class="small" style="padding-left:18px;margin-top:8px;display:flex;flex-direction:column;gap:4px"><li>Нажми <b>«Прогнать флоу»</b> — 8 шагов от гостя до «кредиты закончились».</li><li>Переключай <b>Сейчас / После</b> на любом экране — слева список внедрений с кодами A1–A18, клик подсвечивает элемент.</li><li>Персоны: Гость → Новый → Monthly → 0 QCC. Таймеры честные: дедлайн хранится в localStorage, «Сброс» обнуляет.</li><li>В ЛК: Change plan (перерасчёт), Cancel (один экран), 🎁 реферал, 🔁 авто-пополнение — всё кликается.</li></ol></div>
+    <div class="card"><b>Часть B · IDE</b><ol class="small" style="padding-left:18px;margin-top:8px;display:flex;flex-direction:column;gap:4px"><li>Слева список 12 триггеров B1–B12 — клик показывает слой поверх реального скрина IDE.</li><li><b>«Авто-показ»</b> листает все слои по 2,5 с.</li><li>Меню моделей, чат и панели не меняются — только маркетинговые вставки в баннере, тосте и профиле.</li></ol></div>
+  </div>
+</div>
+<script src="data.js"></script><script src="app.js"></script>
+<script>
+$('#top').innerHTML = labTop('index.html');
+$('#cmp tbody').innerHTML = LAB.compare.map(r => `<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="badge ${r[3]==='критичный'?'bad':r[3]==='высокий'?'acc':'mut'}">${r[3]}</span></td></tr>`).join('');
+$('#dec tbody').innerHTML = LAB.decisions.map(d => `<tr><td><b>${d.q}</b></td><td>${d.v}</td><td class="mut">${d.why}</td><td class="small">${d.where}</td></tr>`).join('');
+const fig = ([p, c]) => `<figure><img src="../assets/${p}" loading="lazy"><figcaption>${c}</figcaption></figure>`;
+$('#gal-qc').innerHTML = LAB.evidence.qc.map(fig).join('');
+$('#gal-hf').innerHTML = LAB.evidence.hf.map(fig).join('');
+</script>
+</body></html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Quadcode AI · Plans for creators, studios and teams</title>
+<meta name="description" content="Choose a Quadcode AI plan. Credits for the world's best image, video, audio and code models — driven by your own team of AI agents. Free to start, no card required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Same type system as higgsfield.ai/pricing: Inter (UI, H1) + Space Grotesk (uppercase display) + IBM Plex Mono (labels) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<!-- white.css = light theme in the real Quadcode app style -->
+<link rel="stylesheet" href="white.css">
+</head>
+<body>
+
+<!-- ===== PREVIEW BAR (Subscriber persona switcher: Visitor / Starter / Plus) ===== -->
+<div class="preview-bar" id="previewBar">
+  <div class="wrap">
+    <div class="pb-left">
+      <span class="pb-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> Preview as:</span>
+      <div class="pb-pills" id="previewPills">
+        <button class="pb-pill active" data-as="visitor">Visitor</button>
+        <button class="pb-pill" data-as="starter">Starter</button>
+        <button class="pb-pill" data-as="plus">Plus</button>
+      </div>
+    </div>
+    <div class="pb-right">
+      <span class="pb-info" id="previewInfo">Viewing as guest · all plans visible</span>
+      <label class="pb-proposal-toggle" title="Toggle internal proposal notes layer">
+        <input type="checkbox" id="toggleProposalNotes">
+        <span class="pb-toggle-slider"></span>
+        <span class="pb-toggle-lbl">Show proposal notes</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EXIT-INTENT STICKY BANNER (Higgsfield 62% mirror) ===== -->
+<div class="exit-sticky" id="exitSticky">
+  <div class="wrap">
+    <span class="exit-tag">Special 62% OFF</span>
+    <span class="exit-copy"><b class="exit-copy-bold">62% OFF applied</b> · <span class="exit-timer-slot" id="exitStickyTimer">07:58</span> left<span class="exit-models-copy"> · Nano Banana Pro, Nano Banana 2 &amp; Kling 3.0 Unlimited on Ultra for 7 days</span></span>
+    <a class="btn btn-sm b3d b3d-white" href="#plans" id="exitStickyBtn">
+      <span class="btn-long-text">Claim 62% OFF</span>
+      <span class="btn-short-text">Claim</span>
+    </a>
+    <button class="exit-close" id="exitStickyClose" aria-label="Dismiss discount">×</button>
+  </div>
+</div>
+
+<!-- ===== PROMO BAR (mirror: Higgsfield "Get an additional discount…") ===== -->
+<div class="promo" id="promo">
+  <div class="wrap">
+    <div class="promo-rotator" id="promoRotator">
+      <div class="promo-item active">
+        <span class="tag">App sign-up promo</span>
+        <span>Download &amp; sign up in the Quadcode app for an <b>additional 30% off</b> (stacks with annual savings up to 25%)</span>
+      </div>
+      <div class="promo-item">
+        <span class="tag tag-green">Work email bonus</span>
+        <span>Sign up with your business email to get <b>+50 free credits</b> instantly</span>
+      </div>
+      <div class="promo-item">
+        <span class="tag tag-red">Quadcode Film Week</span>
+        <span>Join the 15-second film challenge — <b>250,000 credit prize pool</b></span>
+      </div>
+    </div>
+    <span class="timer" id="promoTimer" title="Offer window for new accounts">23:59:59</span>
+    <button class="btn" data-open-modal>Get your discount</button>
+    <button class="close" aria-label="Close" id="promoClose">×</button>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="https://quadcode.ai">
+      <img class="qc-logo" src="../../assets/logos/quadcode.svg" width="28" height="28" alt="">
+      <span class="qc-word">Quadcode <b>AI</b></span>
+    </a>
+    <nav class="main">
+      <a href="https://quadcode.ai/#capabilities">Capabilities</a>
+      <a href="https://quadcode.ai/#agents">Agents</a>
+      <a href="https://guides.quadcode.ai">Guides</a>
+      <a href="#plans" class="active">Pricing <span class="pill">Up to 25% OFF</span></a>
+      <a href="#business">Enterprise</a>
+    </nav>
+    <div class="hdr-right">
+      <a class="btn btn-ghost btn-sm" href="https://quadcode.ai/#download">Sign in</a>
+      <a class="btn btn-primary btn-sm" href="https://quadcode.ai/#download">Start for free</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO (mirror: "Upgrade your plan / Lock better prices…") ===== -->
+<section class="hero" id="plans">
+  <div class="wrap">
+    <!-- Extra discount banner (mirror: Higgsfield promo block above "Upgrade your plan") -->
+    <div class="xpromo">
+      <div class="xp-copy">
+        <span class="skew red">App sign-up promo</span>
+        <h2 class="xp-h"><span class="xp-l1"><span class="rot-slot" id="rotSlot"><span class="rot-item active" id="rotModel">Nanobanana Pro</span></span> <span class="xp-l1-tail">unlimited for 7 days</span></span><span class="xp-l2">Sign up in app for an extra 30% off</span></h2>
+        <p>New accounts only: sign up in the Quadcode desktop app and get 7 days of unlimited image &amp; video plus an extra 30% off any plan — stacked on top of up to 25% annual savings.</p>
+        <div class="xp-models" id="xpModels"></div>
+        <button class="btn b3d b3d-white" data-open-modal>Sign up and get your discount</button>
+      </div>
+      <div class="xp-art" id="xpArt"></div>
+    </div>
+
+    <h1>Upgrade your plan</h1>
+    <p class="sub">Lock better prices with annual billing, or scale up and let your agents run bigger jobs across every top image, video, audio and code model.</p>
+
+    <div>
+      <div class="tabs" id="audienceTabs">
+        <button class="active" data-aud="individual">Individual plans</button>
+        <button data-aud="business">Business plans</button>
+      </div>
+      <a href="#finder" class="helper">Not sure which plan?</a>
+    </div>
+
+    <div class="toggle-row">
+      <div class="toggle" id="billingToggle">
+        <button data-bill="monthly">Monthly</button>
+        <button data-bill="annual" class="active">Annual <span class="badge dark">Up to 25% OFF</span></button>
+      </div>
+    </div>
+
+    <!-- Plan cards are rendered by app.js -->
+    <div class="plans" id="planCards"></div>
+
+    <!-- Payment methods + trust row (rendered by extras.js) -->
+    <div class="payrow" id="payRow"></div>
+
+    <p class="fine">
+      <b style="color:var(--muted)">How do Quadcode plans work?</b> Credits are spent per generation; the cost is shown on every button before you run it. Unlimited &amp; free generations are available in the desktop app only (not via MCP/CLI or API). Prices exclude VAT and local taxes, calculated at checkout. Access to new models may roll out gradually. <a href="#faq">Learn more</a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== MODELS MARQUEE (every vendor logo, rotating) ===== -->
+<section class="band" id="models">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>Every top model. <span class="grad-text">One plan.</span></h2>
+      <p>Image, video, audio and code models from Google, OpenAI, ByteDance, Kuaishou, Alibaba and more, with the price in credits shown on every run.</p>
+    </div>
+  </div>
+  <div class="marquee" id="marquee"></div>
+</section>
+
+<!-- 24-hour Unlimited start for new accounts, 1:1 with the Higgsfield new-user offer: card up front, cancel in one click -->
+<section id="trial">
+  <div class="wrap">
+    <div class="sec-title">
+      <span class="kicker">New accounts · one per person and card</span>
+      <h2>24 hours of Unlimited, then Plus</h2>
+      <p>Add a card, pick Plus monthly or annual and generate without spending credits for a day. Cancel in one click within 24 hours and pay nothing.</p>
+    </div>
+    <div class="trial-card">
+      <div class="trial-media">
+        <img src="../../assets/content/c3.jpg" alt="Clip made with Seedance 2.5" loading="lazy">
+        <span class="trial-clock"><i></i>24:00:00 after you start</span>
+      </div>
+      <div class="trial-body">
+        <div class="trial-models">
+          <span class="trial-model"><img src="../../assets/logos/bytedance.svg" alt="" width="18" height="18">Seedance 2.5</span>
+          <span class="trial-model"><img src="../../assets/logos/kling.svg" alt="" width="18" height="18">Kling 3.0</span>
+          <span class="trial-model"><img src="../../assets/logos/gemini.svg" alt="" width="18" height="18">Nanobanana Pro</span>
+        </div>
+        <ol class="trial-steps">
+          <li><b>Start today</b><span>Add a card and choose Plus. Nothing is charged for 24 hours.</span></li>
+          <li><b>Create for a day</b><span>Turn on Unlimited in the model menu. One job at a time, entry resolution.</span></li>
+          <li><b>Keep it or cancel</b><span>We remind you 2 hours before the end. Cancel in one click, or Plus starts: $59 a month, or $47 a month billed annually.</span></li>
+        </ol>
+        <div class="trial-cta">
+          <a class="btn btn-grad btn-lg" href="https://quadcode.ai/#download">Start 24-hour Unlimited</a>
+          <span class="trial-note">Cancel in one click within 24 hours and pay nothing</span>
+        </div>
+      </div>
+    </div>
+    <p class="trial-foot">There's no standing free trial: the Free plan gives 50 credits and 10 more every day. <span class="proposal-note">Mirrors Higgsfield's 24-hour Unlimited offer for new users (July 2026). The 2-hour reminder is our addition.</span></p>
+  </div>
+</section>
+
+<!-- ===== TOP-UP CREDITS (mirror: Higgsfield store modal, "Top-up credits" tab) ===== -->
+<section id="topup">
+  <div class="wrap">
+    <div class="sec-title">
+      <span class="kicker">Add-ons · on top of a paid plan</span>
+      <h2>Top up credits in one click</h2>
+      <p>Credit packs are a one-time purchase added to your balance instantly, without changing your plan. Extra credits stay valid for 90 days.</p>
+    </div>
+    <div class="packs" id="packs"></div>
+    <div class="topup-row">
+      <div class="refill" id="autoRefill" style="width:100%"></div>
+    </div>
+    <div class="nudge" id="packNudge"></div>
+  </div>
+</section>
+
+<!-- ===== UNLIMITED MODELS + BOOST SPEED (mirror: store tabs 3 and avatar menu "Boost speed") ===== -->
+<section id="unlimited">
+  <div class="wrap">
+    <div class="duo">
+      <div class="xcard" id="passes"></div>
+      <div class="xcard dark" id="boost"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODEL SHELF (mirror: Higgsfield model picker badges + crossed cost on Generate) ===== -->
+<section id="shelf">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>What a credit buys today</h2>
+      <p>Live prices per run. Sale prices are shown crossed out on the Generate button, so nobody pays more than the button says.</p>
+    </div>
+    <div class="shelf" id="shelfGrid"></div>
+  </div>
+</section>
+
+<!-- ===== CASES STRIP (bold generations made in Quadcode, rotating) ===== -->
+<section id="made">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>What one plan <span class="grad-text">actually</span> ships</h2>
+      <p>Real outputs from Quadcode agents: films, key art, games, apps and scores. One prompt, finished files.</p>
+    </div>
+  </div>
+  <div class="cases-marquee"><div class="cases-track" id="casesTrack"></div></div>
+</section>
+
+<!-- ===== CHALLENGE (mirror: Higgsfield "Live now · $1,000,000 Global Film Festival") ===== -->
+<section id="challenge">
+  <div class="wrap"><div class="film" id="filmWeek"></div></div>
+</section>
+
+<!-- Invite friends, 1:1 with the Higgsfield referral: Plus and higher, 24-hour link, friend up to 60% off, 3 / 5 / 7 days Unlimited -->
+<section id="refer">
+  <div class="wrap">
+    <div class="sec-title">
+      <span class="kicker">Plus and higher</span>
+      <h2>Invite friends, get Unlimited Seedance 2.5</h2>
+      <p>Your invite link stays open for 24 hours. Friends who join through it get up to 60% off their first plan.</p>
+    </div>
+    <div class="refer-grid">
+      <div class="refer-card">
+        <div class="refer-link">
+          <span class="refer-url">quadcode.ai/invite/7Q2K-M9</span>
+          <button type="button" class="btn btn-white" id="copyInvite">Copy link</button>
+        </div>
+        <div class="refer-ladder">
+          <div class="rung"><b>1 friend</b><span>3 days</span></div>
+          <div class="rung"><b>2 friends</b><span>5 days</span></div>
+          <div class="rung hi"><b>3 friends</b><span>7 days</span></div>
+        </div>
+        <p class="refer-rules">Unlimited Seedance 2.5 at 720p. A friend counts after buying Plus monthly or higher and running one credit-paid generation while the link is open. The link can't be recreated after it closes.</p>
+      </div>
+      <a class="refer-card refer-aff" href="../affiliate/index.html">
+        <span class="kicker">Creators with an audience</span>
+        <h3>Affiliate program: up to 25% for 12 months</h3>
+        <p>Cash commission on every subscription payment, renewals and upgrades included. Your audience gets up to 50% off for 3 hours after signing in through your link.</p>
+        <span class="btn btn-primary">Apply to the program</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLAN FINDER (mirror: "Not sure which plan? Find the best plan for you") ===== -->
+<section id="finder">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>Find the best plan for you</h2>
+      <p>Choose what you want to create and get exactly what you need</p>
+    </div>
+    <div class="finder">
+      <div>
+        <div class="step">
+          <h4><span class="num">1</span>What are you here to make?</h4>
+          <div class="hint">Multiple options can be selected</div>
+          <div class="chips" id="goals"></div>
+        </div>
+        <div class="step">
+          <h4><span class="num">2</span>How many content items per month?</h4>
+          <div class="hint">≈ 22 credits · per Seedance 2.5 video, 5s, 720p &nbsp;·&nbsp; = 2 credits · per Nanobanana Pro image</div>
+          <div class="sliders">
+            <div class="sl">
+              <div class="lbl"><span>AI videos / month</span><span class="cost" id="vidCost">~1,100 credits</span></div>
+              <div class="val" id="vidVal">~50 videos</div>
+              <input type="range" id="vidRange" min="0" max="200" step="5" value="30">
+              <div class="sl-ticks" id="vidTicks"></div>
+            </div>
+            <div class="sl">
+              <div class="lbl"><span>AI images / month</span><span class="cost" id="imgCost">120 credits</span></div>
+              <div class="val" id="imgVal">~60 images</div>
+              <input type="range" id="imgRange" min="0" max="500" step="10" value="80">
+              <div class="sl-ticks" id="imgTicks"></div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <h4><span class="num">3</span>Features &amp; capabilities</h4>
+          <div class="hint">Add anything else you'll need</div>
+          <div class="chips" id="features"></div>
+        </div>
+      </div>
+      <div class="reco" id="reco"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARE TABLE (mirror: "Compare features — See in details what plan suits you best") ===== -->
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>Compare features</h2>
+      <p>See in details what plan suits you best</p>
+    </div>
+    <div class="cmp-toggle">
+      <div class="toggle" id="billingToggle2">
+        <button data-bill="monthly">Monthly</button>
+        <button data-bill="annual" class="active">Annual <span class="badge dark">Up to 25% OFF</span></button>
+      </div>
+    </div>
+    <div class="cmp-wrap"><table class="cmp" id="cmpTable"></table></div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS ===== -->
+<section id="business" style="padding-top:0">
+  <div class="wrap">
+    <div class="ent-box">
+      <div class="ent-left">
+        <span class="badge" style="background:var(--orange);color:#ffffff;margin-bottom:12px;">From 2 seats</span>
+        <h3>Teams &amp; <span class="grad-text">Enterprise</span></h3>
+        <p class="ent-sub">Centralized billing, private model routing, and dedicated assistance for creative studios and companies.</p>
+        <div class="ent-pills">
+          <div class="ent-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F18024" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div>
+              <b>Shared credit pool</b>
+              <span>Single credit pool across all members with team admin controls</span>
+            </div>
+          </div>
+          <div class="ent-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F18024" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div>
+              <b>SSO integration</b>
+              <span>Google Workspace and Okta single sign-on support</span>
+            </div>
+          </div>
+          <div class="ent-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F18024" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div>
+              <b>Private model routing &amp; on-prem agents</b>
+              <span>Dedicated routing for studio models and on-premises agents</span>
+            </div>
+          </div>
+          <div class="ent-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F18024" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="m3.34 7 11.32 11.32a3 3 0 0 0 4.24 0l1.42-1.42a3 3 0 0 0 0-4.24L8.98 1.34a2 2 0 0 0-2.83 0L3.34 4.17a2 2 0 0 0 0 2.83Z"/></svg>
+            <div>
+              <b>Dedicated success engineer</b>
+              <span>Priority onboarding and direct technical workflow support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ent-right">
+        <a class="btn b3d b3d-orange btn-lg" href="mailto:sales@quadcode.ai">Talk to sales</a>
+        <span class="ent-note">Custom contracts &amp; volume invoicing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-title"><h2>Frequently Asked Questions</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA (mirror: "Are you ready? Choose your plan") ===== -->
+<section class="final">
+  <div class="wrap">
+    <h2>Are you <span class="grad-text">ready?</span></h2>
+    <p>Start free with 50 credits and 10 more every day. Upgrade when your agents need more.</p>
+    <a href="#plans" class="btn b3d b3d-orange btn-lg">Choose your plan</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand"><img src="../../assets/logos/quadcode.svg" width="22" height="22" alt=""> <span>© 2026 Quadcode AI. All rights reserved.</span></div>
+    <div class="f-pay" id="footPay"></div>
+    <div><a href="../affiliate/index.html">Affiliate program</a><a href="https://quadcode.ai/terms">Terms</a><a href="https://quadcode.ai/privacy">Privacy</a><a href="https://guides.quadcode.ai">Help center</a><a href="https://quadcode.ai/changelog">Changelog</a></div>
+  </div>
+</footer>
+
+<!-- ===== SIGNUP / DISCOUNT MODAL (mirror: "Welcome to Higgsfield · Sign up and generate for free") ===== -->
+<div class="modal" id="modal">
+  <div class="box">
+    <button class="x" data-close-modal aria-label="Close">×</button>
+    <img class="m-logo" src="../../assets/logos/quadcode.svg" width="48" height="48" alt="">
+    <h3>Welcome to Quadcode</h3>
+    <p>Sign up and generate for free. Your <b>new account extra 30% off</b> (which stacks on top of up to 25% annual savings) and <b>+20% bonus credits</b> stay locked to this account for 7 days.</p>
+    <div class="stack">
+      <a class="btn btn-ghost gift" href="https://quadcode.ai/#download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F18024" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> Sign up with business email <small>+50 credits</small></a>
+      <a class="btn sso" href="https://quadcode.ai/#download"><img src="../../assets/logos/google.svg" width="18" height="18" alt=""> Continue with Google</a>
+      <a class="btn sso" href="https://quadcode.ai/#download"><img src="../../assets/logos/apple.svg" width="18" height="18" alt=""> Continue with Apple</a>
+      <a class="btn sso" href="https://quadcode.ai/#download"><img src="../../assets/logos/microsoft.svg" width="18" height="18" alt=""> Continue with Microsoft</a>
+      <a class="btn sso" href="https://quadcode.ai/#download"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Continue with Email</a>
+    </div>
+    <div class="legal">By continuing you agree to the Terms of Use and Privacy Policy. SSO available on Scale and Enterprise plans.</div>
+  </div>
+</div>
+
+<!-- ===== EXIT-INTENT 62% MODAL (Higgsfield 1:1 overlay) ===== -->
+<div class="modal" id="exitModal">
+  <div class="box exit-box">
+    <button class="x" id="exitCloseX" aria-label="Close">×</button>
+    <div class="exit-diagonal-ribbon">
+      <span>62% OFF DISCOUNT · <span class="exit-timer-slot" id="exitTimer">07:58</span> LEFT</span>
+    </div>
+    <div class="exit-glow-badge-wrap">
+      <div class="exit-glow-badge">62% OFF</div>
+    </div>
+    <h3>EXTRA DISCOUNT ADDED</h3>
+    <p>You're getting an extra discount on top of your personal discount. This is our absolute best offer. Promocode is applied.</p>
+    <div class="exit-actions">
+      <button class="btn btn-primary btn-block btn-lg" id="exitContinueBtn">Continue with 62% OFF</button>
+    </div>
+    <div class="exit-coupon-card">
+      <div class="exit-coupon-head">
+        <svg class="exit-coupon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Promocode is applied</span>
+      </div>
+      <div class="exit-coupon-pills">
+        <div class="exit-coupon-pill-off">62% OFF</div>
+        <div class="exit-coupon-pill-time">
+          <span class="exit-time-digits" id="exitCouponTimer">07 : 58</span>
+        </div>
+      </div>
+    </div>
+    <div class="legal">Personal 62% promotional discount applies to Plus and Ultra annual plans for 8 minutes. Cannot be combined with app sign-up promo.</div>
+  </div>
+</div>
+
+<!-- ===== CHANGE COMMITMENT MODAL (Monthly -> Annual) ===== -->
+<div class="modal" id="changeCommitmentModal">
+  <div class="box plan-action-box">
+    <button class="x" data-close-action-modal aria-label="Close">×</button>
+    <span class="pa-kicker">Change Commitment</span>
+    <h3>Changing commitment</h3>
+    <p class="pa-sub">Your new plan starts now. Unused credits are applied as a discount.</p>
+    <div class="pa-summary">
+      <div class="pa-row">
+        <span>Current plan</span>
+        <b id="ccCurrentPlan">Plus — Monthly ($59)</b>
+      </div>
+      <div class="pa-row highlight">
+        <div>
+          <span class="pa-name" id="ccNewPlan">Plus — Annual</span>
+          <small id="ccCredits">1,200 credits / mo · 20% OFF</small>
+        </div>
+        <div class="pa-pr-wrap">
+          <s id="ccOldAnnual">$708</s>
+          <b id="ccNewAnnual">$564</b>
+        </div>
+      </div>
+      <div class="pa-section-lbl">Prorations</div>
+      <div class="pa-row proration">
+        <span>Unused credits deduction</span>
+        <span class="pa-credit-val" id="ccCreditDeduction">−$35.30</span>
+      </div>
+      <hr class="pa-div">
+      <div class="pa-row total-row">
+        <b>Amount due today</b>
+        <span class="pa-total" id="ccDueToday">$528.70</span>
+      </div>
+    </div>
+    <p class="pa-legal">By clicking Confirm Change, you agree to our Terms of Service and Privacy Policy. Any balance or credit will be automatically applied. Your subscription renews at <span id="ccRenewVal">$564</span> per year on <span id="ccRenewDate">Oct 7, 2027</span>, and you can cancel anytime from Settings → My Subscription.</p>
+    <button class="btn btn-primary btn-block btn-lg" id="ccConfirmBtn">Confirm Change</button>
+  </div>
+</div>
+
+<!-- ===== UPGRADE PLAN MODAL ===== -->
+<div class="modal" id="upgradePlanModal">
+  <div class="box plan-action-box">
+    <button class="x" data-close-action-modal aria-label="Close">×</button>
+    <span class="pa-kicker">Plan Upgrade</span>
+    <h3>Upgrading plan</h3>
+    <p class="pa-sub">Your new plan starts now. Unused credits are applied as a discount.</p>
+    <div class="pa-summary">
+      <div class="pa-row">
+        <span>Current plan</span>
+        <b id="upCurrentPlan">Starter — Monthly ($20)</b>
+      </div>
+      <div class="pa-row highlight">
+        <div>
+          <span class="pa-name" id="upNewPlan">Plus — Annual</span>
+          <small id="upCredits">1,200 credits / mo · Full model line-up</small>
+        </div>
+        <div class="pa-pr-wrap">
+          <s id="upOldPrice">$708</s>
+          <b id="upNewPrice">$564</b>
+        </div>
+      </div>
+      <div class="pa-section-lbl">Prorations</div>
+      <div class="pa-row proration">
+        <span>Unused credits deduction</span>
+        <span class="pa-credit-val" id="upCreditDeduction">−$10.00</span>
+      </div>
+      <hr class="pa-div">
+      <div class="pa-row total-row">
+        <b>Amount due today</b>
+        <span class="pa-total" id="upDueToday">$554.00</span>
+      </div>
+    </div>
+    <p class="pa-legal">Your new plan starts immediately with expanded parallel jobs, access to frontier models, and 1-month credit rollover. Next renewal on <span id="upRenewDate">Nov 7, 2026</span>; cancel anytime in Settings.</p>
+    <button class="btn btn-primary btn-block btn-lg" id="upConfirmBtn">Confirm Change</button>
+  </div>
+</div>
+
+<!-- ===== DOWNGRADE PLAN MODAL ===== -->
+<div class="modal" id="downgradePlanModal">
+  <div class="box plan-action-box">
+    <button class="x" data-close-action-modal aria-label="Close">×</button>
+    <span class="pa-kicker red">Plan Change</span>
+    <h3>Downgrading plan</h3>
+    <p class="pa-sub">Changes will take effect at your next renewal date.</p>
+    <div class="pa-summary">
+      <div class="pa-row">
+        <span>Current plan</span>
+        <b id="dwCurrentPlan">Plus — Monthly ($59)</b>
+      </div>
+      <div class="pa-row">
+        <div>
+          <span class="pa-name" id="dwNewPlan">Starter — Annual</span>
+          <small id="dwCredits">300 credits / mo</small>
+        </div>
+        <b id="dwPrice">$180 / yr</b>
+      </div>
+      <hr class="pa-div">
+      <div class="pa-row">
+        <span>Due today (<span id="dwTodayDate">Oct 7, 2026</span>)</span>
+        <b class="text-green">$0</b>
+      </div>
+      <div class="pa-row total-row">
+        <span>Total starting <span id="dwRenewDate">Oct 22, 2026</span></span>
+        <span class="pa-total" id="dwNextCharge">$180</span>
+      </div>
+    </div>
+    <p class="pa-legal">Your current plan remains active with full limits until <span id="dwKeepUntil">Oct 22, 2026</span>, then automatically switches to Starter. No charge is made today. You can change or cancel your subscription at any time from Settings.</p>
+    <div class="pa-actions">
+      <button class="btn btn-primary btn-block btn-lg" id="dwKeepPlanBtn" data-close-action-modal style="margin-bottom:10px;">Keep my plan</button>
+      <button class="btn btn-ghost btn-block btn-lg" id="dwConfirmBtn">Confirm Change</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT SHEET MODAL ===== -->
+<div class="modal" id="checkoutModal">
+  <div class="box checkout-box">
+    <button class="x" data-close-checkout aria-label="Close">×</button>
+    <div class="checkout-hdr">
+      <img class="qc-logo" src="../../assets/logos/quadcode.svg" width="28" height="28" alt="">
+      <div>
+        <h3>Checkout</h3>
+        <span class="ch-sub" id="chSubTitle">Complete your purchase</span>
+      </div>
+    </div>
+
+    <!-- Order summary -->
+    <div class="ch-summary">
+      <div class="ch-line title-line">
+        <div>
+          <b id="chItemTitle">Plus Plan</b>
+          <span id="chItemInterval">Annual billing · 1,200 credits / mo</span>
+        </div>
+        <span class="ch-val" id="chItemPrice">$564.00</span>
+      </div>
+      <div class="ch-line discount-line" id="chDiscountLine" style="display:none">
+        <span id="chDiscountLabel">Promotional discount (62% OFF)</span>
+        <span class="ch-val text-red" id="chDiscountVal">−$180.00</span>
+      </div>
+      <div class="ch-line proration-line" id="chProrationLine" style="display:none">
+        <span>Unused credits deduction</span>
+        <span class="ch-val text-green" id="chProrationVal">−$35.30</span>
+      </div>
+      <div class="ch-line">
+        <span>Estimated tax (VAT / Sales tax)</span>
+        <span class="ch-val" id="chTaxVal">$0.00</span>
+      </div>
+      <hr class="ch-div">
+      <div class="ch-line total-line">
+        <b>Total due today</b>
+        <b class="ch-total-val" id="chTotalDue">$564.00</b>
+      </div>
+    </div>
+
+    <!-- Express Checkout: Wallets FIRST -->
+    <div class="ch-wallets-head">Express checkout</div>
+    <div class="ch-wallets">
+      <button class="btn-wallet btn-applepay" id="btnApplePay" type="button">
+        <img src="../../assets/logos/applepay.svg" alt="Apple Pay" height="20">
+      </button>
+      <button class="btn-wallet btn-bank" id="btnBankPay" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 4l9 5.5H3zM5 10v7M9.5 10v7M14.5 10v7M19 10v7M3 20h18"/></svg> <b>Bank payment</b>
+      </button>
+    </div>
+
+    <div class="ch-divider"><span>Or pay with card</span></div>
+
+    <!-- Card Form -->
+    <form class="ch-form" id="chCardForm" onsubmit="return false;">
+      <div class="ch-field">
+        <label>Name on card</label>
+        <input type="text" placeholder="Alex Morgan" value="Alex Morgan" required>
+      </div>
+      <div class="ch-field">
+        <label>Card details</label>
+        <div class="ch-input-card">
+          <input type="text" placeholder="•••• •••• •••• 4242" value="•••• •••• •••• 4242" required>
+          <div class="ch-card-icons">
+            <img src="../../assets/logos/visa.svg" alt="Visa" height="13">
+            <img src="../../assets/logos/mastercard.svg" alt="Mastercard" height="13">
+            <img src="../../assets/logos/amex.svg" alt="Amex" height="13">
+            <img src="../../assets/logos/jcb.svg" alt="JCB" height="13">
+          </div>
+        </div>
+      </div>
+      <div class="ch-row-2">
+        <div class="ch-field">
+          <label>Expires</label>
+          <input type="text" placeholder="MM / YY" value="12 / 28" required>
+        </div>
+        <div class="ch-field">
+          <label>CVC</label>
+          <input type="text" placeholder="CVC" value="•••" required>
+        </div>
+      </div>
+
+      <!-- Proposal note for digital wallets (hidden by default, shown via presentation toggle) -->
+      <div class="ch-proposal-note proposal-note">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <span>Apple Pay and bank payments are part of this proposal: the live checkout takes cards only today.</span>
+      </div>
+
+      <!-- Auto-renewal disclosure -->
+      <div class="ch-renew-terms" id="chRenewTerms">
+        Renews at $47/mo ($564 billed annually) until you cancel. Cancel anytime in Settings.
+      </div>
+
+      <button class="btn btn-primary btn-block btn-lg" id="chSubmitBtn" type="button">
+        Pay <span id="chBtnAmount">$564.00</span> &amp; Start Creating
+      </button>
+    </form>
+
+    <div class="ch-security">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span>256-bit SSL encrypted · Powered by Stripe</span>
+    </div>
+  </div>
+</div>
+
+<div class="sticky-cta" id="stickyCta"></div>
+
+<!-- Floating challenge card (mirror: Higgsfield "Live now · $1,000,000") -->
+<a class="live-card" id="liveCard" href="#challenge">
+  <img src="../../assets/content/c6.jpg" alt="">
+  <span class="lc-t"><span class="lc-k"><i></i>Live now</span><b>250,000 credits</b><span>Quadcode Film Week</span></span>
+  <button class="lc-x" id="liveClose" aria-label="Close">×</button>
+</a>
+
+<script src="extras.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

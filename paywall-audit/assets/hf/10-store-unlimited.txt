@@ -1,0 +1,44 @@
+﻿# Subscription • Higgsfield
+[Group] Notifications Alt+T  @-
+[Group] Notifications  @-
+[Pane] Upgrade plan or buy credits  @8,8
+[Text] Choose a higher plan for increased limits, or add extra credits  @8,8
+[Button] Upgrade Plan  @360,26
+[Button] Top-up Credits  @436,26
+[Button] Unlimited Models  @516,26
+[Text] UNLIMITED  @180,49
+[Text] World's best video model  @168,116
+[Text] available on Higgsfield AI  @169,126
+[Text] 1080p  @185,148
+[Text] Up to 30s  @218,148
+[Button] Get from €180  @155,184
+[Button] Browse all models  @155,210
+[Button] Unlimited Nano Banana Pro 4K  @139,250
+[Button] Unlimited Kling 3.0 4K  @312,250
+[Button] Unlimited GPT Image 2.0 4K  @484,250
+[Button] All Unlimited Models  @656,250
+[Text] ALL UNLIMITED OFFERS  @394,396
+[Text] Buy unlimited access to the most powerful image and video models.  @392,420
+[Hyperlink] Learn more  @486,428
+[Button] Image  @314,449
+[Button] Video  @366,449
+[Button] Google  @426,449
+[Button] OpenAI  @482,449
+[Button] Kling  @540,449
+[Button] Seedance  @588,449
+[Button] 2K Nano Banana Pro 2K Get from €5  @289,498
+[Button] 4K Nano Banana Pro 4K Get from €7  @420,498
+[Image] 4K  @468,506
+[Button] 720p Seedance 2.0 720p Get from €65  @550,498
+[Button] 1080p Seedance 2.0 1080p Get from €140  @289,694
+[Button] 1080p Kling 3.0 1080p Get from €35  @420,694
+[Button] 4K Kling 3.0 4K Get from €110  @550,694
+[Image] 4K  @598,702
+[Button] 720p Seedance 2.5 720p Get from €120  @289,890
+[Button] 1080p Seedance 2.5 1080p Get from €180  @420,890
+[Button] 1K GPT Image 2 1K Get from €15  @550,890
+[Button] 2K GPT Image 2 2K Get from €30  @289,1086
+[Button] 4K GPT Image 2 4K Get from €50  @420,1086
+[Image] 4K  @468,1094
+[Button] Unlimited access to all models Generate freely across every model in this collection. Get from €230 Nano Banana Pro Seedance 2.5 Seedance 2.0 GPT Image 2 Kling 3.0  @289,1282
+[Image] Unlimited access to all models  @308,1320
